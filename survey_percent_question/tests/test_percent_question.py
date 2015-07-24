@@ -38,7 +38,8 @@ class TestPercentQuestion(TransactionCase):
         })
 
         self.q_percent = self.env["survey.question"].create({
-            "title": "Coverage status of your lines",
+            "page_id": self.page.id,
+            "question": "Coverage status of your lines",
             "type": "percent_split",
             "labels_ids": [
                 (0, 0, {'sequence': 1, 'value': 'Covered'}),
@@ -114,3 +115,60 @@ class TestPercentQuestion(TransactionCase):
             self.tag,
         )
         self.assertFalse(err, "Validation should pass, counting comment")
+
+    def test_save_line_w_comments(self):
+        input_id = self.env["survey.user_input"].create({
+            "token": "test",
+            "survey_id": self.survey.id,
+        }).id
+        self.q_percent.comments_allowed = True
+        line_obj = self.env["survey.user_input_line"]
+        line_obj.save_line_percent_split(
+            input_id,
+            self.q_percent,
+            {"{0}_comment_value".format(self.tag): "50",
+             "{0}_comment_label".format(self.tag): "Just Imported",
+             "{0}_{1}".format(self.tag, self.l_covered.id): "0.01",
+             "{0}_{1}".format(self.tag, self.l_uncover.id): "49.99"},
+            self.tag,
+        )
+
+        for line in line_obj.get_old_lines(input_id, self.q_percent):
+            if line.value_suggested_row:
+                if line.value_suggested_row.id == self.l_covered.id:
+                    self.assertEquals(line.value_number, 0.01,
+                                      "Covered value should be 0.01%")
+                elif line.value_suggested_row.id == self.l_uncover.id:
+                    self.assertEquals(line.value_number, 49.99,
+                                      "Uncovered value should be 49.99%")
+                else:
+                    raise AssertionError("Unexpected result line")
+            else:
+                self.assertEquals(line.value_text, "Just Imported")
+                self.assertEquals(line.value_number, 50,
+                                  "Just Imported value should be 50%")
+
+        # Test that saving again overwrites the data
+        line_obj.save_line_percent_split(
+            input_id,
+            self.q_percent,
+            {"{0}_comment_value".format(self.tag): "30",
+             "{0}_comment_label".format(self.tag): "Data",
+             "{0}_{1}".format(self.tag, self.l_covered.id): "60",
+             "{0}_{1}".format(self.tag, self.l_uncover.id): "10"},
+            self.tag,
+        )
+        for line in line_obj.get_old_lines(input_id, self.q_percent):
+            if line.value_suggested_row:
+                if line.value_suggested_row.id == self.l_covered.id:
+                    self.assertEquals(line.value_number, 60,
+                                      "Covered value should be 60%")
+                elif line.value_suggested_row.id == self.l_uncover.id:
+                    self.assertEquals(line.value_number, 10,
+                                      "Uncovered value should be 10%")
+                else:
+                    raise AssertionError("Unexpected result line")
+            else:
+                self.assertEquals(line.value_text, "Data")
+                self.assertEquals(line.value_number, 30,
+                                  "Data value should be 30%")

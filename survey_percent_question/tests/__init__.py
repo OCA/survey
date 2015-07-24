@@ -20,4 +20,4 @@
 #
 ##############################################################################
 
-from . import percent_question
+from . import test_percent_question
