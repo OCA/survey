@@ -3,7 +3,9 @@
   <data>
     <template id="survey_result" inherit_id="survey.result">
       <xpath expr="//t[@t-if='question.description']" position="after">
-        <t t-if="question.type == 'percent_split'" t-call="survey_percent_question.result_percent_split" />
+        <t t-if="question.type == 'percent_split'">
+          <t t-call="survey_percent_question.result_percent_split" />
+        </t>
       </xpath>
     </template>
 

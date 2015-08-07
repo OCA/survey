@@ -3,13 +3,17 @@
   <data>
     <template id="page" inherit_id="survey.page">
       <xpath expr="//div[@t-field='question.description']" position="after">
-        <t t-if="question.type == 'percent_split'" t-call="survey_percent_question.question_percent_split" />
+        <t t-if="question.type == 'percent_split'">
+          <t t-call="survey_percent_question.question_percent_split" />
+        </t>
       </xpath>
     </template>
 
     <template id="survey_print" inherit_id="survey.survey_print">
       <xpath expr="//t[@t-if='question.description']" position="after">
-        <t t-if="question.type == 'percent_split'" t-call="survey_percent_question.question_percent_split" />
+        <t t-if="question.type == 'percent_split'">
+          <t t-call="survey_percent_question.question_percent_split" />
+        </t>
       </xpath>
     </template>
 
