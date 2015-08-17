@@ -61,6 +61,10 @@ class SurveyCalculatorComputation(models.Model):
         'Display help text?',
         default=True,
     )
+    calculator_result_ids = fields.One2many(
+        comodel_name='survey.calculator.result',
+        inverse_name='computation_id'
+    )
 
     @api.onchange('survey_id')
     def on_change_survey_id(self):
@@ -72,7 +76,11 @@ class SurveyCalculatorComputation(models.Model):
         Do the computation for all user inputs associated to the survey.
         """
         for user_input in self.survey_id.user_input_ids:
-            if user_input.state == 'done':
+            results = user_input.calculator_result_ids
+            already_computed = self in results.mapped(
+                lambda r: r.computation_id
+            )
+            if user_input.state == 'done' and not already_computed:
                 result_pool = self.env['survey.calculator.result']
                 result_pool.create({
                     'computation_id': self.id,

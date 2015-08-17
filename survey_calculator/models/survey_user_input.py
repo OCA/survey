@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo, Open Source Management Solution
@@ -20,7 +20,13 @@
 #
 ##############################################################################
 
-from . import survey_calculator_computation
-from . import survey_calculator_result
-from . import survey_question
-from . import survey_user_input
+from openerp import models, fields
+
+
+class SurveyUserInput(models.Model):
+    _inherit = 'survey.user_input'
+
+    calculator_result_ids = fields.One2many(
+        comodel_name='survey.calculator.result',
+        inverse_name='user_input_id'
+    )
