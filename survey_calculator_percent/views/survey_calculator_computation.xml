@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <record id="survey_calculator_computation_form_view"
+            model="ir.ui.view">
+      <field name="model">survey.calculator.computation</field>
+      <field name="inherit_id" ref="survey_calculator.survey_calculator_computation_form_view"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//li[@name='matrix_questions_multiple_choices per_row_allowed']" position="after">
+          <li name="percent_questions">
+                  <u>For percentage questions:</u><br/>
+                  The value in q[id] is a <b>dictionary</b>. Its <b>keys are the matrix rows ids</b>, and the
+                  <b>values are the percentages</b> chosen.<br/>
+                  <i>Example: Question #31 asks for a ratio '[7] Men' vs '[8] Women'.
+                  Then q[31] = {7: 48.3, 8: 51.7}. The female percentage is q[31][8] = 51.7</i>
+                </li>
+        </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</openerp>

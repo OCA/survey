@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_calculator_percent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-17 16:29+0000\n"
+"PO-Revision-Date: 2015-08-17 12:33-0500\n"
+"Last-Translator: Agathe Mollé <agathe.molle@savoirfairelinux.com>\n"
+"Language-Team: Savoir-faire Linux <support@savoirfairelinux.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: fr\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid ", and the"
+msgstr ", et les"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid ". Its"
+msgstr ". Ses"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid ""
+"Example: Question #31 asks for a ratio '[7] Men' vs '[8] Women'.\n"
+"                  Then q[31] = {7: 48.3, 8: 51.7}. The female percentage is "
+"q[31][8] = 51.7"
+msgstr ""
+"Exemple : La question #31 demande le ratio '[7] Hommes' contre '[8] Femmes'. "
+"Alors q[31] = {7: 48.3, 8: 51.7}. Le pourcentage de femmes est q[31][8] = "
+"51.7"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid "For percentage questions:"
+msgstr "Pour les questions pourcentage :"
+
+#. module: survey_calculator_percent
+#: model:ir.model,name:survey_calculator_percent.model_survey_calculator_result
+msgid "Survey Calculator Result"
+msgstr "Résultat du Calculateur"
+
+#. module: survey_calculator_percent
+#: model:ir.model,name:survey_calculator_percent.model_survey_question
+msgid "Survey Question"
+msgstr "Question du sondage"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid "The value in q[id] is a"
+msgstr "La valeur dans q[id] est un"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid "chosen."
+msgstr "choisis."
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid "dictionary"
+msgstr "dictionnaire"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid "keys are the matrix rows ids"
+msgstr "clés sont les ids des lignes de matrice"
+
+#. module: survey_calculator_percent
+#: view:survey.calculator.computation:survey_calculator_percent.survey_calculator_computation_form_view
+msgid "values are the percentages"
+msgstr "valeurs sont les pourcentages"
