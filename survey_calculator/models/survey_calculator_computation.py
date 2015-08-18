@@ -29,9 +29,7 @@ class SurveyCalculatorComputation(models.Model):
 
     @api.depends('survey_id')
     def get_questions_available(self):
-        self.question_ids = self.survey_id.page_ids.mapped(
-            lambda p: p.question_ids
-        )
+        self.question_ids = self.mapped('survey_id.page_ids.question_ids')
 
     name = fields.Char(
         string='Name',
@@ -66,10 +64,6 @@ class SurveyCalculatorComputation(models.Model):
         inverse_name='computation_id'
     )
 
-    @api.onchange('survey_id')
-    def on_change_survey_id(self):
-        self.get_questions_available()
-
     @api.multi
     def compute_all_inputs(self):
         """
@@ -77,9 +71,7 @@ class SurveyCalculatorComputation(models.Model):
         """
         for user_input in self.survey_id.user_input_ids:
             results = user_input.calculator_result_ids
-            already_computed = self in results.mapped(
-                lambda r: r.computation_id
-            )
+            already_computed = self in results.mapped('computation_id')
             if user_input.state == 'done' and not already_computed:
                 result_pool = self.env['survey.calculator.result']
                 result_pool.create({
