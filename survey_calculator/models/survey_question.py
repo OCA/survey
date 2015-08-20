@@ -77,7 +77,3 @@ class SurveyQuestion(models.Model):
         help="Display a simplified list of the available rows",
         compute='get_available_answers',
     )
-
-    @api.onchange('labels_ids', 'labels_ids_2')
-    def on_change_answers(self):
-        self.get_available_answers()

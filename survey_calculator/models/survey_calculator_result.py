@@ -153,6 +153,7 @@ class SurveyCalculatorResult(models.Model):
         params['q'] = answers
         params['value'] = values
 
+    @api.depends('computation_id', 'user_input_id')
     @api.one
     def compute_results(self):
         params = {'result': 0.0, 'tag': ''}
@@ -166,11 +167,3 @@ class SurveyCalculatorResult(models.Model):
             )
             self.result = float(params['result'])
             self.tag = ustr(params['tag'])
-
-    @api.onchange('computation_id')
-    def on_change_computation_id(self):
-        self.compute_results()
-
-    @api.onchange('user_input_id')
-    def on_change_user_input_id(self):
-        self.compute_results()
