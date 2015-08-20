@@ -43,7 +43,7 @@ class SurveyQuestion(models.Model):
     _inherit = 'survey.question'
 
     type = fields.Selection(
-        selection_add=[('percent_split', 'Percentage')],
+        selection_add=[('percent_split', _('Percentage'))],
     )
 
     @api.model
