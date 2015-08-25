@@ -40,7 +40,7 @@ class SurveyCalculatorResult(models.Model):
     partner_id = fields.Many2one(
         'res.partner',
         'Partner',
-        related='user_input_id.partner_id.parent_id',
+        related='user_input_id.partner_id',
         readonly=True,
         store=True,
     )
