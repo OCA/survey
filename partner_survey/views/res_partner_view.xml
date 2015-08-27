@@ -25,11 +25,6 @@
                        string="Surveys"/>
             </button>
         </div>
-        <notebook position="inside">
-            <page string="Surveys">
-                <field name="survey_inputs" context="{'default_partner_id': active_id}"/>
-            </page>
-        </notebook>
     </field>
 </record>
 
