@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record model="ir.ui.view" id="survey_email_compose_message">
+      <field name="inherit_id" ref="survey.survey_email_compose_message" />
+      <field name="model">survey.mail.compose.message</field>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='partner_ids']/.." position="before">
+          <group col="2">
+            <field invisible="context.get('survey_resent_token')" name="partners_manual" widget="many2many_tags_email" placeholder="Add list of existing contacts..." context="{'force_email':True, 'show_email':True}" />
+            <field invisible="context.get('survey_resent_token')" name="tags" widget="many2many_tags_email" placeholder="Add list of existing tags..." context="{'force_email':True, 'show_email':True}" />
+          </group>
+        </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</openerp>
