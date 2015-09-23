@@ -39,6 +39,15 @@ https://github.com/ingadhoc/odoo-addons/tree/8.0/survey_conditional_questions
 https://github.com/csrocha/openerp-survey
 
 
+[//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[partner_survey](partner_survey/) | 1.0.0 | Partner Survey
+
+[//]: # (end addons)
+
 Translation Status
 ------------------
 [![Transifex Status](https://www.transifex.com/projects/p/OCA-survey-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-survey-8-0)
