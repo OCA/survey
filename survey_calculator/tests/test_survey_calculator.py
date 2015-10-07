@@ -263,8 +263,8 @@ class TestSurveyCalculator(TransactionCase):
         Make sure question_ids fields is computed properly
         """
         self.assertEquals(
-            self.computation.question_ids.mapped('id'),
-            [x.id for x in self.questions],
+            set(self.computation.question_ids.mapped('id')),
+            set([x.id for x in self.questions]),
         )
 
     def test_get_available_answers(self):
