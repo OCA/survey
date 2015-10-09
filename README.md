@@ -44,7 +44,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[partner_survey](partner_survey/) | 1.0.0 | Partner Survey
+[partner_survey](partner_survey/) | 8.0.1.0.0 | Partner Survey
 
 [//]: # (end addons)
 

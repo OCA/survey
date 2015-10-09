@@ -23,7 +23,7 @@
 {
     'name': "Partner Survey",
     'category': 'Marketing',
-    'version': '1.0.0',
+    'version': '8.0.1.0.0',
     'depends': [
         'survey',
     ],
