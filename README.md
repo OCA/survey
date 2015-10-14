@@ -1,6 +1,6 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/200/8.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-survey-200)
-[![Build Status](https://travis-ci.org/OCA/survey.svg?branch=8.0)](https://travis-ci.org/OCA/survey)
-[![Coverage Status](https://coveralls.io/repos/OCA/survey/badge.svg?branch=8.0)](https://coveralls.io/r/OCA/survey?branch=8.0)
+[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/200/9.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-survey-200)
+[![Build Status](https://travis-ci.org/OCA/survey.svg?branch=9.0)](https://travis-ci.org/OCA/survey)
+[![Coverage Status](https://coveralls.io/repos/OCA/survey/badge.svg?branch=9.0)](https://coveralls.io/r/OCA/survey?branch=9.0)
 [![Code Climate](https://codeclimate.com/github/OCA/survey/badges/gpa.svg)](https://codeclimate.com/github/OCA/survey)
 
 OCA Survey management addons for Odoo
@@ -34,20 +34,14 @@ Roadmap
 Links
 -----
 
-https://github.com/ingadhoc/odoo-addons/tree/8.0/survey_conditional_questions
+https://github.com/ingadhoc/odoo-addons/tree/9.0/survey_conditional_questions
 
 https://github.com/csrocha/openerp-survey
 
 
 [//]: # (addons)
-Available addons
-----------------
-addon | version | summary
---- | --- | ---
-[partner_survey](partner_survey/) | 8.0.1.0.0 | Partner Survey
-
 [//]: # (end addons)
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/OCA-survey-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-survey-8-0)
+[![Transifex Status](https://www.transifex.com/projects/p/OCA-survey-9-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-survey-9-0)
