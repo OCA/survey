@@ -65,6 +65,14 @@ class SurveyCalculatorComputation(models.Model):
     )
 
     @api.multi
+    def _compute_input(self, user_input):
+        result_pool = self.env['survey.calculator.result']
+        result_pool.create({
+            'computation_id': self.id,
+            'user_input_id': user_input.id,
+        })
+
+    @api.multi
     def compute_all_inputs(self):
         """
         Do the computation for all user inputs associated to the survey.
@@ -73,8 +81,4 @@ class SurveyCalculatorComputation(models.Model):
             results = user_input.calculator_result_ids
             already_computed = self in results.mapped('computation_id')
             if user_input.state == 'done' and not already_computed:
-                result_pool = self.env['survey.calculator.result']
-                result_pool.create({
-                    'computation_id': self.id,
-                    'user_input_id': user_input.id,
-                })
+                self._compute_input(user_input)
