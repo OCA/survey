@@ -64,7 +64,6 @@ class SurveyCalculatorComputation(models.Model):
         inverse_name='computation_id'
     )
 
-    @api.multi
     def _compute_input(self, user_input):
         result_pool = self.env['survey.calculator.result']
         result_pool.create({
