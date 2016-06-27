@@ -19,6 +19,7 @@ _logger = logging.getLogger(__name__)
 
 class SurveyConditional(WebsiteSurvey):
 
+    # TODO deberiamos heredar esto correctamente
     @http.route()
     def fill_survey(self, survey, token, prev=None, **post):
         '''Display and validates a survey'''
