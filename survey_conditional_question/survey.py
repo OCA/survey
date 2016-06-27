@@ -34,10 +34,6 @@ class survey_question(models.Model):
             self, cr, uid, question, post, answer_tag, context=None):
         ''' Validate question, depending on question type and parameters '''
 
-        input_answer_id = self.pool['survey.user_input_line'].search(
-            cr, uid,
-            [('user_input_id.token', '=', post.get('token')),
-             ('question_id', '=', question.question_conditional_id.id)])
         try:
             checker = getattr(self, 'validate_' + question.type)
         except AttributeError:
@@ -45,6 +41,13 @@ class survey_question(models.Model):
                 question.type + ": This type of question has no validation method")
             return {}
         else:
+            # TODO deberiamos emprolijar esto
+            if not question.question_conditional_id:
+                return checker(cr, uid, question, post, answer_tag, context=context)
+            input_answer_id = self.pool['survey.user_input_line'].search(
+                cr, uid,
+                [('user_input_id.token', '=', post.get('token')),
+                 ('question_id', '=', question.question_conditional_id.id)])
             for answers in self.pool['survey.user_input_line'].browse(cr, uid,input_answer_id):
                 value_suggested = answers.value_suggested
                 if question.conditional and question.answer_id != value_suggested:
