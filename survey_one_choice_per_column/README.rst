@@ -11,9 +11,22 @@ This module adds an option 'One Choice Per Column' to the matrix type of the mat
 Usage
 =====
 
+* go to Marketing -> Surveys -> Surveys;
+* click on 'Survey Options';
+* open a survey page;
+* open a question;
+* select 'Matrix' in 'Type of Question';
+* open tab 'Options';
+* select 'One choice per column' in 'Matrix Type'.
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/200/8.0
+
 Known issues / Roadmap
 ======================
 
+* No check on the number of rows / columns (Rows of the Matrix / Types of answers)
  
 Bug Tracker
 ===========

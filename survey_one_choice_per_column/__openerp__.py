@@ -7,7 +7,7 @@
     'images': [],
     'category': 'Marketing',
     'version': '8.0.1.0.0',
-    'author': 'ONESTEiN BV,Odoo Community Association (OCA)',
+    'author': 'ONESTEiN BV, Odoo Community Association (OCA)',
     'license': 'AGPL-3',
     'website': 'http://www.onestein.eu',
     'depends': ['survey'],
@@ -15,8 +15,5 @@
         'views/assets.xml',
         'views/survey_one_choice_per_column_templates.xml',
     ],
-    'summary': "Adds a new option 'One Choice Per Column' to the matrix type of question.",
-    'installable': True,
-    'auto_install': False,
-    'application': False
+    'summary': "Adds a new option 'One Choice Per Column' to matrix types."
 }
