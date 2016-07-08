@@ -10,29 +10,21 @@ class SurveyQuestion(models.Model):
     
     matrix_subtype = fields.Selection(selection_add=[('simple_restricted', 'One choice per column')])
     
-    #TODO: API2, overridden method is API1
-    def validate_matrix(self, cr, uid, question, post, answer_tag, context=None):
+    @api.model
+    def validate_question(self, question, post, answer_tag):
+        if question.type == 'matrix' and question.matrix_subtype == 'simple_restricted':
+            return self.validate_simple_restricted_matrix(question, post, answer_tag)
+        return super(SurveyQuestion, self).validate_question(question, post, answer_tag)
+    
+    def validate_simple_restricted_matrix(self, question, post, answer_tag):
         errors = {}
-        
-        #Requirement test
-        if question.constr_mandatory:
-            lines_number = len(question.labels_ids_2)
-            answer_candidates = dict_keys_startswith(post, answer_tag)
-            
-            # Number of lines that have been answered
-            if question.matrix_subtype == 'simple' or question.matrix_subtype == 'simple_restricted':
-                answer_number = len(answer_candidates)
-            elif question.matrix_subtype == 'multiple':
-                answer_number = len(set([sk.rsplit('_', 1)[0] for sk in answer_candidates.keys()]))
-            # Validate that each line has been answered
-            if answer_number != lines_number:
+        answer_candidates = {key: post[key] for key in filter(lambda key: key.startswith(answer_tag), post.keys())}
+        answer_number = len(answer_candidates)
+        lines_number = len(question.labels_ids_2)
+        if question.constr_mandatory and answer_number != lines_number:
+            errors.update({answer_tag: question.constr_error_msg})
+        values = answer_candidates.values()
+        for answer in values:
+            if len(filter(lambda i: i == answer, values)) > 1:
                 errors.update({answer_tag: question.constr_error_msg})
-        
-        #Simple restricted unique answer test
-        if(question.matrix_subtype == 'simple_restricted'):
-            answer_candidates = dict_keys_startswith(post, answer_tag)
-            for answer_candidate in answer_candidates:
-                if(len(dict_keys_startswith(answer_candidates, answer_tag + "_" + answer_candidate)) > 1):
-                    errors.update({answer_tag: question.constr_error_msg})
-            
         return errors
