@@ -4,7 +4,6 @@
 
 {
     'name': 'Survey One Choice Per Column',
-    'images': [],
     'category': 'Marketing',
     'version': '8.0.1.0.0',
     'author': 'ONESTEiN BV, Odoo Community Association (OCA)',

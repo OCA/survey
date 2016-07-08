@@ -4,9 +4,15 @@
 
 <openerp>
     <data>
-        <template id="matrix_one_choice_per_column" inherit_id="survey.matrix" name="Matrix One Choice Per Column">
+        <template id="matrix_one_choice_per_column" 
+                  inherit_id="survey.matrix" 
+                  name="Matrix One Choice Per Column">
             <xpath expr="//td" position="inside">
-                <input t-if="question.matrix_subtype == 'simple_restricted'" type="radio" t-att-name="'%s_%s' % (prefix, row_label.id)" t-att-value='col_label.id' class='survey_restricted_radio' />
+                <input t-if="question.matrix_subtype == 'simple_restricted'"
+                       type="radio"
+                       t-att-name="'%s_%s' % (prefix, row_label.id)"
+                       t-att-value='col_label.id' 
+                       class='survey_restricted_radio'/>
             </xpath>
         </template>
     </data>
