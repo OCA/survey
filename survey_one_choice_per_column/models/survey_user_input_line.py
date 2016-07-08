@@ -37,8 +37,7 @@ class SurveyUserInputLine(models.Model):
             tag = "%s_%s" % (answer_tag, row.id)
             if tag in candidates:
                 no_answers = False
-                vals.update({
-                             'answer_type': 'suggestion',
+                vals.update({'answer_type': 'suggestion',
                              'value_suggested': candidates[tag],
                              'value_suggested_row': row.id
                              })
