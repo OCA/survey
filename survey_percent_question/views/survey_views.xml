@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="survey_question_form">
+      <field name="name">Survey Form +Percent question</field>
+      <field name="model">survey.question</field>
+      <field name="inherit_id" ref="survey.survey_question_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//page[@string='Answers']//label[@for='labels_ids']" position="attributes">
+          <attribute name="attrs">{'invisible': [('type', 'not in', ['simple_choice', 'multiple_choice', 'matrix', 'percent_split'])]}</attribute>
+        </xpath>
+        <xpath expr="//page[@string='Answers']//field[@name='labels_ids']" position="attributes">
+          <attribute name="attrs">{'invisible': [('type', 'not in', ['simple_choice', 'multiple_choice', 'matrix', 'percent_split'])]}</attribute>
+        </xpath>
+        <xpath expr="//page[@string='Options']//group[@string='Allow Comments']" position="attributes">
+          <attribute name="attrs">{'invisible': [('type', 'not in', ['simple_choice', 'multiple_choice', 'matrix', 'percent_split'])]}</attribute>
+        </xpath>
+        <xpath expr="//page[@string='Options']//field[@name='comment_count_as_answer']" position="attributes">
+          <attribute name="attrs">{'invisible': ['|', ('comments_allowed', '=', False), ('type', 'in', ['matrix', 'percent_split'])]}</attribute>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>

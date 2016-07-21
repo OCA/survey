@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <template id="page" inherit_id="survey.page">
+      <xpath expr="//div[@t-field='question.description']" position="after">
+        <t t-if="question.type == 'percent_split'">
+          <t t-call="survey_percent_question.question_percent_split" />
+        </t>
+      </xpath>
+    </template>
+
+    <template id="survey_print" inherit_id="survey.survey_print">
+      <xpath expr="//t[@t-if='question.description']" position="after">
+        <t t-if="question.type == 'percent_split'">
+          <t t-call="survey_percent_question.question_percent_split" />
+        </t>
+      </xpath>
+    </template>
+
+    <template id="question_percent_split" name="Percent Split">
+      <!-- previously div.row with div.col-md-12 for answers -->
+      <div t-foreach='question.labels_ids' t-as='label' class="row">
+        <t t-set="field_name" t-value="'%s_%s' % (prefix, label.id)" />
+        <div class="col-md-10">
+          <label t-att-for="field_name"><span t-field="label.value" /></label>
+        </div>
+        <div class="col-md-2 input-group">
+          <input class="form-control" type="number" t-att-name="field_name" min="0" max="100" step="0.01" />
+          <span class="input-group-addon">%</span>
+        </div>
+      </div>
+      <div t-if='question.comments_allowed' class="row">
+        <div class="col-md-10">
+          <div class="input-group">
+            <span class="input-group-addon" t-field="question.comments_message" />
+            <input class="form-control" type="text" t-att-name="'%s_comment_label' % (prefix, )" />
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="input-group">
+            <input class="form-control" type="number" t-att-name="'%s_comment_value' % (prefix, )" min="0" max="100" step="0.01" />
+            <span class="input-group-addon">%</span>
+          </div>
+        </div>
+      </div>
+    </template>
+  </data>
+</openerp>
+

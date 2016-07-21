@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <template id="survey_result" inherit_id="survey.result">
+      <xpath expr="//t[@t-if='question.description']" position="after">
+        <t t-if="question.type == 'percent_split'">
+          <t t-call="survey_percent_question.result_percent_split" />
+        </t>
+      </xpath>
+    </template>
+
+    <template id="result_percent_split" name="Percent Split Result">
+      <t t-set="header" t-value="prepare_result['header']" />
+      <t t-set="data" t-value="prepare_result['data']" />
+      <table class="table table-hover table-condensed" t-tt-id="'table_question_%d' % question.id">
+        <thead>
+          <tr>
+            <th t-foreach="header" t-as="label">
+              <span t-esc="label" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr t-foreach="data" t-as="row">
+            <td t-foreach="row" t-as="value">
+              <span t-esc="value" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </template>
+  </data>
+</openerp>
