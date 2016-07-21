@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 ONESTEiN BV (<http://www.onestein.eu>)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <template id="survey_one_choice_per_column_assets" 
+                  inherit_id="website.assets_frontend" 
+                  name="Survey One Choice Per Column Assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" 
+                        src="/survey_one_choice_per_column/static/src/js/survey_one_choice_per_column.js" />
+            </xpath>
+        </template>
+    </data>
+</openerp>
