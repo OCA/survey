@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_partner_tag_share
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-28 17:15+0000\n"
+"PO-Revision-Date: 2015-08-28 13:19-0500\n"
+"Last-Translator: Agathe Mollé <agathe.molle@savoirfairelinux.com>\n"
+"Language-Team: Savoir-faire Linux <support@savoirfairelinux.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: fr\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. module: survey_partner_tag_share
+#: view:survey.mail.compose.message:survey_partner_tag_share.survey_email_compose_message
+msgid "Add list of existing contacts..."
+msgstr "Ajouter une liste de contacts existants..."
+
+#. module: survey_partner_tag_share
+#: view:survey.mail.compose.message:survey_partner_tag_share.survey_email_compose_message
+msgid "Add list of existing tags..."
+msgstr "Ajouter une liste d'étiquettes existantes..."
+
+#. module: survey_partner_tag_share
+#: field:survey.mail.compose.message,partners_manual:0
+msgid "Add these partners to recipients"
+msgstr "Ajouter ces partenaires aux destinataires"
+
+#. module: survey_partner_tag_share
+#: field:survey.mail.compose.message,tags:0
+msgid "Add these tags to recipients"
+msgstr "Ajouter ces étiquettes aux destinataires"
+
+#. module: survey_partner_tag_share
+#: model:ir.model,name:survey_partner_tag_share.model_survey_mail_compose_message
+msgid "Email composition wizard for Survey"
+msgstr "Assistant de composition de courriels pour les sondages"
