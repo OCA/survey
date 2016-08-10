@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
 <record id="act_partner_survey_input" model="ir.actions.act_window">
     <field name="res_model">survey.user_input</field>
@@ -15,7 +14,7 @@
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
-        <div class="oe_right oe_button_box" position="inside">
+        <div class="oe_button_box" position="inside">
             <button name="%(partner_survey.act_partner_survey_input)d"
                     type="action"
                     class="oe_stat_button oe_inline"
@@ -28,5 +27,4 @@
     </field>
 </record>
 
-</data>
-</openerp>
+</odoo>
