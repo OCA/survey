@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
 <record id="act_partner_survey_input" model="ir.actions.act_window">
     <field name="res_model">survey.user_input</field>
@@ -28,5 +27,4 @@
     </field>
 </record>
 
-</data>
-</openerp>
+</odoo>
