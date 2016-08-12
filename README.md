@@ -40,11 +40,11 @@ https://github.com/csrocha/openerp-survey
 
 
 [//]: # (addons)
-Unported addons
----------------
+Available addons
+----------------
 addon | version | summary
 --- | --- | ---
-[partner_survey](partner_survey/) | 8.0.1.0.0 (unported) | Partner Survey
+[partner_survey](partner_survey/) | 9.0.1.0.0 | Partner Survey
 
 [//]: # (end addons)
 
