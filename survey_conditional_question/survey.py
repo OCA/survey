@@ -22,7 +22,8 @@ class survey_question(models.Model):
         'survey.question',
         'Question',
         copy=False,
-        help="In order to edit this field you should first save the question"
+        help="In order to edit this field you should"
+             " first save the question"
     )
     answer_id = fields.Many2one(
         'survey.label',
@@ -32,28 +33,35 @@ class survey_question(models.Model):
 
     def validate_question(
             self, cr, uid, question, post, answer_tag, context=None):
-        ''' Validate question, depending on question type and parameters '''
+        ''' Validate question, depending on question
+        type and parameters '''
 
         try:
             checker = getattr(self, 'validate_' + question.type)
         except AttributeError:
             _logger.warning(
-                question.type + ": This type of question has no validation method")
+                question.type + ": This type of question has "
+                                "no validation method")
             return {}
         else:
             # TODO deberiamos emprolijar esto
             if not question.question_conditional_id:
-                return checker(cr, uid, question, post, answer_tag, context=context)
-            input_answer_id = self.pool['survey.user_input_line'].search(
-                cr, uid,
-                [('user_input_id.token', '=', post.get('token')),
-                 ('question_id', '=', question.question_conditional_id.id)])
-            for answers in self.pool['survey.user_input_line'].browse(cr, uid,input_answer_id):
+                return checker(cr, uid, question,
+                               post, answer_tag, context=context)
+            input_answer_id = \
+                self.pool['survey.user_input_line'].search(
+                    cr, uid,
+                    [('user_input_id.token', '=', post.get('token')),
+                     ('question_id', '=', question.question_conditional_id.id)])
+            for answers in\
+                    self.pool['survey.user_input_line'].browse(
+                        cr, uid, input_answer_id):
                 value_suggested = answers.value_suggested
                 if question.conditional and question.answer_id != value_suggested:
                     return {}
                 else:
-                    return checker(cr, uid, question, post, answer_tag, context=context)
+                    return checker(cr, uid, question, post,
+                                   answer_tag, context=context)
 
 
 class survey_user_input(models.Model):
@@ -77,7 +85,9 @@ class survey_user_input(models.Model):
                             uid,
                             [('user_input_id', '=', user_input_id),
                              ('question_id', '=', question2.id)])
-                        for answers in obj_user_input_line.browse( cr,uid,input_answer_id):
+                        for answers in \
+                                obj_user_input_line.browse(
+                                    cr, uid, input_answer_id):
                             value_suggested = answers.value_suggested
                             if question.answer_id != value_suggested:
                                 questions_to_hide.append(question.id)
