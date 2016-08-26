@@ -6,12 +6,9 @@
 
 import logging
 import werkzeug
-import werkzeug.utils
-from math import ceil
 from openerp.addons.web import http
 from openerp.addons.survey.controllers.main import WebsiteSurvey
 from openerp.addons.web.http import request
-from openerp.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT as DTF
 
 
 _logger = logging.getLogger(__name__)
@@ -75,8 +72,9 @@ class SurveyConditional(WebsiteSurvey):
                 user_input.last_displayed_page_id.id,
                 go_back=flag, context=context)
 
-            # special case if you click "previous" from the last page, then
-                # leave the survey, then reopen it from the URL, avoid crash
+            # special case if you click "previous" from the last page,
+            # then  leave the survey, then reopen it from the URL,
+            #  avoid crash
             if not page:
                 page, page_nr, last = survey_obj.next_page(
                     cr, uid, user_input,

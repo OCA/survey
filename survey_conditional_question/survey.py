@@ -52,12 +52,14 @@ class survey_question(models.Model):
                 self.pool['survey.user_input_line'].search(
                     cr, uid,
                     [('user_input_id.token', '=', post.get('token')),
-                     ('question_id', '=', question.question_conditional_id.id)])
+                     ('question_id', '=',
+                      question.question_conditional_id.id)])
             for answers in\
                     self.pool['survey.user_input_line'].browse(
                         cr, uid, input_answer_id):
                 value_suggested = answers.value_suggested
-                if question.conditional and question.answer_id != value_suggested:
+                if question.conditional and \
+                                question.answer_id != value_suggested:
                     return {}
                 else:
                     return checker(cr, uid, question, post,
