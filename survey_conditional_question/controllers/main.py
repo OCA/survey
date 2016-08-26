@@ -5,7 +5,6 @@
 ##############################################################################
 
 import logging
-import werkzeug
 from openerp.addons.web import http
 from openerp.addons.survey.controllers.main import WebsiteSurvey
 from openerp.addons.web.http import request
