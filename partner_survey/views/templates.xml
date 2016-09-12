@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="sfinished_partner" inherit_id="survey.sfinished" name="Survey Finished Partner">
+        <xpath expr="//div[@class='jumbotron mt32']" position="inside">
+          <div t-if="user_input.partner_id and user_input.partner_id != uid">Also yout can go to <a t-att-href="'/web#id=%s&amp;view_type=form&amp;model=res.partner&amp;menu_id=74&amp;action=60' % (user_input.partner_id.id)">
+              <span t-field='user_input.partner_id.name'/> form</a>.</div>
+        </xpath>
+    </template>
+</data>
+</openerp>

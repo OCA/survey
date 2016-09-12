@@ -28,7 +28,9 @@
         'survey',
     ],
     'data': [
-        'views/res_partner_view.xml'
+        'views/res_partner_view.xml',
+        'views/templates.xml',
+        'wizard/fill_survey_view.xml',
     ],
     'author': 'Antiun Ingeniería S.L., '
               'Odoo Community Association (OCA)',
