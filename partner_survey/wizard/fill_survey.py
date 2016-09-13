@@ -3,7 +3,7 @@
 # For copyright and license notices, see __openerp__.py file in root directory
 ##############################################################################
 
-from openerp import models, api, fields, _
+from openerp import models, api, fields
 
 
 class FillSurvey(models.TransientModel):
