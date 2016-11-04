@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * survey_percent_question
+# 
+# Translators:
+# Wagner Pereira <wagner@wagner.pereira.nom.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-30 02:42+0000\n"
+"PO-Revision-Date: 2016-07-30 02:42+0000\n"
+"Last-Translator: Wagner Pereira <wagner@wagner.pereira.nom.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: survey_percent_question
+#: code:addons/survey_percent_question/models/survey.py:50
+#, python-format
+msgid "Comment"
+msgstr ""
+
+#. module: survey_percent_question
+#: code:addons/survey_percent_question/models/survey.py:50
+#, python-format
+msgid "Other"
+msgstr ""
+
+#. module: survey_percent_question
+#: code:addons/survey_percent_question/models/survey_question.py:46
+#, python-format
+msgid "Percentage"
+msgstr ""
+
+#. module: survey_percent_question
+#: model:ir.model,name:survey_percent_question.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_percent_question
+#: model:ir.model,name:survey_percent_question.model_survey_question
+msgid "Survey Question"
+msgstr ""
+
+#. module: survey_percent_question
+#: model:ir.model,name:survey_percent_question.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "Linha para digitação do usuário"
+
+#. module: survey_percent_question
+#: code:addons/survey_percent_question/models/survey_question.py:67
+#, python-format
+msgid "The sum of all values must be 100%, not {0}%"
+msgstr ""
+
+#. module: survey_percent_question
+#: code:addons/survey_percent_question/models/survey_question.py:56
+#, python-format
+msgid "You must provide a label for your extra value"
+msgstr ""
+
+#. module: survey_percent_question
+#: view:survey.question:survey_percent_question.survey_question_form
+msgid ""
+"{'invisible': ['|', ('comments_allowed', '=', False), ('type', 'in', "
+"['matrix', 'percent_split'])]}"
+msgstr ""
+
+#. module: survey_percent_question
+#: view:survey.question:survey_percent_question.survey_question_form
+msgid ""
+"{'invisible': [('type', 'not in', ['simple_choice', 'multiple_choice', "
+"'matrix', 'percent_split'])]}"
+msgstr ""
+
+#. module: survey_percent_question
+#: code:addons/survey_percent_question/models/survey_question.py:64
+#, python-format
+msgid "{0} is not a number"
+msgstr ""
