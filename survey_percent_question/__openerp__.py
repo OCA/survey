@@ -15,16 +15,9 @@
     'depends': [
         'survey'
     ],
-    'external_dependencies': {
-        'python': [],
-    },
     'data': [
         'views/survey_result.xml',
         'views/survey_templates.xml',
         'views/survey_views.xml',
-    ],
-    'demo': [],
-    'test': [],
-    'installable': True,
-    'auto_install': False,
+    ]
 }
