@@ -26,6 +26,11 @@ To use this module, you need to:
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/200/9.0
 
+Known issues / Roadmap
+======================
+
+* Refilling form when navigated back to previous page doesn't work
+
 Bug Tracker
 ===========
 
