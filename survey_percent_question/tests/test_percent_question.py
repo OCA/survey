@@ -14,11 +14,13 @@ class TestPercentQuestion(TransactionCase):
         self.survey = self.env["survey.survey"].create({
             "title": "Percent Question Test",
         })
+
         self.page = self.env["survey.page"].create({
             "title": "Page1",
             "survey_id": self.survey.id,
         })
-        self.question = self.env["survey.question"].create({
+
+        self.q_percent = self.env["survey.question"].create({
             "page_id": self.page.id,
             "question": "Coverage status of your lines",
             "type": "percent_split",
@@ -27,18 +29,20 @@ class TestPercentQuestion(TransactionCase):
                 (0, 0, {'sequence': 2, 'value': 'Not Covered'}),
             ],
         })
-        self.l_covered = self.question.labels_ids[0]
-        self.l_uncover = self.question.labels_ids[1]
+
+        self.l_covered = self.q_percent.labels_ids[0]
+        self.l_uncover = self.q_percent.labels_ids[1]
+
         self.tag = "{0}_{1}_{2}".format(
             self.survey.id,
             self.page.id,
-            self.question.id,
+            self.q_percent.id,
         )
 
     def test_validate(self):
         qobj = self.env["survey.question"]
         err = qobj.validate_percent_split(
-            self.question,
+            self.q_percent,
             {"{0}_{1}".format(self.tag, self.l_covered.id): "50",
              "{0}_{1}".format(self.tag, self.l_uncover.id): "45"},
             self.tag,
@@ -47,7 +51,7 @@ class TestPercentQuestion(TransactionCase):
                       "Validation should fail for a total of 95%")
 
         err = qobj.validate_percent_split(
-            self.question,
+            self.q_percent,
             {},
             self.tag,
         )
