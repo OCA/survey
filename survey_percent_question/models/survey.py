@@ -14,10 +14,10 @@ class Survey(models.Model):
 
     @api.model
     def prepare_result(self, question, current_filters=None):
-        '''
+        """
         Compute statistical data for questions by counting number of vote per
         choice on basis of filter
-        '''
+        """
         current_filters = current_filters if current_filters else []
         result_summary = {}
 
@@ -53,7 +53,6 @@ class Survey(models.Model):
                     row[order["comment_value"]] = line["value_number"]
                     row[order["comment_label"]] = line["value_text"]
             result_summary["data"] = list(data.values())
-
         else:
             return super(Survey, self).prepare_result(
                 question, current_filters=current_filters)

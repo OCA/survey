@@ -135,10 +135,10 @@ class TestPercentQuestion(TransactionCase):
         line_obj.save_line_percent_split(
             input_id,
             self.q_percent,
-            {"{0}_comment_value".format(self.tag): "30",
+            {"{0}_comment_value".format(self.tag): "40",
              "{0}_comment_label".format(self.tag): "Data",
              "{0}_{1}".format(self.tag, self.l_covered.id): "60",
-             "{0}_{1}".format(self.tag, self.l_uncover.id): "10"},
+             "{0}_{1}".format(self.tag, self.l_uncover.id): "0"},
             self.tag,
         )
         for line in line_obj.get_old_lines(input_id, self.q_percent):
@@ -147,11 +147,36 @@ class TestPercentQuestion(TransactionCase):
                     self.assertEquals(line.value_number, 60,
                                       "Covered value should be 60%")
                 elif line.value_suggested_row.id == self.l_uncover.id:
-                    self.assertEquals(line.value_number, 10,
-                                      "Uncovered value should be 10%")
+                    self.assertEquals(line.value_number, 0,
+                                      "Uncovered value should be 0%")
                 else:
                     raise AssertionError("Unexpected result line")
             else:
                 self.assertEquals(line.value_text, "Data")
-                self.assertEquals(line.value_number, 30,
-                                  "Data value should be 30%")
+                self.assertEquals(line.value_number, 40,
+                                  "Data value should be 40%")
+
+    def test_prepare_result(self):
+        self.q_percent.comments_allowed = True
+        input_id = self.env["survey.user_input"].create({
+            "token": "test",
+            "survey_id": self.survey.id,
+        }).id
+        line_obj = self.env["survey.user_input_line"]
+        line_obj.save_line_percent_split(
+            input_id,
+            self.q_percent,
+            {"{0}_comment_value".format(self.tag): "30",
+             "{0}_comment_label".format(self.tag): "Data",
+             "{0}_{1}".format(self.tag, self.l_covered.id): "10",
+             "{0}_{1}".format(self.tag, self.l_uncover.id): "60"},
+            self.tag,
+        )
+        res = self.env["survey.survey"].prepare_result(
+            self.q_percent
+        )
+        self.assertEquals(res['header'],
+                          ['Covered', 'Not Covered', 'Other', 'Comment'])
+        self.assertEquals(res['data'][0][0], 10)
+        self.assertEquals(res['data'][0][1], 60)
+        self.assertEquals(res['data'][0][2], 30)
