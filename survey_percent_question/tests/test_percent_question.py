@@ -4,8 +4,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from __future__ import unicode_literals
-
 from openerp.tests.common import TransactionCase
+from openerp.addons.survey_percent_question.models.survey_question \
+    import to_decimal
 
 
 class TestPercentQuestion(TransactionCase):
@@ -186,3 +187,6 @@ class TestPercentQuestion(TransactionCase):
                 ('id', '=', self.ref('survey.feedback_3_2'))
             ])
         ))
+
+    def test_to_decimal(self):
+        self.assertEquals(to_decimal(False), 0)
