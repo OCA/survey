@@ -91,10 +91,10 @@ class TestPercentQuestion(TransactionCase):
 
         err = qobj.validate_percent_split(
             self.q_percent,
-            {"{0}_comment_value".format(self.tag): "50",
+            {"{0}_comment_value".format(self.tag): "0",
              "{0}_comment_label".format(self.tag): "Just Imported",
              "{0}_{1}".format(self.tag, self.l_covered.id): "0.01",
-             "{0}_{1}".format(self.tag, self.l_uncover.id): "49.99"},
+             "{0}_{1}".format(self.tag, self.l_uncover.id): "99.99"},
             self.tag,
         )
         self.assertFalse(err, "Validation should pass, counting comment")
@@ -180,3 +180,9 @@ class TestPercentQuestion(TransactionCase):
         self.assertEquals(res['data'][0][0], 10)
         self.assertEquals(res['data'][0][1], 60)
         self.assertEquals(res['data'][0][2], 30)
+        # Regression test
+        self.assertNotIn('data', self.env['survey.survey'].prepare_result(
+            self.env['survey.question'].search([
+                ('id', '=', self.ref('survey.feedback_3_2'))
+            ])
+        ))
