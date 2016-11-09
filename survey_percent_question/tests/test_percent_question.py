@@ -91,10 +91,10 @@ class TestPercentQuestion(TransactionCase):
 
         err = qobj.validate_percent_split(
             self.q_percent,
-            {"{0}_comment_value".format(self.tag): "0",
+            {"{0}_comment_value".format(self.tag): "50",
              "{0}_comment_label".format(self.tag): "Just Imported",
-             "{0}_{1}".format(self.tag, self.l_covered.id): "0.01",
-             "{0}_{1}".format(self.tag, self.l_uncover.id): "99.99"},
+             "{0}_{1}".format(self.tag, self.l_covered.id): "0",
+             "{0}_{1}".format(self.tag, self.l_uncover.id): "50"},
             self.tag,
         )
         self.assertFalse(err, "Validation should pass, counting comment")
