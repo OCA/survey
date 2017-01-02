@@ -9,6 +9,13 @@ import time
 
 from openerp import api, fields, models
 
+evaluation_360_list = []
+
+
+def evaluation_360(evaluation_func):
+    evaluation_360_list.append(evaluation_func)
+    return evaluation_360
+
 
 class HrEvaluationPlanPhase(models.Model):
 
@@ -25,6 +32,25 @@ class HrEvaluationEvaluation(models.Model):
 
     _inherit = 'hr_evaluation.evaluation'
 
+    @evaluation_360
+    def _get_360_evaluation_child(self, evaluation):
+        return evaluation.employee_id.child_ids
+
+    @evaluation_360
+    def _get_360_evaluation_parent(self, evaluation):
+        return evaluation.employee_id.parent_id
+
+    @evaluation_360
+    def _get_360_evaluation_myself(self, evaluation):
+        return evaluation.employee_id
+
+    @evaluation_360
+    def _get_360_evaluation_department(self, evaluation):
+        return self.env['hr.employee'].search(
+            [('department_id', '=',
+              evaluation.employee_id.department_id.id)]
+        )
+
     @api.multi
     def button_plan_in_progress(self):
         hr_eval_inter_obj = self.env['hr.evaluation.interview']
@@ -36,13 +62,8 @@ class HrEvaluationEvaluation(models.Model):
                                  self).button_plan_in_progress()
 
                 children = self.env['hr.employee']
-                children |= evaluation.employee_id.child_ids
-                children |= evaluation.employee_id.parent_id
-                children |= self.env['hr.employee'].search(
-                   [('department_id', '=',
-                     evaluation.employee_id.department_id.id)]
-                )
-                children |= evaluation.employee_id
+                for item in evaluation_360_list:
+                    children |= item(self, evaluation)
 
                 for child in children:
                     int_id = hr_eval_inter_obj.create({
