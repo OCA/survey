@@ -24,6 +24,7 @@ class HrEvaluationPlanPhase(models.Model):
     action = fields.Selection(
         selection_add=[
             ('360', u'360-degree feedback'),
+            ('360-anonymous', u'360-degree anonymous feedback'),
         ]
     )
 
@@ -57,7 +58,7 @@ class HrEvaluationEvaluation(models.Model):
         for evaluation in self:
             wait = False
             for phase in evaluation.plan_id.phase_ids:
-                if phase.action != '360':
+                if phase.action not in ('360', '360-anonymous'):
                     return super(HrEvaluationEvaluation,
                                  self).button_plan_in_progress()
 
@@ -100,3 +101,17 @@ class HrEvaluationEvaluation(models.Model):
                             }
                             self.env['mail.mail'].create(vals)
         self.write({'state': 'wait'})
+
+
+class HrEvaluationInterview(models.Model):
+
+    _inherit = 'hr.evaluation.interview'
+
+    @api.constrains('state')
+    def _check_state_done(self):
+        for item in self.sudo():
+            if (item.state == 'done' and
+                    item.phase_id.action == '360-anonymous'):
+                item.user_id = False
+                item.request_id.partner_id = False
+                item.request_id.email = False
