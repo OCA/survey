@@ -4,8 +4,7 @@
 
 {
     'name': 'Hr Evaluation 360',
-    'summary': """
-        360-degree feedback""",
+    'summary': """360-degree feedback""",
     'version': '8.0.0.0.0',
     'license': 'AGPL-3',
     'author': 'KMEE,Odoo Community Association (OCA)',
