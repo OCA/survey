@@ -40,6 +40,7 @@ https://github.com/csrocha/openerp-survey
 
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
