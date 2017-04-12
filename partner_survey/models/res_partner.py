@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-# For copyright and license notices, see __openerp__.py file in root directory
-##############################################################################
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
 class ResPartner(models.Model):
@@ -16,10 +13,10 @@ class ResPartner(models.Model):
         comodel_name='survey.user_input', inverse_name='partner_id',
         string='Surveys')
     survey_input_count = fields.Integer(
-        string='Survey number', compute='_count_survey_input',
+        string='Survey number', compute='_compute_survey_input_count',
         store=True)
 
-    @api.one
     @api.depends('survey_inputs')
-    def _count_survey_input(self):
-        self.survey_input_count = len(self.survey_inputs)
+    def _compute_survey_input_count(self):
+        for survey in self:
+            survey.survey_input_count = len(survey.survey_inputs)
