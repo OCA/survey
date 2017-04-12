@@ -16,7 +16,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/200/9.0
+   :target: https://runbot.odoo-community.org/runbot/200/10.0
 
 
 Bug Tracker
@@ -38,10 +38,11 @@ Images
 Contributors
 ------------
 
-* Rafael Blasco <rafabn@antiun.com>
-* Antonio Espinosa <antonioea@antiun.com>
+* Rafael Blasco <rafael.blasco@tecnativa.com>
+* Antonio Espinosa <antonio.espinosa@tecnativa.com>
 * Javier Iniesta <javieria@antiun.com>
 * Damien Crier <damien.crier@camptocamp.com>
+* Akim Juillerat <akim.juillerat@camptocamp.com>
 
 Maintainer
 ----------
