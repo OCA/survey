@@ -7,7 +7,7 @@
 {
     'name': "Partner Survey",
     'category': 'Marketing',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'depends': [
         'survey',
     ],
@@ -19,5 +19,5 @@
               'Odoo Community Association (OCA)',
     'website': 'http://www.antiun.com',
     'license': 'AGPL-3',
-    'installable': False,
+    'installable': True,
 }
