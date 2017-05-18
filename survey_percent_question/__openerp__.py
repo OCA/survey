@@ -5,7 +5,7 @@
 
 {
     'name': 'Survey Percent Question',
-    'version': '9.0.0.1.0',
+    'version': '9.0.1.0.0',
     'author': 'Savoir-faire Linux,Onestein,Odoo Community Association (OCA)',
     'maintainer': 'Savoir-faire Linux',
     'website': 'http://www.savoirfairelinux.com',
