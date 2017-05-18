@@ -7,7 +7,7 @@ Survey Percent Questions
 ========================
 
 This module was written to offer a new type of question. 
-You can now ask in a survey the repartition in % though a chosen number of options.
+You can now ask in a survey the repartition in % through a chosen number of options.
 
 Configuration
 =============
