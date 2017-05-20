@@ -3,14 +3,14 @@
 # * partner_survey
 # 
 # Translators:
-# Philipp Hug <philipp@hug.cx>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-18 12:41+0000\n"
-"PO-Revision-Date: 2016-09-18 12:41+0000\n"
-"Last-Translator: Philipp Hug <philipp@hug.cx>, 2016\n"
+"POT-Creation-Date: 2017-05-20 01:11+0000\n"
+"PO-Revision-Date: 2017-05-20 01:11+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "Partner"
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_survey_user_input_line
 msgid "Survey User Input Line"
-msgstr ""
+msgstr "Benutzer-Eingabezeile"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_input_count

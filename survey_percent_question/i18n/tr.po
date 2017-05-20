@@ -3,68 +3,68 @@
 # * survey_percent_question
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-20 01:11+0000\n"
 "PO-Revision-Date: 2017-05-20 01:11+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2017\n"
+"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
+"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: survey_percent_question
 #: code:addons/survey_percent_question/models/survey.py:33
 #, python-format
 msgid "Comment"
-msgstr "Commentaire"
+msgstr ""
 
 #. module: survey_percent_question
 #: code:addons/survey_percent_question/models/survey.py:33
 #, python-format
 msgid "Other"
-msgstr "Autre"
+msgstr "Diğer"
 
 #. module: survey_percent_question
 #: code:addons/survey_percent_question/models/survey_question.py:29
 #, python-format
 msgid "Percentage"
-msgstr "Pourcentage"
+msgstr ""
 
 #. module: survey_percent_question
 #: model:ir.model,name:survey_percent_question.model_survey_survey
 msgid "Survey"
-msgstr "Sondage"
+msgstr ""
 
 #. module: survey_percent_question
 #: model:ir.model,name:survey_percent_question.model_survey_question
 msgid "Survey Question"
-msgstr "Question"
+msgstr ""
 
 #. module: survey_percent_question
 #: model:ir.model,name:survey_percent_question.model_survey_user_input_line
 msgid "Survey User Input Line"
-msgstr "Ligne de saisie utilisateur"
+msgstr ""
 
 #. module: survey_percent_question
 #: code:addons/survey_percent_question/models/survey_question.py:50
 #, python-format
 msgid "The sum of all values must be 100%, not {0}%"
-msgstr "La somme de toutes les valeurs doit être 100%, et non {0}%"
+msgstr ""
 
 #. module: survey_percent_question
 #: code:addons/survey_percent_question/models/survey_question.py:39
 #, python-format
 msgid "You must provide a label for your extra value"
-msgstr "Vous devez fournir une étiquette pour votre valeur supplémentaire"
+msgstr ""
 
 #. module: survey_percent_question
 #: code:addons/survey_percent_question/models/survey_question.py:47
 #, python-format
 msgid "{0} is not a number"
-msgstr "{0} n'est pas un nombre"
+msgstr ""
