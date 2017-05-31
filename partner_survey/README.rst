@@ -38,8 +38,8 @@ Images
 Contributors
 ------------
 
-* Rafael Blasco <rafabn@antiun.com>
-* Antonio Espinosa <antonioea@antiun.com>
+* Rafael Blasco <rafael.blasco@tecnativa.com>
+* Antonio Espinosa <antonio.espinosa@tecnativa.com>
 * Javier Iniesta <javieria@antiun.com>
 * Damien Crier <damien.crier@camptocamp.com>
 * Akim Juillerat <akim.juillerat@camptocamp.com>
