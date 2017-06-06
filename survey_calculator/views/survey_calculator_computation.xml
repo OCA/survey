@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <record id="survey_calculator_computation_list_view"
+            model="ir.ui.view">
+      <field name="model">survey.calculator.computation</field>
+      <field name="arch" type="xml">
+
+        <tree string="Computations List">
+          <field name="name"/>
+          <field name="survey_id"/>
+        </tree>
+
+      </field>
+    </record>
+
+    <record id="survey_calculator_computation_form_view"
+            model="ir.ui.view">
+      <field name="model">survey.calculator.computation</field>
+      <field name="arch" type="xml">
+
+        <form string="Computation">
+
+          <header>
+            <button string="Compute for all user inputs" name="compute_all_inputs"
+                    type="object" class="oe_highlight"/>
+          </header>
+
+          <sheet>
+
+            <h1>
+              <group>
+                <field name="name" />
+              </group>
+            </h1>
+
+            <group>
+              <field name="survey_id"/>
+              <field name="display_help_text"/>
+            </group>
+
+            <div attrs="{'invisible':[('display_help_text','=',False)]}">
+              <h2><u>How to use</u></h2>
+
+              <p>The 'Python code' field allows you to do calculations with the
+              survey answers in Python.<br/>
+              You can return 2 different values:
+                <ul>
+                  <li>a float in the variable 'result'</li>
+                  <li>a string in the variable 'tag'</li>
+                </ul>
+              </p>
+
+              <div class="row">
+                <div class="col-xs-7" name="how_to">
+
+              <h3>How to access the answers</h3>
+              <p>The answers of all available questions are stocked in a dictionary <b>'q'</b>.</p>
+
+              <ul>
+                <li name="numerical_questions">
+                  <u>For numerical value questions:</u><br/>
+                  Use the id to access the answer in the dictionary. The value in q[îd] is a <b>float</b>.<br/>
+                  <i>Example: if the answer of question #65 is 2.0, q[65] will contain 2.0.</i>
+                </li>
+                <li name="text_questions">
+                  <u>For long text zones, text inputs and date/time questions:</u><br/>
+                  Same principle but the value q[id] will be a <b>string</b> instead of a float.<br/>
+                  <i>Example: q[40] will contain the string answer to question #40.</i>
+                </li>
+              </ul>
+              For the following questions, you manipulate answers in the model (survey.label objects).
+              Therefore, you will access to their ids. The corresponding answers values are stored in another
+              dictionary : <b>'value'</b>.<br />
+              If you have the id of the answer and want to access to its value, simply write value[id].<br/>
+              <b>The answers and their ids (enclosed in brackets) are listed in the table below.</b>
+              <ul>
+                <li name="multiple_choice_questions_one_answer_allowed">
+                  <u>For multiple choice questions that only allow one answer:</u><br/>
+                  The value in q[id] is a <b>survey.label id</b> among the possible answers.<br/>
+                  <i>Example: Question #12 asks for the gender of the user. Available answers are
+                  '[3] Male' or '[4] Female'. Then q[12] will contain 3 or 4 depending of
+                  the user's answer. So value[q[12]] will contain 'Male' or 'Female'.</i>
+                </li>
+                <li name="multiple_choice_questions_multiple_answers_allowed">
+                  <u>For multiple choice questions with multiple answers allowed:</u><br/>
+                  The value in q[id] is a <b>list containing all the answers id</b>.<br/>
+                  <i>Example: Question #15 asks for the sports practiced by the user among a
+                  list of possible sports. If the user chose '[8] Hockey', '[9] Basketball' and
+                  '[12] Dance', q[15] = [8, 9, 12].<br/></i>
+                </li>
+                <li name="matrix_questions_one_choice per_row_allowed">
+                  <u>For matrix questions with once choice per row allowed:</u><br/>
+                  The value in q[id] is a <b>dictionary</b>. Its <b>keys are the matrix rows ids</b>, and the
+                  <b>values are the matrix answer types ids</b>.<br/>
+                  <i>Example: Question #24 asks which color ('[3] Blue', '[4] Red' or '[5] Green') the user
+                  prefer for the following objects ; '[21] Table', '[22] Chair', '[23] Door'. If the user
+                  answered 'Blue' for the 2 first and 'Red' for the last one:<br/>
+                  q[24] = {21: 3, 22: 3, 23: 4}.<br/>
+                  If you need to access to the color chosen for 'Table', its id is q[24][21] so its
+                  value is value[q[24][21]].</i>
+                </li>
+                <li name="matrix_questions_multiple_choices per_row_allowed">
+                  <u>For matrix questions with multiple choices per row allowed:</u><br/>
+                  The value in q[id] is a <b>dictionary</b>. Its <b>keys are the matrix rows ids</b>, and the
+                  <b>values are lists of matrix answer types ids</b>.<br/>
+                  <i>Example: Question #24 asks which color ('[3] Blue', '[4] Red' or '[5] Green') the user
+                  prefer for the following objects ; '[21] Table', '[22] Chair', '[23] Door'. If the user
+                  answered 'Blue' for the first one, 'Blue and 'Red' for the second and 'Blue' and 'Green'
+                  for the last one:<br/>
+                  q[24] = {21: [3], 22: [3,4], 23: [3,5]}.<br/>
+                  If you need to access to the colors chosen for 'Chair', the list is in q[24][22].</i>
+                </li>
+              </ul>
+
+                </div>
+                <div class="col-xs-5" name="examples">
+
+              <h3>Examples</h3>
+              <ul>
+                <li><pre>result = q[1] * 1.25
+tag = q[2]</pre></li>
+                <li><pre>temp = q[1] * 0.55 + q[2]
+result = temp * 1.40</pre></li>
+                <li><pre>result = q[14]
+if 12 in q[15]:
+  result += 5.0
+else:
+  result -= 5.0</pre></li>
+                <li><pre>for row in q[24]:
+  if value[q[24][row]] == 'Blue'
+    tag = 'Correct'
+  else:
+    tag = 'Wrong'</pre></li>
+              </ul>
+
+                </div>
+                </div>
+
+            </div>
+
+            <group>
+              <field name="python_code"/>
+            </group>
+
+            <b>Available questions/answers</b>
+
+              <field name="question_ids">
+                <tree string="Available questions">
+                  <field name="id" />
+                  <field name="question" />
+                  <field name="type" />
+                  <field name="multiple_answers_allowed" />
+                  <field name="available_answers_multiple" />
+                  <field name="available_answers_matrix_type" />
+                  <field name="available_answers_matrix_row" />
+                </tree>
+              </field>
+
+          </sheet>
+
+        </form>
+
+      </field>
+    </record>
+
+    <record id="survey_calculator_computation_search" model="ir.ui.view">
+      <field name="model">survey.calculator.computation</field>
+      <field name="type">search</field>
+      <field name="arch" type="xml">
+        <search name="Computation">
+          <field name="name"/>
+          <field name="survey_id"/>
+          <group expand="1" string="Group By">
+            <filter string="Survey"
+                    name="group_by_survey"
+                    context="{'group_by':'survey_id'}"
+                    help="Group all computations associated to the same survey."/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_survey_calculator_computation"
+            model="ir.actions.act_window">
+      <field name="name">Computations</field>
+      <field name="view_id" ref="survey_calculator_computation_list_view"/>
+      <field name="search_view_id" ref="survey_calculator_computation_search"/>
+      <field name="res_model">survey.calculator.computation</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{'search_default_group_by_survey': True}</field>
+    </record>
+
+  </data>
+</openerp>

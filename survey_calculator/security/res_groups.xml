@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <record id="group_viewer" model="res.groups">
+      <field name="name">Survey Calculator / Viewer</field>
+    </record>
+
+    <record id="group_manager" model="res.groups">
+      <field name="name">Survey Calculator / Manager</field>
+    </record>
+
+  </data>
+</openerp>

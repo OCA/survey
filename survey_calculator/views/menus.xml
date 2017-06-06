@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <menuitem id="menu_survey_calculator"
+              parent="base.marketing_menu"
+              name="Survey Calculator"
+              sequence="26"
+            />
+
+    <menuitem id="menu_survey_calculator_computation"
+              parent="survey_calculator.menu_survey_calculator"
+              name="Computations"
+              action="action_survey_calculator_computation"
+            />
+
+    <menuitem id="menu_survey_calculator_result"
+              parent="survey_calculator.menu_survey_calculator"
+              name="Calculation Results"
+              action="action_survey_calculator_result"
+            />
+
+  </data>
+</openerp>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <record id="survey_calculator_result_list_view"
+            model="ir.ui.view">
+      <field name="model">survey.calculator.result</field>
+      <field name="arch" type="xml">
+
+        <tree string="Results List">
+          <field name="survey_id"/>
+          <field name="user_input_id"/>
+          <field name="partner_id"/>
+          <field name="computation_id"/>
+          <field name="result"/>
+          <field name="tag"/>
+        </tree>
+
+      </field>
+    </record>
+
+    <record id="survey_calculator_result_view"
+            model="ir.ui.view">
+      <field name="model">survey.calculator.result</field>
+      <field name="arch" type="xml">
+
+        <form string="Calculation Result">
+
+          <sheet>
+
+            <group>
+              <field name="user_input_id"/>
+              <field name="survey_id"/>
+              <field name="partner_id"/>
+              <field name="computation_id"/>
+              <field name="result"/>
+              <field name="tag"/>
+            </group>
+
+          </sheet>
+
+        </form>
+
+      </field>
+    </record>
+
+    <record id="survey_calculator_result_search" model="ir.ui.view">
+      <field name="model">survey.calculator.result</field>
+      <field name="type">search</field>
+      <field name="arch" type="xml">
+        <search name="Calculator Result">
+          <field name="computation_id"/>
+          <field name="user_input_id"/>
+          <field name="partner_id"/>
+          <field name="survey_id"/>
+          <group expand="1" string="Group By">
+            <filter string="User Input"
+                    name="group_by_user_input"
+                    context="{'group_by':'user_input_id'}"
+                    help="Group all results associated to the same user input."/>
+            <filter string="Survey"
+                    name="group_by_survey"
+                    context="{'group_by':'survey_id'}"
+                    help="Group all results associated to the same survey."/>
+            <filter string="Partner"
+                    name="group_by_partner"
+                    context="{'group_by':'partner_id'}"
+                    help="Group all results associated to the same partner."/>
+            <filter string="Computation"
+                    name="group_by_computation"
+                    context="{'group_by':'computation_id'}"
+                    help="Group all results associated to the same computation."/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_survey_calculator_result"
+            model="ir.actions.act_window">
+      <field name="name">Calculator Results</field>
+      <field name="view_id" ref="survey_calculator_result_list_view"/>
+      <field name="search_view_id" ref="survey_calculator_result_search"/>
+      <field name="res_model">survey.calculator.result</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{'search_default_group_by_computation': True}</field>
+    </record>
+
+  </data>
+</openerp>
