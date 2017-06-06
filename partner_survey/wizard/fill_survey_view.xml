@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_fill_survey_form" model="ir.ui.view">
+            <field name="name">view.fill_survey.form</field>
+            <field name="model">fill.survey</field>
+            <field name="arch" type="xml">
+                <form string="Fill Survey">
+                    <p class="oe_gray">
+                        Use this assistant to fill survey as the partner selected.
+                    </p>
+                    <group name="main">
+                        <field name="partner_id"/>
+                        <field name="survey_id"/>
+                    </group>
+                    <footer>
+                        <button name="open_survey" string="Open Survey" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_fill_survey" model="ir.actions.act_window">
+            <field name="name">Fill Survey</field>
+            <field name="res_model">fill.survey</field>
+            <field name="src_model">res.partner</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_fill_survey_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="partner_fill_survey" model="ir.values">
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="name">Fill Survey</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +
+                        str(ref('act_fill_survey'))"/>
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+
+    </data>
+</openerp>
