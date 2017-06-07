@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2015 Antiun Ingeniería S.L. - Antonio Espinosa <antonioea@antiun.com>
-# Copyright (c) 2016 Tecnativa S.L. - Antonio Espinosa <antonio.espinosa@tecnativa.com>
-# Copyright 2016 Camptocamp SA - Damien Crier
+# Copyright 2016 Tecnativa S.L.
+# Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
 {
     'name': "Partner Survey",
     'category': 'Marketing',
@@ -21,4 +19,3 @@
     'license': 'AGPL-3',
     'installable': True,
 }
-
