@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: survey (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-14 06:58+0000\n"
-"PO-Revision-Date: 2015-11-03 11:00+0000\n"
-"Last-Translator: Wagner Pereira <wagner@wagner.pereira.nom.br>\n"
+"POT-Creation-Date: 2017-06-06 09:51+0000\n"
+"PO-Revision-Date: 2017-06-06 10:07+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-survey-8-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,10 +19,72 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_survey
+#: view:website:survey.sfinished
+msgid "Also yout can go to"
+msgstr ""
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: partner_survey
+#: field:fill.survey,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: partner_survey
+#: field:fill.survey,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: partner_survey
+#: field:fill.survey,display_name:0
+msgid "Display Name"
+msgstr "Nome para Mostrar"
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+#: model:ir.actions.act_window,name:partner_survey.act_fill_survey
+msgid "Fill Survey"
+msgstr ""
+
+#. module: partner_survey
+#: field:fill.survey,id:0
+msgid "ID"
+msgstr "Identificação"
+
+#. module: partner_survey
+#: field:fill.survey,__last_update:0
+msgid "Last Modified on"
+msgstr "Última atualização em"
+
+#. module: partner_survey
+#: field:fill.survey,write_uid:0
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: partner_survey
+#: field:fill.survey,write_date:0
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "Open Survey"
+msgstr ""
+
+#. module: partner_survey
+#: field:fill.survey,partner_id:0
 #: model:ir.model,name:partner_survey.model_res_partner
 #: field:survey.user_input_line,partner_id:0
 msgid "Partner"
 msgstr "Parceiro"
+
+#. module: partner_survey
+#: field:fill.survey,survey_id:0
+msgid "Survey"
+msgstr ""
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_survey_user_input_line
@@ -45,3 +107,18 @@ msgstr "Pesquisas"
 #: field:res.partner,survey_input_lines:0
 msgid "Surveys answers"
 msgstr "Respostas das pesquisas"
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "Use this assistant to fill survey as the partner selected."
+msgstr ""
+
+#. module: partner_survey
+#: view:website:survey.sfinished
+msgid "form"
+msgstr ""
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "or"
+msgstr "ou"

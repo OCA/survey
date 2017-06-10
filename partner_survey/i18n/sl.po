@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: survey (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-27 16:29+0000\n"
-"PO-Revision-Date: 2015-08-30 06:03+0000\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"POT-Creation-Date: 2017-06-06 09:51+0000\n"
+"PO-Revision-Date: 2017-06-06 10:07+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-survey-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,10 +19,72 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: partner_survey
+#: view:website:survey.sfinished
+msgid "Also yout can go to"
+msgstr ""
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "Cancel"
+msgstr "Preklic"
+
+#. module: partner_survey
+#: field:fill.survey,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: partner_survey
+#: field:fill.survey,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: partner_survey
+#: field:fill.survey,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+#: model:ir.actions.act_window,name:partner_survey.act_fill_survey
+msgid "Fill Survey"
+msgstr ""
+
+#. module: partner_survey
+#: field:fill.survey,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_survey
+#: field:fill.survey,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: partner_survey
+#: field:fill.survey,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: partner_survey
+#: field:fill.survey,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "Open Survey"
+msgstr ""
+
+#. module: partner_survey
+#: field:fill.survey,partner_id:0
 #: model:ir.model,name:partner_survey.model_res_partner
 #: field:survey.user_input_line,partner_id:0
 msgid "Partner"
 msgstr "Partner"
+
+#. module: partner_survey
+#: field:fill.survey,survey_id:0
+msgid "Survey"
+msgstr "Raziskava"
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_survey_user_input_line
@@ -45,3 +107,18 @@ msgstr "Raziskave"
 #: field:res.partner,survey_input_lines:0
 msgid "Surveys answers"
 msgstr "Odgovori na raziskave"
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "Use this assistant to fill survey as the partner selected."
+msgstr ""
+
+#. module: partner_survey
+#: view:website:survey.sfinished
+msgid "form"
+msgstr ""
+
+#. module: partner_survey
+#: view:fill.survey:partner_survey.view_fill_survey_form
+msgid "or"
+msgstr "ali"
