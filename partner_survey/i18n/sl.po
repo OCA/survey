@@ -3,14 +3,14 @@
 # * partner_survey
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: survey (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 09:51+0000\n"
-"PO-Revision-Date: 2017-06-06 10:07+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2017-06-10 11:14+0000\n"
+"PO-Revision-Date: 2017-06-14 04:50+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-survey-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. module: partner_survey
 #: view:website:survey.sfinished
 msgid "Also yout can go to"
-msgstr ""
+msgstr "Lahko tudi"
 
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
@@ -47,7 +47,7 @@ msgstr "Prikazni naziv"
 #: view:fill.survey:partner_survey.view_fill_survey_form
 #: model:ir.actions.act_window,name:partner_survey.act_fill_survey
 msgid "Fill Survey"
-msgstr ""
+msgstr "Izpolni raziskavo"
 
 #. module: partner_survey
 #: field:fill.survey,id:0
@@ -72,7 +72,7 @@ msgstr "Zadnjič posodobljeno"
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
 msgid "Open Survey"
-msgstr ""
+msgstr "Odpri raziskavo"
 
 #. module: partner_survey
 #: field:fill.survey,partner_id:0
@@ -111,12 +111,12 @@ msgstr "Odgovori na raziskave"
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
 msgid "Use this assistant to fill survey as the partner selected."
-msgstr ""
+msgstr "Uporabi asistenta za izpolnjevanje raziskave kot izbrani partner."
 
 #. module: partner_survey
 #: view:website:survey.sfinished
 msgid "form"
-msgstr ""
+msgstr "od"
 
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
