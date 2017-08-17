@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* survey_answer_once
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-03 10:03+0000\n"
+"PO-Revision-Date: 2017-09-03 10:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_answer_once
+#: field:survey.survey,allow_duplicates:0
+msgid "Allow users to give multiple Responses"
+msgstr "Allow users to give multiple Responses"
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:38
+#, python-format
+msgid "Allowing, because survey allows duplicate answers"
+msgstr "Allowing, because survey allows duplicate answers"
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:59
+#, python-format
+msgid "Allowing, because we found no existing answers."
+msgstr "Allowing, because we found no existing answers."
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:50
+#, python-format
+msgid "Disallowing, because we cannot check duplicates."
+msgstr "Disallowing, because we cannot check duplicates."
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:62
+#, python-format
+msgid "Disallowing, because we found existing answers."
+msgstr "Disallowing, because we found existing answers."
+
+#. module: survey_answer_once
+#: view:website:survey_answer_once.disallowinvite
+msgid "Please ask for a new invitation link to this survey."
+msgstr "Vraag om een nieuwe uitnodigingslink voor deze enquete."
+
+#. module: survey_answer_once
+#: view:website:survey_answer_once.disallowinvite
+msgid "Something went wrong!"
+msgstr "Er is iets verkeerd gegaan!"
+
+#. module: survey_answer_once
+#: model:ir.model,name:survey_answer_once.model_survey_survey
+msgid "Survey"
+msgstr "Enquete"
+
+#. module: survey_answer_once
+#: model:ir.model,name:survey_answer_once.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "Survey User Input Line"
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:29
+#, python-format
+msgid "User '%s' (%d, partner %d) filled survey %d question %d"
+msgstr "User '%s' (%d, partner %d) filled survey %d question %d"
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:45
+#, python-format
+msgid "User input object says this is user with partner id %d"
+msgstr "User input object says this is user with partner id %d"
+
+#. module: survey_answer_once
+#: view:website:survey_answer_once.duplicatesurvey
+msgid "You have already taken this survey!"
+msgstr "U hebt deze enquete al ingevuld!"
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:51
+#, python-format
+msgid "disallow_invite"
+msgstr "disallow_invite"
+
+#. module: survey_answer_once
+#: code:addons/survey_answer_once/models/survey_survey.py:63
+#, python-format
+msgid "duplicate_answer"
+msgstr "duplicate_answer"
+

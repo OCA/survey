@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <!-- Add new checkbox allow_duplicates-->
+    <record id="survey_form2" model="ir.ui.view">
+        <field name="name">Survey Form Add Checkbox</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='quizz_mode']" position="after">
+                <field name="allow_duplicates"/>
+            </xpath>
+
+        </field>
+    </record>
+</data>
+</openerp>

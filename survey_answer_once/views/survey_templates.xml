@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <!-- Already Taken the survey -->
+    <template id="duplicatesurvey" name="Duplicate answer">
+        <t t-call="website.layout">
+            <div class="wrap">
+                <div class="container">
+                    <div class="jumbotron mt32">
+                        <h1>You have already taken this survey!</h1>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- This invite not allowed -->
+    <template id="disallowinvite" name="Invite disallowed">
+        <t t-call="website.layout">
+            <div class="wrap">
+                <div class="container">
+                    <div class="jumbotron mt32">
+                        <h2>Something went wrong!</h2>
+                        <h3>Please ask for a new invitation link to this survey.</h3>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</data>
+</openerp>
