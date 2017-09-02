@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: survey (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-24 10:52+0000\n"
-"PO-Revision-Date: 2017-06-30 08:53+0000\n"
+"POT-Creation-Date: 2017-07-29 11:19+0000\n"
+"PO-Revision-Date: 2017-08-29 08:01+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-survey-8-0/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -25,17 +25,17 @@ msgstr ""
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
 msgid "Cancel"
-msgstr ""
+msgstr "Verwijderen"
 
 #. module: partner_survey
 #: field:fill.survey,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: partner_survey
 #: field:fill.survey,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: partner_survey
 #: field:fill.survey,display_name:0
@@ -61,12 +61,12 @@ msgstr "Laatst gewijzigd op"
 #. module: partner_survey
 #: field:fill.survey,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: partner_survey
 #: field:fill.survey,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
