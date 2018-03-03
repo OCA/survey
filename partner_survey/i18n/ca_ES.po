@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: survey (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 09:51+0000\n"
-"PO-Revision-Date: 2017-06-06 10:07+0000\n"
+"POT-Creation-Date: 2017-12-02 14:44+0000\n"
+"PO-Revision-Date: 2018-02-02 14:11+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (Spain) (http://www.transifex.com/oca/OCA-survey-8-0/language/ca_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -30,17 +30,17 @@ msgstr "Cancel·la"
 #. module: partner_survey
 #: field:fill.survey,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: partner_survey
 #: field:fill.survey,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: partner_survey
 #: field:fill.survey,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
@@ -56,17 +56,17 @@ msgstr ""
 #. module: partner_survey
 #: field:fill.survey,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: partner_survey
 #: field:fill.survey,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: partner_survey
 #: field:fill.survey,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Darrera actualització el"
 
 #. module: partner_survey
 #: view:fill.survey:partner_survey.view_fill_survey_form
