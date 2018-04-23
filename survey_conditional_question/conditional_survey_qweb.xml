@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <template id="survey_qweb" inherit_id="survey.page">
             <xpath expr="//div[@class='js_question-wrapper']" position="attributes">
@@ -7,4 +7,4 @@
             </xpath>
         </template>
     </data>
-</openerp>
+</odoo>
