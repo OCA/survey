@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-# For copyright and license notices, see __openerp__.py file in module root
+# For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
 
 import logging
-from openerp.addons.web import http
-from openerp.addons.survey.controllers.main import WebsiteSurvey
-from openerp.addons.web.http import request
+from odoo.addons.web import http
+from odoo.addons.survey.controllers.main import WebsiteSurvey
+from odoo.addons.web.http import request
 
 
 _logger = logging.getLogger(__name__)
