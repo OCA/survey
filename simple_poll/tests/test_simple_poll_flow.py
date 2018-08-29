@@ -14,6 +14,8 @@ class TestSimplePollFlow(TestPollQuestionCommon):
         group_vals = {'name': 'test_poll_group',
                       'res_partner_ids': [(6, 0, [self.partner_id])]}
         self.poll_group = self.PollGroup.create(group_vals)
+        self.assertEqual(True, bool(self.poll_group.name),
+                         'Test Group has no name')
         self.assertEqual(1, len(self.poll_group.res_partner_ids),
                          'Test Group has no partner')
         self.assertEqual(True, bool(
@@ -76,3 +78,11 @@ class TestSimplePollFlow(TestPollQuestionCommon):
             'target': 'new',
             'context': ctx,
         })
+
+    def test_poll_fields(self):
+        self.assertEqual(True, bool(self.simple_text_question.title),
+                         'Test Poll has no title')
+        self.assertEqual(True, bool(self.simple_text_question.type),
+                         'Test Group has no partner')
+        self.assertEqual(True, bool(self.simple_text_question.end_date),
+                         'Test Group partner has no email')
