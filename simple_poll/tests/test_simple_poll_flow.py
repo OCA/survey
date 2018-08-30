@@ -86,3 +86,6 @@ class TestSimplePollFlow(TestPollQuestionCommon):
                          'Test Group has no partner')
         self.assertEqual(True, bool(self.simple_text_question.end_date),
                          'Test Group partner has no email')
+
+    def test_poll_mail_scheduler_run(self):
+        self.assertEqual(True, self.poll_mail_scheduler.run())

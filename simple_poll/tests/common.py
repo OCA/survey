@@ -17,6 +17,7 @@ class TestPollQuestionCommon(common.TransactionCase):
         self.PollGroup = self.env['poll.group']
         self.IrModelData = self.env['ir.model.data']
         self.IrConfigParam = self.env['ir.config_parameter']
+        self.PollMailScheduler = self.env['poll.mail.scheduler']
 
         self.partner_id = self.env.ref('base.res_partner_1').id
 
@@ -45,4 +46,13 @@ class TestPollQuestionCommon(common.TransactionCase):
             'option_ids': [(0, 0, {
                 'name_datetime': fields.Datetime.now(),
             })],
+        })
+
+        # Test Poll Mail Scheduler creation
+        self.poll_mail_scheduler = self.PollMailScheduler.create({
+            'interval_nbr': 2,
+            'interval_unit': 'days',
+            'template_id': self.ref(
+                'simple_poll.email_reminder_template_edi_poll'),
+            'poll_id': self.choose_date_time_question.id,
         })
