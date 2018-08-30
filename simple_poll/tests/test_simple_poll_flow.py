@@ -6,6 +6,7 @@ import re
 from urlparse import urljoin
 
 from odoo.addons.simple_poll.tests.common import TestPollQuestionCommon
+from odoo.exceptions import UserError
 
 
 class TestSimplePollFlow(TestPollQuestionCommon):
@@ -89,3 +90,50 @@ class TestSimplePollFlow(TestPollQuestionCommon):
 
     def test_poll_mail_scheduler_run(self):
         self.assertEqual(True, self.poll_mail_scheduler.run())
+
+    def test_get_participant_emails(self):
+        self.assertEqual(
+            self.poll_group.res_partner_ids[0].email,
+            self.simple_text_question.get_participant_emails()
+        )
+
+    def test_get_participants(self):
+        self.assertEqual(
+            set(self.poll_group.res_partner_ids[0]),
+            self.simple_text_question.get_participants()
+        )
+
+    def test_get_participants_no_answer(self):
+        self.assertEqual(
+            set(self.poll_group.res_partner_ids[0]),
+            self.simple_text_question.get_participants_no_answer()
+        )
+
+    def test_poll_group_write(self):
+        group_vals = {'name': 'Poll Group Test',
+                      'res_partner_ids': [(0, 0, {
+                          'name': 'Test Partner NO EMAIL',
+                      })]}
+        with self.assertRaises(UserError):
+            self.PollGroup.create(group_vals)
+
+    def test_save_answer(self):
+        pos = {
+            'res_partner_id': self.poll_group.res_partner_ids[0].id,
+            self.simple_text_question.option_ids[0].id: '',
+        }
+
+        self.QuestionAnswer.save_answer(self.simple_text_question, pos)
+        answer = \
+            self.QuestionAnswer.search(
+                [('question_id', '=', self.simple_text_question.id),
+                 ('res_partner_id', '=', pos['res_partner_id']),
+                 (
+                     'option_id',
+                     '=',
+                     self.simple_text_question.option_ids[0].id
+                 )]
+            )
+        if not answer:
+            answer = None
+        self.assertIsNotNone(answer)

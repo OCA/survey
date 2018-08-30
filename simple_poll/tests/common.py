@@ -14,12 +14,21 @@ class TestPollQuestionCommon(common.TransactionCase):
         # Usefull models
         self.PollQuestion = self.env['poll.question']
         self.QuestionOption = self.env['question.option']
+        self.QuestionAnswer = self.env['question.answer']
         self.PollGroup = self.env['poll.group']
         self.IrModelData = self.env['ir.model.data']
         self.IrConfigParam = self.env['ir.config_parameter']
         self.PollMailScheduler = self.env['poll.mail.scheduler']
 
         self.partner_id = self.env.ref('base.res_partner_1').id
+
+        # Test Group Creation
+        group_vals = {'name': 'Poll Group Test',
+                      'res_partner_ids': [(0, 0, {
+                          'name': 'Test Partner',
+                          'email': 'test_partner@yourcompany.example.com'
+                      })]}
+        self.poll_group = self.PollGroup.create(group_vals)
 
         # Test Poll Questions creation
         self.simple_text_question = self.PollQuestion.create({
@@ -28,6 +37,7 @@ class TestPollQuestionCommon(common.TransactionCase):
             'end_date': fields.Datetime.now(),
             'yes_no_maybe': True,
             'option_ids': [(0, 0, {'name': 'Test Option 01'})],
+            'group_ids': [(6, 0, [self.poll_group.id])]
         })
         self.choose_date_question = self.PollQuestion.create({
             'title': 'Choose Date Question',
