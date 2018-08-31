@@ -125,15 +125,15 @@ class TestSimplePollFlow(TestPollQuestionCommon):
 
         self.QuestionAnswer.save_answer(self.simple_text_question, pos)
         answer = \
-            self.QuestionAnswer.search(
-                [('question_id', '=', self.simple_text_question.id),
-                 ('res_partner_id', '=', pos['res_partner_id']),
-                 (
-                     'option_id',
-                     '=',
-                     self.simple_text_question.option_ids[0].id
-                 )]
-            )
+            self.QuestionAnswer.search([
+                ('question_id', '=', self.simple_text_question.id),
+                ('res_partner_id', '=', pos['res_partner_id']),
+                (
+                    'option_id',
+                    '=',
+                    self.simple_text_question.option_ids[0].id
+                )
+            ])
         if not answer:
             answer = None
         self.assertIsNotNone(answer)
