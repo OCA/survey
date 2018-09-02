@@ -238,8 +238,8 @@ class UICase(HttpCase):
 
     def mock_response(self, req, uuid):
         url = self.choose_date_question.public_url
-        uuid == self.choose_date_question.uuid
-        if req.geturl() == url and uuid == uuid:
+        poll_uuid = self.choose_date_question.uuid
+        if req.geturl() == url and poll_uuid == uuid:
             resp = \
                 urllib2.addinfourl(
                     StringIO("mock file"),
@@ -249,7 +249,7 @@ class UICase(HttpCase):
             resp.code = 200
             resp.msg = "OK"
             return resp
-        if req.geturl() == url and uuid != uuid:
+        if req.geturl() == url and poll_uuid != uuid:
             resp = \
                 urllib2.addinfourl(
                     StringIO("mock file"),

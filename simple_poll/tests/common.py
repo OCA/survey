@@ -48,7 +48,7 @@ class TestPollQuestionCommon(common.TransactionCase):
             'option_ids': [
                 (0, 0, {'name_date': fields.Date.today()}),
                 (0, 0, {'name_date': fields.Date.from_string('2018-08-30')}),
-                           ],
+            ],
         })
         self.choose_date_time_question = self.PollQuestion.create({
             'title': 'Choose DateTime Question',
