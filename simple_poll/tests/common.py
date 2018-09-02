@@ -19,6 +19,7 @@ class TestPollQuestionCommon(common.TransactionCase):
         self.IrModelData = self.env['ir.model.data']
         self.IrConfigParam = self.env['ir.config_parameter']
         self.PollMailScheduler = self.env['poll.mail.scheduler']
+        self.ResPartner = self.env['res.partner']
 
         self.partner_id = self.env.ref('base.res_partner_1').id
 
@@ -44,9 +45,10 @@ class TestPollQuestionCommon(common.TransactionCase):
             'type': 'date',
             'end_date': fields.Datetime.now(),
             'yes_no_maybe': False,
-            'option_ids': [(0, 0, {
-                'name_date': fields.Date.today(),
-            })],
+            'option_ids': [
+                (0, 0, {'name_date': fields.Date.today()}),
+                (0, 0, {'name_date': fields.Date.from_string('2018-08-30')}),
+                           ],
         })
         self.choose_date_time_question = self.PollQuestion.create({
             'title': 'Choose DateTime Question',

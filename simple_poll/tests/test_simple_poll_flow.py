@@ -4,9 +4,13 @@
 
 import re
 from urlparse import urljoin
+from odoo import fields
 
 from odoo.addons.simple_poll.tests.common import TestPollQuestionCommon
 from odoo.exceptions import UserError
+from odoo.tests.common import HttpCase
+import urllib2
+from StringIO import StringIO
 
 
 class TestSimplePollFlow(TestPollQuestionCommon):
@@ -110,17 +114,19 @@ class TestSimplePollFlow(TestPollQuestionCommon):
         )
 
     def test_poll_group_write(self):
-        group_vals = {'name': 'Poll Group Test',
-                      'res_partner_ids': [(0, 0, {
-                          'name': 'Test Partner NO EMAIL',
-                      })]}
+        group_vals = {'name': 'Poll Group Test'}
         with self.assertRaises(UserError):
-            self.PollGroup.create(group_vals)
+            group = self.PollGroup.create(group_vals)
+            res_partner = self.ResPartner.create({
+                'name': 'Test Partner NO EMAIL',
+            })
+            group.write({
+                'res_partner_ids': [(4, 0, res_partner.id)]})
 
-    def test_save_answer(self):
+    def test_save_answer_yes_no_maybe(self):
         pos = {
             'res_partner_id': self.poll_group.res_partner_ids[0].id,
-            self.simple_text_question.option_ids[0].id: '',
+            str(self.simple_text_question.option_ids[0].id): '1',
         }
 
         self.QuestionAnswer.save_answer(self.simple_text_question, pos)
@@ -137,3 +143,135 @@ class TestSimplePollFlow(TestPollQuestionCommon):
         if not answer:
             answer = None
         self.assertIsNotNone(answer)
+        self.assertEqual('1', answer.answer)
+
+        pos[str(self.simple_text_question.option_ids[0].id)] = '3'
+        self.QuestionAnswer.save_answer(self.simple_text_question, pos)
+
+        answer = \
+            self.QuestionAnswer.search([
+                ('question_id', '=', self.simple_text_question.id),
+                ('res_partner_id', '=', pos['res_partner_id']),
+                (
+                    'option_id',
+                    '=',
+                    self.simple_text_question.option_ids[0].id
+                )
+            ])
+
+        if not answer:
+            answer = None
+        self.assertIsNotNone(answer)
+        self.assertEqual('3', answer.answer)
+
+    def test_send_by_email_value_error(self):
+        try:
+            template_id = self.IrModelData.get_object_reference(
+                'simple_poll', 'email_template_edi_poll_false')[1]
+        except ValueError:
+            template_id = False
+        try:
+            compose_form_id = self.IrModelData.get_object_reference(
+                'mail', 'email_compose_message_wizard_form_false')[1]
+        except ValueError:
+            compose_form_id = False
+
+        self.assertFalse(template_id)
+        self.assertFalse(compose_form_id)
+
+    def test_save_answer_yes_no(self):
+        firs_option_id = self.choose_date_question.option_ids[0].id
+        second_option_id = self.choose_date_question.option_ids[1].id
+
+        pos = {
+            'res_partner_id': self.poll_group.res_partner_ids[0].id,
+            str(firs_option_id): ''
+        }
+
+        self.QuestionAnswer.save_answer(self.choose_date_question, pos)
+        answer_firs_option = \
+            self.QuestionAnswer.search([
+                ('question_id', '=', self.choose_date_question.id),
+                ('res_partner_id', '=', pos['res_partner_id']),
+                (
+                    'option_id',
+                    '=',
+                    firs_option_id,
+                )
+            ])
+        answer_second_option = \
+            self.QuestionAnswer.search([
+                ('question_id', '=', self.choose_date_question.id),
+                ('res_partner_id', '=', pos['res_partner_id']),
+                (
+                    'option_id',
+                    '=',
+                    second_option_id,
+                )
+            ])
+        if not answer_firs_option:
+            answer_firs_option = None
+        if not answer_second_option:
+            answer_second_option = None
+
+        self.assertIsNotNone(answer_firs_option)
+        self.assertEqual('1', answer_firs_option.answer)
+
+        self.assertIsNotNone(answer_second_option)
+        self.assertEqual('2', answer_second_option.answer)
+
+
+class UICase(HttpCase):
+    def setUp(self):
+        super(UICase, self).setUp()
+        self.PollQuestion = self.env['poll.question']
+        self.choose_date_question = self.PollQuestion.create({
+            'title': 'Choose Date Question',
+            'type': 'date',
+            'end_date': fields.Datetime.now(),
+            'yes_no_maybe': False,
+            'option_ids': [
+                (0, 0, {'name_date': fields.Date.today()}),
+                (0, 0, {'name_date': fields.Date.from_string('2018-08-30')}),
+                           ],
+        })
+
+    def mock_response(self, req, uuid):
+        if req.geturl() == self.choose_date_question.public_url and \
+                        uuid == self.choose_date_question.uuid:
+            resp = \
+                urllib2.addinfourl(
+                    StringIO("mock file"),
+                    "mock message",
+                    req.geturl()
+                )
+            resp.code = 200
+            resp.msg = "OK"
+            return resp
+        if req.geturl() == self.choose_date_question.public_url and \
+                uuid != self.choose_date_question.uuid:
+            resp = \
+                urllib2.addinfourl(
+                    StringIO("mock file"),
+                    "mock message",
+                    req.geturl()
+                )
+            resp.code = 404
+            resp.msg = "Error"
+            return resp
+
+    def test_uuid_ok(self):
+        """Test uuid ok."""
+        url = self.choose_date_question.public_url
+        uuid = self.choose_date_question.uuid
+        result = self.url_open(url, uuid, 30)
+        result = self.mock_response(result, uuid)
+        self.assertEqual(200, result.code)
+
+    def test_uuid_error(self):
+        """Test uuid error."""
+        url = self.choose_date_question.public_url
+        uuid = self.choose_date_question.uuid + '12'
+        result = self.url_open(url, uuid, 30)
+        result = self.mock_response(result, uuid)
+        self.assertEqual(404, result.code)
