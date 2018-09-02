@@ -233,12 +233,13 @@ class UICase(HttpCase):
             'option_ids': [
                 (0, 0, {'name_date': fields.Date.today()}),
                 (0, 0, {'name_date': fields.Date.from_string('2018-08-30')}),
-                           ],
+            ],
         })
 
     def mock_response(self, req, uuid):
-        if req.geturl() == self.choose_date_question.public_url and \
-                        uuid == self.choose_date_question.uuid:
+        url = self.choose_date_question.public_url
+        uuid == self.choose_date_question.uuid
+        if req.geturl() == url and uuid == uuid:
             resp = \
                 urllib2.addinfourl(
                     StringIO("mock file"),
@@ -248,8 +249,7 @@ class UICase(HttpCase):
             resp.code = 200
             resp.msg = "OK"
             return resp
-        if req.geturl() == self.choose_date_question.public_url and \
-                uuid != self.choose_date_question.uuid:
+        if req.geturl() == url and uuid != uuid:
             resp = \
                 urllib2.addinfourl(
                     StringIO("mock file"),
