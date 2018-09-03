@@ -95,6 +95,9 @@ class TestSimplePollFlow(TestPollQuestionCommon):
     def test_poll_mail_scheduler_run(self):
         self.assertEqual(True, self.poll_mail_scheduler.run())
 
+    def test_poll_mail_scheduler_run_autocommit(self):
+        self.assertEqual(True, self.poll_mail_scheduler.run(autocommit=True))
+
     def test_get_participant_emails(self):
         self.assertEqual(
             self.poll_group.res_partner_ids[0].email,
@@ -113,7 +116,16 @@ class TestSimplePollFlow(TestPollQuestionCommon):
             self.simple_text_question.get_participants_no_answer()
         )
 
-    def test_poll_group_write(self):
+    def test_poll_group_create_error(self):
+        res_partner = self.ResPartner.create({
+            'name': 'Test Partner NO EMAIL',
+        })
+        group_vals = {'name': 'Poll Group Test',
+                      'res_partner_ids': [(6, 0, [res_partner.id])]}
+        with self.assertRaises(UserError):
+            self.PollGroup.create(group_vals)
+
+    def test_poll_group_write_error(self):
         group_vals = {'name': 'Poll Group Test'}
         with self.assertRaises(UserError):
             group = self.PollGroup.create(group_vals)
@@ -121,7 +133,20 @@ class TestSimplePollFlow(TestPollQuestionCommon):
                 'name': 'Test Partner NO EMAIL',
             })
             group.write({
-                'res_partner_ids': [(4, 0, res_partner.id)]})
+                'res_partner_ids': [(6, 0, [res_partner.id])]})
+
+    def test_poll_group_write(self):
+        group_vals = {'name': 'Poll Group Test'}
+        group = self.PollGroup.create(group_vals)
+        res_partner = self.ResPartner.create({
+            'name': 'Test Partner with email',
+            'email': 'test@myexample.com'
+        })
+        group.write({
+            'res_partner_ids': [(6, 0, [res_partner.id])]})
+
+        self.assertEqual(res_partner.id, group.res_partner_ids[0].id,
+                         'Test Group has added a partner')
 
     def test_save_answer_yes_no_maybe(self):
         pos = {
@@ -163,21 +188,6 @@ class TestSimplePollFlow(TestPollQuestionCommon):
             answer = None
         self.assertIsNotNone(answer)
         self.assertEqual('3', answer.answer)
-
-    def test_send_by_email_value_error(self):
-        try:
-            template_id = self.IrModelData.get_object_reference(
-                'simple_poll', 'email_template_edi_poll_false')[1]
-        except ValueError:
-            template_id = False
-        try:
-            compose_form_id = self.IrModelData.get_object_reference(
-                'mail', 'email_compose_message_wizard_form_false')[1]
-        except ValueError:
-            compose_form_id = False
-
-        self.assertFalse(template_id)
-        self.assertFalse(compose_form_id)
 
     def test_save_answer_yes_no(self):
         firs_option_id = self.choose_date_question.option_ids[0].id
