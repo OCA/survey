@@ -84,6 +84,46 @@ class TestSimplePollFlow(TestPollQuestionCommon):
             'context': ctx,
         })
 
+    def test_send_by_email_error(self):
+        template_id = self.IrModelData.get_object_reference(
+            'simple_poll', 'email_template_edi_poll')[1]
+        self.MailTemplate.browse(template_id).unlink()
+        compose_form_id = self.IrModelData.get_object_reference(
+            'mail', 'email_compose_message_wizard_form')[1]
+        self.IrUiView .browse(compose_form_id).unlink()
+        try:
+            template_id = self.IrModelData.get_object_reference(
+                'simple_poll', 'email_template_edi_poll')[1]
+        except ValueError:
+            template_id = False
+        try:
+            compose_form_id = self.IrModelData.get_object_reference(
+                'mail', 'email_compose_message_wizard_form')[1]
+        except ValueError:
+            compose_form_id = False
+
+        action = self.choose_date_time_question.action_poll_send()
+
+        ctx = dict()
+        ctx.update({
+            'default_model': 'poll.question',
+            'default_res_id': self.choose_date_time_question.id,
+            'default_use_template': bool(template_id),
+            'default_template_id': template_id,
+            'default_composition_mode': 'comment',
+            'mark_so_as_sent': True,
+        })
+        self.assertDictEqual(action, {
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'mail.compose.message',
+            'views': [(compose_form_id, 'form')],
+            'view_id': compose_form_id,
+            'target': 'new',
+            'context': ctx,
+        })
+
     def test_poll_fields(self):
         self.assertEqual(True, bool(self.simple_text_question.title),
                          'Test Poll has no title')
@@ -229,6 +269,29 @@ class TestSimplePollFlow(TestPollQuestionCommon):
 
         self.assertIsNotNone(answer_second_option)
         self.assertEqual('2', answer_second_option.answer)
+
+    def test_poll_without_end_date(self):
+        self.env.cr.execute("""
+        ALTER TABLE poll_question ALTER end_date DROP NOT NULL;
+        """)
+
+        # Test Poll Questions creation without end date
+        simple_text_question = self.PollQuestion.create({
+            'title': 'Simple Text Question',
+            'type': 'simple_text',
+            'yes_no_maybe': True,
+            'option_ids': [(0, 0, {'name': 'Test Option 01'})]
+        })
+
+        poll_mail_scheduler = self.PollMailScheduler.create({
+            'interval_nbr': 2,
+            'interval_unit': 'days',
+            'template_id': self.ref(
+                'simple_poll.email_reminder_template_edi_poll'),
+            'poll_id': simple_text_question.id,
+        })
+
+        self.assertFalse(poll_mail_scheduler.scheduled_date)
 
 
 class UICase(HttpCase):

@@ -20,6 +20,8 @@ class TestPollQuestionCommon(common.TransactionCase):
         self.IrConfigParam = self.env['ir.config_parameter']
         self.PollMailScheduler = self.env['poll.mail.scheduler']
         self.ResPartner = self.env['res.partner']
+        self.MailTemplate = self.env['mail.template']
+        self.IrUiView = self.env['ir.ui.view']
 
         self.partner_id = self.env.ref('base.res_partner_1').id
 
