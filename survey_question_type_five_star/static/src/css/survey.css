@@ -1,0 +1,27 @@
+/* Copyright 2018 ACSONE SA/NV
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate > input{
+    display:none;
+}
+.rate > label:hover,
+.rate > label:hover ~ label,
+.checked {
+    color: #deb217;
+}
+.rate > label {
+    float:right;
+    width:1em;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+}
+.rate > label:before {
+    content: '★ ';
+}
+
