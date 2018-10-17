@@ -42,6 +42,6 @@ class SurveyUserInputLine(models.Model):
                 if rec.answer_type != 'number':
                     raise ValidationError(
                         _("Five stars rate question must have numeric answer"))
-                if not (1 <= rec.value_number <= 5):
+                if not (0 <= rec.value_number <= 5):
                     raise ValidationError(
                         _("Answer is not in the right range"))

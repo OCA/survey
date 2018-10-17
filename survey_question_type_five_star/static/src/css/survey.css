@@ -1,12 +1,12 @@
 /* Copyright 2018 ACSONE SA/NV
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
 
-.rate {
+.rate_widget {
     float: left;
     height: 46px;
     padding: 0 10px;
 }
-.rate > input{
+.rate_widget > input{
     display:none;
 }
 .rate > label:hover,
@@ -14,14 +14,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
 .checked {
     color: #deb217;
 }
-.rate > label {
+.rate_widget > label {
     float:right;
     width:1em;
     white-space:nowrap;
     cursor:pointer;
     font-size:30px;
 }
-.rate > label:before {
+.rate_widget > label:before {
     content: '★ ';
 }
 
