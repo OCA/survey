@@ -38,7 +38,7 @@ class TestSurvey(TransactionCase):
     def test_01_question_star_rate_with_error_values(self):
         error_results = [
             ('aaa', 'This is not a number'),
-            ('0', 'Answer is not in the right range'),
+            ('-1', 'Answer is not in the right range'),
             ('6', 'Answer is not in the right range')]
         msg = "Validation function for type numerical_box is unable to " \
               "notify if answer is violating the validation rules"
@@ -49,7 +49,7 @@ class TestSurvey(TransactionCase):
                 msg=msg)
 
     def test_02_question_star_rate_with_valid_values(self):
-        for i in ('1', '3', '5'):
+        for i in ('0', '3', '5'):
             self.assertTrue(
                 self.env['survey.user_input_line'].save_line_star_rate(
                     user_input_id=self.user_input1.id,

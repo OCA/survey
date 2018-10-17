@@ -29,7 +29,7 @@ class SurveyQuestion(models.Model):
             # Answer is not in the right range
             with tools.ignore(Exception):
                 floatanswer = float(answer)
-                if not (1 <= floatanswer <= 5):
+                if not (0 <= floatanswer <= 5):
                     errors.update({answer_tag: 'Answer is not in '
                                                'the right range'})
         return errors

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="assets_frontend_survey"
-              inherit_id="survey.assets_frontend_survey">
-        <xpath expr="//link" position="after">
+    <template id="assets_frontend" inherit_id="website.assets_frontend"
+              name="Survey assets">
+        <xpath expr="." position="inside">
             <script type="text/javascript"
                     src="/survey_question_type_five_star/static/src/js/survey.js"/>
             <link href="/survey_question_type_five_star/static/src/css/survey.css"
@@ -19,16 +19,46 @@
         </xpath>
     </template>
 
+    <template id="result" inherit_id="survey.result">
+        <xpath expr="//t[@t-call='survey.result_number']/parent::t/parent::t"
+               position="inside">
+            <t t-if="question.type == 'star_rate'">
+                <t t-call="survey.result_number"></t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="survey_print" inherit_id="survey.survey_print">
+        <xpath expr="//div[@t-att-id='prefix']" position="inside">
+            <t t-if="question.type == 'star_rate'">
+                <t t-call="survey_question_type_five_star.print_star_rate"/>
+            </t>
+        </xpath>
+    </template>
+
     <template id="star_rate" name="Five starts rating">
         <div class="row">
-            <div class="rate">
+            <div class="rate rate_widget">
                 <label for="star5"/>
                 <label for="star4"/>
                 <label for="star3"/>
                 <label for="star2"/>
                 <label for="star1"/>
                 <input type="number" step="any" class="form-control"
-                       t-att-name="prefix" hidden="hidden"/>
+                       t-att-name="prefix" hidden="hidden" value="0"/>
+            </div>
+        </div>
+    </template>
+    <template id="print_star_rate" name="Five starts rating">
+        <div class="row">
+            <div class="print_star_rate rate_widget">
+                <label for="star5"/>
+                <label for="star4"/>
+                <label for="star3"/>
+                <label for="star2"/>
+                <label for="star1"/>
+                <input type="number" step="any" class="form-control"
+                       t-att-name="prefix" hidden="hidden" value="0"/>
             </div>
         </div>
     </template>
