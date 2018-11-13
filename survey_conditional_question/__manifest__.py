@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Survey Conditional Questions',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
@@ -29,15 +29,16 @@
     'images': [
     ],
     'depends': [
-        'survey', 'website'
+        'survey',
+        'website'
     ],
     'data': [
-        'conditional_survey_view.xml',
-        'conditional_survey_qweb.xml',
+        'views/survey_question_views.xml',
+        'views/survey_question_qweb.xml',
     ],
     'demo': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
