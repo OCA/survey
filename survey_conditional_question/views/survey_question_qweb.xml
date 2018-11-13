@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="survey_qweb" inherit_id="survey.page">
+        <xpath expr="//div[hasclass('js_question-wrapper')]" position="attributes">
+                <attribute name="t-if">question.id not in hide_question_ids</attribute>
+        </xpath>
+    </template>
+</odoo>
