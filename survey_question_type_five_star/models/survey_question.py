@@ -9,8 +9,7 @@ class SurveyQuestion(models.Model):
 
     _inherit = 'survey.question'
 
-    type = fields.Selection(selection_add=[
-        ('star_rate', 'Five stars rating')])
+    type = fields.Selection(selection_add=[('star_rate', 'Five stars rating')])
 
     @api.multi
     def validate_star_rate(self, post, answer_tag):
@@ -29,7 +28,17 @@ class SurveyQuestion(models.Model):
             # Answer is not in the right range
             with tools.ignore(Exception):
                 floatanswer = float(answer)
-                if not (0 <= floatanswer <= 5):
-                    errors.update({answer_tag: 'Answer is not in '
-                                               'the right range'})
+                # 0 answer to mandatory question
+                if self.constr_mandatory:
+                    if floatanswer == 0:
+                        errors.update({answer_tag: self.constr_error_msg})
+                    elif not (0 < floatanswer <= 5):
+                        errors.update(
+                            {answer_tag: 'Answer is not in ' 'the right range'}
+                        )
+                else:
+                    if not (0 <= floatanswer <= 5):
+                        errors.update(
+                            {answer_tag: 'Answer is not in ' 'the right range'}
+                        )
         return errors
