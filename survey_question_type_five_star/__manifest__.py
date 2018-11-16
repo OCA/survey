@@ -10,13 +10,7 @@
     'license': 'AGPL-3',
     'author': 'ACSONE SA/NV,Odoo Community Association (OCA)',
     'website': 'https://github.com/OCA/survey',
-    'depends': [
-        'survey'
-    ],
-    'data': [
-        'views/survey_question.xml',
-        'views/survey_template.xml',
-    ],
-    'demo': [
-    ],
+    'depends': ['survey'],
+    'data': ['views/survey_question.xml', 'views/survey_template.xml'],
+    'demo': [],
 }

@@ -16,18 +16,24 @@ class SurveyUserInputLine(models.Model):
             'user_input_id': user_input_id,
             'question_id': question.id,
             'survey_id': question.survey_id.id,
-            'skipped': False
+            'skipped': False,
         }
         if answer_tag in post and post[answer_tag].strip():
-            vals.update({'answer_type': 'number',
-                         'value_number': float(post[answer_tag])})
+            vals.update(
+                {
+                    'answer_type': 'number',
+                    'value_number': float(post[answer_tag]),
+                }
+            )
         else:
             vals.update({'answer_type': None, 'skipped': True})
-        old_uil = self.search([
-            ('user_input_id', '=', user_input_id),
-            ('survey_id', '=', question.survey_id.id),
-            ('question_id', '=', question.id)
-        ])
+        old_uil = self.search(
+            [
+                ('user_input_id', '=', user_input_id),
+                ('survey_id', '=', question.survey_id.id),
+                ('question_id', '=', question.id),
+            ]
+        )
         if old_uil:
             old_uil.write(vals)
         else:
@@ -41,7 +47,17 @@ class SurveyUserInputLine(models.Model):
             if rec.question_id.type == 'star_rate':
                 if rec.answer_type != 'number':
                     raise ValidationError(
-                        _("Five stars rate question must have numeric answer"))
-                if not (0 <= rec.value_number <= 5):
+                        _("Five stars rate question must have numeric answer")
+                    )
+                if rec.question_id.constr_mandatory and not (
+                    0 < rec.value_number <= 5
+                ):
                     raise ValidationError(
-                        _("Answer is not in the right range"))
+                        _("Answer is not in the right range")
+                    )
+                if not rec.question_id.constr_mandatory and not (
+                    0 <= rec.value_number <= 5
+                ):
+                    raise ValidationError(
+                        _("Answer is not in the right range")
+                    )
