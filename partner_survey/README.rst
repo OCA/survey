@@ -33,7 +33,7 @@ filter partners according to their answers in surveys.
 **Table of contents**
 
 .. contents::
-    :local:
+   :local:
 
 Bug Tracker
 ===========
