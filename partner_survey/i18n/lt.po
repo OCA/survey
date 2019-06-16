@@ -21,7 +21,11 @@ msgstr ""
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_res_partner
-#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line_partner_id
+msgid "Contact"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
 msgid "Partner"
 msgstr "Partneris"
 
@@ -31,21 +35,21 @@ msgid "Survey User Input Line"
 msgstr ""
 
 #. module: partner_survey
-#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_input_count
-#: model:ir.model.fields,field_description:partner_survey.field_res_users_survey_input_count
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_count
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_count
 msgid "Survey number"
 msgstr ""
 
 #. module: partner_survey
 #: model:ir.actions.act_window,name:partner_survey.act_partner_survey_input
-#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_inputs
-#: model:ir.model.fields,field_description:partner_survey.field_res_users_survey_inputs
-#: model:ir.ui.view,arch_db:partner_survey.view_partner_form
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_inputs
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_inputs
+#: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
 msgid "Surveys"
 msgstr ""
 
 #. module: partner_survey
-#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_input_lines
-#: model:ir.model.fields,field_description:partner_survey.field_res_users_survey_input_lines
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_lines
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_lines
 msgid "Surveys answers"
 msgstr ""
