@@ -21,7 +21,7 @@ To use this module, you need to:
 * Select the method to send emails
 * Add your tag to recipients
 * All the partners who have this tag will be added in the recipients field, thus
-will receive an email
+  will receive an email
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
