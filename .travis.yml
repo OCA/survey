@@ -7,6 +7,7 @@ sudo: false
 cache: pip
 
 addons:
+  postgresql: "10.0"
   apt:
     packages:
       - expect-dev  # provides unbuffer utility
@@ -17,7 +18,7 @@ addons:
 
 env:
   global:
-  - VERSION="11.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
+  - VERSION="12.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
   - TRANSIFEX_USER='transbot@odoo-community.org'
   - secure: jyI2a/SFeERzgUOl8Tl14mBfLYDPdVDqqyYL7WgYKMl9iLE0PXGEWHm94BIIsQsO2ysCzTYPWqUGj9RheIY5PGh617MwxKrTgiMy7EMjru/MDX5ObrE6NaT/Jx45TgLOxI9E1ECe1XXXc57k/XlsvtE3EtGNTdLLyXuLkyZ5vduexPF4FpUErZQZbIuzbHyZhJvDYDG00Pe/+Z9BDO/BLtUr2GSTCYa5Bq+ID7bwZSPtk/t6U4ysx/yOz018oPAOrzqFz6xt9GWLw4gQzFN9ny9mqWNzcfNZW/KRWxjqw/cM+vHHep+vFJDsDkQW9IaJ8sP4M3Jn+q/AVEoRSJydEw80ZJx7y7TVyiN9Zvl8cA69I9jl0jAQ1P1Obq8dqGPfKnB8FxK6DnbP7vgMqD47jZD2KL660ZEh6eKeccDCxGxwHrnCZf/6jsoZ6tFDPAQ5I7WNgdTm2vryXHYCj3IIfuNksCwcJ/q6NxlqjmObyEsH6QLgDkMdxFFzHjVsiV+uOczaF2j41ryWsqQEX5ySNuyP0xCHwpvjn34kst29UTaWsqWSGkJdH2vyJZcsS1l0jG+Sgt/G7WWmCy1sgW3SxlUeTo/CiUlc60ORzdigccoE8yuNxfqtJ3XK9MAtW9du3+THdo4uWmCRmVbq1ya3F+eqbjuMhijiZCm1pASATkw=
 

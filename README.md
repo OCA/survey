@@ -1,6 +1,6 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/200/11.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-survey-200)
-[![Build Status](https://travis-ci.org/OCA/survey.svg?branch=11.0)](https://travis-ci.org/OCA/survey)
-[![Coverage Status](https://coveralls.io/repos/OCA/survey/badge.svg?branch=11.0)](https://coveralls.io/r/OCA/survey?branch=11.0)
+[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/200/12.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-survey-200)
+[![Build Status](https://travis-ci.org/OCA/survey.svg?branch=12.0)](https://travis-ci.org/OCA/survey)
+[![Coverage Status](https://coveralls.io/repos/OCA/survey/badge.svg?branch=12.0)](https://coveralls.io/r/OCA/survey?branch=12.0)
 [![Code Climate](https://codeclimate.com/github/OCA/survey/badges/gpa.svg)](https://codeclimate.com/github/OCA/survey)
 
 OCA Survey management addons for Odoo
@@ -30,17 +30,13 @@ Roadmap
 - offer choice to the survey's administrator to display information from an existing object (for example : res.partner)
 - extend the existing notation to finely evaluate or profile by answering and generate actions (for example : generate sale order and sale order lines depending on respondent answers)
 
-
 Links
 -----
 
-https://github.com/ingadhoc/odoo-addons/tree/11.0/survey_conditional_questions
+https://github.com/ingadhoc/odoo-addons/tree/12.0/survey_conditional_questions
 
 https://github.com/csrocha/openerp-survey
 
-
-
-
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/OCA-survey-11-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-survey-11-0)
+[![Transifex Status](https://www.transifex.com/projects/p/OCA-survey-12-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-survey-12-0)
