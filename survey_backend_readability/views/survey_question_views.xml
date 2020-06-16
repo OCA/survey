@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020 Le Filament (<https://www.le-filament.com>)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+
+        <record id="survey_question_backend_readability_tree" model="ir.ui.view">
+            <field name="name">survey.survey.view.tree</field>
+            <field name="model">survey.question</field>
+            <field name="arch" type="xml">
+                <tree string="Survey Question">
+                    <field name="sequence" widget="handle"/>
+                    <field name="question"/>
+                    <field name="survey_id"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+       </record>
+
+   </data>
+</odoo>
