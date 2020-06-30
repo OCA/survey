@@ -13,6 +13,9 @@
                 <page string="Description">
                     <field name="description"/>
                 </page>
+                <page string="Thank you">
+                    <field name="thank_you_message"/>
+                </page>
             </xpath>
         </field>
     </record>
