@@ -2,7 +2,9 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Survey description field",
-    "summary": "Displays description fields for survey, page and question",
+    "summary": """
+               Displays description and thank you fields for survey,
+               page and question""",
     "version": "12.0.1.0.0",
     "development_status": "Beta",
     "website": "https://github.com/OCA/survey.git",
