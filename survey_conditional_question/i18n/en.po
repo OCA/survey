@@ -28,12 +28,12 @@ msgid "Conditional Question"
 msgstr "Conditional Question"
 
 #. module: survey_conditional_questions
-#: help:survey.question,question_conditional_id:0
+#: help:survey.question,triggering_question_id:0
 msgid "In order to edit this field you should first save the question"
 msgstr "In order to edit this field you should first save the question"
 
 #. module: survey_conditional_questions
-#: field:survey.question,question_conditional_id:0
+#: field:survey.question,triggering_question_id:0
 msgid "Question"
 msgstr "Question"
 

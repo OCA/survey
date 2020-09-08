@@ -29,12 +29,12 @@ msgid "Conditional Question"
 msgstr "Pregunta Condicional"
 
 #. module: survey_conditional_questions
-#: model:ir.model.fields,help:survey_conditional_questions.field_survey_question_question_conditional_id
+#: model:ir.model.fields,help:survey_conditional_questions.field_survey_question_triggering_question_id
 msgid "In order to edit this field you should first save the question"
 msgstr "Para editar este campo , primero debe guardar la pregunta"
 
 #. module: survey_conditional_questions
-#: model:ir.model.fields,field_description:survey_conditional_questions.field_survey_question_question_conditional_id
+#: model:ir.model.fields,field_description:survey_conditional_questions.field_survey_question_triggering_question_id
 msgid "Question"
 msgstr "Pregunta"
 
