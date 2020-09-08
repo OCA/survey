@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="survey_qweb" inherit_id="survey.page">
-        <xpath expr="//div[hasclass('js_question-wrapper')]" position="attributes">
-                <attribute name="t-if">question.id not in hide_question_ids</attribute>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Survey Conditional Assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/survey_conditional_questions/static/src/js/survey_conditional_questions.js" />
+        </xpath>
+    </template>
+    <template id="survey_page" inherit_id="survey.page">
+        <xpath expr="//form[hasclass('js_surveyform')]" position="attributes">
+                <attribute name="t-att-data-hidden">'/survey/hidden/%s/%s/0' % (slug(survey), token)</attribute>
+        </xpath>
+    </template>
+    <template id="survey_print" inherit_id="survey.survey_print">
+        <xpath expr="//div[hasclass('js_surveyform')]" position="attributes">
+                <attribute name="t-att-data-hidden">'/survey/hidden/%s/%s/1' % (slug(survey), token)</attribute>
         </xpath>
     </template>
 </odoo>
