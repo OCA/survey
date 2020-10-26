@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_survey
+#
+# Translators:
+# Ashish Deshmukh <ashish.p.deshmukh@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 11:03+0000\n"
+"PO-Revision-Date: 2017-06-10 11:03+0000\n"
+"Last-Translator: Ashish Deshmukh <ashish.p.deshmukh@gmail.com>, 2017\n"
+"Language-Team: Hindi (India) (https://www.transifex.com/oca/teams/23907/"
+"hi_IN/)\n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_survey
+#: model:ir.model,name:partner_survey.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
+msgid "Partner"
+msgstr "पार्टनर"
+
+#. module: partner_survey
+#: model:ir.model,name:partner_survey.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "सर्वेक्षण उपयोगकर्ता इनपुट लाइन"
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_count
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_count
+msgid "Survey number"
+msgstr "सर्वेक्षण संख्या"
+
+#. module: partner_survey
+#: model:ir.actions.act_window,name:partner_survey.act_partner_survey_input
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_inputs
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_inputs
+#: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
+msgid "Surveys"
+msgstr "सर्वेक्षण"
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_lines
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_lines
+msgid "Surveys answers"
+msgstr "सर्वेक्षण उत्तर"
