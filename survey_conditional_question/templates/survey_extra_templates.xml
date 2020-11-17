@@ -12,7 +12,7 @@
                    $("input[name='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.conditional_question_id.id"/>']").click(function() {
                        if (this.value == <t t-esc="question.conditional_option_id.id"/>) {
                            //Show the conditional question
-                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'inline-block');
+                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'block');
                        } else {
                            //Hide the question
                            $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'none');
@@ -22,7 +22,7 @@
                    $("select[name='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.conditional_question_id.id"/>']").click(function() {
                        if (this.value == <t t-esc="question.conditional_option_id.id"/>) {
                            //Show the conditional question
-                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'inline-block');
+                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'block');
                        } else {
                            //Hide the question
                            $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'none');
