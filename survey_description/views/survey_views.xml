@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Le Filament (<https://le-filament.com>)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="survey_desc_form">
+        <field name="name">Add description</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="Description">
+                    <field name="description"/>
+                </page>
+                <page string="Thank you">
+                    <field name="thank_you_message"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="survey_page_desc_form">
+        <field name="name">Add description</field>
+        <field name="model">survey.page</field>
+        <field name="inherit_id" ref="survey.survey_page_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                <label for="description" string="Description"/>
+                <field name="description"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="survey_question_desc_form">
+        <field name="name">Add description</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="Description">
+                    <field name="description"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
