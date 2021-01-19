@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-partner_survey',
+        'odoo12-addon-survey_description',
     ],
     classifiers=[
         'Programming Language :: Python',
