@@ -43,9 +43,9 @@ https://github.com/csrocha/openerp-survey
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[partner_survey](partner_survey/) | 10.0.1.0.0 | Partner Survey
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[partner_survey](partner_survey/) | 10.0.1.0.0 |  | Partner Survey
 
 [//]: # (end addons)
 
