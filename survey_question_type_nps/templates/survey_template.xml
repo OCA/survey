@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="assets_frontend"
+        inherit_id="survey.survey_assets"
+        name="Survey assets"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/survey_question_type_nps/static/src/js/survey.js"
+            />
+            <link
+                href="/survey_question_type_nps/static/src/scss/parameters.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+            <link
+                href="/survey_question_type_nps/static/src/scss/survey.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+        </xpath>
+    </template>
+    <template id="question" inherit_id="survey.question">
+        <xpath expr="//div[@t-field='question.description']" position="inside">
+            <t t-if="question.question_type == 'nps_rate'">
+                <t t-call="survey_question_type_nps.nps_rate" />
+            </t>
+        </xpath>
+    </template>
+    <template id="result" inherit_id="survey.result">
+        <xpath
+            expr="//t[@t-call='survey.result_number']/parent::t/parent::t"
+            position="inside"
+        >
+            <t t-if="question.question_type == 'nps_rate'">
+                <t t-call="survey.result_number" />
+            </t>
+        </xpath>
+    </template>
+    <template id="survey_print" inherit_id="survey.survey_print">
+        <xpath expr="//div[@t-att-id='prefix']" position="inside">
+            <t t-if="question.question_type == 'nps_rate'">
+                <t t-call="survey_question_type_nps.print_nps_rate" />
+            </t>
+        </xpath>
+    </template>
+    <template id="nps_rate" name="NPS Rating">
+        <div class="row">
+            <div class="rate rate_widget">
+                <label for="num10">10</label>
+                <label for="num9">9</label>
+                <label for="num8">8</label>
+                <label for="num7">7</label>
+                <label for="num6">6</label>
+                <label for="num5">5</label>
+                <label for="num4">4</label>
+                <label for="num3">3</label>
+                <label for="num2">2</label>
+                <label for="num1">1</label>
+                <input
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    t-att-name="prefix"
+                    hidden="hidden"
+                    value="0"
+                />
+            </div>
+        </div>
+    </template>
+    <template id="print_nps_rate" name="NPS rating">
+        <div class="row">
+            <div class="print_nps_rate rate_widget">
+                <label for="num10">10</label>
+                <label for="num9">9</label>
+                <label for="num8">8</label>
+                <label for="num7">7</label>
+                <label for="num6">6</label>
+                <label for="num5">5</label>
+                <label for="num4">4</label>
+                <label for="num3">3</label>
+                <label for="num2">2</label>
+                <label for="num1">1</label>
+                <input
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    t-att-name="prefix"
+                    hidden="hidden"
+                    value="0"
+                />
+            </div>
+        </div>
+    </template>
+    <template id="avg_nps" name="Average NPS" inherit_id="survey.result_number">
+        <xpath expr="//span[@class='float-right mt8']" position="inside">
+            <t t-if="'average_nps' in number_result">
+                <span class="badge badge-secondary only_left_radius">NPS</span>
+                <span
+                    class="badge badge-light only_right_radius"
+                    t-esc="number_result['average_nps']"
+                />
+            </t>
+        </xpath>
+    </template>
+</odoo>
