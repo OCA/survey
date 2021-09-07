@@ -1,0 +1,37 @@
+/* Copyright 2018 ACSONE SA/NV
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
+
+.rate_widget {
+    float: left;
+    height: 64px;
+    padding: 0 10px;
+    text-align: center;
+}
+.rate_widget > input {
+    display: none;
+}
+.rate_widget > label {
+    font: 25px Arial, sans-serif;
+
+    width: 2em;
+    height: 2em;
+    box-sizing: initial;
+
+    background: $nps-widget-background-color;
+    border: 0.1em solid $nps-widget-color;
+    color: $nps-widget-color;
+    text-align: center;
+    border-radius: 50%;
+
+    line-height: 2em;
+    box-sizing: content-box;
+
+    float: right;
+    cursor: pointer;
+    margin: 10px;
+}
+.rate > label:hover,
+.rate_widget .checked {
+    color: $nps-widget-background-color;
+    background: $nps-widget-color;
+}
