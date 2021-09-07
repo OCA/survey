@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from collections import Counter
+
 from odoo import api, models
 
 
@@ -17,8 +17,7 @@ class SurveySurvey(models.Model):
             vote per choice on basis of filter
         """
         current_filters = current_filters if current_filters else []
-        result_summary = {}
-        if question.type == "star_rate":
+        if question.question_type == "star_rate":
             result_summary = {"input_lines": []}
             all_inputs = []
             for input_line in question.user_input_line_ids:
@@ -28,6 +27,7 @@ class SurveySurvey(models.Model):
                 ):
                     all_inputs.append(input_line.value_number)
                     result_summary["input_lines"].append(input_line)
+
             if all_inputs:
                 result_summary.update(
                     {
@@ -39,6 +39,4 @@ class SurveySurvey(models.Model):
                     }
                 )
             return result_summary
-        return super(SurveySurvey, self).prepare_result(
-            question, current_filters
-        )
+        return super(SurveySurvey, self).prepare_result(question, current_filters)

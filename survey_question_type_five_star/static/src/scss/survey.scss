@@ -6,21 +6,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
     height: 46px;
     padding: 0 10px;
 }
-.rate_widget > input{
-    display:none;
+.rate_widget > input {
+    display: none;
 }
 .rate > label:hover,
 .rate > label:hover ~ label,
-.checked {
+.rate .checked {
     color: #deb217;
 }
 .rate_widget > label {
-    float:right;
-    width:1em;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-}
-.rate_widget > label:before {
-    content: '★ ';
+    float: right;
+    width: 1em;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
 }
