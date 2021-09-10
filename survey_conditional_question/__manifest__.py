@@ -4,17 +4,14 @@
 {
     "name": "Survey Conditional Question",
     "summary": "Display question depending on answer to previous one",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "development_status": "Beta",
     "website": "https://github.com/OCA/survey",
-    "author": "Le Filament, Vuente, Odoo Community Association (OCA)",
+    "author": "Le Filament, Vuente, Creu Blanca, Odoo Community Association (OCA)",
     "license": "GPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "survey",
-        "survey_backend_readability"
-    ],
+    "depends": ["survey"],
     "data": [
         "views/survey_question_views.xml",
         "templates/survey_extra_templates.xml",

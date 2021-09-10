@@ -1,39 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 Vuente
      Copyright 2020 Le Filament (<https://www.le-filament.com>)
      License GPL-3.0 or later (https://www.gnu.org/licenses/gpl). -->
 <odoo>
-    <data>
-        <!-- Hide the conditional questions by default -->
-        <template id="survey_conditional" inherit_id="survey.page">
-            <xpath expr="//div[hasclass('js_question-wrapper')]" position="before">
-                <script t-if="question.conditional">
-                  //if format in radio
-                   $("input[name='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.conditional_question_id.id"/>']").click(function() {
-                       if (this.value == <t t-esc="question.conditional_option_id.id"/>) {
-                           //Show the conditional question
-                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'block');
-                       } else {
-                           //Hide the question
-                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'none');
-                       }
-                   });
-                   // if format is select
-                   $("select[name='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.conditional_question_id.id"/>']").click(function() {
-                       if (this.value == <t t-esc="question.conditional_option_id.id"/>) {
-                           //Show the conditional question
-                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'block');
-                       } else {
-                           //Hide the question
-                           $("div[id='<t t-esc="survey.id"/>_<t t-esc="page.id"/>_<t t-esc="question.id"/>']").css('display', 'none');
-                       }
-                   });
+    <template id="survey_conditional" inherit_id="survey.question">
+        <xpath expr="//div[hasclass('js_question-wrapper')]" position="before">
+            <script t-if="question.conditional">
+                    //if format in radio
+                    $("input[name='<t t-esc="survey.id" />_<t
+                    t-esc="question.conditional_question_id.id"
+                />']").click(
+                        function() {
+                            <t
+                    t-if="question.conditional_question_id.question_type == 'simple_choice'"
+                >
+                                if (this.value == <t
+                        t-esc="question.conditional_option_id.id"
+                    />) {
+                                    //Show the conditional question
+                                    $("div[id='<t t-esc="survey.id" />_<t
+                        t-esc="question.id"
+                    />']").css('display', 'block');
+                                } else {
+                                   //Hide the question
+                                   $("div[id='<t t-esc="survey.id" />_<t
+                        t-esc="question.id"
+                    />']").css('display', 'none');
+                                }
+                            </t>
+                            <t t-else="">
+                                if (this.value &gt;= <t
+                        t-esc="question.conditional_minimum_value"
+                    /> &amp;&amp; this.value &lt;= <t
+                        t-esc="question.conditional_maximum_value"
+                    />) {
+                                    //Show the conditional question
+                                    $("div[id='<t t-esc="survey.id" />_<t
+                        t-esc="question.id"
+                    />']").css('display', 'block');
+                                } else {
+                                   //Hide the question
+                                   $("div[id='<t t-esc="survey.id" />_<t
+                        t-esc="question.id"
+                    />']").css('display', 'none');
+                                }
+                            </t>
+                        }
+                    );
+                    // if format is select
+                    <t
+                    t-if="question.conditional_question_id.question_type == 'simple_choice'"
+                >
+                        $("select[name='<t t-esc="survey.id" />_<t
+                        t-esc="question.conditional_question_id.id"
+                    />']").click(
+                            function() {
+                                if (this.value == <t
+                        t-esc="question.conditional_option_id.id"
+                    />) {
+                                    //Show the conditional question
+                                    $("div[id='<t t-esc="survey.id" />_<t
+                        t-esc="question.id"
+                    />']").css('display', 'block');
+                                } else {
+                                    //Hide the question
+                                    $("div[id='<t t-esc="survey.id" />_<t
+                        t-esc="question.id"
+                    />']").css('display', 'none');
+                                }
+                            }
+                        );
+                    </t>
                 </script>
-            </xpath>
-            <xpath expr="//div[hasclass('js_question-wrapper')]" position="attributes">
-                <attribute name="t-attf-style">#{question.conditional and 'display:none;' ''}</attribute>
-            </xpath>
-        </template>
+        </xpath>
+        <xpath expr="//div[hasclass('js_question-wrapper')]" position="attributes">
+            <attribute
+                name="t-attf-style"
+            >#{question.conditional and 'display:none;' ''}</attribute>
+        </xpath>
+    </template>
+    <!--
+    <template id="question" name="Question" inherit_id="survey.question">
 
-    </data>
+    </template>-->
 </odoo>
