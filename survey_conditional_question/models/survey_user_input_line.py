@@ -52,10 +52,14 @@ class SurveyUserInputLine(models.Model):
 
     @api.model
     def save_lines(self, user_input_id, question, post, answer_tag):
-        """ Inject value for 'hidden' in context to be picked up in write and
-        create methods """
+        """ Set anwers to hidden and wipe their contents """
         user_input = self.env["survey.user_input"].browse(user_input_id)
-        hidden = question in user_input.get_hidden_questions()
+        hidden = False
+        if question.is_conditional:
+            if question.page_id == question.triggering_question_id.page_id:
+                hidden = question._hidden_on_same_page(post)
+            else:
+                hidden = question in user_input.get_hidden_questions()
         self.update_hidden(user_input, question, hidden=hidden)
         if hidden:
             return True

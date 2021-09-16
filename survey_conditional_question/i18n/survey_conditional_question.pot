@@ -1,0 +1,113 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_conditional_question
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-22 07:26+0000\n"
+"PO-Revision-Date: 2021-09-22 07:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__triggering_answer_id
+msgid "Condition Option"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__triggering_question_id
+msgid "Condition Question"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__conditional_maximum_date
+msgid "Conditional Maximum Date"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__conditional_maximum_value
+msgid "Conditional Maximum Value"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__conditional_minimum_date
+msgid "Conditional Minimum Date"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__conditional_minimum_value
+msgid "Conditional Minimum Value"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__is_conditional
+msgid "Conditional Question"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_user_input_line__hidden
+msgid "Hidden"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_question__conditional_maximum_date
+msgid "If the date is higher, it will not be shown"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_question__conditional_minimum_date
+msgid "If the date is lower, it will not be shown"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_question__conditional_maximum_value
+msgid "If the value is higher, it will not be shown"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_question__conditional_minimum_value
+msgid "If the value is lower, it will not be shown"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_user_input_line__hidden
+msgid ""
+"Indicate whether this input's question was hidden on condition of earlier "
+"questions in the survey."
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__triggering_question_type
+msgid "Question Type"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model,name:survey_conditional_question.model_survey_question
+msgid "Survey Question"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model,name:survey_conditional_question.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model,name:survey_conditional_question.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_question__triggering_answer_id
+msgid "The option which determines if this question is shown"
+msgstr ""
+
+#. module: survey_conditional_question
+#: model:ir.model.fields,help:survey_conditional_question.field_survey_question__triggering_question_id
+msgid "The question which determines if this question is shown"
+msgstr ""

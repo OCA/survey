@@ -1,1 +1,3 @@
-from . import test_survey_conditional_questions
+from . import test_survey_conditional_questions_simple
+from . import test_survey_conditional_questions_multiple
+from . import test_survey_conditional_questions_number
