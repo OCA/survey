@@ -1,25 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record model="ir.ui.view" id="survey_question_form">
         <field name="name">Form view for survey conditional question</field>
         <field name="model">survey.question</field>
-        <field name="inherit_id" ref="survey.survey_question_form"/>
+        <field name="inherit_id" ref="survey.survey_question_form" />
         <field name="arch" type="xml">
             <field name="type" position="before">
-                <field name="survey_id" invisible="1" readonly="1" required="0"/>
-                <field name="page_id" invisible="1" required="0"/>
+                <field name="survey_id" invisible="1" readonly="1" required="0" />
+                <field name="page_id" invisible="1" required="0" />
             </field>
             <xpath expr="//group/field[@name='constr_mandatory']/.." position="after">
                 <group name="conditional" colspan="4" cols="2">
-                    <field name="is_conditional" attrs="{'readonly':[('survey_id', '=', False)]}"/>
-                    <field name="triggering_question_id"
-                           options="{'no_create': True}"
-                           domain="[('survey_id', '=', survey_id), ('page_id', '!=', page_id), ('type', 'in', ('simple_choice', 'multiple_choice'))]"
-                           attrs="{'required': [('is_conditional', '=', True)], 'invisible':[('is_conditional','!=',True)]}"/>
-                    <field name="triggering_answer_id"
-                           options="{'no_create': True}"
-                           domain="[('question_id', '=', triggering_question_id)]"
-                           attrs="{'required': [('is_conditional', '=', True)], 'invisible':[('is_conditional','!=',True)]}"/>
+                    <field
+                        name="is_conditional"
+                        attrs="{'readonly':[('survey_id', '=', False)]}"
+                    />
+                    <field
+                        name="triggering_question_id"
+                        options="{'no_create': True}"
+                        domain="[('survey_id', '=', survey_id), ('page_id', '!=', page_id), ('type', 'in', ('simple_choice', 'multiple_choice'))]"
+                        attrs="{'required': [('is_conditional', '=', True)], 'invisible':[('is_conditional','!=',True)]}"
+                    />
+                    <field
+                        name="triggering_answer_id"
+                        options="{'no_create': True}"
+                        domain="[('question_id', '=', triggering_question_id)]"
+                        attrs="{'required': [('is_conditional', '=', True)], 'invisible':[('is_conditional','!=',True)]}"
+                    />
                 </group>
             </xpath>
         </field>
@@ -27,13 +34,15 @@
     <record model="ir.ui.view" id="survey_page_form">
         <field name="name">Form view for survey page</field>
         <field name="model">survey.page</field>
-        <field name="inherit_id" ref="survey.survey_page_form"/>
+        <field name="inherit_id" ref="survey.survey_page_form" />
         <field name="arch" type="xml">
             <field name="question_ids" position="before">
-                <field name="survey_id" invisible="1" readonly="1" required="0"/>
+                <field name="survey_id" invisible="1" readonly="1" required="0" />
             </field>
             <field name="question_ids" position="attributes">
-                <attribute name="context">{'default_page_id': active_id, 'default_survey_id': survey_id}</attribute>
+                <attribute
+                    name="context"
+                >{'default_page_id': active_id, 'default_survey_id': survey_id}</attribute>
             </field>
         </field>
     </record>
