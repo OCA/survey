@@ -2,13 +2,18 @@
 <odoo>
     <template
         id="assets_frontend"
-        inherit_id="website.assets_frontend"
+        inherit_id="survey.survey_assets"
         name="Survey Conditional Assets"
     >
         <xpath expr="." position="inside">
             <script
                 type="text/javascript"
-                src="/survey_conditional_questions/static/src/js/survey_conditional_questions.js"
+                src="/survey_conditional_question/static/src/js/survey_conditional_questions.js"
+            />
+            <link
+                rel="stylesheet"
+                href="/survey_conditional_question/static/src/scss/survey_conditional_questions.scss"
+                type="text/scss"
             />
         </xpath>
     </template>
@@ -16,14 +21,30 @@
         <xpath expr="//form[hasclass('js_surveyform')]" position="attributes">
             <attribute
                 name="t-att-data-hidden"
-            >'/survey/hidden/%s/%s/0' % (slug(survey), token)</attribute>
+            >'/survey/hidden/%s/%s/0' % (survey.access_token, answer.token)</attribute>
+        </xpath>
+    </template>
+    <template id="question" inherit_id="survey.question">
+        <xpath expr="//div[hasclass('js_question-wrapper')]" position="attributes">
+            <attribute
+                name="t-attf-triggering_question_id"
+            >{{question.triggering_question_id.id}}</attribute>
+            <attribute
+                name="t-attf-triggering_answer_id"
+            >{{question.triggering_answer_id.id}}</attribute>
+            <attribute
+                name="t-attf-triggering_question_min"
+            >{{question.conditional_minimum_value}}</attribute>
+            <attribute
+                name="t-attf-triggering_question_max"
+            >{{question.conditional_maximum_value}}</attribute>
         </xpath>
     </template>
     <template id="survey_print" inherit_id="survey.survey_print">
         <xpath expr="//div[hasclass('js_surveyform')]" position="attributes">
             <attribute
                 name="t-att-data-hidden"
-            >'/survey/hidden/%s/%s/1' % (slug(survey), token)</attribute>
+            >'/survey/hidden/%s/%s/1' % (survey.access_token, answer.token)</attribute>
         </xpath>
     </template>
 </odoo>

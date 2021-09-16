@@ -15,7 +15,7 @@ class TestSurveyConditionalQuestions(TransactionCase):
         }
         conditional_question.write(conditional_values)
         user_input = self.env["survey.user_input"].create(
-            {"survey_id": survey.id, "partner_id": self.env.user.partner_id.id,}
+            {"survey_id": survey.id, "partner_id": self.env.user.partner_id.id}
         )
 
         # Conditional question is hidden when original question not answered
