@@ -1,55 +1,36 @@
 /* Copyright 2018 ACSONE SA/NV
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).*/
-odoo.define("survey_question_type_five_star.survey", function () {
+odoo.define("survey_question_type_five_star.survey", function (require) {
     "use strict";
-    $(document).ready(function () {
-        // Print Result case
-        var the_form = $(".js_surveyform");
-        var prefill_controller = the_form.attr("data-prefill");
-        if (!the_form.length) {
-            return $.Deferred();
-        }
-
-        function prefill() {
-            if (!_.isUndefined(prefill_controller)) {
-                var prefill_def = $.ajax(prefill_controller, {
-                    dataType: "json",
-                })
-                    .done(function (json_data) {
-                        _.each(json_data, function (value, key) {
-                            var input = the_form.find(
-                                ".form-control[name=" + key + "]"
-                            );
-                            if (!$(input).parent().hasClass("print_star_rate")) {
-                                return;
-                            }
-                            $(input)
-                                .parent()
-                                .find("label")
-                                .each(function (label_index) {
-                                    if (5 - label_index <= value) {
-                                        $(this).addClass("checked fa-star");
-                                        $(this).removeClass("fa-star-o");
-                                    }
-                                });
-                        });
-                    })
-                    .fail(function () {
-                        console.warn("[survey Question Five Star] Unable to prefill");
-                    });
-                return prefill_def;
+    var SurveyFormWidget = require("survey.form");
+    SurveyFormWidget.include({
+        events: _.extend({}, SurveyFormWidget.prototype.events, {
+            "click .rate > label": "_onClickFiveStarLabel",
+        }),
+        _onClickFiveStarLabel: function (event) {
+            if (this.readonly) {
+                return;
             }
-        }
-        prefill();
-        // Answer Case
-        $(".rate > label").click(function () {
-            var label_items = $(this).parent().find("label");
-            var value = label_items.length - $(this).index();
+            var target = event.target;
+            var label_items = $(target).parent().find("label");
+
+            var value = label_items.length - $(target).index();
             label_items.removeClass("checked fa-star");
             label_items.addClass("fa-star-o");
-            label_items.slice($(this).index()).addClass("checked fa-star");
-            label_items.slice($(this).index()).removeClass("fa-star-o");
-            $(this).parent().find("input").val(value);
-        });
+            label_items.slice($(target).index()).addClass("checked fa-star");
+            label_items.slice($(target).index()).removeClass("fa-star-o");
+            $(target).parent().find("input").val(value);
+            $(target).parent().find("input").trigger("change");
+        },
+        _prepareSubmitValues: function (formData, params) {
+            this._super.apply(this, arguments);
+            this.$("[data-question-type]").each(function () {
+                switch ($(this).data("questionType")) {
+                    case "star_rate":
+                        params[this.name] = this.value;
+                        break;
+                }
+            });
+        },
     });
 });
