@@ -13,8 +13,8 @@ class SurveySurvey(models.Model):
     @api.model
     def prepare_result(self, question, current_filters=None):
         """
-            Compute statistical data for questions by counting number of
-            vote per choice on basis of filter
+        Compute statistical data for questions by counting number of
+        vote per choice on basis of filter
         """
         current_filters = current_filters if current_filters else []
         if question.question_type == "star_rate":

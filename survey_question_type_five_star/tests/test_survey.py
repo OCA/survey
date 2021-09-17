@@ -74,7 +74,9 @@ class TestSurvey(common.SurveyCase):
             )
         )
         self.answer_tag1 = "{}_{}_{}".format(
-            self.survey1.id, self.page1.id, self.question1.id,
+            self.survey1.id,
+            self.page1.id,
+            self.question1.id,
         )
         self._type_match["star_rate"] = ("number", "value_number")
 
