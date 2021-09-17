@@ -1,5 +1,6 @@
 # Copyright 2018 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import collections
 
 from odoo import fields, models, tools
 
@@ -8,7 +9,29 @@ class SurveyQuestion(models.Model):
 
     _inherit = "survey.question"
 
-    question_type = fields.Selection(selection_add=[("star_rate", "Five stars rating")])
+    question_type = fields.Selection(
+        selection_add=[("star_rate", "Five Stars Rating")], ondelete={"foo": "set null"}
+    )
+
+    def _get_stats_summary_data(self, user_input_lines):
+        stats = super()._get_stats_summary_data(user_input_lines)
+        if self.question_type in ["star_rate"]:
+            stats.update(self._get_stats_summary_data_numerical(user_input_lines))
+            stats.update(
+                {
+                    "common_lines": collections.Counter(
+                        user_input_lines.filtered(lambda line: not line.skipped).mapped(
+                            "value_numerical_box"
+                        )
+                    ).most_common(5),
+                    "right_inputs_count": len(
+                        user_input_lines.filtered(
+                            lambda line: line.answer_is_correct
+                        ).mapped("user_input_id")
+                    ),
+                }
+            )
+        return stats
 
     def validate_star_rate(self, post, answer_tag):
         self.ensure_one()
