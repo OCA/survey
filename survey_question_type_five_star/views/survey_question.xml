@@ -10,11 +10,11 @@
             <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
                 <!-- Five start rating -->
                 <div attrs="{'invisible': [('question_type', '!=', 'star_rate')]}">
-                    <i class="fa fa-star fa-2x" />
-                    <i class="fa fa-star fa-2x" />
-                    <i class="fa fa-star fa-2x" />
-                    <i class="fa fa-star-o fa-2x" />
-                    <i class="fa fa-star-o fa-2x" />
+                    <i class="fa fa-star fa-2x" title="star1" />
+                    <i class="fa fa-star fa-2x" title="star2" />
+                    <i class="fa fa-star fa-2x" title="star3" />
+                    <i class="fa fa-star-o fa-2x" title="star4" />
+                    <i class="fa fa-star-o fa-2x" title="star5" />
                 </div>
             </xpath>
         </field>

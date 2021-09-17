@@ -5,47 +5,49 @@ from odoo import _, api, models
 from odoo.exceptions import ValidationError
 
 
-class SurveyUserInputLine(models.Model):
+class SurveyUserInput(models.Model):
+    _inherit = "survey.user_input"
 
-    _inherit = "survey.user_input_line"
-
-    @api.model
-    def save_line_star_rate(self, user_input_id, question, post, answer_tag):
-        vals = {
-            "user_input_id": user_input_id,
-            "question_id": question.id,
-            "survey_id": question.survey_id.id,
-            "skipped": False,
-        }
-        if answer_tag in post and post[answer_tag].strip():
-            value = float(post[answer_tag])
-            vals.update({"answer_type": "number", "value_number": value})
-        else:
-            vals.update({"answer_type": None, "skipped": True})
-        old_uil = self.search(
-            [
-                ("user_input_id", "=", user_input_id),
-                ("survey_id", "=", question.survey_id.id),
-                ("question_id", "=", question.id),
-            ]
+    def save_lines(self, question, answer, comment=None):
+        old_answers = self.env["survey.user_input.line"].search(
+            [("user_input_id", "=", self.id), ("question_id", "=", question.id)]
         )
-        if old_uil:
-            old_uil.write(vals)
-        else:
-            old_uil.create(vals)
-        return True
 
-    @api.constrains("question_id", "answer_type", "value_number")
+        if question.question_type in ["star_rate"]:
+            self._save_line_simple_answer(question, old_answers, answer)
+        else:
+            super(SurveyUserInput, self).save_lines(question, answer, comment=comment)
+
+    def _get_line_answer_values(self, question, answer, answer_type):
+        vals = super(SurveyUserInput, self)._get_line_answer_values(
+            question, answer, answer_type
+        )
+        if answer_type == "star_rate" and answer:
+            vals.update(
+                {"value_numerical_box": float(answer), "answer_type": "numerical_box"}
+            )
+            vals.pop("value_star_rate")
+        return vals
+
+
+class SurveyUserInputLine(models.Model):
+    _inherit = "survey.user_input.line"
+
+    @api.constrains("question_id", "answer_type", "value_numerical_box")
     def _check_star_rate_answer(self):
         for rec in self:
             if rec.question_id.question_type == "star_rate":
-                if rec.answer_type != "number":
+                if not rec.answer_type:
+                    continue
+                if rec.answer_type != "numerical_box":
                     raise ValidationError(
                         _("Five stars rate question must have numeric answer")
                     )
-                if rec.question_id.constr_mandatory and not (0 < rec.value_number <= 5):
+                if rec.question_id.constr_mandatory and not (
+                    0 < rec.value_numerical_box <= 5
+                ):
                     raise ValidationError(_("Answer is not in the right range"))
                 if not rec.question_id.constr_mandatory and not (
-                    0 <= rec.value_number <= 5
+                    0 <= rec.value_numerical_box <= 5
                 ):
                     raise ValidationError(_("Answer is not in the right range"))
