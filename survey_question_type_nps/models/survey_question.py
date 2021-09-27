@@ -1,5 +1,6 @@
 # Copyright 2018 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import collections
 
 from odoo import fields, models, tools
 
@@ -9,6 +10,30 @@ class SurveyQuestion(models.Model):
     _inherit = "survey.question"
 
     question_type = fields.Selection(selection_add=[("nps_rate", "NPS Rating")])
+
+    def _get_stats_summary_data(self, user_input_lines):
+        stats = super()._get_stats_summary_data(user_input_lines)
+        if self.question_type in ["nps_rate"]:
+            stats.update(self._get_stats_summary_data_numerical(user_input_lines))
+            all_nps = user_input_lines.filtered(lambda line: not line.skipped).mapped(
+                "value_nps"
+            )
+            stats.update(
+                {
+                    "common_lines": collections.Counter(
+                        user_input_lines.filtered(lambda line: not line.skipped).mapped(
+                            "value_numerical_box"
+                        )
+                    ).most_common(5),
+                    "right_inputs_count": len(
+                        user_input_lines.filtered(
+                            lambda line: line.answer_is_correct
+                        ).mapped("user_input_id")
+                    ),
+                    "average_nps": round(sum(all_nps) / len(all_nps), 2),
+                }
+            )
+        return stats
 
     def validate_nps_rate(self, post, answer_tag):
         self.ensure_one()
@@ -23,9 +48,9 @@ class SurveyQuestion(models.Model):
                 floatanswer = float(answer)
             except ValueError:
                 errors.update({answer_tag: "This is not a number"})
+                return errors
             # Answer is not in the right range
             with tools.ignore(Exception):
-                floatanswer = float(answer)
                 # 0 answer to mandatory question
                 if self.constr_mandatory:
                     if floatanswer == 0:
