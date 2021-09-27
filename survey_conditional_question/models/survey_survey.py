@@ -10,9 +10,9 @@ class SurveySurvey(models.Model):
 
     @api.model
     def next_page(self, user_input, page_id, go_back=False):
-        """ Skip pages that only have hidden questions on them,
+        """Skip pages that only have hidden questions on them,
         except if its the last page or the first page (in which case there
-        is a configuration error in the survey). """
+        is a configuration error in the survey)."""
         questions_to_hide = user_input.get_hidden_questions()
         res = super(SurveySurvey, self).next_page(user_input, page_id, go_back=go_back)
         page, index, last = res

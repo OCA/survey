@@ -21,11 +21,11 @@ class SurveyConditional(Survey):
         website=True,
     )
     def hidden(self, survey_token, answer_token, stored, **post):
-        """ Pass the lists of hidden questions and pages to be applied in the
+        """Pass the lists of hidden questions and pages to be applied in the
         Javascript.
         :param stored: indicate if we can rely on stored answers from a
         completed survey, or if we have to determine the hidden questions from
-        the answers filled in so far. """
+        the answers filled in so far."""
         ret = {"hidden_pages": [], "hidden_questions": []}
         access_data = self._get_access_data(
             survey_token, answer_token, ensure_token=True

@@ -10,7 +10,10 @@ class SurveyQuestion(models.Model):
 
     # Don't copy conditional fields. It could lead to references to a
     # different survey if a survey was copied.
-    is_conditional = fields.Boolean("Conditional Question", copy=False,)
+    is_conditional = fields.Boolean(
+        "Conditional Question",
+        copy=False,
+    )
     triggering_question_id = fields.Many2one(
         comodel_name="survey.question",
         string="Condition Question",
@@ -34,12 +37,14 @@ class SurveyQuestion(models.Model):
     )
 
     def _hidden_on_same_page(self, post):
-        """ Indicate that the question was hidden dynamically due to answers
+        """Indicate that the question was hidden dynamically due to answers
         to questions on the same page
         """
         self.ensure_one()
         qkey = "{}_{}_{}".format(
-            self.survey_id.id, self.page_id.id, self.triggering_question_id.id,
+            self.survey_id.id,
+            self.page_id.id,
+            self.triggering_question_id.id,
         )
         if qkey in post:
             # Compare the simple choice answer to the triggering answer

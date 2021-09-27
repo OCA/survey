@@ -17,9 +17,9 @@ class SurveyUserInputLine(models.Model):
 
     @api.model
     def update_hidden(self, user_input, question, hidden=True):
-        """ If hidden, delete all preexisting values and replace by a dummy
+        """If hidden, delete all preexisting values and replace by a dummy
         one marked as hidden. If not hidden, delete any preexisting value
-        marked as hidden. """
+        marked as hidden."""
         domain = [
             ("user_input_id", "=", user_input.id),
             ("survey_id", "=", question.survey_id.id),

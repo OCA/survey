@@ -10,8 +10,8 @@ class SurveyUserInput(models.Model):
 
     @api.model
     def get_hidden_questions(self):
-        """ Return the questions that should be hidden based on the current
-        user input """
+        """Return the questions that should be hidden based on the current
+        user input"""
         questions_to_hide = self.env["survey.question"]
         questions = self.survey_id.mapped("question_ids")
         for question in questions.filtered("is_conditional"):

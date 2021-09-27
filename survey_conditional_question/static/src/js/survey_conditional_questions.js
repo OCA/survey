@@ -1,4 +1,4 @@
-odoo.define("survey.conditional_question", function() {
+odoo.define("survey.conditional_question", function () {
     "use strict";
 
     var the_form = $(".js_surveyform");
@@ -9,14 +9,14 @@ odoo.define("survey.conditional_question", function() {
         // Hide the marked questions and pages
         var hidden_controller = the_form.attr("data-hidden");
         if (!_.isUndefined(hidden_controller)) {
-            $.ajax(hidden_controller, {dataType: "json"}).done(function(json_data) {
+            $.ajax(hidden_controller, {dataType: "json"}).done(function (json_data) {
                 // For each of these, hide the question label and the answer
-                _.each(json_data.hidden_questions, function(key) {
+                _.each(json_data.hidden_questions, function (key) {
                     the_form
                         .find(".js_question-wrapper[id=" + key + "]")
                         .addClass("hidden");
                 });
-                _.each(json_data.hidden_pages, function(key) {
+                _.each(json_data.hidden_pages, function (key) {
                     var div = the_form
                         .find("h1[data-oe-id=" + key + "][data-oe-model='survey.page']")
                         .parent();
@@ -40,7 +40,7 @@ odoo.define("survey.conditional_question", function() {
         if ($(target).is("select") || type === "radio") {
             the_form
                 .find('[triggering_question_id="' + question + '"]')
-                .each(function(index, item) {
+                .each(function (index, item) {
                     if (item.getAttribute("triggering_answer_id") === value) {
                         $(item).removeClass("hidden");
                     } else {
@@ -50,7 +50,7 @@ odoo.define("survey.conditional_question", function() {
         } else if (type === "checkbox") {
             the_form
                 .find('[triggering_question_id="' + question + '"]')
-                .each(function(index, item) {
+                .each(function (index, item) {
                     if (item.getAttribute("triggering_answer_id") === value) {
                         if (target.checked) {
                             $(item).removeClass("hidden");
@@ -63,7 +63,7 @@ odoo.define("survey.conditional_question", function() {
             // In this case, we are managing a number
             the_form
                 .find('[triggering_question_id="' + question + '"]')
-                .each(function(index, item) {
+                .each(function (index, item) {
                     var min_value = parseFloat(
                         item.getAttribute("triggering_question_min")
                     );
@@ -83,19 +83,19 @@ odoo.define("survey.conditional_question", function() {
     hide_conditional_questions();
     // Set onchange events on all simple and multiple choice answers
     if (the_form.is("form")) {
-        the_form.find("label > input[type='checkbox']").each(function(index, item) {
+        the_form.find("label > input[type='checkbox']").each(function (index, item) {
             $(item).change(_survey_conditional_on_change);
             _survey_conditional_on_change({target: item});
         });
-        the_form.find("label > input[type='radio']").each(function(index, item) {
+        the_form.find("label > input[type='radio']").each(function (index, item) {
             $(item).change(_survey_conditional_on_change);
             _survey_conditional_on_change({target: item});
         });
-        the_form.find("select").each(function(index, item) {
+        the_form.find("select").each(function (index, item) {
             $(item).change(_survey_conditional_on_change);
             _survey_conditional_on_change({target: item});
         });
-        the_form.find("input[type='number']").each(function(index, item) {
+        the_form.find("input[type='number']").each(function (index, item) {
             console.log(item.value);
             $(item).change(_survey_conditional_on_change);
             _survey_conditional_on_change({target: item});
