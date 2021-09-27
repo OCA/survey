@@ -5,7 +5,7 @@
         inherit_id="survey.survey_assets"
         name="Survey assets"
     >
-        <xpath expr="." position="inside">
+        <xpath expr="//link[last()]" position="after">
             <script
                 type="text/javascript"
                 src="/survey_question_type_nps/static/src/js/survey.js"
@@ -22,79 +22,98 @@
             />
         </xpath>
     </template>
-    <template id="question" inherit_id="survey.question">
-        <xpath expr="//div[@t-field='question.description']" position="inside">
+    <template id="question" inherit_id="survey.question_container">
+        <xpath expr="//t[@t-call='survey.question_text_box']/.." position="after">
             <t t-if="question.question_type == 'nps_rate'">
                 <t t-call="survey_question_type_nps.nps_rate" />
             </t>
         </xpath>
     </template>
-    <template id="result" inherit_id="survey.result">
+    <template id="result" inherit_id="survey.survey_page_statistics_question">
         <xpath
-            expr="//t[@t-call='survey.result_number']/parent::t/parent::t"
-            position="inside"
+            expr="//t[@t-call='survey.question_result_number_or_date']/parent::t"
+            position="after"
         >
             <t t-if="question.question_type == 'nps_rate'">
-                <t t-call="survey.result_number" />
+                <t t-call="survey.question_result_number_or_date" />
             </t>
         </xpath>
     </template>
-    <template id="survey_print" inherit_id="survey.survey_print">
-        <xpath expr="//div[@t-att-id='prefix']" position="inside">
+    <template id="result_user" inherit_id="survey.question_result_number_or_date">
+        <xpath expr="//a[@t-field='input_line.value_date']" position="after">
+            <a
+                t-if="question.question_type == 'nps_rate'"
+                t-att-href="input_line.user_input_id.get_print_url()"
+                t-field="input_line.value_numerical_box"
+            />
+        </xpath>
+        <xpath expr="//tbody/tr/td/span" position="after">
+            <span t-if="question.question_type == 'nps_rate'" t-esc="common_line[0]" />
+        </xpath>
+    </template>
+    <template id="survey_page_print" inherit_id="survey.survey_page_print">
+        <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
             <t t-if="question.question_type == 'nps_rate'">
-                <t t-call="survey_question_type_nps.print_nps_rate" />
+                <t t-call="survey_question_type_nps.nps_rate" />
             </t>
         </xpath>
     </template>
     <template id="nps_rate" name="NPS Rating">
         <div class="row">
             <div class="rate rate_widget">
-                <label for="num10">10</label>
-                <label for="num9">9</label>
-                <label for="num8">8</label>
-                <label for="num7">7</label>
-                <label for="num6">6</label>
-                <label for="num5">5</label>
-                <label for="num4">4</label>
-                <label for="num3">3</label>
-                <label for="num2">2</label>
-                <label for="num1">1</label>
+                <label
+                    for="num10"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 10 else ''}"
+                >10</label>
+                <label
+                    for="num9"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 9 else ''}"
+                >9</label>
+                <label
+                    for="num8"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 8 else ''}"
+                >8</label>
+                <label
+                    for="num7"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 7 else ''}"
+                >7</label>
+                <label
+                    for="num6"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 6 else ''}"
+                >6</label>
+                <label
+                    for="num5"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 5 else ''}"
+                >5</label>
+                <label
+                    for="num4"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 4 else ''}"
+                >4</label>
+                <label
+                    for="num3"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 3 else ''}"
+                >3</label>
+                <label
+                    for="num2"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 2 else ''}"
+                >2</label>
+                <label
+                    for="num1"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 1 else ''}"
+                >1</label>
                 <input
                     type="number"
                     step="any"
                     class="form-control"
-                    t-att-name="prefix"
+                    t-att-data-question-type="question.question_type"
+                    t-att-name="question.id"
                     hidden="hidden"
-                    value="0"
+                    t-att-value="answer_lines[0].value_numerical_box if answer_lines else None"
                 />
             </div>
         </div>
     </template>
-    <template id="print_nps_rate" name="NPS rating">
-        <div class="row">
-            <div class="print_nps_rate rate_widget">
-                <label for="num10">10</label>
-                <label for="num9">9</label>
-                <label for="num8">8</label>
-                <label for="num7">7</label>
-                <label for="num6">6</label>
-                <label for="num5">5</label>
-                <label for="num4">4</label>
-                <label for="num3">3</label>
-                <label for="num2">2</label>
-                <label for="num1">1</label>
-                <input
-                    type="number"
-                    step="any"
-                    class="form-control"
-                    t-att-name="prefix"
-                    hidden="hidden"
-                    value="0"
-                />
-            </div>
-        </div>
-    </template>
-    <template id="avg_nps" name="Average NPS" inherit_id="survey.result_number">
+    <!-- <template id="avg_nps" name="Average NPS" inherit_id="survey.result_number">
         <xpath expr="//span[@class='float-right mt8']" position="inside">
             <t t-if="'average_nps' in number_result">
                 <span class="badge badge-secondary only_left_radius">NPS</span>
@@ -104,5 +123,12 @@
                 />
             </t>
         </xpath>
+    </template> comprovar -->
+    <template id="avg_nps" inherit_id="survey.survey_page_statistics_question">
+        <div class="d-flex align-items-start mb-2">
+            <span class="badge badge-info ml-1"><span
+                    t-esc="question_data['average_nps']"
+                /> NPS Average</span>
+        </div>
     </template>
 </odoo>
