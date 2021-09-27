@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-29 08:27+0000\n"
-"PO-Revision-Date: 2021-09-29 08:27+0000\n"
+"POT-Creation-Date: 2021-09-29 08:25+0000\n"
+"PO-Revision-Date: 2021-09-29 08:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_user_input__display_name
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_user_input_line__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_user_input_line__hidden
@@ -69,40 +69,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_user_input____last_update
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_user_input_line____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model.fields,help:survey_conditional_question.field_survey_question__triggering_question_id
 msgid ""
 "Question containing the triggering answer to display the current question."
 msgstr ""
-"Pregunta que contiene la respuesta desencadenante para mostrar la pregunta "
-"actual."
 
 #. module: survey_conditional_question
 #: model:ir.model,name:survey_conditional_question.model_survey_survey
 msgid "Survey"
-msgstr "Encuesta"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model,name:survey_conditional_question.model_survey_question
 msgid "Survey Question"
-msgstr "Pregunta de la encuesta"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model,name:survey_conditional_question.model_survey_user_input
 msgid "Survey User Input"
-msgstr "Entrada de usuario de la encuesta"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model,name:survey_conditional_question.model_survey_user_input_line
 msgid "Survey User Input Line"
-msgstr "Línea de entrada de usuario de la encuesta"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__triggering_question_id
 msgid "Triggering Question"
-msgstr "Pregunta desencadenante"
+msgstr ""
 
 #. module: survey_conditional_question
 #: model:ir.model.fields,field_description:survey_conditional_question.field_survey_question__triggering_question_type

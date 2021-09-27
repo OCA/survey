@@ -6,7 +6,7 @@ from odoo import api, fields, models
 
 
 class SurveyUserInputLine(models.Model):
-    _inherit = "survey.user_input_line"
+    _inherit = "survey.user_input.line"
 
     hidden = fields.Boolean(
         help=(
@@ -52,7 +52,7 @@ class SurveyUserInputLine(models.Model):
 
     @api.model
     def save_lines(self, user_input_id, question, post, answer_tag):
-        """ Set anwers to hidden and wipe their contents """
+        """Set anwers to hidden and wipe their contents"""
         user_input = self.env["survey.user_input"].browse(user_input_id)
         hidden = False
         if question.is_conditional:

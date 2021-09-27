@@ -7,27 +7,15 @@ from odoo import fields, models
 
 class SurveyQuestion(models.Model):
     _inherit = "survey.question"
-
-    # Don't copy conditional fields. It could lead to references to a
-    # different survey if a survey was copied.
-    is_conditional = fields.Boolean(
-        "Conditional Question",
-        copy=False,
-    )
     triggering_question_id = fields.Many2one(
-        comodel_name="survey.question",
-        string="Condition Question",
-        help="The question which determines if this question is shown",
-        copy=False,
-    )
-    triggering_answer_id = fields.Many2one(
-        comodel_name="survey.label",
-        string="Condition Option",
-        help="The option which determines if this question is shown",
-        copy=False,
+        domain="""[('survey_id', '=', survey_id),
+                         ('question_type', '!=', False), '|',
+                     ('sequence', '<', sequence),
+                     '&', ('sequence', '=', sequence), ('id', '<', id)]"""
     )
     triggering_question_type = fields.Selection(
-        related="triggering_question_id.question_type"
+        related="triggering_question_id.question_type",
+        string="Triggering question type",
     )
     conditional_minimum_value = fields.Float(
         help="If the value is lower, it will not be shown", copy=False
@@ -55,24 +43,3 @@ class SurveyQuestion(models.Model):
             # but not this question's triggering answer
             return True
         return False
-
-    def validate_question(self, post, answer_tag):
-        """ Skip validation of hidden questions """
-        self.ensure_one()
-        if self.is_conditional and self.triggering_question_id:
-            if self.page_id == self.triggering_question_id.page_id:
-                if self._hidden_on_same_page(post):
-                    return {}
-            else:
-                # In case the dependent question was on a previous page
-                input_answer_ids = self.env["survey.user_input_line"].search(
-                    [
-                        ("user_input_id.token", "=", post.get("token")),
-                        ("question_id", "=", self.triggering_question_id.id),
-                    ]
-                )
-                if self.triggering_answer_id not in input_answer_ids.mapped(
-                    "value_suggested"
-                ):
-                    return {}
-        return super(SurveyQuestion, self).validate_question(post, answer_tag)
