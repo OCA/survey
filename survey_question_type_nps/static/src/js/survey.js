@@ -5,7 +5,7 @@ odoo.define("survey_question_type_nps", function (require) {
     var SurveyFormWidget = require("survey.form");
     SurveyFormWidget.include({
         events: _.extend({}, SurveyFormWidget.prototype.events, {
-            "click .rate > label": "_onClickNPSLabel",
+            "click .nps_rate > label": "_onClickNPSLabel",
         }),
         _onClickNPSLabel: function (event) {
             if (this.readonly) {
@@ -16,7 +16,11 @@ odoo.define("survey_question_type_nps", function (require) {
             var value = label_items.length - $(target).index();
             label_items.removeClass("checked");
             $(target).addClass("checked");
-            $(target).parent().find("input").val(value);
+            var $input = $(target).parent().find("input");
+            $input.val(value);
+            // We will trigger the change in order to make it compatible with conditional.
+            // If it is not installed, it has no effects
+            $input.trigger("change");
         },
         _prepareSubmitValues: function (formData, params) {
             this._super.apply(this, arguments);
