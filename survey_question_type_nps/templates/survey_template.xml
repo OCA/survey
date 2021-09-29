@@ -60,7 +60,7 @@
     </template>
     <template id="nps_rate" name="NPS Rating">
         <div class="row">
-            <div class="rate rate_widget">
+            <div class="nps_rate nps_rate_widget">
                 <label
                     for="num10"
                     t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 10 else ''}"
@@ -113,22 +113,13 @@
             </div>
         </div>
     </template>
-    <!-- <template id="avg_nps" name="Average NPS" inherit_id="survey.result_number">
-        <xpath expr="//span[@class='float-right mt8']" position="inside">
-            <t t-if="'average_nps' in number_result">
-                <span class="badge badge-secondary only_left_radius">NPS</span>
-                <span
-                    class="badge badge-light only_right_radius"
-                    t-esc="number_result['average_nps']"
-                />
-            </t>
-        </xpath>
-    </template> comprovar -->
     <template id="avg_nps" inherit_id="survey.survey_page_statistics_question">
-        <div class="d-flex align-items-start mb-2">
-            <span class="badge badge-info ml-1"><span
-                    t-esc="question_data['average_nps']"
-                /> NPS Average</span>
+        <div class="d-flex align-items-start mb-2" position="inside">
+            <t t-if="'average_nps' in question_data">
+                <span class="badge badge-info ml-1"><span
+                        t-esc="question_data['average_nps']"
+                    /> NPS Average</span>
+            </t>
         </div>
     </template>
 </odoo>
