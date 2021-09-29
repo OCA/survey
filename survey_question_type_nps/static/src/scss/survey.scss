@@ -1,24 +1,21 @@
 /* Copyright 2018 ACSONE SA/NV
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
 
-.rate_widget {
-    float: left;
-    height: 64px;
-    padding: 0 10px;
-    text-align: center;
+.nps_rate_widget {
+    margin-left: 10px;
 }
-.rate_widget > input {
+.nps_rate_widget > input {
     display: none;
 }
-.rate_widget > label {
-    font: 25px Arial, sans-serif;
+.nps_rate_widget > label {
+    font: 20px Arial, sans-serif;
 
     width: 2em;
     height: 2em;
     box-sizing: initial;
 
     background: $nps-widget-background-color;
-    border: 0.1em solid $nps-widget-color;
+    border: 0.15em solid $nps-widget-color;
     color: $nps-widget-color;
     text-align: center;
     border-radius: 50%;
@@ -29,9 +26,26 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
     float: right;
     cursor: pointer;
     margin: 10px;
+
+    @include media-breakpoint-down(md) {
+        font: 16px Arial, sans-serif;
+
+        width: 1.5em;
+        height: 1.5em;
+        box-sizing: initial;
+        text-align: center;
+        border-radius: 50%;
+
+        line-height: 1.5em;
+        box-sizing: content-box;
+
+        float: right;
+        cursor: pointer;
+        margin: 3px;
+    }
 }
-.rate > label:hover,
-.rate_widget .checked {
+.nps_rate > label:hover,
+.nps_rate_widget .checked {
     color: $nps-widget-background-color;
     background: $nps-widget-color;
 }
