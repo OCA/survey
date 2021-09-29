@@ -12,7 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
 .rate > label:hover,
 .rate > label:hover ~ label,
 .rate .checked {
-    color: #deb217;
+    color: $star-widget-color;
 }
 .rate_widget > label {
     float: right;
@@ -20,4 +20,5 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
     white-space: nowrap;
     cursor: pointer;
     font-size: 30px;
+    color: $nps-widget-color;
 }

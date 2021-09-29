@@ -11,6 +11,11 @@
                 src="/survey_question_type_five_star/static/src/js/survey.js"
             />
             <link
+                href="/survey_question_type_five_star/static/src/scss/parameters.scss"
+                rel="stylesheet"
+                type="text/scss"
+            />
+            <link
                 href="/survey_question_type_five_star/static/src/scss/survey.scss"
                 rel="stylesheet"
                 type="text/scss"
