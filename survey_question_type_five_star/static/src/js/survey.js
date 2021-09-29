@@ -15,12 +15,16 @@ odoo.define("survey_question_type_five_star.survey", function (require) {
             var label_items = $(target).parent().find("label");
 
             var value = label_items.length - $(target).index();
-            label_items.removeClass("checked fa-star");
-            label_items.addClass("fa-star-o");
-            label_items.slice($(target).index()).addClass("checked fa-star");
-            label_items.slice($(target).index()).removeClass("fa-star-o");
-            $(target).parent().find("input").val(value);
-            $(target).parent().find("input").trigger("change");
+            label_items.removeClass("checked fa-star").addClass("fa-star-o");
+            label_items
+                .slice($(target).index())
+                .addClass("checked fa-star")
+                .removeClass("fa-star-o");
+            var $input = $(target).parent().find("input");
+            $input.val(value);
+            // We will trigger the change in order to make it compatible with conditional.
+            // If it is not installed, it has no effects
+            $input.trigger("change");
         },
         _prepareSubmitValues: function (formData, params) {
             this._super.apply(this, arguments);
