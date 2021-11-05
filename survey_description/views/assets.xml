@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="assets_backend" inherit_id="survey.assets_backend">
+            <xpath expr="//script" position="after">
+                <script
+                    type="text/javascript"
+                    src="/survey_description/static/src/js/fields_form_page_description.js"
+                />
+            </xpath>
+        </template>
+    </data>
+</odoo>
