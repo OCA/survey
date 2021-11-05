@@ -7,24 +7,16 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_form" />
         <field name="arch" type="xml">
-            <xpath expr="//notebook/page[1]" position="after">
-                <page string="Description">
-                    <field name="description" />
-                </page>
-                <page string="Thank you">
+            <xpath expr="//notebook/page[2]" position="after">
+                <page string="Thank you message">
                     <field name="thank_you_message" />
                 </page>
             </xpath>
-        </field>
-    </record>
-    <record model="ir.ui.view" id="survey_page_desc_form">
-        <field name="name">Add description</field>
-        <field name="model">survey.page</field>
-        <field name="inherit_id" ref="survey.survey_page_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('oe_title')]" position="inside">
-                <label for="description" string="Description" />
-                <field name="description" />
+            <xpath
+                expr="//field[@name='question_and_page_ids']/tree/field[@name='title']"
+                position="attributes"
+            >
+                <attribute name="widget">survey_description_page</attribute>
             </xpath>
         </field>
     </record>
@@ -38,6 +30,12 @@
                     <field name="description" />
                 </page>
             </xpath>
+            <field name="title" position="after">
+                <field
+                    name="description"
+                    attrs="{'invisible': [('is_page', '=', False)]}"
+                />
+            </field>
         </field>
     </record>
 </odoo>
