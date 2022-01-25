@@ -4,8 +4,9 @@ from datetime import datetime
 
 from freezegun import freeze_time
 
-from odoo.tests.common import SavepointCase, Form
 from odoo.exceptions import UserError
+from odoo.tests.common import Form, SavepointCase
+
 from ...resource_booking.tests.common import create_test_data
 
 
