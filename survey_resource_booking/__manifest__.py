@@ -3,10 +3,10 @@
 {
     "name": "Link between resource bookings and surveys",
     "summary": "Access survey answers from resource booking",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "development_status": "Beta",
     "category": "Appointments",
-    "website": "https://github.com/OCA/e-commerce",
+    "website": "https://github.com/OCA/survey",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "maintainers": ["Yajo"],
     "license": "AGPL-3",
