@@ -2,9 +2,9 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import _, fields, models
+from odoo.exceptions import UserError
 from odoo.tests.common import Form
 from odoo.tools.mail import email_split
-from odoo.exceptions import UserError
 
 
 class ResourceBooking(models.Model):
@@ -23,9 +23,7 @@ class ResourceBooking(models.Model):
             # Skip unconfirmed bookings, or finished user inputs
             if one.state != "confirmed":
                 raise UserError(
-                    _(
-                        "Cannot invite to fill survey because booking not confirmed: %s"
-                    )
+                    _("Cannot invite to fill survey because booking not confirmed: %s")
                     % one.display_name
                 )
             if one.survey_user_input_id.state == "done":
@@ -50,9 +48,7 @@ class ResourceBooking(models.Model):
                         )
                         % one.display_name
                     )
-                one.survey_user_input_id = self.env[
-                    "survey.user_input"
-                ].create(
+                one.survey_user_input_id = self.env["survey.user_input"].create(
                     {
                         "partner_id": one.partner_id.id,
                         "survey_id": one.type_id.survey_id.id,
