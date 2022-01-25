@@ -7,8 +7,8 @@ class ResourceBookingType(models.Model):
     _inherit = "resource.booking.type"
 
     survey_id = fields.Many2one(
-        "survey.survey",
+        comodel_name="survey.survey",
         string="Survey",
-        track_visibility="onchange",
+        tracking=True,
         help="You will be able to invite requesters to respond to this survey.",
     )

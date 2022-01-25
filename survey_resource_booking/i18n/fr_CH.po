@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* survey_resource_booking
+# 	* survey_resource_booking
 #
 msgid ""
 msgstr ""
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:26
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
 #, python-format
 msgid "Cannot invite to fill survey because booking not confirmed: %s"
 msgstr ""
@@ -25,9 +25,11 @@ msgstr ""
 "confirmée: %s"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:47
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
 #, python-format
-msgid "Cannot send survey invitation for this booking because the requester has no email: %s"
+msgid ""
+"Cannot send survey invitation for this booking because the requester has no "
+"email: %s"
 msgstr ""
 "Impossible d'inviter à remplir le sondage pour cette réservation car le "
 "demandeur n'a pas d’adresse e-mail: %s"
@@ -58,14 +60,14 @@ msgid "Survey user input"
 msgstr "Réponse au sondage"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:33
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
 #, python-format
 msgid "This booking's requester was already invited to fill survey: %s"
 msgstr ""
 "Le demandeur de la réservation était déjà invité à remplir le sondage : %s"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:42
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
 #, python-format
 msgid "This booking's type has no survey defined: %s"
 msgstr "Ce type de réservation n'a pas de sondage définit: %s"

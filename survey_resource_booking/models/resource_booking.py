@@ -11,9 +11,9 @@ class ResourceBooking(models.Model):
     _inherit = "resource.booking"
 
     survey_user_input_id = fields.Many2one(
-        "survey.user_input",
+        comodel_name="survey.user_input",
         string="Survey user input",
-        track_visibility="onchange",
+        tracking=True,
         help="User responses to survey, as specified in the resource booking type.",
     )
 
@@ -52,13 +52,13 @@ class ResourceBooking(models.Model):
                     {
                         "partner_id": one.partner_id.id,
                         "survey_id": one.type_id.survey_id.id,
-                        "type": "link",
+                        "input_type": "link",
                     }
                 )
             # Enqueue survey invitation
-            action = one.survey_user_input_id.action_survey_resend()
+            action = one.survey_user_input_id.action_resend()
             wizard_f = Form(
                 self.env[action["res_model"]].with_context(action["context"]),
             )
             wizard = wizard_f.save()
-            wizard.send_mail()
+            wizard.action_invite()
