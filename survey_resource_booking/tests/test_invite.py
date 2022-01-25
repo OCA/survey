@@ -16,32 +16,13 @@ class SurveyInvitationCase(SavepointCase):
     def setUpClass(cls):
         super().setUpClass()
         create_test_data(cls)
-        cls.open_stage = cls.env["survey.stage"].create({"name": "open"})
-        cls.survey = cls.env["survey.survey"].create(
-            {
-                "title": "survey 1",
-                "stage_id": cls.open_stage.id,
-                "page_ids": [
-                    (
-                        0,
-                        0,
-                        {
-                            "title": "page 1",
-                            "question_ids": [
-                                (
-                                    0,
-                                    0,
-                                    {
-                                        "question": "are you a robot?",
-                                        "type": "textbox",
-                                    },
-                                )
-                            ],
-                        },
-                    )
-                ],
-            }
-        )
+        survey_form = Form(cls.env["survey.survey"])
+        survey_form.title = "survey 1"
+        survey_form.state = "open"
+        with survey_form.question_and_page_ids.new() as question_form:
+            question_form.title = "are you a robot?"
+            question_form.question_type = "textbox"
+        cls.survey = survey_form.save()
         cls.rbt.survey_id = cls.survey
 
     def test_new_booking_survey_invitation(self):
