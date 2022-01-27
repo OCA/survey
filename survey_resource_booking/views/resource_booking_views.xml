@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<data>
+    <record id="resource_booking_form" model="ir.ui.view">
+        <field name="name">resource.booking.view.form.inherit</field>
+        <field name="model">resource.booking</field>
+        <field name="groups_id" eval="[(4, ref('survey.group_survey_user'), 0)]" />
+        <field name="inherit_id" ref="resource_booking.resource_booking_form" />
+        <field name="arch" type="xml">
+            <group name="booking" position="inside">
+                <field name="survey_user_input_id" />
+            </group>
+        </field>
+    </record>
+    <record id="action_invite_survey" model="ir.actions.server">
+        <field name="name">Invite to fill survey</field>
+        <field name="model_id" ref="resource_booking.model_resource_booking" />
+        <field name="binding_model_id" ref="resource_booking.model_resource_booking" />
+        <field name="state">code</field>
+        <field name="code">records.action_invite_survey()</field>
+    </record>
+</data>
