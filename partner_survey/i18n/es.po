@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-10 03:03+0000\n"
-"PO-Revision-Date: 2017-06-10 03:03+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2022-02-14 15:17+0000\n"
+"Last-Translator: Olga Marco Puértolas <olga.marco@creublanca.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
@@ -26,6 +27,10 @@ msgid ""
 "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
 "[('surveys_company_count', '&gt;', 1)]}\">Survey</span>"
 msgstr ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_company_count', "
+"'&lt;', 2)]}\">Encuestas</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [("
+"'surveys_company_count', '&gt;', 1)]}\">Encuesta</span>"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
@@ -35,29 +40,34 @@ msgid ""
 "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
 "[('surveys_count', '&gt;', 1)]}\">Survey</span>"
 msgstr ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', '&lt;', "
+"2)]}\">Encuestas</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [("
+"'surveys_count', '&gt;', 1)]}\">Encuesta</span>"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_count
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_count
 msgid "Company Surveys Count"
-msgstr ""
+msgstr "Recuento de encuestas de empresas"
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_invisible
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_invisible
 msgid "Hide surveys link on partner contact if needed"
 msgstr ""
+"Oculte el enlace de las encuestas en el contacto con el socio si es necesario"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_invisible
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_invisible
 msgid "Hide surveys link on partner if needed"
-msgstr ""
+msgstr "Oculte el enlace de las encuestas en el socio si es necesario"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
@@ -80,7 +90,7 @@ msgstr "Encuestas"
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_count
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_count
 msgid "Surveys Count"
-msgstr ""
+msgstr "Recuento de encuestas"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_lines
