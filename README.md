@@ -1,46 +1,37 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/200/13.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-survey-200)
-[![Build Status](https://travis-ci.org/OCA/survey.svg?branch=13.0)](https://travis-ci.org/OCA/survey)
-[![Coverage Status](https://coveralls.io/repos/OCA/survey/badge.svg?branch=13.0)](https://coveralls.io/r/OCA/survey?branch=13.0)
-[![Code Climate](https://codeclimate.com/github/OCA/survey/badges/gpa.svg)](https://codeclimate.com/github/OCA/survey)
 
-OCA Survey management addons for Odoo
-=====================================
+[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=13.0)
+[![Pre-commit Status](https://github.com/OCA/survey/actions/workflows/pre-commit.yml/badge.svg?branch=13.0)](https://github.com/OCA/survey/actions/workflows/pre-commit.yml?query=branch%3A13.0)
+[![Build Status](https://github.com/OCA/survey/actions/workflows/test.yml/badge.svg?branch=13.0)](https://github.com/OCA/survey/actions/workflows/test.yml?query=branch%3A13.0)
+[![codecov](https://codecov.io/gh/OCA/survey/branch/13.0/graph/badge.svg)](https://codecov.io/gh/OCA/survey)
+[![Translation Status](https://translation.odoo-community.org/widgets/survey-13-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/survey-13-0/?utm_source=widget)
+
+<!-- /!\ do not modify above this line -->
+
+# OCA Survey management addons for Odoo
 
 This project aims to deal with modules related to survey management.
 
+<!-- /!\ do not modify below this line -->
 
-What is survey
---------------
+<!-- prettier-ignore-start -->
 
-Odoo includes basic functionality with the survey module.
-Historic features have been removed from the official code gradually as major versions.
-This repository aims to consolidate community efforts around extended features.
+[//]: # (addons)
 
-In the field of FOSS, if you do not need to interact directly with other Odoo features, you should see alternatives like https://www.limesurvey.org
+This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
 
+[//]: # (end addons)
 
-Roadmap
--------
+<!-- prettier-ignore-end -->
 
-- add new type of answer. For example "percent" type : one respondent is asked how to spread his activity as a percentage from a preconfigured list pending precise values. Workaround : If no requirement for precise value, it can be configured ranges of values in a list of choices.
-- allow adding comment on each item for multiple choice answer
-- format "date time" type to set date and time or only date or only time
-- allow subquestions. Very useful with conditional_questions to loop on a page or series of questions
-- allow editing or inserting Odoo blocks in website survey inside of the question-answer group and not only around or after.  For example, one respondent is asked to vote about pictures selection.
-- offer choice to the survey's administrator to display information from an existing object (for example : res.partner)
-- extend the existing notation to finely evaluate or profile by answering and generate actions (for example : generate sale order and sale order lines depending on respondent answers)
+## Licenses
 
+This repository is licensed under [AGPL-3.0](LICENSE).
 
-Links
------
+However, each module can have a totally different license, as long as they adhere to Odoo Community Association (OCA)
+policy. Consult each module's `__manifest__.py` file, which contains a `license` key
+that explains its license.
 
-https://github.com/ingadhoc/odoo-addons/tree/13.0/survey_conditional_questions
-
-https://github.com/csrocha/openerp-survey
-
-
-
-
-Translation Status
-------------------
-[![Transifex Status](https://www.transifex.com/projects/p/OCA-survey-13-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-survey-13-0)
+----
+OCA, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit
+organization whose mission is to support the collaborative development of Odoo features
+and promote its widespread use.
