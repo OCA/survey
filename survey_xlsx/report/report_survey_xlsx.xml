@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report
+        id="report_survey_xlsx"
+        model="survey.survey"
+        string="XLSX Report Survey"
+        report_type="xlsx"
+        name="survey.xlsx"
+        file="survey"
+        attachment_use="False"
+    />
+</odoo>
