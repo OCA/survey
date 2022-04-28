@@ -1,14 +1,15 @@
 
 [![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=14.0)
-[![Build Status](https://travis-ci.com/OCA/survey.svg?branch=14.0)](https://travis-ci.com/OCA/survey)
+[![Pre-commit Status](https://github.com/OCA/survey/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/OCA/survey/actions/workflows/pre-commit.yml?query=branch%3A14.0)
+[![Build Status](https://github.com/OCA/survey/actions/workflows/test.yml/badge.svg?branch=14.0)](https://github.com/OCA/survey/actions/workflows/test.yml?query=branch%3A14.0)
 [![codecov](https://codecov.io/gh/OCA/survey/branch/14.0/graph/badge.svg)](https://codecov.io/gh/OCA/survey)
 [![Translation Status](https://translation.odoo-community.org/widgets/survey-14-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/survey-14-0/?utm_source=widget)
 
 <!-- /!\ do not modify above this line -->
 
-# survey
+# OCA Survey Management Addons for Odoo
 
-TODO: add repo description.
+This project aims to deal with modules related to survey management.
 
 <!-- /!\ do not modify below this line -->
 
