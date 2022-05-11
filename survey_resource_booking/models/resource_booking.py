@@ -48,12 +48,8 @@ class ResourceBooking(models.Model):
                         )
                         % one.display_name
                     )
-                one.survey_user_input_id = self.env["survey.user_input"].create(
-                    {
-                        "partner_id": one.partner_id.id,
-                        "survey_id": one.type_id.survey_id.id,
-                        "input_type": "link",
-                    }
+                one.survey_user_input_id = one.type_id.survey_id._create_answer(
+                    partner=one.partner_id, check_attempts=False, input_type="link"
                 )
             # Enqueue survey invitation
             action = one.survey_user_input_id.action_resend()
