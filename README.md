@@ -16,7 +16,11 @@ TODO: add repo description.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[survey_question_type_five_star](survey_question_type_five_star/) | 14.0.1.0.0 |  | This module add five stars rating as question type for survey page
 
 [//]: # (end addons)
 
