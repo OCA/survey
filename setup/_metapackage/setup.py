@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo13-addon-partner_survey',
+        'odoo13-addon-survey_question_type_five_star',
         'odoo13-addon-survey_resource_booking',
         'odoo13-addon-survey_xlsx',
     ],
