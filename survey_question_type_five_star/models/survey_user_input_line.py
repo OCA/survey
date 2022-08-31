@@ -16,12 +16,10 @@ class SurveyUserInput(models.Model):
         if question.question_type in ["star_rate"]:
             self._save_line_simple_answer(question, old_answers, answer)
         else:
-            super(SurveyUserInput, self).save_lines(question, answer, comment=comment)
+            return super().save_lines(question, answer, comment=comment)
 
     def _get_line_answer_values(self, question, answer, answer_type):
-        vals = super(SurveyUserInput, self)._get_line_answer_values(
-            question, answer, answer_type
-        )
+        vals = super()._get_line_answer_values(question, answer, answer_type)
         if answer_type == "star_rate" and answer:
             vals.update(
                 {"value_numerical_box": float(answer), "answer_type": "numerical_box"}

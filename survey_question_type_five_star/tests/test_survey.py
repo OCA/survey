@@ -8,8 +8,8 @@ from odoo.addons.survey.tests import common
 
 class TestSurvey(common.SurveyCase):
     def setUp(self):
-        super(TestSurvey, self).setUp()
-        User = self.env["res.users"].with_context({"no_reset_password": True})
+        super().setUp()
+        User = self.env["res.users"].with_context(no_reset_password=True)
         (group_survey_user, group_employee) = (
             self.ref("survey.group_survey_user"),
             self.ref("base.group_user"),
