@@ -1,5 +1,5 @@
-Usage
-=====
- .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-   :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/{200}/{10.0}
+To use this module, you need to:
+
+#. Go to Surveys, create a new survey, add a question of type "Five Stars Rating"
+
+.. image:: /OCA/survey/survey_question_type_five_star/static/description/five_star_type.png

@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template
-        id="assets_frontend"
-        inherit_id="survey.survey_assets"
-        name="Survey assets"
-    >
-        <xpath expr="//link[last()]" position="after">
-            <script
-                type="text/javascript"
-                src="/survey_question_type_five_star/static/src/js/survey.js"
-            />
-            <link
-                href="/survey_question_type_five_star/static/src/scss/parameters.scss"
-                rel="stylesheet"
-                type="text/scss"
-            />
-            <link
-                href="/survey_question_type_five_star/static/src/scss/survey.scss"
-                rel="stylesheet"
-                type="text/scss"
-            />
-        </xpath>
-    </template>
     <template id="question" inherit_id="survey.question_container">
         <xpath expr="//t[@t-call='survey.question_text_box']/.." position="after">
             <t t-if="question.question_type == 'star_rate'">
@@ -31,15 +9,18 @@
     </template>
     <template id="result" inherit_id="survey.survey_page_statistics_question">
         <xpath
-            expr="//t[@t-call='survey.question_result_number_or_date']/parent::t"
+            expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']"
             position="after"
         >
             <t t-if="question.question_type == 'star_rate'">
-                <t t-call="survey.question_result_number_or_date" />
+                <t t-call="survey.question_result_number_or_date_or_datetime" />
             </t>
         </xpath>
     </template>
-    <template id="result_user" inherit_id="survey.question_result_number_or_date">
+    <template
+        id="result_user"
+        inherit_id="survey.question_result_number_or_date_or_datetime"
+    >
         <xpath expr="//a[@t-field='input_line.value_date']" position="after">
             <a
                 t-if="question.question_type == 'star_rate'"
