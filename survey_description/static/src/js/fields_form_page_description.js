@@ -1,4 +1,4 @@
-odoo.define("survey.fields_form", function(require) {
+odoo.define("survey.fields_form", function (require) {
     "use strict";
 
     var FieldRegistry = require("web.field_registry");
@@ -13,7 +13,7 @@ odoo.define("survey.fields_form", function(require) {
          * @private
          * @override
          */
-        _renderEdit: function() {
+        _renderEdit: function () {
             var def = this._super.apply(this, arguments);
             this.$el.addClass("col");
             var $inputGroup = $('<div class="input-group">');
@@ -38,7 +38,7 @@ odoo.define("survey.fields_form", function(require) {
         /**
          * @private
          */
-        _onClickEdit: function(ev) {
+        _onClickEdit: function (ev) {
             ev.stopPropagation();
             var id = this.record.id;
             if (id) {
