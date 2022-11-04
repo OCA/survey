@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="assets_frontend"
+        inherit_id="survey.survey_assets"
+        name="Survey Conditional Assets"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/survey_conditional_question/static/src/js/survey_conditional_questions.js"
+            />
+            <link
+                rel="stylesheet"
+                href="/survey_conditional_question/static/src/scss/survey_conditional_questions.scss"
+                type="text/scss"
+            />
+        </xpath>
+    </template>
+    <template id="survey_fill_form" inherit_id="survey.survey_fill_form">
+        <xpath expr="//form" position="attributes">
+            <attribute
+                name="t-att-data-no-answer-conditional-questions-by-question"
+            >json.dumps(no_answer_conditional_questions_by_question)</attribute>
+        </xpath>
+    </template>
+    <template id="question_container" inherit_id="survey.question_container">
+        <xpath expr="//t[@t-set='display_question']" position="before">
+            <t
+                t-if="question.is_conditional"
+                t-set="conditional_value"
+                t-value="question.id in no_answer_conditional_questions and answer.user_input_line_ids.filtered(lambda line: line.question_id == no_answer_conditional_questions[question.id][0]).value_numerical_box"
+            />
+        </xpath>
+        <xpath expr="//t[@t-set='display_question']" position="attributes">
+            <attribute
+                name="t-value"
+            >survey.questions_layout == 'page_per_question' or (survey.questions_layout == 'one_page' and not question.is_conditional) or (survey.questions_layout == 'page_per_section' and (not question.is_conditional or (question.id in no_answer_conditional_questions and conditional_value and no_answer_conditional_questions[question.id][1] &lt;= conditional_value and conditional_value &lt;= no_answer_conditional_questions[question.id][2] ) or  (question.id not in no_answer_conditional_questions and triggering_answer_by_question[question.id] in selected_answers)))</attribute>
+        </xpath>
+    </template>
+</odoo>

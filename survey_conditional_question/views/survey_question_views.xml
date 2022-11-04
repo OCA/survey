@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="survey_question_form">
+        <field name="name">Form view for survey conditional question</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <field name="question_type" position="before">
+                <field name="survey_id" invisible="1" readonly="1" required="0" />
+                <field name="page_id" invisible="1" required="0" />
+            </field>
+            <field name="triggering_question_id" position="after">
+                    <field name="triggering_question_type" invisible="1" />
+                    <field
+                    name="conditional_minimum_value"
+                    options="{'no_create_edit': True,}"
+                    attrs="{'invisible':['|', '|', ('is_conditional', '=', False), ('triggering_question_id', '=', False), ('triggering_question_type', 'in', ['simple_choice', 'multiple_choice'])]}"
+                />
+                    <field
+                    name="conditional_maximum_value"
+                    options="{'no_create_edit': True,}"
+                    attrs="{'invisible':['|', '|', ('is_conditional', '=', False), ('triggering_question_id', '=', False), ('triggering_question_type', 'in', ['simple_choice', 'multiple_choice'])]}"
+                />
+            </field>
+            <field name="triggering_answer_id" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': ['|', '|', ('is_conditional','=', False), ('triggering_question_id','=', False), ('triggering_question_type', 'not in', ['simple_choice', 'multiple_choice'])], 'required': [('is_conditional','=', True), ('triggering_question_type', 'in', ['simple_choice', 'multiple_choice'])]}</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
