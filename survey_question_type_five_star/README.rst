@@ -32,24 +32,6 @@ This module add five stars rating question type for survey page
 .. contents::
    :local:
 
-Usage
-=====
-
-Usage
-=====
- .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-   :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/{200}/{10.0}
-
-Known issues / Roadmap
-======================
-
-Bug Tracker
-===========
-
- Bugs are tracked on `GitHub Issues
- <https://github.com/OCA/survey/issues>`_. In case of trouble, please
-
 Bug Tracker
 ===========
 

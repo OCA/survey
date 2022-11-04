@@ -11,7 +11,6 @@
     "maintainers": ["Yajo"],
     "license": "AGPL-3",
     "depends": ["resource_booking", "survey"],
-    "external_dependencies": {"python": ["freezegun"]},
     "data": [
         "views/resource_booking_type_views.xml",
         "views/resource_booking_views.xml",
