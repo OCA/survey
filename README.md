@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[survey_conditional_question](survey_conditional_question/) | 14.0.1.0.0 |  | Survey Conditional Questions
 [survey_question_type_five_star](survey_question_type_five_star/) | 14.0.1.0.1 |  | This module add five stars rating as question type for survey page
 [survey_question_type_nps](survey_question_type_nps/) | 14.0.1.0.0 |  | This module add nps rating as question type for survey page
 
