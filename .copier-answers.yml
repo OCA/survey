@@ -1,7 +1,7 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: v1.5.2
-_src_path: gh:oca/oca-addons-repo-template
-ci: Travis
+_commit: v1.6.1
+_src_path: git@github.com:OCA/oca-addons-repo-template.git
+ci: GitHub
 dependency_installation_mode: PIP
 generate_requirements_txt: true
 include_wkhtmltopdf: false
@@ -9,8 +9,8 @@ odoo_version: 14.0
 org_name: Odoo Community Association (OCA)
 org_slug: OCA
 rebel_module_groups: []
-repo_description: 'TODO: add repo description.'
-repo_name: survey
+repo_description: This project aims to deal with modules related to survey management.
+repo_name: OCA Survey Management Addons for Odoo
 repo_slug: survey
 repo_website: https://github.com/OCA/survey
 travis_apt_packages: []
