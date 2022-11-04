@@ -4,8 +4,10 @@
     "name": "Survey description field",
     "summary": """
                Displays description and thank you fields for survey,
-               page and question""",
-    "version": "13.0.1.0.0",
+               page and question.
+               """,
+    "version": "14.0.1.0.0",
+    # This module should not be migrated to 15.0.
     "development_status": "Beta",
     "website": "https://github.com/OCA/survey",
     "author": "Le Filament, Odoo Community Association (OCA)",
@@ -14,5 +16,5 @@
     "application": False,
     "installable": True,
     "depends": ["survey"],
-    "data": ["views/survey_views.xml", "views/assets.xml"],
+    "data": ["views/survey_views.xml"],
 }

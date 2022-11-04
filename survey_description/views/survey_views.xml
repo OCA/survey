@@ -9,33 +9,10 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[2]" position="after">
                 <page string="Thank you message">
-                    <field name="thank_you_message" />
+                    <field name="description_done" />
                 </page>
-            </xpath>
-            <xpath
-                expr="//field[@name='question_and_page_ids']/tree/field[@name='title']"
-                position="attributes"
-            >
-                <attribute name="widget">survey_description_page</attribute>
             </xpath>
         </field>
     </record>
-    <record model="ir.ui.view" id="survey_question_desc_form">
-        <field name="name">Add description</field>
-        <field name="model">survey.question</field>
-        <field name="inherit_id" ref="survey.survey_question_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//notebook/page[1]" position="after">
-                <page string="Description">
-                    <field name="description" />
-                </page>
-            </xpath>
-            <field name="title" position="after">
-                <field
-                    name="description"
-                    attrs="{'invisible': [('is_page', '=', False)]}"
-                />
-            </field>
-        </field>
-    </record>
+
 </odoo>
