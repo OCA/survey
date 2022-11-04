@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-survey_question_type_five_star',
+        'odoo14-addon-survey_question_type_nps',
     ],
     classifiers=[
         'Programming Language :: Python',
