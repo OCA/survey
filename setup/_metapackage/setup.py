@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo14-addon-survey_description',
         'odoo14-addon-survey_question_type_five_star',
         'odoo14-addon-survey_question_type_nps',
+        'odoo14-addon-survey_xlsx',
     ],
     classifiers=[
         'Programming Language :: Python',
