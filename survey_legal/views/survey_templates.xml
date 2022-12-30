@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="survey_legal_terms" name="Survey legal terms acceptance">
+        <div t-if="survey.legal_terms" class="col-lg-12">
+            <input
+                t-attf-class="form-check-input position-relative ml-0 mr-1 #{'is-invalid' if error and error.get('accepted_legal_terms') else ''}"
+                type="checkbox"
+                name="accepted_legal_terms"
+                id="accepted_legal_terms"
+                required="required"
+            />
+            <label for="accepted_legal_terms" class="control-label form-check-label">
+                <t t-call="website_legal_page.acceptance_full" />
+            </label>
+        </div>
+    </template>
+    <template id="page" name="Legal terms in survey page" inherit_id="survey.page">
+        <xpath
+            expr='//t[@t-if="survey.questions_layout == &apos;one_page&apos;"]//button[@value="finish"]/..'
+            position="before"
+        >
+            <t t-call="survey_legal.survey_legal_terms" />
+        </xpath>
+        <xpath
+            expr='//t[@t-if="survey.questions_layout == &apos;page_per_section&apos;"]//button[@value="finish"]/..'
+            position="before"
+        >
+            <t t-if="last">
+                <t t-call="survey_legal.survey_legal_terms" />
+            </t>
+        </xpath>
+        <xpath
+            expr='//t[@t-if="survey.questions_layout == &apos;page_per_question&apos;"]//button[@value="finish"]/..'
+            position="before"
+        >
+            <t t-if="last">
+                <t t-call="survey_legal.survey_legal_terms" />
+            </t>
+        </xpath>
+    </template>
+</odoo>
