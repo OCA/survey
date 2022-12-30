@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <field name="labels_ids_2" position="after">
+                <group
+                    name="Linked product"
+                    attrs="{'invisible': [('question_type', '!=', 'numerical_box')]}"
+                >
+                    <field name="product_id" />
+                </group>
+            </field>
+            <xpath
+                expr="//field[@name='labels_ids']//field[@name='value']"
+                position="after"
+            >
+                <field
+                    name="product_id"
+                    attrs="{'column_invisible': [('parent.question_type', '=', 'matrix')]}"
+                />
+            </xpath>
+            <xpath expr="//field[@name='comments_allowed']/.." position="after">
+                <group name="sales" string="Sales">
+                    <field
+                        name="show_in_sale_order_comment"
+                        attrs="{'invisible': [('question_type', 'in', ['matrix', 'simple_choice', 'multiple_choice'])]}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
