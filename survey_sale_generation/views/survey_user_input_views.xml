@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="survey_user_input_view_form">
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field
+                    name="sale_order_id"
+                    attrs="{'invisible': [('sale_order_id', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
