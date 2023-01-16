@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo13-addon-survey_legal',
         'odoo13-addon-survey_question_type_five_star',
         'odoo13-addon-survey_resource_booking',
+        'odoo13-addon-survey_sale_generation',
         'odoo13-addon-survey_xlsx',
     ],
     classifiers=[
