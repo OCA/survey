@@ -11,5 +11,12 @@
     "maintainers": ["chienandalu"],
     "license": "AGPL-3",
     "depends": ["survey", "sale"],
-    "data": ["views/survey_question_views.xml", "views/survey_survey_views.xml"],
+    "data": [
+        "views/survey_question_views.xml",
+        "views/survey_survey_views.xml",
+        "views/survey_user_input_views.xml",
+        "views/sale_order_views.xml",
+        "views/assets.xml",
+    ],
+    "demo": ["demo/survey_sale_demo.xml"],
 }
