@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_form" model="ir.ui.view">
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_form" />
+        <field name="arch" type="xml">
+            <group name="options" position="inside">
+                <group name="crm_options" string="CRM">
+                    <field name="generate_leads" />
+                    <field
+                        name="crm_team_id"
+                        attrs="{'invisible': [('generate_leads', '=', False)]}"
+                    />
+                    <field
+                        name="crm_tag_ids"
+                        widget="many2many_tags"
+                        attrs="{'invisible': [('generate_leads', '=', False)]}"
+                    />
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
