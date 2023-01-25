@@ -5,7 +5,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     survey_input_lines = fields.One2many(
-        comodel_name="survey.user_input_line",
+        comodel_name="survey.user_input.line",
         inverse_name="partner_id",
         string="Surveys answers",
     )
@@ -13,7 +13,7 @@ class ResPartner(models.Model):
         comodel_name="survey.user_input", inverse_name="partner_id", string="Surveys"
     )
 
-    surveys_count = fields.Integer("Surveys Count", compute="_compute_surveys_count")
+    surveys_count = fields.Integer(compute="_compute_surveys_count")
     surveys_company_count = fields.Integer(
         "Company Surveys Count", compute="_compute_surveys_company_count"
     )
