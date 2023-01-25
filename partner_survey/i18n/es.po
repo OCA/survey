@@ -29,8 +29,8 @@ msgid ""
 msgstr ""
 "<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_company_count', "
 "'&lt;', 2)]}\">Encuestas</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [("
-"'surveys_company_count', '&gt;', 1)]}\">Encuesta</span>"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('surveys_company_count', '&gt;', 1)]}\">Encuesta</span>"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
@@ -42,8 +42,8 @@ msgid ""
 msgstr ""
 "<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', '&lt;', "
 "2)]}\">Encuestas</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [("
-"'surveys_count', '&gt;', 1)]}\">Encuesta</span>"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('surveys_count', '&gt;', 1)]}\">Encuesta</span>"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_count
