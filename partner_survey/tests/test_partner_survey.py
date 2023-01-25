@@ -1,7 +1,7 @@
 from odoo.tests import common
 
 
-class TestPartnerSurvey(common.SavepointCase):
+class TestPartnerSurvey(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
