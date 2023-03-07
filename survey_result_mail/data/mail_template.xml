@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<record id="mail_template_user_input_result" model="mail.template">
+    <field name="name">Survey: Result</field>
+    <field name="model_id" ref="model_survey_user_input" />
+    <field name="subject">Results for your ${object.survey_id.title} survey</field>
+    <field
+            name="email_to"
+        >${(object.partner_id.email_formatted or object.email) |safe}</field>
+    <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear ${object.partner_id.name or 'participant'}<br /><br />
+
+        You'll find attached your survey answers so you can review them.
+
+        Thank you for your participation.
+    </p>
+</div>
+    </field>
+    <field name="report_template" ref="survey_result_report" />
+    <field name="report_name">Survey Results</field>
+    <field name="lang">${object.partner_id.lang}</field>
+    <field name="auto_delete" eval="True" />
+    <field name="user_signature" eval="False" />
+</record>
+</odoo>
