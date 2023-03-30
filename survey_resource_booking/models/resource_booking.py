@@ -49,12 +49,13 @@ class ResourceBooking(models.Model):
                         % one.display_name
                     )
                 one.survey_user_input_id = one.type_id.survey_id._create_answer(
-                    partner=one.partner_id, check_attempts=False, input_type="link"
+                    partner=one.partner_id,
+                    check_attempts=False,
                 )
             # Enqueue survey invitation
             action = one.survey_user_input_id.action_resend()
             wizard_f = Form(
-                self.env[action["res_model"]].with_context(action["context"]),
+                self.env[action["res_model"]].with_context(**action["context"]),
             )
             wizard = wizard_f.save()
             wizard.action_invite()
