@@ -5,23 +5,23 @@ from datetime import datetime
 from freezegun import freeze_time
 
 from odoo.exceptions import UserError
-from odoo.tests.common import Form, SavepointCase
+from odoo.tests.common import Form, TransactionCase
 
 from ...resource_booking.tests.common import create_test_data
 
 
 @freeze_time("2021-02-26 09:00:00", tick=True)
-class SurveyInvitationCase(SavepointCase):
+class SurveyInvitationCase(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         create_test_data(cls)
         survey_form = Form(cls.env["survey.survey"])
         survey_form.title = "survey 1"
-        survey_form.state = "open"
+        survey_form.session_state = "in_progress"
         with survey_form.question_and_page_ids.new() as question_form:
             question_form.title = "are you a robot?"
-            question_form.question_type = "textbox"
+            question_form.question_type = "text_box"
         cls.survey = survey_form.save()
         cls.rbt.survey_id = cls.survey
 
