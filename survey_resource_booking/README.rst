@@ -19,11 +19,11 @@ Link between resource bookings and surveys
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/survey-15-0/survey-15-0-survey_resource_booking
     :alt: Translate me on Weblate
-.. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/webui/builds.html?repo=OCA/survey&target_branch=15.0
-    :alt: Try me on Runboat
+.. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
+    :target: https://runbot.odoo-community.org/runbot/200/15.0
+    :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module extends the functionality of surveys and resource bookings to
 support linking them together and to allow you to quickly request and read
@@ -99,7 +99,7 @@ promote its widespread use.
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-Yajo|
+|maintainer-Yajo| 
 
 This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/15.0/survey_resource_booking>`_ project on GitHub.
 
