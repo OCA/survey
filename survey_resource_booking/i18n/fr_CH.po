@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_resource_booking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2021-10-31 19:35+0000\n"
+"Last-Translator: Julien Guenat <julien.guenat@geckoescalade.ch>\n"
+"Language-Team: none\n"
+"Language: fr_CH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid "Cannot invite to fill survey because booking not confirmed: %s"
+msgstr ""
+"Impossible d'inviter à remplir le sondage car la réservation n'est pas "
+"confirmée: %s"
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid ""
+"Cannot send survey invitation for this booking because the requester has no "
+"email: %s"
+msgstr ""
+"Impossible d'inviter à remplir le sondage pour cette réservation car le "
+"demandeur n'a pas d’adresse e-mail: %s"
+
+#. module: survey_resource_booking
+#: model:ir.actions.server,name:survey_resource_booking.action_invite_survey
+msgid "Invite to fill survey"
+msgstr "Inviter à remplir le sondage"
+
+#. module: survey_resource_booking
+#: model:ir.model,name:survey_resource_booking.model_resource_booking
+msgid "Resource Booking"
+msgstr "Réservation de ressources"
+
+#. module: survey_resource_booking
+#: model:ir.model,name:survey_resource_booking.model_resource_booking_type
+msgid "Resource Booking Type"
+msgstr "Type de réservation de ressources"
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,field_description:survey_resource_booking.field_resource_booking_type__survey_id
+msgid "Survey"
+msgstr "Sondage"
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,field_description:survey_resource_booking.field_resource_booking__survey_user_input_id
+msgid "Survey user input"
+msgstr "Réponse au sondage"
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid "This booking's requester was already invited to fill survey: %s"
+msgstr ""
+"Le demandeur de la réservation était déjà invité à remplir le sondage : %s"
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid "This booking's type has no survey defined: %s"
+msgstr "Ce type de réservation n'a pas de sondage définit: %s"
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,help:survey_resource_booking.field_resource_booking__survey_user_input_id
+msgid "User responses to survey, as specified in the resource booking type."
+msgstr ""
+"Réponses au sondage de l'utilisateur, comme spécifié dans le type de "
+"réservation de ressources."
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,help:survey_resource_booking.field_resource_booking_type__survey_id
+msgid "You will be able to invite requesters to respond to this survey."
+msgstr "Vous pourrez inviter les demandeurs à répondre à ce sondage."

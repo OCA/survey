@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<data>
+    <record id="resource_booking_type_form" model="ir.ui.view">
+        <field name="name">Resource booking type survey</field>
+        <field name="model">resource.booking.type</field>
+        <field name="groups_id" eval="[(4, ref('survey.group_survey_user'), 0)]" />
+        <field name="inherit_id" ref="resource_booking.resource_booking_type_form" />
+        <field name="arch" type="xml">
+            <field name="requester_advice" position="before">
+                <field name="survey_id" />
+            </field>
+        </field>
+    </record>
+</data>
