@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo13-addon-partner_survey',
         'odoo13-addon-survey_crm_generation',
+        'odoo13-addon-survey_crm_sale_generation',
         'odoo13-addon-survey_description',
         'odoo13-addon-survey_legal',
         'odoo13-addon-survey_question_type_five_star',
