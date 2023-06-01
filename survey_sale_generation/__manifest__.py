@@ -3,7 +3,7 @@
 {
     "name": "Survey sale generation",
     "summary": "Generate sale orders from surveys",
-    "version": "13.0.1.1.0",
+    "version": "15.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
@@ -16,7 +16,11 @@
         "views/survey_survey_views.xml",
         "views/survey_user_input_views.xml",
         "views/sale_order_views.xml",
-        "views/assets.xml",
     ],
     "demo": ["demo/survey_sale_demo.xml"],
+    "assets": {
+        "web.assets_tests": [
+            "/survey_sale_generation/static/tests/survey_sale_generation_tour.js",
+        ],
+    },
 }

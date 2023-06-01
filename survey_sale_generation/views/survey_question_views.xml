@@ -4,18 +4,15 @@
         <field name="model">survey.question</field>
         <field name="inherit_id" ref="survey.survey_question_form" />
         <field name="arch" type="xml">
-            <field name="labels_ids_2" position="after">
+            <xpath expr="//field[@name='suggested_answer_ids']/.." position="after">
                 <group
                     name="Linked product"
                     attrs="{'invisible': [('question_type', '!=', 'numerical_box')]}"
                 >
                     <field name="product_id" />
                 </group>
-            </field>
-            <xpath
-                expr="//field[@name='labels_ids']//field[@name='value']"
-                position="after"
-            >
+            </xpath>
+            <xpath expr="//field[@name='value']" position="after">
                 <field
                     name="product_id"
                     attrs="{'column_invisible': [('parent.question_type', '=', 'matrix')]}"
