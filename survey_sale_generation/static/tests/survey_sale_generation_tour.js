@@ -11,12 +11,12 @@ odoo.define("survey.tour_test_survey_sale_generation", function (require) {
         },
         [
             {
-                content: "Click on Start",
-                trigger: "a.btn:contains('Start')",
+                content: "Start Survey",
+                trigger: "button.btn:contains('Start Survey')",
             },
             {
                 content: "E-mail address",
-                trigger: "div.js_question-wrapper:contains('E-mail address') input",
+                trigger: "div.js_question-wrapper:contains('E-mail address') textarea",
                 run: "text test@test.com",
             },
             {
@@ -28,13 +28,7 @@ odoo.define("survey.tour_test_survey_sale_generation", function (require) {
             {
                 content: "Choose your subscription level",
                 trigger:
-                    "div.js_question-wrapper:contains('Choose your subscription level') select",
-                run: function () {
-                    var $select = $(
-                        "div.js_question-wrapper:contains('Choose your subscription level') select"
-                    );
-                    $select.val($("option:contains('Gold')").val());
-                },
+                    "div.js_question-wrapper:contains('Choose your subscription level') span:contains('Gold')",
             },
             {
                 content: "Add advanced backup",

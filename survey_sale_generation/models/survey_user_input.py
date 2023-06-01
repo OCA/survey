@@ -21,9 +21,9 @@ class SurveyUserInput(models.Model):
     def _prepare_quotation_line(self, input_line):
         if input_line.question_id.question_type == "numerical_box":
             product_id = input_line.question_id.product_id
-            qty = input_line.value_number
+            qty = input_line.value_numerical_box
         else:
-            product_id = input_line.value_suggested.product_id
+            product_id = input_line.suggested_answer_id.product_id
             qty = 1
         return {
             "product_id": product_id.id,
@@ -49,8 +49,8 @@ class SurveyUserInput(models.Model):
         """After creating the quotation send an internal message with practical info"""
         message = _(
             "This order has been created from this survey input: "
-            "<a href=# data-oe-model=survey.user_input data-oe-id=%d>%s</a>"
-        ) % (self.id, self.survey_id.title)
+            "<a href=# data-oe-model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
+        ) % {"id": self.id, "title": self.survey_id.title}
         additional_comment = self._prepare_quotation_comment()
         if additional_comment:
             message += (
@@ -64,7 +64,9 @@ class SurveyUserInput(models.Model):
         res = super()._mark_done()
         if not self.survey_id.generate_quotations:
             return res
-        quotable_lines = self.user_input_line_ids.filtered("value_suggested.product_id")
+        quotable_lines = self.user_input_line_ids.filtered(
+            "suggested_answer_id.product_id"
+        )
         quotable_lines += self.user_input_line_ids.filtered(
             lambda x: x.question_id.product_id and not x.skipped
         )
