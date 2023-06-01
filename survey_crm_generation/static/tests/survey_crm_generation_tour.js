@@ -13,23 +13,25 @@ odoo.define(
             },
             [
                 {
-                    content: "Click on Start",
-                    trigger: "a.btn:contains('Start')",
+                    content: "Start Survey",
+                    trigger: "button.btn:contains('Start Survey')",
                 },
                 {
                     content: "E-mail address",
-                    trigger: "div.js_question-wrapper:contains('E-mail address') input",
+                    trigger:
+                        "div.js_question-wrapper:contains('E-mail address') textarea",
                     run: "text test@test.com",
                 },
                 {
                     content: "Your company name?",
                     trigger:
-                        "div.js_question-wrapper:contains('Your company name?') input",
+                        "div.js_question-wrapper:contains('Your company name?') textarea",
                     run: "text Tecnativa",
                 },
                 {
                     content: "And your name?",
-                    trigger: "div.js_question-wrapper:contains('And your name?') input",
+                    trigger:
+                        "div.js_question-wrapper:contains('And your name?') textarea",
                     run: "text Tecnativa",
                 },
                 {
