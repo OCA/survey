@@ -11,7 +11,7 @@ class SurveyQuestion(models.Model):
 
 
 class SurveyLabel(models.Model):
-    _inherit = "survey.label"
+    _inherit = "survey.question.answer"
 
     product_id = fields.Many2one(comodel_name="product.product")
 
