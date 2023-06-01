@@ -1,4 +1,4 @@
-odoo.define("survey.tour_test_survey_sale_generation", function(require) {
+odoo.define("survey.tour_test_survey_sale_generation", function (require) {
     "use strict";
 
     const tour = require("web_tour.tour");
@@ -29,7 +29,7 @@ odoo.define("survey.tour_test_survey_sale_generation", function(require) {
                 content: "Choose your subscription level",
                 trigger:
                     "div.js_question-wrapper:contains('Choose your subscription level') select",
-                run: function() {
+                run: function () {
                     var $select = $(
                         "div.js_question-wrapper:contains('Choose your subscription level') select"
                     );
