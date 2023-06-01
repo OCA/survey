@@ -1,5 +1,7 @@
 # Copyright 2023 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+from markupsafe import Markup
+
 from odoo.tests import HttpCase, tagged
 
 from odoo.addons.survey.tests.common import SurveyCase
@@ -36,9 +38,12 @@ class SurveyCrmGenerationTests(SurveyCrmGenerationCase):
                 + self.env.ref("survey_crm_generation.tag_survey_leads")
             ),
         )
-        expected_lead_description = (
-            "E-mail address: test@test.com\n"
+        expected_lead_description = Markup(
+            "<p>E-mail address: test@test.com\n"
             "Your company name?: Tecnativa\n"
-            "And your name?: Tecnativa"
+            "And your name?: Tecnativa</p>"
         )
-        self.assertEqual(self.generated_lead.description, expected_lead_description)
+        self.assertEqual(
+            self.generated_lead.description,
+            expected_lead_description,
+        )
