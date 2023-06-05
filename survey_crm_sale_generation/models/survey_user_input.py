@@ -13,7 +13,7 @@ class SurveyUserInput(models.Model):
         if self.opportunity_id and self.sale_order_id:
             self.opportunity_id.update(
                 {
-                    "planned_revenue": self.sale_order_id.amount_total,
+                    "expected_revenue": self.sale_order_id.amount_total,
                     "order_ids": [(6, 0, self.sale_order_id.ids)],
                 }
             )
