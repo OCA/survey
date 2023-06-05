@@ -196,10 +196,8 @@ msgstr "La respuesta que has introducido no es válida."
 #, python-format
 msgid ""
 "This order has been created from this survey input: <a href=# data-oe-"
-"model=survey.user_input data-oe-id=%d>%s</a>"
+"model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
 msgstr ""
-"Esta orden se ha creado a partir de las aportaciones de esta encuesta: "
-"<a href=# data-oe-model=survey.user_input data-oe-id=%d>%s</a>"
 
 #. module: survey_sale_generation
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q0
@@ -226,3 +224,11 @@ msgstr "Esta pregunta requiere una respuesta."
 #: model:product.template,uom_name:survey_sale_generation.support_hours_product_template
 msgid "Units"
 msgstr "Unidades"
+
+#, python-format
+#~ msgid ""
+#~ "This order has been created from this survey input: <a href=# data-oe-"
+#~ "model=survey.user_input data-oe-id=%d>%s</a>"
+#~ msgstr ""
+#~ "Esta orden se ha creado a partir de las aportaciones de esta encuesta: <a "
+#~ "href=# data-oe-model=survey.user_input data-oe-id=%d>%s</a>"
