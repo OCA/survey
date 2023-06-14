@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 15:49+0000\n"
-"PO-Revision-Date: 2023-06-13 15:49+0000\n"
+"POT-Creation-Date: 2023-06-14 11:55+0000\n"
+"PO-Revision-Date: 2023-06-14 11:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,14 +21,37 @@ msgid "Allowed Field"
 msgstr ""
 
 #. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q3
+#: model:survey.question,title:survey_contact_generation.survey_contact_q3
+msgid "Color"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_form
 #: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_question_form
 msgid "Contact"
 msgstr ""
 
 #. module: survey_contact_generation
+#: model:survey.survey,title:survey_contact_generation.survey_contact_creation
+msgid "Contact Creation Survey"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
 msgid "Contact field"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q4
+#: model:survey.question,title:survey_contact_generation.survey_contact_q4
+msgid "Date"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q1
+#: model:survey.question,title:survey_contact_generation.survey_contact_q1
+msgid "Email"
 msgstr ""
 
 #. module: survey_contact_generation
@@ -39,6 +62,27 @@ msgstr ""
 #. module: survey_contact_generation
 #: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__generate_contact
 msgid "Generate contacts for anonymous survey users"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q0
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q1
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q2
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q3
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
+msgid "If other, please specify:"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q0
+#: model:survey.question,title:survey_contact_generation.survey_contact_q0
+msgid "Name"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q2
+#: model:survey.question,title:survey_contact_generation.survey_contact_q2
+msgid "Notes"
 msgstr ""
 
 #. module: survey_contact_generation
@@ -54,4 +98,22 @@ msgstr ""
 #. module: survey_contact_generation
 #: model:ir.model,name:survey_contact_generation.model_survey_user_input
 msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q0
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q1
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q2
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q3
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
+msgid "The answer you entered is not valid."
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q0
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q1
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q2
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q3
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
+msgid "This question requires an answer."
 msgstr ""
