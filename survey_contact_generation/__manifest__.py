@@ -3,7 +3,7 @@
 {
     "name": "Survey contacts generation",
     "summary": "Generate new contacts from surveys",
-    "version": "13.0.1.0.0",
+    "version": "15.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
@@ -14,7 +14,11 @@
     "data": [
         "views/survey_question_views.xml",
         "views/survey_survey_views.xml",
-        "views/assets.xml",
     ],
     "demo": ["demo/survey_contact_generation_demo.xml"],
+    "assets": {
+        "web.assets_tests": [
+            "/survey_contact_generation/static/tests/survey_contact_generation_tour.js",
+        ],
+    },
 }
