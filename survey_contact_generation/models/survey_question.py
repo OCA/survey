@@ -7,7 +7,8 @@ class SurveyQuestion(models.Model):
     _inherit = "survey.question"
 
     allowed_field_ids = fields.Many2many(
-        comodel_name="ir.model.fields", compute="_compute_allowed_field_ids",
+        comodel_name="ir.model.fields",
+        compute="_compute_allowed_field_ids",
     )
     res_partner_field = fields.Many2one(
         string="Contact field",
