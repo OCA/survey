@@ -1,4 +1,4 @@
-odoo.define("survey.tour_test_survey_contact_generation", function(require) {
+odoo.define("survey.tour_test_survey_contact_generation", function (require) {
     "use strict";
 
     const tour = require("web_tour.tour");
