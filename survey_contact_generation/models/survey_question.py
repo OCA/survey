@@ -19,8 +19,8 @@ class SurveyQuestion(models.Model):
     @api.depends("question_type")
     def _compute_allowed_field_ids(self):
         type_mapping = {
-            "textbox": ["char"],
-            "free_text": ["text"],
+            "char_box": ["char"],
+            "text_box": ["html"],
             "numerical_box": ["integer", "float"],
             "date": ["date"],
             "datetime": ["datetime"],

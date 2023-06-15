@@ -12,7 +12,7 @@ odoo.define("survey.tour_test_survey_contact_generation", function (require) {
         [
             {
                 content: "Click on Start",
-                trigger: "a.btn:contains('Start')",
+                trigger: "button.btn:contains('Start Survey')",
             },
             {
                 content: "Name",

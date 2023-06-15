@@ -4,7 +4,6 @@
     <record model="survey.survey" id="survey_contact_creation">
         <field name="title">Contact Creation Survey</field>
         <field name="access_token">80e5f1e2-1a9d-4c51-8e23-09e93f7fa2c5</field>
-        <field name="state">open</field>
         <field name="access_mode">public</field>
         <field name="users_can_go_back" eval="True" />
         <field name="generate_contact" eval="True" />
@@ -13,7 +12,7 @@
         <field name="survey_id" ref="survey_contact_creation" />
         <field name="sequence">0</field>
         <field name="title">Name</field>
-        <field name="question_type">textbox</field>
+        <field name="question_type">char_box</field>
         <field name="constr_mandatory" eval="True" />
         <field name="res_partner_field" ref="base.field_res_partner__name" />
     </record>
@@ -21,14 +20,14 @@
         <field name="survey_id" ref="survey_contact_creation" />
         <field name="sequence">1</field>
         <field name="title">Email</field>
-        <field name="question_type">textbox</field>
+        <field name="question_type">char_box</field>
         <field name="res_partner_field" ref="base.field_res_partner__email" />
     </record>
     <record model="survey.question" id="survey_contact_q2">
         <field name="survey_id" ref="survey_contact_creation" />
         <field name="sequence">2</field>
         <field name="title">Notes</field>
-        <field name="question_type">free_text</field>
+        <field name="question_type">text_box</field>
         <field name="res_partner_field" ref="base.field_res_partner__comment" />
     </record>
     <record model="survey.question" id="survey_contact_q3">
