@@ -14,7 +14,7 @@ odoo.define("survey_crm_generation.tour_test_survey_crm_generation", function (
         [
             {
                 content: "Click on Start",
-                trigger: "a.btn:contains('Start')",
+                trigger: "button[value='start']",
             },
             {
                 content: "E-mail address",

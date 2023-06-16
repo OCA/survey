@@ -10,7 +10,7 @@ class SurveySurvey(models.Model):
         help="Generate leads/opportunities linked to the generated quotations",
     )
     crm_tag_ids = fields.Many2many(
-        comodel_name="crm.lead.tag",
+        comodel_name="crm.tag",
         help="Set the default crm tags in the generated leads/opportunities",
     )
     crm_team_id = fields.Many2one(comodel_name="crm.team")

@@ -18,7 +18,6 @@ class SurveyCrmGenerationCase(SurveyCase, HttpCase):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
             "test_survey_crm_generation",
-            login="portal",
         )
         self.user_input = self.survey.user_input_ids - initial_user_inputs
         self.generated_lead = self.user_input.opportunity_id

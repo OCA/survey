@@ -3,11 +3,11 @@
 {
     "name": "Survey leads generation",
     "summary": "Generate CRM leads/opportunities from surveys",
-    "version": "13.0.1.0.0",
+    "version": "14.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
-    "author": "Tecnativa, Odoo Community Association (OCA)",
+    "author": "Tecnativa, Odoo Community Association (OCA), Studio73",
     "maintainers": ["chienandalu"],
     "license": "AGPL-3",
     "depends": ["survey", "crm"],

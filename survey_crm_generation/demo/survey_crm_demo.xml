@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record model="crm.lead.tag" id="tag_survey_leads">
+    <record model="crm.tag" id="tag_survey_leads">
         <field name="name">Survey Leads</field>
     </record>
-    <record model="crm.lead.tag" id="tag_oca_partnership">
+    <record model="crm.tag" id="tag_oca_partnership">
         <field name="name">OCA Partnership</field>
     </record>
     <!-- Sales Team -->
@@ -29,7 +29,7 @@
         <field name="survey_id" ref="become_partner" />
         <field name="sequence">0</field>
         <field name="title">E-mail address</field>
-        <field name="question_type">textbox</field>
+        <field name="question_type">text_box</field>
         <field name="show_in_lead_description" eval="True" />
         <field name="constr_mandatory" eval="True" />
     </record>
@@ -37,7 +37,7 @@
         <field name="survey_id" ref="become_partner" />
         <field name="sequence">1</field>
         <field name="title">Your company name?</field>
-        <field name="question_type">textbox</field>
+        <field name="question_type">text_box</field>
         <field name="show_in_lead_description" eval="True" />
         <field name="constr_mandatory" eval="True" />
     </record>
@@ -45,7 +45,7 @@
         <field name="survey_id" ref="become_partner" />
         <field name="sequence">2</field>
         <field name="title">And your name?</field>
-        <field name="question_type">textbox</field>
+        <field name="question_type">text_box</field>
         <field name="show_in_lead_description" eval="True" />
         <field name="constr_mandatory" eval="True" />
     </record>
