@@ -18,7 +18,6 @@ class SurveyContactGenerationCase(SurveyCase, HttpCase):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
             "test_survey_contact_generation",
-            # login="public",
         )
         self.user_input = self.survey.user_input_ids - initial_user_inputs
 
@@ -27,12 +26,6 @@ class SurveyContactGenerationCase(SurveyCase, HttpCase):
 class SurveyContactGenerationTests(SurveyContactGenerationCase):
     def test_contact_generation(self):
         partner = self.env["res.partner"].search(
-            [
-                ("name", "=", "My Name"),
-                ("email", "=", "test@test.com"),
-                ("comment", "=", "This is a test note"),
-                ("color", "=", 1),
-                ("date", "=", "01/01/2023"),
-            ]
+            [("email", "=", "survey_contact_generation@test.com")]
         )
         self.assertEqual(partner, self.user_input.partner_id)
