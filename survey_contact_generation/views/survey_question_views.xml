@@ -10,6 +10,23 @@
                     <field name="allowed_field_ids" invisible="1" />
                 </group>
             </xpath>
+            <xpath expr="//field[@name='matrix_row_ids']" position="attributes">
+                <attribute
+                    name="context"
+                >{'default_question_id': active_id, 'default_res_partner_field': res_partner_field}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='matrix_row_ids']//field[@name='value']"
+                position="after"
+            >
+                <field name="res_partner_field" invisible="1" />
+                <field
+                    name="res_partner_field_resource_ref"
+                    readonly="False"
+                    options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                    attrs="{'column_invisible': [('parent.res_partner_field', '=', False)]}"
+                />
+            </xpath>
         </field>
     </record>
 </odoo>
