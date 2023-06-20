@@ -7,19 +7,48 @@ class SurveyUserInput(models.Model):
     _inherit = "survey.user_input"
 
     def _prepare_partner(self):
+        """Extract partner values from the answers"""
         self.ensure_one()
-        return {
+        elegible_inputs = self.user_input_line_ids.filtered(
+            lambda x: x.question_id.res_partner_field and not x.skipped
+        )
+        basic_inputs = elegible_inputs.filtered(
+            lambda x: x.answer_type not in {"suggestion"}
+            and x.question_id.res_partner_field.name != "comment"
+        )
+        vals = {
             line.question_id.res_partner_field.name: line[f"value_{line.answer_type}"]
-            for line in self.user_input_line_ids.filtered(
-                lambda r: r.question_id.res_partner_field
-            )
+            for line in basic_inputs
         }
+        for line in elegible_inputs - basic_inputs:
+            field_name = line.question_id.res_partner_field.name
+            if line.question_id.res_partner_field.ttype == "many2one":
+                vals[
+                    field_name
+                ] = line.suggested_answer_id.res_partner_field_resource_ref.id
+            elif line.question_id.res_partner_field.ttype == "many2many":
+                vals.setdefault(field_name, [])
+                vals[field_name] += [
+                    (4, line.suggested_answer_id.res_partner_field_resource_ref.id)
+                ]
+            # We'll use the comment field to add any other infos
+            elif field_name == "comment":
+                vals.setdefault("comment", "")
+                value = (
+                    line.suggested_answer_id.value
+                    if line.answer_type == "suggestion"
+                    else line[f"value_{line.answer_type}"]
+                )
+                vals["comment"] += f"\n{line.question_id.title}: {value}"
+            else:
+                vals[field_name] = line.suggested_answer_id.value
+        return vals
 
-    def _create_contact_post_process(self):
+    def _create_contact_post_process(self, partner):
         """After creating the lead send an internal message with the input link"""
-        self.partner_id.message_post_with_view(
+        partner.message_post_with_view(
             "mail.message_origin_link",
-            values={"self": self.partner_id, "origin": self.survey_id},
+            values={"self": partner, "origin": self.survey_id},
             subtype_id=self.env.ref("mail.mt_note").id,
         )
 
@@ -37,6 +66,6 @@ class SurveyUserInput(models.Model):
                 )
             if not partner:
                 partner = self.env["res.partner"].create(vals)
-                self._create_contact_post_process()
-            self.write({"partner_id": partner.id, "email": partner.email})
+                self._create_contact_post_process(partner)
+            self.update({"partner_id": partner.id, "email": partner.email})
         return super()._mark_done()
