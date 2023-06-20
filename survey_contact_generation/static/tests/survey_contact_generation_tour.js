@@ -22,7 +22,7 @@ odoo.define("survey.tour_test_survey_contact_generation", function (require) {
             {
                 content: "Email",
                 trigger: "div.js_question-wrapper:contains('Email') input",
-                run: "text test@test.com",
+                run: "text survey_contact_generation@test.com",
             },
             {
                 content: "Notes",
