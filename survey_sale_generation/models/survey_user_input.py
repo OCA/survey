@@ -11,7 +11,7 @@ class SurveyUserInput(models.Model):
 
     def _prepare_quotation(self):
         return {
-            "partner_id": self.create_uid.partner_id.id,
+            "partner_id": self.partner_id.id or self.create_uid.partner_id.id,
             "origin": self.survey_id.title,
             "survey_user_input_id": self.id,
             "company_id": self.create_uid.company_id.id,
