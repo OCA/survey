@@ -40,6 +40,36 @@ odoo.define("survey.tour_test_survey_contact_generation", function (require) {
                 run: "text 01/01/2023",
             },
             {
+                content: "Country",
+                trigger:
+                    "div.js_question-wrapper:contains('Country') label:contains('Romania') i",
+                run: function () {
+                    $(
+                        "div.js_question-wrapper:contains('Country') label:contains('Romania') i"
+                    ).prop("checked", true);
+                },
+            },
+            {
+                content: "Tags",
+                trigger:
+                    "div.js_question-wrapper:contains('Tags') label:contains('Prospects') i",
+                run: function () {
+                    $(
+                        "div.js_question-wrapper:contains('Tags') label:contains('Prospects') i"
+                    ).prop("checked", true);
+                },
+            },
+            {
+                content: "Tags",
+                trigger:
+                    "div.js_question-wrapper:contains('Tags') label:contains('Vendor') i",
+                run: function () {
+                    $(
+                        "div.js_question-wrapper:contains('Tags') label:contains('Vendor') i"
+                    ).prop("checked", true);
+                },
+            },
+            {
                 content: "Click Submit",
                 trigger: "button[value='finish']",
             },
