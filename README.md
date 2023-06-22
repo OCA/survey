@@ -29,7 +29,7 @@ addon | version | maintainers | summary
 [survey_legal](survey_legal/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Require legal terms before survey submit
 [survey_question_type_five_star](survey_question_type_five_star/) | 13.0.1.0.1 |  | This module add five stars rating as question type for survey page
 [survey_resource_booking](survey_resource_booking/) | 13.0.1.0.2 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Access survey answers from resource booking
-[survey_sale_generation](survey_sale_generation/) | 13.0.1.1.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate sale orders from surveys
+[survey_sale_generation](survey_sale_generation/) | 13.0.1.1.1 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate sale orders from surveys
 [survey_xlsx](survey_xlsx/) | 13.0.1.0.0 |  | XLSX Report to show the survey results
 
 [//]: # (end addons)
