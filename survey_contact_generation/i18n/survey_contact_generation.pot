@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,7 +19,6 @@ msgid "Allowed Field"
 msgstr ""
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q3
 #: model:survey.question,title:survey_contact_generation.survey_contact_q3
 msgid "Color"
 msgstr ""
@@ -37,19 +36,33 @@ msgstr ""
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field
 msgid "Contact field"
 msgstr ""
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q4
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field_resource_ref
+msgid "Contact field value"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q5
+msgid "Country"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q4
 msgid "Date"
 msgstr ""
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q1
 #: model:survey.question,title:survey_contact_generation.survey_contact_q1
 msgid "Email"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug3
+msgid "Employees"
 msgstr ""
 
 #. module: survey_contact_generation
@@ -68,24 +81,44 @@ msgstr ""
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q2
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q3
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q5
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q6
 msgid "If other, please specify:"
 msgstr ""
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q0
 #: model:survey.question,title:survey_contact_generation.survey_contact_q0
 msgid "Name"
 msgstr ""
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q2
 #: model:survey.question,title:survey_contact_generation.survey_contact_q2
 msgid "Notes"
 msgstr ""
 
 #. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug2
+msgid "Prospects"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug2
+msgid "Romania"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug1
+msgid "Spain"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:ir.model,name:survey_contact_generation.model_survey_survey
 msgid "Survey"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question_answer
+msgid "Survey Label"
 msgstr ""
 
 #. module: survey_contact_generation
@@ -99,11 +132,18 @@ msgid "Survey User Input"
 msgstr ""
 
 #. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q6
+msgid "Tags"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q0
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q1
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q2
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q3
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q5
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q6
 msgid "The answer you entered is not valid."
 msgstr ""
 
@@ -113,5 +153,12 @@ msgstr ""
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q2
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q3
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q5
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q6
 msgid "This question requires an answer."
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug1
+msgid "Vendor"
 msgstr ""
