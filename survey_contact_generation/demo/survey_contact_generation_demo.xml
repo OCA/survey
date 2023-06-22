@@ -45,4 +45,57 @@
         <field name="question_type">date</field>
         <field name="res_partner_field" ref="base.field_res_partner__date" />
     </record>
+    <record model="survey.question" id="survey_contact_q5">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">4</field>
+        <field name="title">Country</field>
+        <field name="question_type">simple_choice</field>
+        <field name="res_partner_field" ref="base.field_res_partner__country_id" />
+    </record>
+    <record model="survey.label" id="survey_contact_q5_sug1">
+        <field name="question_id" ref="survey_contact_q5" />
+        <field name="sequence">1</field>
+        <field name="value">Spain</field>
+        <field name="res_partner_field_resource_ref" ref="base.es" />
+    </record>
+    <record model="survey.label" id="survey_contact_q5_sug2">
+        <field name="question_id" ref="survey_contact_q5" />
+        <field name="sequence">2</field>
+        <field name="value">Romania</field>
+        <field name="res_partner_field_resource_ref" ref="base.ro" />
+    </record>
+    <record model="survey.question" id="survey_contact_q6">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">4</field>
+        <field name="title">Tags</field>
+        <field name="question_type">multiple_choice</field>
+        <field name="res_partner_field" ref="base.field_res_partner__category_id" />
+    </record>
+    <record model="survey.label" id="survey_contact_q6_sug1">
+        <field name="question_id" ref="survey_contact_q6" />
+        <field name="sequence">1</field>
+        <field name="value">Vendor</field>
+        <field
+            name="res_partner_field_resource_ref"
+            ref="base.res_partner_category_0"
+        />
+    </record>
+    <record model="survey.label" id="survey_contact_q6_sug2">
+        <field name="question_id" ref="survey_contact_q6" />
+        <field name="sequence">2</field>
+        <field name="value">Prospects</field>
+        <field
+            name="res_partner_field_resource_ref"
+            ref="base.res_partner_category_2"
+        />
+    </record>
+    <record model="survey.label" id="survey_contact_q6_sug3">
+        <field name="question_id" ref="survey_contact_q6" />
+        <field name="sequence">3</field>
+        <field name="value">Employees</field>
+        <field
+            name="res_partner_field_resource_ref"
+            ref="base.res_partner_category_3"
+        />
+    </record>
 </odoo>
