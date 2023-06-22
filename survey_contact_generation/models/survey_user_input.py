@@ -41,7 +41,13 @@ class SurveyUserInput(models.Model):
                 )
                 vals["comment"] += f"\n{line.question_id.title}: {value}"
             else:
-                vals[field_name] = line.suggested_answer_id.value
+                if line.question_id.question_type == "multiple_choice":
+                    if not vals.get(field_name):
+                        vals[field_name] = line.suggested_answer_id.value
+                    else:
+                        vals[field_name] += line.suggested_answer_id.value
+                else:
+                    vals[field_name] = line.suggested_answer_id.value
         return vals
 
     def _create_contact_post_process(self, partner):
