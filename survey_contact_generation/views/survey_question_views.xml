@@ -10,13 +10,13 @@
                     <field name="allowed_field_ids" invisible="1" />
                 </group>
             </xpath>
-            <xpath expr="//field[@name='matrix_row_ids']" position="attributes">
+            <xpath expr="//field[@name='suggested_answer_ids']" position="attributes">
                 <attribute
                     name="context"
                 >{'default_question_id': active_id, 'default_res_partner_field': res_partner_field}</attribute>
             </xpath>
             <xpath
-                expr="//field[@name='matrix_row_ids']//field[@name='value']"
+                expr="//field[@name='suggested_answer_ids']//field[@name='value']"
                 position="after"
             >
                 <field name="res_partner_field" invisible="1" />
