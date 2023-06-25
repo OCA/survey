@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="crm.tag" id="tag_survey_leads">
+        <field name="name">Survey Leads</field>
+    </record>
+    <record model="crm.tag" id="tag_oca_partnership">
+        <field name="name">OCA Partnership</field>
+    </record>
+<!--     Sales Team -->
+    <record model="crm.team" id="oca_partnership_leads">
+        <field name="name">OCA Partnership</field>
+    </record>
+</odoo>
