@@ -12,7 +12,6 @@ class SurveyCrmGenerationCase(SurveyCase, HttpCase):
         modules"""
         super().setUp()
         self.oca_leads = self.env.ref("survey_crm_generation.oca_partnership_leads")
-        self.survey = self.env.ref("survey_crm_generation.become_partner")
         initial_user_inputs = self.survey.user_input_ids
         # Run the survey as a portal user and get the generated quotation
         self.start_tour(
