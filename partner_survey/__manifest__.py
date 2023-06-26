@@ -5,7 +5,7 @@
     "name": "Partner Survey",
     "summary": "Link partners with their survey results",
     "category": "Marketing",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "depends": ["contacts", "survey"],
     "data": ["views/res_partner_view.xml"],
     "author": "Tecnativa, Camptocamp, Odoo Community Association (OCA)",
