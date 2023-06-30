@@ -3,7 +3,7 @@
 {
     "name": "Survey contacts generation",
     "summary": "Generate new contacts from surveys",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.1.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
