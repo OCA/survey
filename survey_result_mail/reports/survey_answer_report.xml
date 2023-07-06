@@ -32,14 +32,14 @@
             </t>
         </t>
     </template>
-    <report
-        id="survey_result_report"
-        model="survey.user_input"
-        name="survey_result_mail.survey_result_report_view"
-        file="survey_result_mail.survey_result_report_view"
-        report_type="qweb-pdf"
-        string="Survey results"
-        attachment="'surevey_results.pdf'"
-        print_report_name="'Survey results - %s' % (object.survey_id.display_name)"
-    />
+    <record id="survey_result_report" model="ir.actions.report">
+        <field name="model">survey.user_input</field>
+        <field name="name">Survey results</field>
+        <field name="report_name">survey_result_mail.survey_result_report_view</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="attachment">'surevey_results.pdf'</field>
+        <field
+            name="print_report_name"
+        >'Survey results - %s' % (object.survey_id.display_name)</field>
+    </record>
 </odoo>
