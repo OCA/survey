@@ -26,7 +26,7 @@ Survey Result Mail
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module extends the functionality of surveys to allow you to send an automatic
-email with the survey answers to the customer as soon as the questionary is completed.
+email with the survey answers to the filler as soon as the questionary is completed.
 
 **Table of contents**
 
