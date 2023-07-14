@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<record
+        id="survey_user_input_line_view_form_inherit_question_type_binary"
+        model="ir.ui.view"
+    >
+    <field name="name">survey.user_input.line.view.form.inherit</field>
+    <field name="model">survey.user_input.line</field>
+    <field name="inherit_id" ref="survey.survey_user_input_line_view_form" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='value_text_box']" position="after">
+            <field name="answer_binary_ids" mode="kanban" nolabel="1" colspan="4">
+                <kanban>
+                    <field name="id" />
+                    <field name="is_binary_image" />
+                    <field name="filename" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img
+                                            alt="Contact image"
+                                            t-if="record.is_binary_image.raw_value"
+                                            t-att-src="kanban_image('survey.user_input.line_binary', 'value_binary', record.id.raw_value)"
+                                        />
+                                    <t t-if="!record.is_binary_image.raw_value">
+                                        <i
+                                                t-if="record.value_binary_type.raw_value == 'application/pdf'"
+                                                class="fa fa-file-pdf-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                        <i
+                                                t-if="record.value_binary_type.raw_value.includes('word')"
+                                                class="fa fa-file-word-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                        <i
+                                                t-if="record.value_binary_type.raw_value.includes('excel') or record.value_binary_type.raw_value.includes('spreadsheet')"
+                                                class="fa fa-file-excel-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                        <i
+                                                t-if="record.value_binary_type.raw_value.includes('powerpoint') or record.value_binary_type.raw_value.includes('presentation')"
+                                                class="fa fa-file-powerpoint-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                        <i
+                                                t-if="record.value_binary_type.raw_value == 'text/plain'"
+                                                class="fa fa-file-text-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                        <i
+                                                t-if="record.value_binary_type.raw_value == 'text/html' or record.value_binary_type.raw_value == 'application/json'"
+                                                class="fa fa-file-code-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                        <i
+                                                t-if="record.value_binary_type.raw_value.includes('zip')"
+                                                class="fa fa-file-archive-o"
+                                                aria-label="Document"
+                                                role="img"
+                                                title="Document"
+                                                style="font-size: 4.5rem;"
+                                            />
+                                    </t>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <div><strong>Filename: </strong><field
+                                                name="filename"
+                                            /></div>
+                                    <div><strong>MIME Type: </strong><field
+                                                name="value_binary_type"
+                                            /></div>
+                                    <div><strong>Size: </strong><field
+                                                name="value_binary_size"
+                                            /> bytes</div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </xpath>
+    </field>
+</record>
+
+</odoo>
