@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2023 Aures Tic (https://aurestic.es/)
+  @author: Jose Zambudio <jose@aurestic.es>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="survey_question_form_inherit_question_type_binary" model="ir.ui.view">
+        <field name="name">survey.question.view.form.inherit</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
+                <div
+                    attrs="{'invisible': [('question_type', 'not in',('binary','multi_binary'))]}"
+                >
+                    <i class="fa fa-upload fa-2x" title="upload" /> Upload binary
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='validation_email']/../.." position="attributes">
+                <attribute name="attrs">
+                {'invisible': [('question_type', 'not in', ['char_box', 'numerical_box', 'date', 'datetime', "binary", "multi_binary"])]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='validation_length_min']" position="before">
+                <field
+                    name="allowed_filemimetypes"
+                    attrs="{'invisible': [('question_type','not in',('binary','multi_binary'))]}"
+                />
+                <field
+                    name="max_filesize"
+                    attrs="{'invisible': [('question_type','not in',('binary','multi_binary'))]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
