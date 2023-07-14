@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="assets_frontend"
+        inherit_id="survey.survey_assets"
+        name="Survey assets"
+    >
+        <xpath
+            expr="//script[@src='/survey/static/src/js/survey_form.js']"
+            position="after"
+        >
+            <script
+                type="text/javascript"
+                src="/survey_question_type_binary/static/src/js/survey_form.js"
+            />
+        </xpath>
+    </template>
+
+    <template
+        id="question_conainer_inh_type_binary"
+        inherit_id="survey.question_container"
+    >
+        <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
+            <t t-if="question.question_type in ('binary', 'multi_binary')">
+                <t t-call="survey_question_type_binary.question_binary" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="survey_page_print" inherit_id="survey.survey_page_print">
+        <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
+            <t t-if="question.question_type in ('binary', 'multi_binary')">
+                <t t-call="survey_question_type_binary.question_binary" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="question_binary" name="Question: Binary">
+        <div class="o_survey_comment_container p-0">
+            <t t-if="answer_lines and answer_lines[0].answer_binary_ids">
+                <t t-foreach="answer_lines[0].answer_binary_ids" t-as="answer_binary">
+                    <t t-if="answer_binary.is_binary_image">
+                        <img
+                            t-attf-src="/web/image?model=#{answer_binary._name}&amp;id=#{answer_binary.id}&amp;field=value_binary"
+                        />
+                    </t>
+                    <t t-elif="answer_binary.value_binary">
+                        <p><t t-esc="answer_binary.filename" /></p>
+                    </t>
+                    <t t-else="">
+                        <input
+                            type="file"
+                            t-att-name="question.id"
+                            t-on-change="binaryChange"
+                            t-att-data-question-type="question.question_type"
+                            t-att-value="answer_binary[0].value_binary if answer_lines else None"
+                        />
+                    </t>
+                </t>
+            </t>
+            <t t-else="">
+                <input
+                    type="file"
+                    t-att-name="question.id"
+                    t-on-change="binaryChange"
+                    t-att-data-question-type="question.question_type"
+                    t-att-multiple="question.question_type == 'multi_binary' and 'multiple' or False"
+                />
+            </t>
+        </div>
+    </template>
+</odoo>
