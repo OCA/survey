@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="crm.tag" id="tag_tech_support">
+        <field name="name">Tech support</field>
+    </record>
+    <record model="survey.survey" id="survey_sale_generation.survey_hire_support">
+        <field name="generate_leads" eval="True" />
+        <field
+            name="crm_tag_ids"
+            eval="[(6,0,[ref('survey_crm_sale_generation.tag_tech_support'), ref('survey_crm_generation.tag_survey_leads')])]"
+        />
+    </record>
+</odoo>
