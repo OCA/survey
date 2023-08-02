@@ -42,7 +42,7 @@ class SurveySaleGenerationTests(SurveySaleGenerationCase):
         """
         expected_lines = {
             self.support_hours: 3,
-            self.gold_service: 1,
+            self.gold_service: 3,
             self.advanced_backup: 1,
             self.mail_management: 1,
         }
