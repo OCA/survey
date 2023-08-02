@@ -7,6 +7,13 @@ class SurveyQuestion(models.Model):
     _inherit = "survey.question"
 
     product_id = fields.Many2one(comodel_name="product.product")
+    product_uom_qty_question_id = fields.Many2one(
+        comodel_name="survey.question",
+        help="For multiple answer questions we might want to consider how much of that "
+        "product we want to order. For example, one question could be: 'How many "
+        "members in your team?' and other could be 'Choose the membership type'. We'll "
+        "want to multiply members by memberships in our sale line.",
+    )
     show_in_sale_order_comment = fields.Boolean()
 
 
