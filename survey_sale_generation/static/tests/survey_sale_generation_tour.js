@@ -15,8 +15,13 @@ odoo.define("survey.tour_test_survey_sale_generation", function (require) {
                 trigger: "button.btn:contains('Start Survey')",
             },
             {
+                content: "Name",
+                trigger: "div.js_question-wrapper:contains('Name') input",
+                run: "text Mr. Odoo",
+            },
+            {
                 content: "E-mail address",
-                trigger: "div.js_question-wrapper:contains('E-mail address') textarea",
+                trigger: "div.js_question-wrapper:contains('E-mail address') input",
                 run: "text test@test.com",
             },
             {

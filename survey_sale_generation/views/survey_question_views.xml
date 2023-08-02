@@ -11,6 +11,15 @@
                 >
                     <field name="product_id" />
                 </group>
+                <group
+                    name="Linked product"
+                    attrs="{'invisible': [('question_type', 'not in', ['simple_choice', 'multiple_choice'])]}"
+                >
+                    <field
+                        name="product_uom_qty_question_id"
+                        domain="[('survey_id', '=', survey_id), ('question_type', '=', 'numerical_box')]"
+                    />
+                </group>
             </xpath>
             <xpath expr="//field[@name='value']" position="after">
                 <field
