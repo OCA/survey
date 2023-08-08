@@ -1,0 +1,121 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_contact_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-14 11:55+0000\n"
+"PO-Revision-Date: 2023-06-14 13:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_field_ids
+msgid "Allowed Field"
+msgstr "Campo permitido"
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q3
+#: model:survey.question,title:survey_contact_generation.survey_contact_q3
+msgid "Color"
+msgstr "Color"
+
+#. module: survey_contact_generation
+#: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_form
+#: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_question_form
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: survey_contact_generation
+#: model:survey.survey,title:survey_contact_generation.survey_contact_creation
+msgid "Contact Creation Survey"
+msgstr "Encuesta de creación de contactos"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
+msgid "Contact field"
+msgstr "Campo de contacto"
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q4
+#: model:survey.question,title:survey_contact_generation.survey_contact_q4
+msgid "Date"
+msgstr "Fecha"
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q1
+#: model:survey.question,title:survey_contact_generation.survey_contact_q1
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__generate_contact
+msgid "Generate Contact"
+msgstr "Generar contacto"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__generate_contact
+msgid "Generate contacts for anonymous survey users"
+msgstr "Generar contacto para encuestas anónimas"
+
+#. module: survey_contact_generation
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q0
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q1
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q2
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q3
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
+msgid "If other, please specify:"
+msgstr "Si es otro, especifíquelo:"
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q0
+#: model:survey.question,title:survey_contact_generation.survey_contact_q0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: survey_contact_generation
+#: model:survey.question,question:survey_contact_generation.survey_contact_q2
+#: model:survey.question,title:survey_contact_generation.survey_contact_q2
+msgid "Notes"
+msgstr "Notas"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_survey
+msgid "Survey"
+msgstr "Planificación"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question
+msgid "Survey Question"
+msgstr "Pregunta de la encuesta"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Entrada de usuario de la encuesta"
+
+#. module: survey_contact_generation
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q0
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q1
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q2
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q3
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
+msgid "The answer you entered is not valid."
+msgstr "La respuesta que has introducido no es válida."
+
+#. module: survey_contact_generation
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q0
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q1
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q2
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q3
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
+msgid "This question requires an answer."
+msgstr "Esta pregunta requiere una respuesta."
