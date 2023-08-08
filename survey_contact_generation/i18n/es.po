@@ -23,7 +23,6 @@ msgid "Allowed Field"
 msgstr "Campo permitido"
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q3
 #: model:survey.question,title:survey_contact_generation.survey_contact_q3
 msgid "Color"
 msgstr "Color"
@@ -41,20 +40,34 @@ msgstr "Encuesta de creación de contactos"
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field
 msgid "Contact field"
 msgstr "Campo de contacto"
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q4
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field_resource_ref
+msgid "Contact field value"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q5
+msgid "Country"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q4
 msgid "Date"
 msgstr "Fecha"
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q1
 #: model:survey.question,title:survey_contact_generation.survey_contact_q1
 msgid "Email"
 msgstr "Correo electrónico"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug3
+msgid "Employees"
+msgstr ""
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__generate_contact
@@ -72,25 +85,45 @@ msgstr "Generar contacto para encuestas anónimas"
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q2
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q3
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q5
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q6
 msgid "If other, please specify:"
 msgstr "Si es otro, especifíquelo:"
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q0
 #: model:survey.question,title:survey_contact_generation.survey_contact_q0
 msgid "Name"
 msgstr "Nombre"
 
 #. module: survey_contact_generation
-#: model:survey.question,question:survey_contact_generation.survey_contact_q2
 #: model:survey.question,title:survey_contact_generation.survey_contact_q2
 msgid "Notes"
 msgstr "Notas"
 
 #. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug2
+msgid "Prospects"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug2
+msgid "Romania"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug1
+msgid "Spain"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:ir.model,name:survey_contact_generation.model_survey_survey
 msgid "Survey"
 msgstr "Planificación"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question_answer
+msgid "Survey Label"
+msgstr ""
 
 #. module: survey_contact_generation
 #: model:ir.model,name:survey_contact_generation.model_survey_question
@@ -103,11 +136,18 @@ msgid "Survey User Input"
 msgstr "Entrada de usuario de la encuesta"
 
 #. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q6
+msgid "Tags"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q0
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q1
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q2
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q3
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q5
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q6
 msgid "The answer you entered is not valid."
 msgstr "La respuesta que has introducido no es válida."
 
@@ -117,5 +157,12 @@ msgstr "La respuesta que has introducido no es válida."
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q2
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q3
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q5
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q6
 msgid "This question requires an answer."
 msgstr "Esta pregunta requiere una respuesta."
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug1
+msgid "Vendor"
+msgstr ""
