@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_answer_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_answer_generation
+#: code:addons/survey_answer_generation/models/survey_user_input.py:0
+#, python-format
+msgid "Current"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input__diff_user_input_line_count
+msgid "Diff User Input Line Count"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input_line__diff_with_origin
+msgid "Diff With Origin"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question__next_survey_id
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_survey__next_survey_id
+msgid "Next Survey"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input__next_survey_input_id
+msgid "Next Survey Input"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question__next_survey_question_id
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question_answer__next_survey_question_id
+msgid "Next Survey Question"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question_answer__next_survey_question_answer_id
+msgid "Next Survey Question Answer"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input__origin_input_id
+msgid "Origin Input"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input_line__origin_input_line
+msgid "Origin Input Line"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,help:survey_answer_generation.field_survey_question__next_survey_question_id
+#: model:ir.model.fields,help:survey_answer_generation.field_survey_question_answer__next_survey_question_answer_id
+#: model:ir.model.fields,help:survey_answer_generation.field_survey_question_answer__next_survey_question_id
+msgid "Prefill this answer of the next survey with the answer of this one"
+msgstr ""
+
+#. module: survey_answer_generation
+#: code:addons/survey_answer_generation/models/survey_user_input.py:0
+#, python-format
+msgid "Previous"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_question_answer
+msgid "Survey Label"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_question
+msgid "Survey Question"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr ""

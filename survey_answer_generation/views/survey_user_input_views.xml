@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_user_input_view_form" model="ir.ui.view">
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form" />
+        <field name="arch" type="xml">
+            <field name="survey_id" position="after">
+                <field name="diff_user_input_line_count" invisible="1" />
+                <field
+                    name="origin_input_id"
+                    attrs="{'invisible': [('origin_input_id', '=', False)]}"
+                />
+                <field
+                    name="next_survey_input_id"
+                    attrs="{'invisible': [('next_survey_input_id', '=', False)]}"
+                />
+            </field>
+            <xpath
+                expr="//field[@name='user_input_line_ids']//tree"
+                position="attributes"
+            >
+                <attribute
+                    name="decoration-danger"
+                >diff_with_origin != False</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='user_input_line_ids']//tree//field[@name='answer_score']"
+                position="after"
+            >
+                <field
+                    name="diff_with_origin"
+                    optional="hide"
+                    attrs="{'column_invisible': [('parent.origin_input_id', '=', False)]}"
+                />
+                <field
+                    name="origin_input_line"
+                    optional="hide"
+                    attrs="{'column_invisible': [('parent.origin_input_id', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

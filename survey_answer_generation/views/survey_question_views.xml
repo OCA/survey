@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='suggested_answer_ids']/.." position="after">
+                <group name="Next survey question">
+                    <field name="next_survey_id" invisible="1" />
+                    <field
+                        name="next_survey_question_id"
+                        attrs="{'invisible': [('next_survey_id', '=', False)]}"
+                    />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='value']" position="after">
+                <field name="next_survey_question_id" invisible="1" />
+                <field
+                    name="next_survey_question_answer_id"
+                    attrs="{'column_invisible': [('parent.next_survey_question_id', '=', 'False')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
