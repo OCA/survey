@@ -1,0 +1,104 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_answer_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-16 15:06+0000\n"
+"PO-Revision-Date: 2023-11-16 16:11+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4\n"
+
+#. module: survey_answer_generation
+#: code:addons/survey_answer_generation/models/survey_user_input.py:0
+#, python-format
+msgid "Current"
+msgstr "Actual"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input__diff_user_input_line_count
+msgid "Diff User Input Line Count"
+msgstr ""
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input_line__diff_with_origin
+msgid "Diff With Origin"
+msgstr "Diferencias con el original"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question__next_survey_id
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_survey__next_survey_id
+msgid "Next Survey"
+msgstr "Próxima encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input__next_survey_input_id
+msgid "Next Survey Input"
+msgstr "Respuestas de la próxima encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question__next_survey_question_id
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question_answer__next_survey_question_id
+msgid "Next Survey Question"
+msgstr "Pregunta de la próxima encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_question_answer__next_survey_question_answer_id
+msgid "Next Survey Question Answer"
+msgstr "Respuesta a la pregunta de la próxima encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input__origin_input_id
+msgid "Origin Input"
+msgstr "Respuestas de origen"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,field_description:survey_answer_generation.field_survey_user_input_line__origin_input_line
+msgid "Origin Input Line"
+msgstr "Línea de repuestas de origen"
+
+#. module: survey_answer_generation
+#: model:ir.model.fields,help:survey_answer_generation.field_survey_question__next_survey_question_id
+#: model:ir.model.fields,help:survey_answer_generation.field_survey_question_answer__next_survey_question_answer_id
+#: model:ir.model.fields,help:survey_answer_generation.field_survey_question_answer__next_survey_question_id
+msgid "Prefill this answer of the next survey with the answer of this one"
+msgstr "Rellenar previamente la respuesta de la próxima encuesta con la respuesta de esta"
+
+#. module: survey_answer_generation
+#: code:addons/survey_answer_generation/models/survey_user_input.py:0
+#, python-format
+msgid "Previous"
+msgstr "Anterior"
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_survey
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_question_answer
+msgid "Survey Label"
+msgstr "Etiqueta de la encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_question
+msgid "Survey Question"
+msgstr "Pregunta de la encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Entrada de usuario de la encuesta"
+
+#. module: survey_answer_generation
+#: model:ir.model,name:survey_answer_generation.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "Línea de entrada de usuario de la encuesta"
