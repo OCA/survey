@@ -15,9 +15,10 @@ class SurveyQuestion(models.Model):
         stats = super()._get_stats_summary_data(user_input_lines)
         if self.question_type in ["nps_rate"]:
             stats.update(self._get_stats_summary_data_numerical(user_input_lines))
-            all_nps = user_input_lines.filtered(lambda line: not line.skipped).mapped(
-                "value_nps"
-            )
+            all_nps = user_input_lines.filtered(
+                lambda line: not line.skipped
+                and line.question_id.question_type == "nps_rate"
+            ).mapped("value_numerical_box")
             stats.update(
                 {
                     "common_lines": collections.Counter(
@@ -30,7 +31,9 @@ class SurveyQuestion(models.Model):
                             lambda line: line.answer_is_correct
                         ).mapped("user_input_id")
                     ),
-                    "average_nps": round(sum(all_nps) / len(all_nps), 2),
+                    "average_nps": round(sum(all_nps) / len(all_nps), 2)
+                    if all_nps
+                    else 0.0,
                 }
             )
         return stats

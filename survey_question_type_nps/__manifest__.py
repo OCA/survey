@@ -10,6 +10,13 @@
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
     "depends": ["survey"],
-    "data": ["views/survey_question.xml", "templates/survey_template.xml"],
+    "data": ["views/survey_question.xml", "views/survey_template.xml"],
     "demo": [],
+    "assets": {
+        "survey.survey_assets": [
+            "survey_question_type_nps/static/src/js/survey.js",
+            "survey_question_type_nps/static/src/scss/parameters.scss",
+            "survey_question_type_nps/static/src/scss/survey.scss",
+        ],
+    },
 }
