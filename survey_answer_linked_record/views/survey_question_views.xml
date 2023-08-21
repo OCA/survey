@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='comments_allowed']/.." position="after">
+                <group name="model" string="Model">
+                    <field
+                        name="ir_model_id"
+                        options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                    />
+                    <field name="ir_model_name" invisible="1" />
+                    <field
+                        name="ir_model_domain"
+                        widget="domain"
+                        options="{'model': 'ir_model_name'}"
+                    />
+                    <button
+                        type="object"
+                        name="populate_ir_model_suggested_answers"
+                        attrs="{'invisible': [('suggested_answer_ids', '!=', [])]}"
+                        icon="fa-cubes"
+                        class="btn-link"
+                    >&amp;nbsp;Populate answers</button>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='suggested_answer_ids']" position="attributes">
+                <attribute
+                    name="context"
+                >{'default_question_id': active_id, 'default_ir_model_id': ir_model_id}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='suggested_answer_ids']//field[@name='value']"
+                position="after"
+            >
+                <field name="ir_model_id" invisible="1" />
+                <field
+                    name="ir_model_resource_ref"
+                    readonly="False"
+                    options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                    attrs="{'column_invisible': [('parent.ir_model_id', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
