@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-survey_conditional_question',
         'odoo14-addon-survey_description',
+        'odoo14-addon-survey_question_type_binary',
         'odoo14-addon-survey_question_type_five_star',
         'odoo14-addon-survey_question_type_nps',
         'odoo14-addon-survey_xlsx',
