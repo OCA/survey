@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template
-        id="assets_frontend"
-        inherit_id="survey.survey_assets"
-        name="Survey assets"
-    >
-        <xpath expr="//link[last()]" position="after">
-            <script
-                type="text/javascript"
-                src="/survey_question_type_nps/static/src/js/survey.js"
-            />
-            <link
-                href="/survey_question_type_nps/static/src/scss/parameters.scss"
-                rel="stylesheet"
-                type="text/scss"
-            />
-            <link
-                href="/survey_question_type_nps/static/src/scss/survey.scss"
-                rel="stylesheet"
-                type="text/scss"
-            />
-        </xpath>
-    </template>
     <template id="question" inherit_id="survey.question_container">
         <xpath expr="//t[@t-call='survey.question_text_box']/.." position="after">
             <t t-if="question.question_type == 'nps_rate'">
@@ -31,15 +9,18 @@
     </template>
     <template id="result" inherit_id="survey.survey_page_statistics_question">
         <xpath
-            expr="//t[@t-call='survey.question_result_number_or_date']/parent::t"
+            expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']"
             position="after"
         >
-            <t t-if="question.question_type == 'nps_rate'">
-                <t t-call="survey.question_result_number_or_date" />
+            <t t-elif="question.question_type == 'nps_rate'">
+                <t t-call="survey.question_result_number_or_date_or_datetime" />
             </t>
         </xpath>
     </template>
-    <template id="result_user" inherit_id="survey.question_result_number_or_date">
+    <template
+        id="result_user"
+        inherit_id="survey.question_result_number_or_date_or_datetime"
+    >
         <xpath expr="//a[@t-field='input_line.value_date']" position="after">
             <a
                 t-if="question.question_type == 'nps_rate'"
@@ -47,9 +28,12 @@
                 t-field="input_line.value_numerical_box"
             />
         </xpath>
-        <xpath expr="//tbody/tr/td/span" position="after">
-            <span t-if="question.question_type == 'nps_rate'" t-esc="common_line[0]" />
-        </xpath>
+        <t t-elif="question.question_type == 'datetime'" position="after">
+            <span
+                t-elif="question.question_type == 'nps_rate'"
+                t-esc="common_line[0]"
+            />
+        </t>
     </template>
     <template id="survey_page_print" inherit_id="survey.survey_page_print">
         <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
@@ -113,13 +97,28 @@
             </div>
         </div>
     </template>
-    <template id="avg_nps" inherit_id="survey.survey_page_statistics_question">
-        <div class="d-flex align-items-start mb-2" position="inside">
-            <t t-if="'average_nps' in question_data">
-                <span class="badge badge-info ml-1"><span
-                        t-esc="question_data['average_nps']"
-                    /> NPS Average</span>
+    <template
+        id="avg_nps"
+        inherit_id="survey.question_result_number_or_date_or_datetime"
+    >
+        <t t-if="question.question_type == 'numerical_box'" position="after">
+            <t t-if="question.question_type == 'nps_rate'">
+                <span class="float-end mt8">
+                    <div
+                        class="btn-group o_survey_results_question_pill"
+                        role="group"
+                        aria-label="Average"
+                    >
+                        <span
+                            class="badge text-bg-secondary only_left_radius px-2 pt-1"
+                        >Average </span>
+                        <span
+                            class="badge text-bg-warning only_right_radius px-2 pt-1"
+                            t-esc="question_data['average_nps']"
+                        />
+                    </div>
+                </span>
             </t>
-        </div>
+        </t>
     </template>
 </odoo>
