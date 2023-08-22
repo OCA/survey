@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="question_text_box"
+        name="Question: free text box placeholder"
+        inherit_id="survey.question_text_box"
+    >
+        <xpath expr='//textarea' position="attributes">
+            <attribute
+                name="t-att-placeholder"
+            >question.question_placeholder</attribute>
+        </xpath>
+    </template>
+    <template
+        id="question_char_box"
+        name="Question: text box placeholder"
+        inherit_id="survey.question_char_box"
+    >
+        <xpath expr='//input' position="attributes">
+            <attribute
+                name="t-att-placeholder"
+            >question.question_placeholder</attribute>
+        </xpath>
+    </template>
+    <template
+        id="question_numerical_box"
+        name="Question: numerical box placeholder"
+        inherit_id="survey.question_numerical_box"
+    >
+        <xpath expr='//input' position="attributes">
+            <attribute
+                name="t-att-placeholder"
+            >question.question_placeholder</attribute>
+        </xpath>
+    </template>
+    <template
+        id="question_date"
+        name="Question: date box placeholder"
+        inherit_id="survey.question_date"
+    >
+        <xpath expr='//input' position="attributes">
+            <attribute
+                name="t-att-placeholder"
+            >question.question_placeholder</attribute>
+        </xpath>
+    </template>
+    <template
+        id="question_datetime"
+        name="Question: datetime box placeholder"
+        inherit_id="survey.question_datetime"
+    >
+        <xpath expr='//input' position="attributes">
+            <attribute
+                name="t-att-placeholder"
+            >question.question_placeholder</attribute>
+        </xpath>
+    </template>
+</odoo>
