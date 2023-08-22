@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="survey_legal_terms" name="Survey legal terms acceptance">
+        <div
+            t-if="survey.legal_terms"
+            class="js_question-wrapper form-check col-lg-12"
+            id="accepted_legal_terms_wrapper"
+        >
+            <input
+                class="form-check-input position-relative ml-0 mr-1"
+                type="checkbox"
+                name="accepted_legal_terms"
+                id="accepted_legal_terms"
+                required="required"
+            />
+            <label for="accepted_legal_terms" class="control-label form-check-label">
+                <span class="acceptance_full">
+                    <a
+                        t-att-href="survey.legal_terms_link or '/legal'"
+                        t-out="survey.legal_terms_text"
+                    />
+                </span>
+            </label>
+            <div
+                class="o_survey_question_error overflow-hidden border-0 py-0 px-3 alert alert-danger"
+                role="alert"
+            />
+        </div>
+    </template>
+    <template
+        id="survey_fill_form_in_progress"
+        name="Legal terms in survey page"
+        inherit_id="survey.survey_fill_form_in_progress"
+    >
+        <xpath
+            expr='//t[@t-if="survey.questions_layout == &apos;one_page&apos;"]//button[@type="submit"]/..'
+            position="before"
+        >
+            <t t-call="survey_legal.survey_legal_terms" />
+        </xpath>
+        <xpath
+            expr='//t[@t-if="survey.questions_layout == &apos;page_per_section&apos;"]//button[@type="submit"]/..'
+            position="before"
+        >
+            <t t-if="survey_last">
+                <t t-call="survey_legal.survey_legal_terms" />
+            </t>
+        </xpath>
+        <xpath
+            expr='//div[@t-if="survey.questions_layout == &apos;page_per_question&apos;"]//button[@type="submit"]/..'
+            position="before"
+        >
+            <t t-if="survey_last">
+                <t t-call="survey_legal.survey_legal_terms" />
+            </t>
+        </xpath>
+    </template>
+</odoo>
