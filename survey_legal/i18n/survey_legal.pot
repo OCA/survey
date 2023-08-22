@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,6 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__legal_terms_link
+msgid "Legal Terms Link"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__legal_terms_text
+msgid "Legal Terms Text"
+msgstr ""
 
 #. module: survey_legal
 #: model:ir.model.fields,help:survey_legal.field_survey_user_input__user_metadata
@@ -44,4 +54,11 @@ msgstr ""
 #. module: survey_legal
 #: model:ir.model.fields,field_description:survey_legal.field_survey_user_input__user_metadata
 msgid "User Metadata"
+msgstr ""
+
+#. module: survey_legal
+#. openerp-web
+#: code:addons/survey_legal/static/src/js/survey_form.esm.js:0
+#, python-format
+msgid "You must accept the legal terms"
 msgstr ""
