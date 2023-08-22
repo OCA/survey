@@ -3,7 +3,7 @@
 {
     "name": "Survey legal terms",
     "summary": "Require legal terms before survey submit",
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.0.1",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
