@@ -13,7 +13,7 @@ class SurveyMetada(Survey):
         access_data = self._get_access_data(
             survey_token, answer_token, ensure_token=True
         )
-        if access_data["validity_code"] != "answer_done":
+        if access_data["validity_code"] is not True:
             return res
         answer_sudo = access_data["answer_sudo"]
         if not answer_sudo.survey_id.legal_terms:

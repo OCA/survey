@@ -6,6 +6,14 @@
         <field name="arch" type="xml">
             <group name="candidates" position="inside">
                 <field name="legal_terms" />
+                <field
+                    name="legal_terms_link"
+                    attrs="{'invisible': [('legal_terms', '=', False)]}"
+                />
+                <field
+                    name="legal_terms_text"
+                    attrs="{'invisible': [('legal_terms', '=', False)]}"
+                />
             </group>
         </field>
     </record>

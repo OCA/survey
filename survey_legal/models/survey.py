@@ -11,3 +11,7 @@ class SurveySurvey(models.Model):
         help="The users will be prompted to require the acceptance of the legal terms "
         "to be able to submit their answers",
     )
+    legal_terms_link = fields.Char(default="/terms")
+    legal_terms_text = fields.Text(
+        default="I accept the legal terms, the privacy policy and conditions."
+    )
