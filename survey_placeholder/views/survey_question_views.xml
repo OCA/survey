@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <group>
+                    <field
+                        name="question_placeholder"
+                        attrs="{'invisible': [('question_type', 'not in', ['text_box', 'char_box', 'date', 'datetime', 'numerical_box'])]}"
+                        placeholder="When set, this text will appear in the field to help participants answer."
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
