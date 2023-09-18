@@ -8,17 +8,17 @@ Now you'll have to configure the products linked to the questions.
 
 For *Numerical value* questions:
 
-#. In the *Answers* tab choose the linked product.
-#. The resulting quotation will have as many items of that product as the user defines.
+#. In the *Answers* tab choose the linked products.
+#. The resulting quotation will have as many items of that products as the user defines.
 
 For *Multiple choice: only one answer*:
 
-#. In the *Answers* tab link a product to every given choice.
-#. The resulting quotation will have the product linked to the survey user's choice.
+#. In the *Answers* tab link multiple products to every given choice.
+#. The resulting quotation will have the products linked to the survey user's choice.
 
 For *Multiple choice: multiple answers allowed*:
 
-#. In the *Answers* tab link a product to every given choice.
+#. In the *Answers* tab link products to every given choice.
 #. The resulting quotation will have the products linked to the survey user's choices.
 #. By default a unit of product will be added per answer to the quotation. If you want
    to set a variable choice, you can link a numeric question that will act as multiplier.
