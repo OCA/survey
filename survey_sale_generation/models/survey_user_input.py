@@ -1,6 +1,6 @@
 # Copyright 2022 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, fields, models
+from odoo import Command, _, fields, models
 from odoo.tools import plaintext2html
 
 
@@ -18,12 +18,10 @@ class SurveyUserInput(models.Model):
             "team_id": self.survey_id.crm_team_id.id,
         }
 
-    def _prepare_quotation_line(self, input_line):
+    def _prepare_quotation_line(self, input_line, product):
         if input_line.question_id.question_type == "numerical_box":
-            product_id = input_line.question_id.product_id
             qty = input_line.value_numerical_box
         else:
-            product_id = input_line.suggested_answer_id.product_id
             # We can set a related question that will be the qty multiplier
             qty_question = self.user_input_line_ids.filtered(
                 lambda x: x.question_id
@@ -33,7 +31,7 @@ class SurveyUserInput(models.Model):
             # validation on top of it
             qty = qty_question.value_numerical_box if qty_question else 1
         return {
-            "product_id": product_id.id,
+            "product_id": product.id,
             "product_uom_qty": qty,
         }
 
@@ -80,16 +78,27 @@ class SurveyUserInput(models.Model):
         if not self.survey_id.generate_quotations:
             return res
         quotable_lines = self.user_input_line_ids.filtered(
-            "suggested_answer_id.product_id"
+            "suggested_answer_id.product_ids"
         )
         quotable_lines += self.user_input_line_ids.filtered(
-            lambda x: x.question_id.product_id and not x.skipped
+            lambda x: x.question_id.product_ids and not x.skipped
         )
         if not quotable_lines:
             return res
         vals = self._prepare_quotation()
+        quotable_lines_pairs = []
+        # We can set multiple products, so for each one a sale line is created
+        for input_line in quotable_lines:
+            if input_line.question_id.question_type == "numerical_box":
+                product_ids = input_line.question_id.product_ids
+            else:
+                product_ids = input_line.suggested_answer_id.product_ids
+            if not product_ids:
+                continue
+            quotable_lines_pairs += [(input_line, product) for product in product_ids]
         vals["order_line"] = [
-            (0, 0, self._prepare_quotation_line(line)) for line in quotable_lines
+            Command.create(self._prepare_quotation_line(line, product))
+            for line, product in quotable_lines_pairs
         ]
         self.sale_order_id = self.env["sale.order"].sudo().create(vals)
         self._create_quotation_post_process()
