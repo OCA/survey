@@ -72,20 +72,11 @@ relevant infos concerning the request. To do so:
 #. Set *Show in sale order comment* on if you want those answers on the internal
    notification.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c9b44d3 (fixup! [IMP] survey_sale_generation: multiple products)
 If you want to use a quotation template you can choose it from the options: *Sale Order Template*.
 
 You can also configure the survey to send the quotation to the customer by mail. When doing
 so, you can choose a mail template or use the default one.
 
-<<<<<<< HEAD
->>>>>>> 5299b79 (fixup! [IMP] survey_sale_generation: send template and multiplier)
-=======
->>>>>>> c9b44d3 (fixup! [IMP] survey_sale_generation: multiple products)
 Usage
 =====
 
