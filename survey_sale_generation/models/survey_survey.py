@@ -19,3 +19,6 @@ class SurveySurvey(models.Model):
         domain=[("model", "=", "sale.order")],
         help="Choose a template. Otherwise the default one will be used.",
     )
+    sale_order_template_id = fields.Many2one(
+        comodel_name="sale.order.template",
+    )

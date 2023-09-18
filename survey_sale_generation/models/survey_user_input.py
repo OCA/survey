@@ -16,6 +16,7 @@ class SurveyUserInput(models.Model):
             "survey_user_input_id": self.id,
             "company_id": self.create_uid.company_id.id,
             "team_id": self.survey_id.crm_team_id.id,
+            "sale_order_template_id": self.survey_id.sale_order_template_id.id,
         }
 
     def _prepare_quotation_line(self, input_line, product):
@@ -85,7 +86,12 @@ class SurveyUserInput(models.Model):
         )
         if not quotable_lines:
             return res
-        vals = self._prepare_quotation()
+        self.sale_order_id = (
+            self.env["sale.order"].sudo().create(self._prepare_quotation())
+        )
+        # Trigger the template default in advance or we could loose our lines
+        if self.sale_order_id.sale_order_template_id:
+            self.sale_order_id.onchange_sale_order_template_id()
         quotable_lines_pairs = []
         # We can set multiple products, so for each one a sale line is created
         for input_line in quotable_lines:
@@ -96,10 +102,14 @@ class SurveyUserInput(models.Model):
             if not product_ids:
                 continue
             quotable_lines_pairs += [(input_line, product) for product in product_ids]
-        vals["order_line"] = [
-            Command.create(self._prepare_quotation_line(line, product))
-            for line, product in quotable_lines_pairs
-        ]
-        self.sale_order_id = self.env["sale.order"].sudo().create(vals)
+        if quotable_lines_pairs:
+            self.sale_order_id.write(
+                {
+                    "order_line": [
+                        Command.create(self._prepare_quotation_line(line, product))
+                        for line, product in quotable_lines_pairs
+                    ]
+                }
+            )
         self._create_quotation_post_process()
         return res
