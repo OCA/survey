@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo13-addon-survey_crm_generation',
         'odoo13-addon-survey_crm_sale_generation',
         'odoo13-addon-survey_description',
+        'odoo13-addon-survey_formio',
         'odoo13-addon-survey_legal',
         'odoo13-addon-survey_question_type_five_star',
         'odoo13-addon-survey_resource_booking',
