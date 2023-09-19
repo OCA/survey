@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo14-addon-survey_question_type_binary',
         'odoo14-addon-survey_question_type_five_star',
         'odoo14-addon-survey_question_type_nps',
+        'odoo14-addon-survey_text_question_validation_length',
         'odoo14-addon-survey_xlsx',
     ],
     classifiers=[
