@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="survey_question_form_view">
+        <field
+            name="name"
+        >survey.question.form (in survey_text_question_validation_length)</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='answers']/div" position="inside">
+                <div
+                    class="col-6"
+                    attrs="{'invisible': [('question_type', '!=', 'text_box')]}"
+                >
+                     <div>
+                            <field name="validation_required" nolabel="1" />
+                            <label for="validation_required" />
+                            <group
+                            attrs="{'invisible': [('validation_required', '=', False)]}"
+                        >
+                                <field
+                                name="validation_length_min"
+                                attrs="{'invisible': [('question_type', '!=', 'text_box')]}"
+                            />
+                                <field
+                                name="validation_length_max"
+                                attrs="{'invisible': [('question_type', '!=', 'text_box')]}"
+                            />
+                                <field name="validation_error_msg" />
+                            </group>
+                        </div>
+                    </div>
+            </xpath>
+        </field>
+    </record>
+
+
+
+</odoo>
