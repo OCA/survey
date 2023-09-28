@@ -241,7 +241,7 @@ class TestSurveyFormIo(common.SavepointCase):
         user_input = self.survey_public.user_input_ids[0]
 
         # 7 questions answered but for the multiple choice there's a line per answer
-        self.assertEqual(len(user_input.user_input_line_ids), 9)
+        self.assertEqual(len(user_input.user_input_line_ids), 8)
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
                 lambda uil: uil.answer_type == "free_text"
@@ -262,6 +262,27 @@ class TestSurveyFormIo(common.SavepointCase):
                 lambda uil: uil.question_id == simple_choice_question
             ).value_suggested,
             simple_choice_question.labels_ids[1],
+        )
+
+        multiple_choice_question = self.survey_public.question_ids.filtered(
+            lambda q: q.question_type == "multiple_choice"
+        )
+        self.assertEqual(
+            len(
+                user_input.user_input_line_ids.filtered(
+                    lambda uil: uil.question_id == multiple_choice_question
+                )
+            ),
+            2,
+        )
+        self.assertEqual(
+            len(
+                user_input.user_input_line_ids.filtered(
+                    lambda uil: uil.question_id == multiple_choice_question
+                    and uil.value_suggested == multiple_choice_question.labels_ids[2]
+                )
+            ),
+            0,
         )
 
         self.assertEqual(self.survey_private.answer_count, 0)
@@ -320,7 +341,7 @@ class TestSurveyFormIo(common.SavepointCase):
         user_input = self.survey_public.user_input_ids[0]
 
         # 7 questions answered but for the multiple choice there's a line per answer
-        self.assertEqual(len(user_input.user_input_line_ids), 9)
+        self.assertEqual(len(user_input.user_input_line_ids), 8)
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
                 lambda uil: uil.answer_type == "free_text"
