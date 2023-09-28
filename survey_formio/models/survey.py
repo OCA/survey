@@ -86,6 +86,9 @@ class SurveySurvey(models.Model):
         }}
         Odoo expects the following format:
         {"question_id_answer_id": "answer_id"}
+        Form.io returns all the answers with true or false but odoo doesn't
+        distinguish them like that. If the answer isn't selected, it shouldn't appear
+        in the dictionnary containing the answers.
 
         Returns a dictionnary with the correct format.
 
@@ -94,6 +97,9 @@ class SurveySurvey(models.Model):
         multiple_choice_answers_dict: dict given by form.io for a multiple choice question
         """
         answers_dict = {}
+        multiple_choice_answers_dict = {
+            key: value for (key, value) in multiple_choice_answers_dict.items() if value
+        }
         for answer in multiple_choice_answers_dict.keys():
             answers_dict[question_id + "_" + answer[1:]] = answer[1:]
         return answers_dict
