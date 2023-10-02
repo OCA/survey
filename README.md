@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [survey_crm_generation](survey_crm_generation/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate CRM leads/opportunities from surveys
 [survey_crm_sale_generation](survey_crm_sale_generation/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Link CRM leads to sale orders generated from surveys
 [survey_description](survey_description/) | 13.0.1.0.0 | [![remi-filament](https://github.com/remi-filament.png?size=30px)](https://github.com/remi-filament) | Displays description and thank you fields for survey, page and question
-[survey_formio](survey_formio/) | 13.0.1.0.1 |  | This module allows the generation of a form.io compatible JSON for a survey.
+[survey_formio](survey_formio/) | 13.0.1.0.2 |  | This module allows the generation of a form.io compatible JSON for a survey.
 [survey_legal](survey_legal/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Require legal terms before survey submit
 [survey_question_type_five_star](survey_question_type_five_star/) | 13.0.1.0.1 |  | This module add five stars rating as question type for survey page
 [survey_resource_booking](survey_resource_booking/) | 13.0.1.0.2 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Access survey answers from resource booking
