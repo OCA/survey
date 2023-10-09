@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* survey_resource_booking
+# 	* survey_resource_booking
 #
 msgid ""
 msgstr ""
@@ -27,7 +27,9 @@ msgstr ""
 #. module: survey_resource_booking
 #: code:addons/survey_resource_booking/models/resource_booking.py:47
 #, python-format
-msgid "Cannot send survey invitation for this booking because the requester has no email: %s"
+msgid ""
+"Cannot send survey invitation for this booking because the requester has no "
+"email: %s"
 msgstr ""
 "Impossible d'inviter à remplir le sondage pour cette réservation car le "
 "demandeur n'a pas d’adresse e-mail: %s"

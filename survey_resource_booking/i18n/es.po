@@ -18,12 +18,20 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:25
+#: code:addons/survey_resource_booking/models/resource_booking.py:26
 #, python-format
 msgid "Cannot invite to fill survey because booking not confirmed: %s"
 msgstr ""
 "No se le puede invitar para rellenar la encuesta porque esta reserva/cita no "
 "está confirmada: %s"
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:47
+#, python-format
+msgid ""
+"Cannot send survey invitation for this booking because the requester has no "
+"email: %s"
+msgstr ""
 
 #. module: survey_resource_booking
 #: model:ir.actions.server,name:survey_resource_booking.action_invite_survey
@@ -51,7 +59,7 @@ msgid "Survey user input"
 msgstr "Entrada de usuario de la encuesta"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:30
+#: code:addons/survey_resource_booking/models/resource_booking.py:33
 #, python-format
 msgid "This booking's requester was already invited to fill survey: %s"
 msgstr ""
@@ -59,7 +67,7 @@ msgstr ""
 "%s"
 
 #. module: survey_resource_booking
-#: code:addons/survey_resource_booking/models/resource_booking.py:36
+#: code:addons/survey_resource_booking/models/resource_booking.py:42
 #, python-format
 msgid "This booking's type has no survey defined: %s"
 msgstr "El tipo de esta reserva/cita no tiene ninguna encuesta definida: %s"
