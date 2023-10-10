@@ -25,14 +25,17 @@ msgstr "10"
 #: model_terms:ir.ui.view,arch_db:survey_question_type_nps.survey_question_form
 msgid ""
 "<i class=\"fa fa-frown-o fa-2x text-danger\" title=\"face1\"/>\n"
-"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title=\"face2\"/>\n"
-"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title=\"face3\"/>\n"
-"                    <i class=\"fa fa-meh-o fa-2x text-warning\" title=\"face4\"/>\n"
-"                    <i class=\"fa fa-smile-o fa-2x text-success\" title=\"face5\"/>"
+"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title="
+"\"face2\"/>\n"
+"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title="
+"\"face3\"/>\n"
+"                    <i class=\"fa fa-meh-o fa-2x text-warning\" title="
+"\"face4\"/>\n"
+"                    <i class=\"fa fa-smile-o fa-2x text-success\" title="
+"\"face5\"/>"
 msgstr ""
 
 #. module: survey_question_type_nps
-#: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
 #: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
 #, python-format
 msgid "Answer is not in the right range"
