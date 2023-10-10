@@ -33,7 +33,6 @@ msgstr ""
 
 #. module: survey_question_type_five_star
 #: code:addons/survey_question_type_five_star/models/survey_user_input_line.py:0
-#: code:addons/survey_question_type_five_star/models/survey_user_input_line.py:0
 #, python-format
 msgid "Answer is not in the right range"
 msgstr "La risposta non è nell'intervallo corretto"
@@ -54,7 +53,8 @@ msgstr "Valutazione cinque stelle"
 #: code:addons/survey_question_type_five_star/models/survey_user_input_line.py:0
 #, python-format
 msgid "Five stars rate question must have numeric answer"
-msgstr "La domanda di Valutazine cinque stelle deve avere una risposta numerica"
+msgstr ""
+"La domanda di Valutazine cinque stelle deve avere una risposta numerica"
 
 #. module: survey_question_type_five_star
 #: model:ir.model.fields,field_description:survey_question_type_five_star.field_survey_question__id
