@@ -89,7 +89,9 @@ msgstr "Oportunidad"
 #. module: survey_crm_generation
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__crm_tag_ids
 msgid "Set the default crm tags in the generated leads/opportunities"
-msgstr "Establecer las etiquetas crm por defecto en las iniciativas/oportunidades generadas"
+msgstr ""
+"Establecer las etiquetas crm por defecto en las iniciativas/oportunidades "
+"generadas"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__show_in_lead_description
