@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_question_type_five_star
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: survey_question_type_five_star
+#: model_terms:ir.ui.view,arch_db:survey_question_type_five_star.survey_question_form
+msgid ""
+"<i class=\"fa fa-star fa-2x\" title=\"star1\"/>\n"
+"                    <i class=\"fa fa-star fa-2x\" title=\"star2\"/>\n"
+"                    <i class=\"fa fa-star fa-2x\" title=\"star3\"/>\n"
+"                    <i class=\"fa fa-star-o fa-2x\" title=\"star4\"/>\n"
+"                    <i class=\"fa fa-star-o fa-2x\" title=\"star5\"/>"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#. odoo-python
+#: code:addons/survey_question_type_five_star/models/survey_user_input_line.py:0
+#: code:addons/survey_question_type_five_star/models/survey_user_input_line.py:0
+#, python-format
+msgid "Answer is not in the right range"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#: model:ir.model.fields.selection,name:survey_question_type_five_star.selection__survey_question__question_type__star_rate
+msgid "Five Stars Rating"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#. odoo-python
+#: code:addons/survey_question_type_five_star/models/survey_user_input_line.py:0
+#, python-format
+msgid "Five stars rate question must have numeric answer"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#: model:ir.model.fields,field_description:survey_question_type_five_star.field_survey_question__question_type
+msgid "Question Type"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#: model:ir.model,name:survey_question_type_five_star.model_survey_question
+msgid "Survey Question"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#: model:ir.model,name:survey_question_type_five_star.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_question_type_five_star
+#: model:ir.model,name:survey_question_type_five_star.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr ""
