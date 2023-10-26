@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-05-29 15:09+0000\n"
+"PO-Revision-Date: 2023-10-29 06:42+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -34,12 +34,21 @@ msgid ""
 "                    <i class=\"fa fa-smile-o fa-2x text-success\" title="
 "\"face5\"/>"
 msgstr ""
+"<i class=\"fa fa-frown-o fa-2x text-danger\" title=\"viso1\"/>\n"
+"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title="
+"\"viso2\"/>\n"
+"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title="
+"\"viso3\"/>\n"
+"                    <i class=\"fa fa-meh-o fa-2x text-warning\" title=\"viso4"
+"\"/>\n"
+"                    <i class=\"fa fa-smile-o fa-2x text-success\" title="
+"\"viso5\"/>"
 
 #. module: survey_question_type_nps
 #: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
 #, python-format
 msgid "Answer is not in the right range"
-msgstr ""
+msgstr "La risposta non è nell'intervallo corretto"
 
 #. module: survey_question_type_nps
 #: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_question__display_name
@@ -65,23 +74,23 @@ msgstr "Ultima modifica il"
 #. module: survey_question_type_nps
 #: model_terms:ir.ui.view,arch_db:survey_question_type_nps.avg_nps
 msgid "NPS Average"
-msgstr ""
+msgstr "Media NPS"
 
 #. module: survey_question_type_nps
 #: model:ir.model.fields.selection,name:survey_question_type_nps.selection__survey_question__question_type__nps_rate
 msgid "NPS Rating"
-msgstr ""
+msgstr "Punteggio NPS"
 
 #. module: survey_question_type_nps
 #: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
 #, python-format
 msgid "NPS rate question must have numeric answer"
-msgstr ""
+msgstr "La domanda valutazione NPS deve avere una risposta numerica"
 
 #. module: survey_question_type_nps
 #: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_question__question_type
 msgid "Question Type"
-msgstr ""
+msgstr "Tipo di domanda"
 
 #. module: survey_question_type_nps
 #: model:ir.model,name:survey_question_type_nps.model_survey_question
@@ -101,4 +110,4 @@ msgstr "Riga risposta utente al sondaggio"
 #. module: survey_question_type_nps
 #: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input_line__value_nps
 msgid "Value Nps"
-msgstr ""
+msgstr "Valorizza NPS"
