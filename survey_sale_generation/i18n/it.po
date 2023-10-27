@@ -1,0 +1,220 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_sale_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.advanced_backup
+#: model:product.template,name:survey_sale_generation.advanced_backup_product_template
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug2
+msgid "Advanced Backup"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__generate_quotations
+msgid ""
+"Check it to generate sale orders from the survey answers. You'll need to "
+"configure at least one question linked to a product."
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,title:survey_sale_generation.survey_support_q3
+msgid "Choose your extras"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,title:survey_sale_generation.survey_support_q2
+msgid "Choose your subscription level"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__crm_team_id
+msgid "Crm Team"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.dedicated_server
+#: model:product.template,name:survey_sale_generation.dedicated_server_product_template
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug1
+msgid "Dedicated Server"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,title:survey_sale_generation.survey_support_q0
+msgid "E-mail address"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__generate_quotations
+msgid "Generate Quotations"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug2
+msgid "Gold"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.gold_service
+#: model:product.template,name:survey_sale_generation.gold_service_product_template
+msgid "Gold support"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.survey,title:survey_sale_generation.survey_hire_support
+msgid "Hire Technical Support"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,title:survey_sale_generation.survey_support_q1
+msgid "How many hours will you hire monthly?"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,comments_message:survey_sale_generation.survey_support_q0
+#: model:survey.question,comments_message:survey_sale_generation.survey_support_q1
+#: model:survey.question,comments_message:survey_sale_generation.survey_support_q2
+#: model:survey.question,comments_message:survey_sale_generation.survey_support_q3
+msgid "If other, please specify:"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.mail_management
+#: model:product.template,name:survey_sale_generation.mail_management_product_template
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug3
+msgid "Mail Management"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug1
+msgid "Platinum"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.platinum_service
+#: model:product.template,name:survey_sale_generation.platinum_service_product_template
+msgid "Platinum support"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_id
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__product_id
+msgid "Product"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_user_input__sale_order_id
+msgid "Sale Order"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model_terms:ir.ui.view,arch_db:survey_sale_generation.survey_form
+#: model_terms:ir.ui.view,arch_db:survey_sale_generation.survey_question_form
+msgid "Sales"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model,name:survey_sale_generation.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__show_in_sale_order_comment
+msgid "Show In Sale Order Comment"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug3
+msgid "Silver"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.silver_service
+#: model:product.template,name:survey_sale_generation.silver_service_product_template
+msgid "Silver support"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:crm.team,name:survey_sale_generation.support_hiring
+msgid "Support Hiring"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,name:survey_sale_generation.support_hours
+#: model:product.template,name:survey_sale_generation.support_hours_product_template
+msgid "Support hours"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model,name:survey_sale_generation.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model,name:survey_sale_generation.model_survey_question_answer
+msgid "Survey Label"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model,name:survey_sale_generation.model_survey_question
+msgid "Survey Question"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model,name:survey_sale_generation.model_survey_user_input
+#: model:ir.model.fields,field_description:survey_sale_generation.field_sale_order__survey_user_input_id
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q0
+#: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q1
+#: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q2
+#: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q3
+msgid "The answer you entered is not valid."
+msgstr ""
+
+#. module: survey_sale_generation
+#: code:addons/survey_sale_generation/models/survey_user_input.py:0
+#, python-format
+msgid ""
+"This order has been created from this survey input: <a href=# data-oe-"
+"model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q0
+#: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q1
+#: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q2
+#: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q3
+msgid "This question requires an answer."
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:product.product,uom_name:survey_sale_generation.advanced_backup
+#: model:product.product,uom_name:survey_sale_generation.dedicated_server
+#: model:product.product,uom_name:survey_sale_generation.gold_service
+#: model:product.product,uom_name:survey_sale_generation.mail_management
+#: model:product.product,uom_name:survey_sale_generation.platinum_service
+#: model:product.product,uom_name:survey_sale_generation.silver_service
+#: model:product.product,uom_name:survey_sale_generation.support_hours
+#: model:product.template,uom_name:survey_sale_generation.advanced_backup_product_template
+#: model:product.template,uom_name:survey_sale_generation.dedicated_server_product_template
+#: model:product.template,uom_name:survey_sale_generation.gold_service_product_template
+#: model:product.template,uom_name:survey_sale_generation.mail_management_product_template
+#: model:product.template,uom_name:survey_sale_generation.platinum_service_product_template
+#: model:product.template,uom_name:survey_sale_generation.silver_service_product_template
+#: model:product.template,uom_name:survey_sale_generation.support_hours_product_template
+msgid "Units"
+msgstr ""
