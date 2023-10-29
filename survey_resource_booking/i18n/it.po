@@ -71,7 +71,7 @@ msgstr ""
 #: code:addons/survey_resource_booking/models/resource_booking.py:0
 #, python-format
 msgid "This booking's type has no survey defined: %s"
-msgstr ""
+msgstr "Questo tipo di prenotazione non ha un sondaggio definito: %s"
 
 #. module: survey_resource_booking
 #: model:ir.model.fields,help:survey_resource_booking.field_resource_booking__survey_user_input_id
