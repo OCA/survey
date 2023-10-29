@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:28+0000\n"
+"PO-Revision-Date: 2023-10-29 09:30+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -37,21 +37,23 @@ msgid ""
 "Max number of multiple answers cannot be smaller than min number of multiple"
 " answers!"
 msgstr ""
+"Il numero massimo di risposte multiple non può essere inferiore al minimo "
+"numero di risposte multiple!"
 
 #. module: survey_multiple_choice_max_answer
 #: model:ir.model.fields,field_description:survey_multiple_choice_max_answer.field_survey_question__validation_multiple_answers_max
 msgid "Maximum Number of Answers"
-msgstr ""
+msgstr "Numero massimo risposte"
 
 #. module: survey_multiple_choice_max_answer
 #: model:ir.model.fields,field_description:survey_multiple_choice_max_answer.field_survey_question__validation_multiple_answers_min
 msgid "Minimum Number of Answers"
-msgstr ""
+msgstr "Numero minimo risposte"
 
 #. module: survey_multiple_choice_max_answer
 #: model:ir.model,name:survey_multiple_choice_max_answer.model_survey_question
 msgid "Survey Question"
-msgstr ""
+msgstr "Domanda sondaggio"
 
 #. module: survey_multiple_choice_max_answer
 #: model:ir.model.constraint,message:survey_multiple_choice_max_answer.constraint_survey_question_non_neg_multiple_ans_max
