@@ -217,7 +217,7 @@ msgstr "Dimensione valore binario"
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__value_binary_type
 msgid "Value Binary Type"
-msgstr ""
+msgstr "Tipo valore binario"
 
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_user_input_line_view_form_inherit_question_type_binary
