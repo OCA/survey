@@ -76,7 +76,7 @@ msgstr "Supporto oro"
 #. module: survey_sale_generation
 #: model:survey.survey,title:survey_sale_generation.survey_hire_support
 msgid "Hire Technical Support"
-msgstr ""
+msgstr "Assumere supporto tecnico"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q1
