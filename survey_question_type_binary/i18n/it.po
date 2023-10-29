@@ -91,6 +91,8 @@ msgid ""
 "File mime types separated by commas (E.g: image/png,image/jpeg). Leave empty"
 " to allow any value."
 msgstr ""
+"Tipi MIME file separati da virgole (Es. image/png,image/jpeg). Lasciare "
+"vuoto per consentire qualsiasi valore."
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__filename
