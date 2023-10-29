@@ -164,7 +164,7 @@ msgstr "Multiplo: binario"
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
 msgid "Only files with {} mime types are allowed."
-msgstr ""
+msgstr "Sono consentiti solo file di tipo MIME {}."
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__question_type
