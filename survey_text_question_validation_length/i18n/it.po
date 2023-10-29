@@ -6,30 +6,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-10-29 09:31+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: survey_text_question_validation_length
 #: model:ir.model.fields,field_description:survey_text_question_validation_length.field_survey_question__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: survey_text_question_validation_length
 #: model:ir.model.fields,field_description:survey_text_question_validation_length.field_survey_question__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: survey_text_question_validation_length
 #: model:ir.model.fields,field_description:survey_text_question_validation_length.field_survey_question____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: survey_text_question_validation_length
 #: model:ir.model,name:survey_text_question_validation_length.model_survey_question
 msgid "Survey Question"
-msgstr ""
+msgstr "Domanda sondaggio"
