@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 08:58+0000\n"
+"PO-Revision-Date: 2023-10-29 09:05+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -29,6 +29,8 @@ msgid ""
 "Check it to generate sale orders from the survey answers. You'll need to "
 "configure at least one question linked to a product."
 msgstr ""
+"Selezionare questa opzione per generare ordini di vendita dalle risposte al "
+"sondaggio. Bisognerà configurare almeno una domanda collegata ad un prodotto."
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q3
@@ -194,6 +196,8 @@ msgid ""
 "This order has been created from this survey input: <a href=# data-oe-"
 "model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
 msgstr ""
+"Questo ordine è stato creato da questa risposta al sondaggio: <a href=# data-"
+"oe-model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
 
 #. module: survey_sale_generation
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q0
@@ -201,7 +205,7 @@ msgstr ""
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q2
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q3
 msgid "This question requires an answer."
-msgstr ""
+msgstr "Questa domanda richiede una risposta."
 
 #. module: survey_sale_generation
 #: model:product.product,uom_name:survey_sale_generation.advanced_backup
@@ -219,4 +223,4 @@ msgstr ""
 #: model:product.template,uom_name:survey_sale_generation.silver_service_product_template
 #: model:product.template,uom_name:survey_sale_generation.support_hours_product_template
 msgid "Units"
-msgstr ""
+msgstr "Unità"
