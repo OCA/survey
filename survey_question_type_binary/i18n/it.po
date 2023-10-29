@@ -24,17 +24,17 @@ msgstr "<i class=\"fa fa-upload fa-2x\" title=\"upload\"/> Carica binario"
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_user_input_line_view_form_inherit_question_type_binary
 msgid "<strong>Filename: </strong>"
-msgstr ""
+msgstr "<strong>Nome file: </strong>"
 
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_user_input_line_view_form_inherit_question_type_binary
 msgid "<strong>MIME Type: </strong>"
-msgstr ""
+msgstr "<strong>Tipo MIME: </strong>"
 
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_user_input_line_view_form_inherit_question_type_binary
 msgid "<strong>Size: </strong>"
-msgstr ""
+msgstr "<strong>Dimensione: </strong>"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__allowed_filemimetypes
