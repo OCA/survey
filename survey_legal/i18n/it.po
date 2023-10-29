@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:12+0000\n"
+"PO-Revision-Date: 2023-10-29 09:13+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -55,15 +55,17 @@ msgid ""
 "The users will be prompted to require the acceptance of the legal terms to "
 "be able to submit their answers"
 msgstr ""
+"All'utente verrà richiesto di accettare i temini legali per poter rispondere "
+"alle domande"
 
 #. module: survey_legal
 #: model:ir.model.fields,field_description:survey_legal.field_survey_user_input__user_metadata
 msgid "User Metadata"
-msgstr ""
+msgstr "Metadati utente"
 
 #. module: survey_legal
 #. openerp-web
 #: code:addons/survey_legal/static/src/js/survey_form.esm.js:0
 #, python-format
 msgid "You must accept the legal terms"
-msgstr ""
+msgstr "Bisogna accettare i temini legali"
