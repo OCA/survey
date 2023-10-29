@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:08+0000\n"
+"PO-Revision-Date: 2023-10-29 09:09+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -77,6 +77,8 @@ msgstr "Questo tipo di prenotazione non ha un sondaggio definito: %s"
 #: model:ir.model.fields,help:survey_resource_booking.field_resource_booking__survey_user_input_id
 msgid "User responses to survey, as specified in the resource booking type."
 msgstr ""
+"Risposte dell'utente al sondaggio, come indicato nel tipo prenotazione "
+"risorsa."
 
 #. module: survey_resource_booking
 #: model:ir.model.fields,help:survey_resource_booking.field_resource_booking_type__survey_id
