@@ -97,7 +97,7 @@ msgstr ""
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__filename
 msgid "Filename"
-msgstr ""
+msgstr "Nome del file"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__id
