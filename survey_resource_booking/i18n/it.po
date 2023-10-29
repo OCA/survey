@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:05+0000\n"
+"PO-Revision-Date: 2023-10-29 09:06+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -31,31 +31,33 @@ msgid ""
 "Cannot send survey invitation for this booking because the requester has no "
 "email: %s"
 msgstr ""
+"Non è possibile inviare l'invito del sondaggio per questa prenotazione "
+"perché la richiesta non ha e-mail: %s"
 
 #. module: survey_resource_booking
 #: model:ir.actions.server,name:survey_resource_booking.action_invite_survey
 msgid "Invite to fill survey"
-msgstr ""
+msgstr "Invito a compilare il sondaggio"
 
 #. module: survey_resource_booking
 #: model:ir.model,name:survey_resource_booking.model_resource_booking
 msgid "Resource Booking"
-msgstr ""
+msgstr "Prenotazione risorsa"
 
 #. module: survey_resource_booking
 #: model:ir.model,name:survey_resource_booking.model_resource_booking_type
 msgid "Resource Booking Type"
-msgstr ""
+msgstr "Tipo prenotazione risorsa"
 
 #. module: survey_resource_booking
 #: model:ir.model.fields,field_description:survey_resource_booking.field_resource_booking_type__survey_id
 msgid "Survey"
-msgstr ""
+msgstr "Sondaggio"
 
 #. module: survey_resource_booking
 #: model:ir.model.fields,field_description:survey_resource_booking.field_resource_booking__survey_user_input_id
 msgid "Survey user input"
-msgstr ""
+msgstr "Risposta utente al sondaggio"
 
 #. module: survey_resource_booking
 #: code:addons/survey_resource_booking/models/resource_booking.py:0
