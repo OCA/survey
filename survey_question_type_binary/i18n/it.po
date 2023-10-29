@@ -174,7 +174,7 @@ msgstr "Tipo di domanda"
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_question
 msgid "Survey Question"
-msgstr ""
+msgstr "Domanda sondaggio"
 
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_user_input
