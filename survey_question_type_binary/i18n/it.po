@@ -169,7 +169,7 @@ msgstr "Sono consentiti solo file di tipo MIME {}."
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__question_type
 msgid "Question Type"
-msgstr ""
+msgstr "Tipo di domanda"
 
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_question
