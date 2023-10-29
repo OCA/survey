@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:38+0000\n"
+"PO-Revision-Date: 2023-10-29 09:39+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -56,27 +56,27 @@ msgstr ""
 #. module: survey_result_mail
 #: model:mail.template,subject:survey_result_mail.mail_template_user_input_result
 msgid "Results for your ${object.survey_id.title} survey"
-msgstr ""
+msgstr "Risultati per il tuo sondaggio ${object.survey_id.title}"
 
 #. module: survey_result_mail
 #: model:ir.model.fields,field_description:survey_result_mail.field_survey_survey__send_result_mail
 msgid "Send Result Mail"
-msgstr ""
+msgstr "E-mail invio risultato"
 
 #. module: survey_result_mail
 #: model:ir.model,name:survey_result_mail.model_survey_survey
 msgid "Survey"
-msgstr ""
+msgstr "Sondaggio"
 
 #. module: survey_result_mail
 #: model:ir.model.fields,field_description:survey_result_mail.field_survey_user_input__survey_result
 msgid "Survey Result"
-msgstr ""
+msgstr "Risultato sondaggio"
 
 #. module: survey_result_mail
 #: model:mail.template,report_name:survey_result_mail.mail_template_user_input_result
 msgid "Survey Results"
-msgstr ""
+msgstr "Risultati sondaggio"
 
 #. module: survey_result_mail
 #: model:ir.model,name:survey_result_mail.model_survey_user_input
