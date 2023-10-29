@@ -81,12 +81,12 @@ msgstr "Risultati sondaggio"
 #. module: survey_result_mail
 #: model:ir.model,name:survey_result_mail.model_survey_user_input
 msgid "Survey User Input"
-msgstr ""
+msgstr "Risposta utente al sondaggio"
 
 #. module: survey_result_mail
 #: model:ir.actions.report,name:survey_result_mail.survey_result_report
 msgid "Survey results"
-msgstr ""
+msgstr "Risultati sondaggio"
 
 #. module: survey_result_mail
 #: model:ir.model.fields,help:survey_result_mail.field_survey_survey__send_result_mail
