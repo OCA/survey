@@ -58,7 +58,7 @@ msgstr "Domanda sondaggio"
 #. module: survey_multiple_choice_max_answer
 #: model:ir.model.constraint,message:survey_multiple_choice_max_answer.constraint_survey_question_non_neg_multiple_ans_max
 msgid "The maximum number of answers must be non-negative!"
-msgstr ""
+msgstr "Il numero massimo delle risposte non può essere negativo!"
 
 #. module: survey_multiple_choice_max_answer
 #: model:ir.model.constraint,message:survey_multiple_choice_max_answer.constraint_survey_question_non_neg_multiple_ans_min
