@@ -45,8 +45,10 @@ msgid ""
 "The users will be prompted to require the acceptance of the legal terms to "
 "be able to submit their answers"
 msgstr ""
+"All'utente verrà richiesto di accettare i temini legali per poter rispondere "
+"alle domande"
 
 #. module: survey_legal
 #: model:ir.model.fields,field_description:survey_legal.field_survey_user_input__user_metadata
 msgid "User Metadata"
-msgstr ""
+msgstr "Metadati utente"
