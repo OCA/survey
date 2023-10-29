@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:23+0000\n"
+"PO-Revision-Date: 2023-10-29 09:24+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -105,7 +105,7 @@ msgstr "Nome del file"
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__id
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,help:survey_question_type_binary.field_survey_question__max_filesize
