@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 08:49+0000\n"
+"PO-Revision-Date: 2023-10-29 08:50+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -38,29 +38,29 @@ msgstr "Scegliere gli extra"
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q2
 msgid "Choose your subscription level"
-msgstr ""
+msgstr "Scegliere il livello di iscrizione"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__crm_team_id
 msgid "Crm Team"
-msgstr ""
+msgstr "Team CRM"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.dedicated_server
 #: model:product.template,name:survey_sale_generation.dedicated_server_product_template
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug1
 msgid "Dedicated Server"
-msgstr ""
+msgstr "Server dedicato"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q0
 msgid "E-mail address"
-msgstr ""
+msgstr "Indirizzo e-mail"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__generate_quotations
 msgid "Generate Quotations"
-msgstr ""
+msgstr "Genera preventivi"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug2
