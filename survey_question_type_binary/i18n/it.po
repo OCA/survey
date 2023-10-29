@@ -179,12 +179,12 @@ msgstr "Domanda sondaggio"
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_user_input
 msgid "Survey User Input"
-msgstr ""
+msgstr "Risposta utente al sondaggio"
 
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_user_input_line
 msgid "Survey User Input Line"
-msgstr ""
+msgstr "Riga risposta utente al sondaggio"
 
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_user_input_line_binary
