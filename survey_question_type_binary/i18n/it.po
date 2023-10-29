@@ -152,7 +152,7 @@ msgstr "Massimo dimensione file"
 #. module: survey_question_type_binary
 #: model:ir.model.fields.selection,name:survey_question_type_binary.selection__survey_user_input_line__answer_type__multi_binary
 msgid "Multi: Binary"
-msgstr ""
+msgstr "Multi: binario"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields.selection,name:survey_question_type_binary.selection__survey_question__question_type__multi_binary
