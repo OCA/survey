@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:16+0000\n"
+"PO-Revision-Date: 2023-10-29 09:23+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -44,33 +44,33 @@ msgstr "Consenti tipi file MIME"
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__answer_binary_ids
 msgid "Answer Binary"
-msgstr ""
+msgstr "Risposta binaria"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__answer_type
 msgid "Answer Type"
-msgstr ""
+msgstr "Tipo risposta"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields.selection,name:survey_question_type_binary.selection__survey_question__question_type__binary
 #: model:ir.model.fields.selection,name:survey_question_type_binary.selection__survey_user_input_line__answer_type__binary
 msgid "Binary"
-msgstr ""
+msgstr "Binaria"
 
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_user_input_line_view_form_inherit_question_type_binary
 msgid "Contact image"
-msgstr ""
+msgstr "Immagine contatto"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__display_name
@@ -78,12 +78,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__display_name
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_user_input_line_view_form_inherit_question_type_binary
 msgid "Document"
-msgstr ""
+msgstr "Documento"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,help:survey_question_type_binary.field_survey_question__allowed_filemimetypes
