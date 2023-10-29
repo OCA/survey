@@ -51,6 +51,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:survey_result_mail.survey_result_report_view_document
 msgid "<i class=\"fa fa-info-circle mr-2\"/><span>Reponses to your survey</span>"
 msgstr ""
+"<i class=\"fa fa-info-circle mr-2\"/><span>Risposte al tuo sondaggio</span>"
 
 #. module: survey_result_mail
 #: model:mail.template,subject:survey_result_mail.mail_template_user_input_result
