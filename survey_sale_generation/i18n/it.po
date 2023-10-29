@@ -96,29 +96,29 @@ msgstr "Se altro, specificare:"
 #: model:product.template,name:survey_sale_generation.mail_management_product_template
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug3
 msgid "Mail Management"
-msgstr ""
+msgstr "Gestione e-mail"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug1
 msgid "Platinum"
-msgstr ""
+msgstr "Platino"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.platinum_service
 #: model:product.template,name:survey_sale_generation.platinum_service_product_template
 msgid "Platinum support"
-msgstr ""
+msgstr "Supporto platino"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_id
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__product_id
 msgid "Product"
-msgstr ""
+msgstr "Prodotto"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_user_input__sale_order_id
 msgid "Sale Order"
-msgstr ""
+msgstr "Ordine di vendita"
 
 #. module: survey_sale_generation
 #: model_terms:ir.ui.view,arch_db:survey_sale_generation.survey_form
