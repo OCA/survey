@@ -134,18 +134,18 @@ msgstr "Ordine di vendita"
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__show_in_sale_order_comment
 msgid "Show In Sale Order Comment"
-msgstr ""
+msgstr "Visualizza nel commento ordine di vendita"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug3
 msgid "Silver"
-msgstr ""
+msgstr "Argento"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.silver_service
 #: model:product.template,name:survey_sale_generation.silver_service_product_template
 msgid "Silver support"
-msgstr ""
+msgstr "Supporto argento"
 
 #. module: survey_sale_generation
 #: model:crm.team,name:survey_sale_generation.support_hiring
