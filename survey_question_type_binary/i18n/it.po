@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:24+0000\n"
+"PO-Revision-Date: 2023-10-29 09:25+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -124,7 +124,7 @@ msgstr "Riga inserita"
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__is_binary_image
 msgid "Is Binary Image"
-msgstr ""
+msgstr "È immagine binaria"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question____last_update
@@ -132,22 +132,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line____last_update
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__max_filesize
 msgid "Max Filesize"
-msgstr ""
+msgstr "Massimo dimensione file"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields.selection,name:survey_question_type_binary.selection__survey_user_input_line__answer_type__multi_binary
