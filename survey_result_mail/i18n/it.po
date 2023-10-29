@@ -35,6 +35,17 @@ msgid ""
 "</div>\n"
 "    "
 msgstr ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Steppabile ${object.partner_id.name or 'participant'}<br/><br/>\n"
+"\n"
+"        trova in allegato le sue risposte al sondaggio per poterle "
+"revisionare.\n"
+"\n"
+"        La ringraziamo per la partecipazione.\n"
+"    </p>\n"
+"</div>\n"
+"    "
 
 #. module: survey_result_mail
 #: model_terms:ir.ui.view,arch_db:survey_result_mail.survey_result_report_view_document
