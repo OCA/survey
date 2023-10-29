@@ -83,4 +83,4 @@ msgstr ""
 #. module: survey_resource_booking
 #: model:ir.model.fields,help:survey_resource_booking.field_resource_booking_type__survey_id
 msgid "You will be able to invite requesters to respond to this survey."
-msgstr ""
+msgstr "Sarà possibile invitare i richiedenti a rispondere a questo sondaggio."
