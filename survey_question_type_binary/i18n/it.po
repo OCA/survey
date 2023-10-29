@@ -113,6 +113,8 @@ msgid ""
 "Indicate maximum file size in bytes (Default 50MB). Leave empty to allow any"
 " value."
 msgstr ""
+"Indica la dimensione file massima in byte (predefinito 50MB). Lasciare vuoto "
+"per consentire qualsiasi valore."
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__input_line_id
