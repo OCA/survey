@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:27+0000\n"
+"PO-Revision-Date: 2023-10-29 09:28+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -202,12 +202,12 @@ msgstr "La risposta deve essere del tipo corretto"
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
 msgid "The file cannot exceed {}MB in size."
-msgstr ""
+msgstr "Il file non può superare i {}MB."
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__value_binary
 msgid "Value Binary"
-msgstr ""
+msgstr "Valore binario"
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__value_binary_size
