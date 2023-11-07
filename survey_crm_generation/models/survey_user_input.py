@@ -9,7 +9,7 @@ class SurveyUserInput(models.Model):
     opportunity_id = fields.Many2one(comodel_name="crm.lead")
 
     def _prepare_opportunity(self):
-        return {
+        vals = {
             "name": self.survey_id.title,
             "tag_ids": [(6, 0, self.survey_id.crm_tag_ids.ids)],
             "partner_id": self.partner_id.id,
@@ -19,6 +19,14 @@ class SurveyUserInput(models.Model):
             "survey_user_input_id": self.id,
             "description": self._prepare_lead_description(),
         }
+        if not self.partner_id:
+            vals.update(
+                {
+                    "email_from": self.email,
+                    "contact_name": self.nickname,
+                }
+            )
+        return vals
 
     def _prepare_lead_description(self):
         """We can have surveys without partner. It's handy to have some relevant info
@@ -26,14 +34,9 @@ class SurveyUserInput(models.Model):
 
         :return str: description for the lead
         """
-        relevant_answers = self.user_input_line_ids.filtered(
-            lambda x: not x.skipped and x.question_id.show_in_lead_description
+        return self._build_answers_html(
+            self.user_input_line_ids.filtered("question_id.show_in_lead_description")
         )
-        description = "\n".join(
-            f"{answer.question_id.title}: {answer[f'value_{answer.answer_type}']}"
-            for answer in relevant_answers
-        )
-        return description
 
     def _create_opportunity_post_process(self):
         """After creating the lead send an internal message with the input link"""
