@@ -39,9 +39,9 @@ class SurveyCrmGenerationTests(SurveyCrmGenerationCase):
             ),
         )
         expected_lead_description = Markup(
-            "<p>E-mail address: test@test.com\n"
-            "Your company name?: Tecnativa\n"
-            "And your name?: Tecnativa</p>"
+            "<li><em>E-mail address</em>: <b>test@test.com</b></li>"
+            "<li><em>Your company name?</em>: <b>Tecnativa</b></li>"
+            "<li><em>And your name?</em>: <b>Tecnativa</b></li>"
         )
         self.assertEqual(
             self.generated_lead.description,
