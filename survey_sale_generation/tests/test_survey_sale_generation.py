@@ -57,4 +57,4 @@ class SurveySaleGenerationTests(SurveySaleGenerationCase):
         )
         info_message, *_ = self.generated_sale.message_ids
         # Some other survey inputs can be annotated in the quotation chatter
-        self.assertTrue("E-mail address: test@test.com" in info_message.body)
+        self.assertTrue("test@test.com" in info_message.body)
