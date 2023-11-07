@@ -10,7 +10,7 @@
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "maintainers": ["chienandalu"],
     "license": "AGPL-3",
-    "depends": ["survey", "sale_management"],
+    "depends": ["survey_result_mail", "sale_management"],
     "data": [
         "views/survey_question_views.xml",
         "views/survey_survey_views.xml",
