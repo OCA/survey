@@ -1,7 +1,6 @@
 # Copyright 2022 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import Command, _, fields, models
-from odoo.tools import plaintext2html
 
 
 class SurveyUserInput(models.Model):
@@ -42,14 +41,9 @@ class SurveyUserInput(models.Model):
 
         :return str: comment for the quotation internal message
         """
-        relevant_answers = self.user_input_line_ids.filtered(
-            lambda x: not x.skipped and x.question_id.show_in_sale_order_comment
+        return self._build_answers_html(
+            self.user_input_line_ids.filtered("question_id.show_in_sale_order_comment")
         )
-        comment = "\n".join(
-            f"{answer.question_id.title}: {answer[f'value_{answer.answer_type}']}"
-            for answer in relevant_answers
-        )
-        return comment
 
     def _create_quotation_post_process(self):
         """After creating the quotation send an internal message with practical info"""
@@ -62,7 +56,7 @@ class SurveyUserInput(models.Model):
         if additional_comment:
             message += (
                 f"<p>{_('Relevant answer informations:')}</p>"
-                f"<p>{plaintext2html(additional_comment)}</p>"
+                f"<p>{additional_comment}</p>"
             )
         sale_sudo.message_post(body=message)
         if self.survey_id.send_quotation_to_customer:
