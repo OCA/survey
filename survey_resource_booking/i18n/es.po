@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-27 12:40+0000\n"
-"PO-Revision-Date: 2021-04-27 13:40+0100\n"
-"Last-Translator: Jairo Llopis <jairo.llopis@tecnativa.com>\n"
+"PO-Revision-Date: 2023-11-11 18:37+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: survey_resource_booking
 #: code:addons/survey_resource_booking/models/resource_booking.py:0
@@ -32,6 +32,8 @@ msgid ""
 "Cannot send survey invitation for this booking because the requester has no "
 "email: %s"
 msgstr ""
+"No se puede enviar la invitación a la encuesta para esta reserva porque el "
+"solicitante no tiene correo electrónico: %s"
 
 #. module: survey_resource_booking
 #: model:ir.actions.server,name:survey_resource_booking.action_invite_survey
