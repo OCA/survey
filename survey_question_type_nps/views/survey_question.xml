@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2018 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="survey_question_form">
+        <field name="name">survey.question.form</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
+                <!-- NPS rating -->
+                <div attrs="{'invisible': [('question_type', '!=', 'nps_rate')]}">
+                    <i class="fa fa-frown-o fa-2x text-danger" title="face1" />
+                    <i class="fa fa-frown-o fa-2x text-danger" title="face2" />
+                    <i class="fa fa-frown-o fa-2x text-danger" title="face3" />
+                    <i class="fa fa-meh-o fa-2x text-warning" title="face4" />
+                    <i class="fa fa-smile-o fa-2x text-success" title="face5" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
