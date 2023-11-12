@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 09:38+0000\n"
+"PO-Revision-Date: 2023-11-12 16:36+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -74,7 +74,7 @@ msgstr "Se altro, specificare:"
 #. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Contatto/opportunità"
+msgstr "Contatto/Opportunità"
 
 #. module: survey_crm_generation
 #: model:crm.lead.tag,name:survey_crm_generation.tag_oca_partnership
