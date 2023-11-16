@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<record id="mail_template_user_input_result_report" model="mail.template">
+    <field name="name">Survey: Results (with report)</field>
+    <field name="model_id" ref="model_survey_user_input" />
+    <field name="subject">Results for your {{object.survey_id.title}} survey</field>
+    <field
+            name="email_to"
+        >{{ (object.partner_id.email_formatted or object.email) }}</field>
+    <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.partner_id.name or object.nickname or 'participant'" />.
+        <br /><br />
+
+        You'll find attached your survey answers so you can review them.
+
+
+        Thanks you for your participation.
+    </p>
+</div>
+    </field>
+    <field name="report_template" ref="survey_result_report" />
+    <field name="report_name">Survey Results</field>
+    <field name="lang">{{object.partner_id.lang}}</field>
+    <field name="auto_delete" eval="True" />
+</record>
+<record id="mail_template_user_input_result_inline" model="mail.template">
+    <field name="name">Survey: Results (inline)</field>
+    <field name="model_id" ref="model_survey_user_input" />
+    <field name="subject">Results for your {{object.survey_id.title}} survey</field>
+    <field
+            name="email_to"
+        >{{ (object.partner_id.email_formatted or object.email) }}</field>
+    <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.partner_id.name or object.nickname or 'participant'" />.
+        <br /><br />
+
+        Here you have a copy of your answers:
+    </p>
+    <p>
+        <t t-out="object._build_answers_html()" />
+    </p>
+    <p>
+        Thanks you for your participation.
+    </p>
+</div>
+    </field>
+    <field name="lang">{{object.partner_id.lang}}</field>
+    <field name="auto_delete" eval="True" />
+</record>
+</odoo>

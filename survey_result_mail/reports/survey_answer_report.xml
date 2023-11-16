@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="survey_result_report_view_document">
+        <t t-call="web.internal_layout">
+            <t t-set="address">
+                <address
+                    t-field="user_input.partner_id"
+                    t-options='{"widget": "contact", "fields": ["name", "email"]}'
+                />
+            </t>
+            <div class="alert alert-info">
+                <i class="fa fa-info-circle mr-2" /><span>Reponses to your survey</span>
+            </div>
+            <div class="page">
+                <div class="row col-10 offset-1">
+                    <t t-raw="user_input.survey_result" />
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="survey_result_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="user_input">
+                <t
+                    t-set="o"
+                    t-value="user_input.with_context(lang=user_input.partner_id.lang or user_input.env.lang)"
+                />
+                <t
+                    t-call="survey_result_mail.survey_result_report_view_document"
+                    t-lang="user_input.partner_id.lang or user_input.env.lang"
+                />
+            </t>
+        </t>
+    </template>
+    <record id="survey_result_report" model="ir.actions.report">
+        <field name="model">survey.user_input</field>
+        <field name="name">Survey results</field>
+        <field name="report_name">survey_result_mail.survey_result_report_view</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="attachment">'surevey_results.pdf'</field>
+        <field
+            name="print_report_name"
+        >'Survey results - %s' % (object.survey_id.display_name)</field>
+    </record>
+</odoo>
