@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo-addon-survey_multi_company>=15.0dev,<15.1dev',
         'odoo-addon-survey_placeholder>=15.0dev,<15.1dev',
         'odoo-addon-survey_resource_booking>=15.0dev,<15.1dev',
+        'odoo-addon-survey_result_mail>=15.0dev,<15.1dev',
         'odoo-addon-survey_sale_generation>=15.0dev,<15.1dev',
     ],
     classifiers=[
