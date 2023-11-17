@@ -1,6 +1,6 @@
 # Copyright 2022 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import Command, _, fields, models
+from odoo import SUPERUSER_ID, Command, _, fields, models
 
 
 class SurveyUserInput(models.Model):
@@ -16,6 +16,9 @@ class SurveyUserInput(models.Model):
             "company_id": self.create_uid.company_id.id,
             "team_id": self.survey_id.crm_team_id.id,
             "sale_order_template_id": self.survey_id.sale_order_template_id.id,
+            "user_id": (
+                self.survey_id.crm_team_id.user_id.id or self.survey_id.user_id.id
+            ),
         }
 
     def _prepare_quotation_line(self, input_line, product):
@@ -58,9 +61,10 @@ class SurveyUserInput(models.Model):
                 f"<p>{_('Relevant answer informations:')}</p>"
                 f"<p>{additional_comment}</p>"
             )
-        sale_sudo.message_post(body=message)
+        # Avoid sending the message as a public user
+        sale_sudo.with_user(SUPERUSER_ID).message_post(body=message)
         if self.survey_id.send_quotation_to_customer:
-            email_act = sale_sudo.action_quotation_send()
+            email_act = sale_sudo.with_user(SUPERUSER_ID).action_quotation_send()
             email_ctx = email_act.get("context", {})
             template = self.survey_id.quotation_mail_template_id.id or email_ctx.get(
                 "default_template_id"
