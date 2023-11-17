@@ -93,7 +93,8 @@ msgstr ""
 
 #. module: survey_result_mail
 #: model_terms:ir.ui.view,arch_db:survey_result_mail.survey_result_report_view_document
-msgid "<i class=\"fa fa-info-circle mr-2\"/><span>Reponses to your survey</span>"
+msgid ""
+"<i class=\"fa fa-info-circle mr-2\"/><span>Reponses to your survey</span>"
 msgstr ""
 "<i class=\"fa fa-info-circle mr-2\"/><span>Respuestas de su encuesta</span>"
 
@@ -151,6 +152,8 @@ msgstr "Encuesta: Resultados (con informe)"
 #. module: survey_result_mail
 #: model:ir.model.fields,help:survey_result_mail.field_survey_survey__send_result_mail
 msgid ""
-"When the survey is submitted, an email will be sent to the user withthe answers"
+"When the survey is submitted, an email will be sent to the user withthe "
+"answers"
 msgstr ""
-"Cuando se completa la encuesta se envía un correo al usuario con las respuestas"
+"Cuando se completa la encuesta se envía un correo al usuario con las "
+"respuestas"
