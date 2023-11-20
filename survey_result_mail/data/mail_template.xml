@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<odoo noupdate="1">
 <record id="mail_template_user_input_result_report" model="mail.template">
     <field name="name">Survey: Results (with report)</field>
     <field name="model_id" ref="model_survey_user_input" />
@@ -29,6 +29,9 @@
     <field name="name">Survey: Results (inline)</field>
     <field name="model_id" ref="model_survey_user_input" />
     <field name="subject">Results for your {{object.survey_id.title}} survey</field>
+    <field
+            name="email_from"
+        >{{ (object.survey_id.user_id.email_formatted or user.email_formatted) }}</field>
     <field
             name="email_to"
         >{{ (object.partner_id.email_formatted or object.email) }}</field>
