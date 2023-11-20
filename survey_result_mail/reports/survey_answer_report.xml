@@ -13,7 +13,9 @@
             </div>
             <div class="page">
                 <div class="row col-10 offset-1">
-                    <t t-raw="user_input.survey_result" />
+                    <t
+                        t-raw="user_input.with_context(survey_result_mode='bootstrap').survey_result"
+                    />
                 </div>
             </div>
         </t>
