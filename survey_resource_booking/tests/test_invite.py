@@ -32,7 +32,7 @@ class SurveyInvitationCase(TransactionCase):
         # Make sure RB gets surveyed as expected
         booking_f = Form(self.env["resource.booking"])
         booking_f.type_id = self.rbt
-        booking_f.partner_id = self.partner
+        booking_f.partner_ids.add(self.partner)
         booking_f.start = datetime(2021, 3, 1, 8)
         booking = booking_f.save()
         self.assertEqual(booking.state, "scheduled")
