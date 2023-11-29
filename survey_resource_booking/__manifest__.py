@@ -3,7 +3,7 @@
 {
     "name": "Link between resource bookings and surveys",
     "summary": "Access survey answers from resource booking",
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.0.1",
     "development_status": "Beta",
     "category": "Appointments",
     "website": "https://github.com/OCA/survey",
