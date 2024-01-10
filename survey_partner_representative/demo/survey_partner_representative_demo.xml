@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="survey.survey" id="survey_representative_demo">
+        <field name="title">Meal preferences</field>
+        <field name="access_token">80e5f1e2-1a9d-4c51-8e23-4abc7534</field>
+        <field name="access_mode">public</field>
+        <field name="users_can_go_back" eval="True" />
+    </record>
+    <record model="survey.question" id="survey_representative_q0">
+        <field name="survey_id" ref="survey_representative_demo" />
+        <field name="sequence">0</field>
+        <field name="title">Name</field>
+        <field name="question_type">char_box</field>
+        <field name="constr_mandatory" eval="True" />
+    </record>
+    <record model="survey.question" id="survey_representative_q1">
+        <field name="survey_id" ref="survey_representative_demo" />
+        <field name="sequence">1</field>
+        <field name="title">Email</field>
+        <field name="question_type">char_box</field>
+    </record>
+    <record model="survey.question" id="survey_representative_q5">
+        <field name="survey_id" ref="survey_representative_demo" />
+        <field name="sequence">4</field>
+        <field name="title">What would you like for dinner?</field>
+        <field name="question_type">simple_choice</field>
+    </record>
+    <record model="survey.question.answer" id="survey_representative_q5_sug1">
+        <field name="question_id" ref="survey_representative_q5" />
+        <field name="sequence">1</field>
+        <field name="value">Meat</field>
+    </record>
+    <record model="survey.question.answer" id="survey_representative_q5_sug2">
+        <field name="question_id" ref="survey_representative_q5" />
+        <field name="sequence">2</field>
+        <field name="value">Fish</field>
+    </record>
+    <record model="survey.question.answer" id="survey_representative_q5_sug3">
+        <field name="question_id" ref="survey_representative_q5" />
+        <field name="sequence">3</field>
+        <field name="value">Vegan</field>
+    </record>
+</odoo>
