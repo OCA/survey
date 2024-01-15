@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="survey_fill_form" inherit_id="survey.survey_fill_form">
+        <xpath
+            expr="//t[@t-call='survey.survey_fill_form_start']"
+            position="attributes"
+        >
+            <attribute name="t-if" add="and not skip_start" separator=" " />
+        </xpath>
+        <xpath
+            expr="//t[@t-call='survey.survey_fill_form_in_progress']"
+            position="attributes"
+        >
+            <attribute name="t-elif" add="or skip_start" separator=" " />
+        </xpath>
+    </template>
+</odoo>
