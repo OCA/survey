@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [survey_crm_sale_generation](survey_crm_sale_generation/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Link CRM leads to sale orders generated from surveys
 [survey_legal](survey_legal/) | 15.0.1.0.1 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Require legal terms before survey submit
 [survey_multi_company](survey_multi_company/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Company security for surveys
+[survey_partner_representative](survey_partner_representative/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Fill the survey on behalf of others
 [survey_placeholder](survey_placeholder/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Placeholders in survey questions
 [survey_resource_booking](survey_resource_booking/) | 15.0.1.0.1 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Access survey answers from resource booking
 [survey_result_mail](survey_result_mail/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Send survey answers to the survey user
