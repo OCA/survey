@@ -17,13 +17,13 @@ Survey leads generation
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsurvey-lightgray.png?logo=github
-    :target: https://github.com/OCA/survey/tree/15.0/survey_crm_generation
+    :target: https://github.com/OCA/survey/tree/17.0/survey_crm_generation
     :alt: OCA/survey
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/survey-15-0/survey-15-0-survey_crm_generation
+    :target: https://translation.odoo-community.org/projects/survey-17-0/survey-17-0-survey_crm_generation
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=15.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -40,21 +40,23 @@ Configuration
 
 To configure the leads/opportunities generation:
 
-#. Go to the configured survey.
-#. In the *CRM* section of the *Options* tab, set *Generate leads* on.
-#. Optionally you can set default tags for the generated leads.
-#. You can set the crm team to assign the leads to.
+1. Go to the configured survey.
+2. In the *CRM* section of the *Options* tab, set *Generate leads* on.
+3. Optionally you can set default tags for the generated leads.
+4. You can set the crm team to assign the leads to.
 
-The questions marked to be shown in the lead description will be shown there.
+The questions marked to be shown in the lead description will be shown
+there.
 
-If you want to fill crm.lead fields from the answers set the *CRM Lead field* you want
-to fill with the given answer.
+If you want to fill crm.lead fields from the answers set the *CRM Lead
+field* you want to fill with the given answer.
 
 Usage
 =====
 
-Once the surveys are submited a lead/opportunity (depending on the default options for
-the company) will be generated with a link to the answers.
+Once the surveys are submited a lead/opportunity (depending on the
+default options for the company) will be generated with a link to the
+answers.
 
 Bug Tracker
 ===========
@@ -62,7 +64,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/survey/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_crm_generation%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_crm_generation%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -70,20 +72,20 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`_
+-  `Tecnativa <https://www.tecnativa.com>`__
 
-  * David Vidal
-  * Stefan ungureanu
+   -  David Vidal
+   -  Stefan ungureanu
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -103,6 +105,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-chienandalu| 
 
-This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/15.0/survey_crm_generation>`_ project on GitHub.
+This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/17.0/survey_crm_generation>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
