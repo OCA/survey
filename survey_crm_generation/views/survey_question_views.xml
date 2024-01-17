@@ -8,7 +8,7 @@
                 <group name="crm" string="CRM">
                     <field
                         name="show_in_lead_description"
-                        attrs="{'invisible': [('question_type', 'in', ['matrix', 'simple_choice', 'multiple_choice'])]}"
+                        invisible="question_type in ['matrix', 'simple_choice', 'multiple_choice']"
                     />
                 </group>
             </xpath>

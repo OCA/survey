@@ -37,10 +37,10 @@ class SurveyUserInput(models.Model):
 
     def _create_opportunity_post_process(self):
         """After creating the lead send an internal message with the input link"""
-        self.opportunity_id.message_post_with_view(
+        self.opportunity_id.message_post_with_source(
             "mail.message_origin_link",
-            values={"self": self.opportunity_id, "origin": self.survey_id},
-            subtype_id=self.env.ref("mail.mt_note").id,
+            render_values={"self": self.opportunity_id, "origin": self.survey_id},
+            subtype_xmlid="mail.mt_note",
         )
 
     def _mark_done(self):
