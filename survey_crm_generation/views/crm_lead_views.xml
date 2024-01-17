@@ -7,7 +7,7 @@
             <field name="team_id" position="after">
                 <field
                     name="survey_user_input_id"
-                    attrs="{'invisible': [('survey_user_input_id', '=', False)]}"
+                    invisible="survey_user_input_id == False"
                 />
             </field>
         </field>

@@ -5,10 +5,7 @@
         <field name="inherit_id" ref="survey.survey_user_input_view_form" />
         <field name="arch" type="xml">
             <field name="partner_id" position="before">
-                <field
-                    name="opportunity_id"
-                    attrs="{'invisible': [('opportunity_id', '=', False)]}"
-                />
+                <field name="opportunity_id" invisible="opportunity_id == False" />
             </field>
         </field>
     </record>
