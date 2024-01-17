@@ -23,16 +23,28 @@ odoo.define(
                     run: "text test@test.com",
                 },
                 {
+                    content: "Continue",
+                    trigger: "button.btn:contains('Continue')",
+                },
+                {
                     content: "Your company name?",
                     trigger:
                         "div.js_question-wrapper:contains('Your company name?') textarea",
                     run: "text Tecnativa",
                 },
                 {
+                    content: "Continue",
+                    trigger: "button.btn:contains('Continue')",
+                },
+                {
                     content: "And your name?",
                     trigger:
                         "div.js_question-wrapper:contains('And your name?') textarea",
                     run: "text Tecnativa",
+                },
+                {
+                    content: "Continue",
+                    trigger: "button.btn:contains('Continue')",
                 },
                 {
                     content: "Click Submit",
