@@ -4,12 +4,12 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
-            <field name="team_id" position="after">
+            <xpath expr="//group[@name='Misc']/field[@name='team_id']" position="after">
                 <field
                     name="survey_user_input_id"
-                    attrs="{'invisible': [('survey_user_input_id', '=', False)]}"
+                    invisible="not survey_user_input_id"
                 />
-            </field>
+            </xpath>
         </field>
     </record>
 </odoo>
