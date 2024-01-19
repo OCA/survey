@@ -32,10 +32,8 @@ msgstr ""
 msgid "Survey"
 msgstr "Encuesta"
 
-#. module: survey_skip_start
-#: code:addons/survey_skip_start/models/survey_survey.py:0
 #, python-format
-msgid "The skip start screen option is only compatible with on page layouts"
-msgstr ""
-"La opción de saltar la pantalla de inicio en la encuesta solo es compatible "
-"con los diseños de una sola página"
+#~ msgid "The skip start screen option is only compatible with on page layouts"
+#~ msgstr ""
+#~ "La opción de saltar la pantalla de inicio en la encuesta solo es "
+#~ "compatible con los diseños de una sola página"

@@ -27,9 +27,3 @@ msgstr ""
 #: model:ir.model,name:survey_skip_start.model_survey_survey
 msgid "Survey"
 msgstr ""
-
-#. module: survey_skip_start
-#: code:addons/survey_skip_start/models/survey_survey.py:0
-#, python-format
-msgid "The skip start screen option is only compatible with on page layouts"
-msgstr ""
