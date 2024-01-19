@@ -13,7 +13,6 @@
     "depends": ["survey"],
     "data": [
         "views/survey_survey_views.xml",
-        "views/survey_templates.xml",
     ],
     "assets": {
         "web.assets_tests": [
