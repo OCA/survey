@@ -3,7 +3,7 @@
 {
     "name": "Survey Skip Start",
     "summary": "Skip the surveys start screen and go directly to fill the form",
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.0.1",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
