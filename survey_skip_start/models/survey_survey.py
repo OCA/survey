@@ -1,7 +1,6 @@
 # Copyright 2024 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo import fields, models
 
 
 class SurveySurvey(models.Model):
@@ -12,13 +11,9 @@ class SurveySurvey(models.Model):
         help="Skip the start screen and go directly to the survey form",
     )
 
-    @api.constrains("skip_start")
-    def _constrain_skip_start(self):
-        """For the moment, skipping the start screen is only compatible with single
-        page layout surveys"""
-        if self.filtered(lambda x: x.skip_start and x.questions_layout != "one_page"):
-            raise UserError(
-                _(
-                    "The skip start screen option is only compatible with on page layouts"
-                )
-            )
+    def _create_answer(self, *args, **additional_vals):
+        """The survey template checks the state of the inputs to show the start screen
+        or not. Setting the state we go directly to the form"""
+        inputs = super()._create_answer(*args, **additional_vals)
+        inputs.filtered("survey_id.skip_start").state = "in_progress"
+        return inputs
