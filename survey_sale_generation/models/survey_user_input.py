@@ -85,7 +85,10 @@ class SurveyUserInput(models.Model):
         if not quotable_lines:
             return res
         self.sale_order_id = (
-            self.env["sale.order"].sudo().create(self._prepare_quotation())
+            self.env["sale.order"]
+            .sudo()
+            .with_user(SUPERUSER_ID)
+            .create(self._prepare_quotation())
         )
         # Trigger the template default in advance or we could loose our lines
         if self.sale_order_id.sale_order_template_id:
