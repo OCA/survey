@@ -33,6 +33,11 @@ msgstr ""
 "sondaggio. Bisognerà configurare almeno una domanda collegata ad un prodotto."
 
 #. module: survey_sale_generation
+#: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__quotation_mail_template_id
+msgid "Choose a template. Otherwise the default one will be used."
+msgstr ""
+
+#. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q3
 msgid "Choose your extras"
 msgstr "Scegliere gli extra"
@@ -58,6 +63,15 @@ msgstr "Server dedicato"
 #: model:survey.question,title:survey_sale_generation.survey_support_q0
 msgid "E-mail address"
 msgstr "Indirizzo e-mail"
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,help:survey_sale_generation.field_survey_question__product_uom_qty_question_id
+msgid ""
+"For multiple answer questions we might want to consider how much of that "
+"product we want to order. For example, one question could be: 'How many "
+"members in your team?' and other could be 'Choose the membership type'. "
+"We'll want to multiply members by memberships in our sale line."
+msgstr ""
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__generate_quotations
@@ -87,6 +101,7 @@ msgstr "Quante ore si nolegeranno al mese?"
 
 #. module: survey_sale_generation
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q0
+#: model:survey.question,comments_message:survey_sale_generation.survey_support_q0_1
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q1
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q2
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q3
@@ -101,6 +116,11 @@ msgid "Mail Management"
 msgstr "Gestione e-mail"
 
 #. module: survey_sale_generation
+#: model:survey.question,title:survey_sale_generation.survey_support_q0_1
+msgid "Name"
+msgstr ""
+
+#. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug1
 msgid "Platinum"
 msgstr "Platino"
@@ -112,15 +132,30 @@ msgid "Platinum support"
 msgstr "Supporto platino"
 
 #. module: survey_sale_generation
-#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_id
-#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__product_id
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_ids
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__product_ids
 msgid "Product"
 msgstr "Prodotto"
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_uom_qty_question_id
+msgid "Product Uom Qty Question"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__quotation_mail_template_id
+msgid "Quotation Mail Template"
+msgstr ""
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_user_input__sale_order_id
 msgid "Sale Order"
 msgstr "Ordine di vendita"
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__sale_order_template_id
+msgid "Sale Order Template"
+msgstr ""
 
 #. module: survey_sale_generation
 #: model_terms:ir.ui.view,arch_db:survey_sale_generation.survey_form
@@ -132,6 +167,16 @@ msgstr "Vendite"
 #: model:ir.model,name:survey_sale_generation.model_sale_order
 msgid "Sales Order"
 msgstr "Ordine di vendita"
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__send_quotation_to_customer
+msgid "Send Quotation To Customer"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__send_quotation_to_customer
+msgid "Send the quotation to the customer automatically."
+msgstr ""
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__show_in_sale_order_comment
@@ -183,6 +228,7 @@ msgstr "Risposta utente al sondaggio"
 
 #. module: survey_sale_generation
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q0
+#: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q0_1
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q1
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q2
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q3
@@ -201,6 +247,7 @@ msgstr ""
 
 #. module: survey_sale_generation
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q0
+#: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q0_1
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q1
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q2
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q3
