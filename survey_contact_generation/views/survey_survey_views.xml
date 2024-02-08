@@ -7,6 +7,10 @@
             <group name="options" position="inside">
                 <group name="contact_options" string="Contact">
                     <field name="generate_contact" />
+                    <field
+                        name="create_parent_contact"
+                        attrs="{'invisible': [('generate_contact', '=', False)]}"
+                    />
                 </group>
             </group>
         </field>
