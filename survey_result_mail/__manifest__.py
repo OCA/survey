@@ -16,5 +16,6 @@
         "reports/survey_answer_report.xml",
         "data/mail_template.xml",
         "views/survey_survey_views.xml",
+        "views/survey_user_input_views.xml",
     ],
 }

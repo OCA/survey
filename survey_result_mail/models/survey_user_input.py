@@ -12,8 +12,12 @@ class SurveyUserInput(models.Model):
     survey_result = fields.Html(compute="_compute_survey_result")
 
     def _compute_survey_result(self):
+        mode = self.env.context.get("survey_result_mode", "basic")
         for user_input in self:
-            user_input.survey_result = user_input._render_user_input()
+            if mode == "bootstrap":
+                user_input.survey_result = user_input._render_user_input()
+            elif mode == "basic":
+                user_input.survey_result = user_input._build_answers_html()
 
     def _render_user_input(self):
         """We're rendering the template results to add them to the pdf report"""
@@ -62,7 +66,8 @@ class SurveyUserInput(models.Model):
             lambda x: x.question_id.question_type == "simple_choice"
         ):
             questions_dict[answer.question_id] = _answer_element(
-                answer.question_id.title, answer.suggested_answer_id.value
+                answer.question_id.title,
+                answer.suggested_answer_id.value or answer.value_char_box,
             )
         multiple_choice_dict = {}
         for answer in given_answers.filtered(
@@ -70,7 +75,7 @@ class SurveyUserInput(models.Model):
         ):
             multiple_choice_dict.setdefault(answer.question_id, [])
             multiple_choice_dict[answer.question_id].append(
-                answer.suggested_answer_id.value
+                answer.suggested_answer_id.value or answer.value_char_box
             )
         for question, answers in multiple_choice_dict.items():
             questions_dict[question] = _answer_element(
@@ -83,7 +88,7 @@ class SurveyUserInput(models.Model):
             matrix_dict.setdefault(answer.question_id, {})
             matrix_dict[answer.question_id].setdefault(answer.matrix_row_id, [])
             matrix_dict[answer.question_id][answer.matrix_row_id].append(
-                answer.suggested_answer_id.value
+                answer.suggested_answer_id.value or answer.value_char_box
             )
         for question, rows in matrix_dict.items():
             questions_dict[question] = f"<li><em>{question.title}:</em><ul>"
@@ -99,7 +104,7 @@ class SurveyUserInput(models.Model):
         """Send the answers when submitted on the so configured surveys"""
         res = super()._mark_done()
         for user_input in self.filtered(
-            lambda x: x.survey_id.send_result_mail and x.partner_id.email
+            lambda x: x.survey_id.send_result_mail and x.partner_id.email or x.email
         ):
             template = self.survey_id.result_mail_template_id or self.env.ref(
                 "survey_result_mail.mail_template_user_input_result_inline"
