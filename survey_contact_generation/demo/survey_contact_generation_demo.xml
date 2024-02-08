@@ -7,6 +7,15 @@
         <field name="access_mode">public</field>
         <field name="users_can_go_back" eval="True" />
         <field name="generate_contact" eval="True" />
+        <field name="create_parent_contact" eval="True" />
+    </record>
+    <record model="survey.question" id="survey_contact_q_company_name">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">0</field>
+        <field name="title">Company name</field>
+        <field name="question_type">char_box</field>
+        <field name="constr_mandatory" eval="True" />
+        <field name="res_partner_field" ref="base.field_res_partner__company_name" />
     </record>
     <record model="survey.question" id="survey_contact_q0">
         <field name="survey_id" ref="survey_contact_creation" />

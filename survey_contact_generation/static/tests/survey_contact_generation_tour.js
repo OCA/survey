@@ -20,6 +20,11 @@ odoo.define("survey.tour_test_survey_contact_generation", function (require) {
                 run: "text My Name",
             },
             {
+                content: "Company Name",
+                trigger: "div.js_question-wrapper:contains('Company name') input",
+                run: "text My Company Name",
+            },
+            {
                 content: "Email",
                 trigger: "div.js_question-wrapper:contains('Email') input",
                 run: "text survey_contact_generation@test.com",

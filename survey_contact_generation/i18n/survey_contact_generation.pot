@@ -24,6 +24,11 @@ msgid "Color"
 msgstr ""
 
 #. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q_company_name
+msgid "Company name"
+msgstr ""
+
+#. module: survey_contact_generation
 #: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_form
 #: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_question_form
 msgid "Contact"
@@ -48,6 +53,11 @@ msgstr ""
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q5
 msgid "Country"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__create_parent_contact
+msgid "Create Parent Contact"
 msgstr ""
 
 #. module: survey_contact_generation
@@ -83,6 +93,7 @@ msgstr ""
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q5
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q6
+#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q_company_name
 msgid "If other, please specify:"
 msgstr ""
 
@@ -104,6 +115,13 @@ msgstr ""
 #. module: survey_contact_generation
 #: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug2
 msgid "Romania"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__create_parent_contact
+msgid ""
+"Set the company_name in a question and a parent contact will be created to "
+"hold the generated one"
 msgstr ""
 
 #. module: survey_contact_generation
@@ -144,6 +162,7 @@ msgstr ""
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q5
 #: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q6
+#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q_company_name
 msgid "The answer you entered is not valid."
 msgstr ""
 
@@ -155,6 +174,7 @@ msgstr ""
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q5
 #: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q6
+#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q_company_name
 msgid "This question requires an answer."
 msgstr ""
 
