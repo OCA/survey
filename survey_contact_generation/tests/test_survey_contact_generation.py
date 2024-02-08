@@ -29,3 +29,4 @@ class SurveyContactGenerationTests(SurveyContactGenerationCase):
             [("email", "=", "survey_contact_generation@test.com")]
         )
         self.assertEqual(partner, self.user_input.partner_id)
+        self.assertEqual(partner.parent_id.name, "My Company Name")
