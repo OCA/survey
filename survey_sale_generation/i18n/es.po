@@ -37,8 +37,7 @@ msgstr ""
 #. module: survey_sale_generation
 #: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__quotation_mail_template_id
 msgid "Choose a template. Otherwise the default one will be used."
-msgstr ""
-"Escoja un plantilla. De otro modo se usará la que existe por defecto."
+msgstr "Escoja un plantilla. De otro modo se usará la que existe por defecto."
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q3
@@ -75,11 +74,11 @@ msgid ""
 "members in your team?' and other could be 'Choose the membership type'. "
 "We'll want to multiply members by memberships in our sale line."
 msgstr ""
-"Para preguntas con múltiples respuestas podríamos querer tener en cuenta "
-"qué cantidad de producto queremos pedir. Por ejemplo, un pregunta podría "
-"ser: '¿Cuántos miembros hay en tu equipo?' y otra podría ser 'Escoge el "
-"tipo de membresía'. Querremos multiplicar socios por tipos de membresía "
-"en nuestra línea de venta."
+"Para preguntas con múltiples respuestas podríamos querer tener en cuenta qué "
+"cantidad de producto queremos pedir. Por ejemplo, un pregunta podría ser: "
+"'¿Cuántos miembros hay en tu equipo?' y otra podría ser 'Escoge el tipo de "
+"membresía'. Querremos multiplicar socios por tipos de membresía en nuestra "
+"línea de venta."
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__generate_quotations
