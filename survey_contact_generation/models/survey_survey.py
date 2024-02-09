@@ -9,3 +9,7 @@ class SurveySurvey(models.Model):
     generate_contact = fields.Boolean(
         help="Generate contacts for anonymous survey users",
     )
+    create_parent_contact = fields.Boolean(
+        help="Set the company_name in a question and a parent contact will be "
+        "created to hold the generated one",
+    )
