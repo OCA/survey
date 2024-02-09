@@ -8,6 +8,19 @@
                 <group name="sale_options" string="Sales">
                     <field name="generate_quotations" />
                     <field
+                        name="sale_order_template_id"
+                        attrs="{'invisible': [('generate_quotations', '=', False)]}"
+                    />
+                    <field
+                        name="send_quotation_to_customer"
+                        attrs="{'invisible': [('generate_quotations', '=', False)]}"
+                    />
+                    <field
+                        name="quotation_mail_template_id"
+                        options="{'no_open': True, 'no_create': True}"
+                        attrs="{'invisible': [('generate_quotations', '=', False), ('send_quotation_to_customer', '=', False)]}"
+                    />
+                    <field
                         name="crm_team_id"
                         attrs="{'invisible': [('generate_quotations', '=', False)]}"
                     />

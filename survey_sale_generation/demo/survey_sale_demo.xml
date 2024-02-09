@@ -49,50 +49,71 @@
         <field name="crm_team_id" ref="support_hiring" />
         <field name="users_can_go_back" eval="True" />
     </record>
-    <record model="survey.question" id="survey_support_q0">
+    <record model="survey.question" id="survey_support_q0_1">
         <field name="survey_id" ref="survey_hire_support" />
         <field name="sequence">0</field>
+        <field name="title">Name</field>
+        <field name="question_type">char_box</field>
+        <field name="show_in_sale_order_comment" eval="True" />
+        <field name="constr_mandatory" eval="True" />
+    </record>
+    <record model="survey.question" id="survey_support_q0">
+        <field name="survey_id" ref="survey_hire_support" />
+        <field name="sequence">1</field>
         <field name="title">E-mail address</field>
-        <field name="question_type">text_box</field>
+        <field name="question_type">char_box</field>
         <field name="show_in_sale_order_comment" eval="True" />
         <field name="constr_mandatory" eval="True" />
     </record>
     <record model="survey.question" id="survey_support_q1">
         <field name="survey_id" ref="survey_hire_support" />
-        <field name="sequence">1</field>
+        <field name="sequence">2</field>
         <field name="title">How many hours will you hire monthly?</field>
         <field name="question_type">numerical_box</field>
-        <field name="product_id" ref="support_hours" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.support_hours'))]"
+        />
         <field name="constr_mandatory" eval="True" />
     </record>
     <record model="survey.question" id="survey_support_q2">
         <field name="survey_id" ref="survey_hire_support" />
-        <field name="sequence">2</field>
+        <field name="sequence">3</field>
         <field name="title">Choose your subscription level</field>
         <field name="question_type">simple_choice</field>
         <field name="constr_mandatory" eval="True" />
+        <field name="product_uom_qty_question_id" ref="survey_support_q1" />
     </record>
     <record model="survey.question.answer" id="survey_support_q2_sug1">
         <field name="question_id" ref="survey_support_q2" />
         <field name="sequence">1</field>
         <field name="value">Platinum</field>
-        <field name="product_id" ref="platinum_service" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.platinum_service'))]"
+        />
     </record>
     <record model="survey.question.answer" id="survey_support_q2_sug2">
         <field name="question_id" ref="survey_support_q2" />
         <field name="sequence">2</field>
         <field name="value">Gold</field>
-        <field name="product_id" ref="gold_service" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.gold_service'))]"
+        />
     </record>
     <record model="survey.question.answer" id="survey_support_q2_sug3">
         <field name="question_id" ref="survey_support_q2" />
         <field name="sequence">3</field>
         <field name="value">Silver</field>
-        <field name="product_id" ref="silver_service" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.silver_service'))]"
+        />
     </record>
     <record model="survey.question" id="survey_support_q3">
         <field name="survey_id" ref="survey_hire_support" />
-        <field name="sequence">2</field>
+        <field name="sequence">5</field>
         <field name="title">Choose your extras</field>
         <field name="question_type">multiple_choice</field>
         <field name="constr_mandatory" eval="False" />
@@ -101,18 +122,27 @@
         <field name="question_id" ref="survey_support_q3" />
         <field name="sequence">1</field>
         <field name="value">Dedicated Server</field>
-        <field name="product_id" ref="dedicated_server" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.dedicated_server'))]"
+        />
     </record>
     <record model="survey.question.answer" id="survey_support_q3_sug2">
         <field name="question_id" ref="survey_support_q3" />
         <field name="sequence">2</field>
         <field name="value">Advanced Backup</field>
-        <field name="product_id" ref="advanced_backup" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.advanced_backup'))]"
+        />
     </record>
     <record model="survey.question.answer" id="survey_support_q3_sug3">
         <field name="question_id" ref="survey_support_q3" />
         <field name="sequence">3</field>
         <field name="value">Mail Management</field>
-        <field name="product_id" ref="mail_management" />
+        <field
+            name="product_ids"
+            eval="[Command.link(ref('survey_sale_generation.mail_management'))]"
+        />
     </record>
 </odoo>

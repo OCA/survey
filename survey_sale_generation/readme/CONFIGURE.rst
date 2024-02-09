@@ -8,18 +8,20 @@ Now you'll have to configure the products linked to the questions.
 
 For *Numerical value* questions:
 
-#. In the *Answers* tab choose the linked product.
-#. The resulting quotation will have as many items of that product as the user defines.
+#. In the *Answers* tab choose the linked products.
+#. The resulting quotation will have as many items of that products as the user defines.
 
 For *Multiple choice: only one answer*:
 
-#. In the *Answers* tab link a product to every given choice.
-#. The resulting quotation will have the product linked to the survey user's choice.
+#. In the *Answers* tab link multiple products to every given choice.
+#. The resulting quotation will have the products linked to the survey user's choice.
 
 For *Multiple choice: multiple answers allowed*:
 
-#. In the *Answers* tab link a product to every given choice.
+#. In the *Answers* tab link products to every given choice.
 #. The resulting quotation will have the products linked to the survey user's choices.
+#. By default a unit of product will be added per answer to the quotation. If you want
+   to set a variable choice, you can link a numeric question that will act as multiplier.
 
 When the survey is submited an internal message is generated in the resulting quotation
 with a link to the user answers. Optionally, you can configure some of the questions so
@@ -29,3 +31,8 @@ relevant infos concerning the request. To do so:
 #. In the *Options* tab of the questions go to the *Sales* section.
 #. Set *Show in sale order comment* on if you want those answers on the internal
    notification.
+
+If you want to use a quotation template you can choose it from the options: *Sale Order Template*.
+
+You can also configure the survey to send the quotation to the customer by mail. When doing
+so, you can choose a mail template or use the default one.
