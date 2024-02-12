@@ -36,3 +36,8 @@ If you want to use a quotation template you can choose it from the options: *Sal
 
 You can also configure the survey to send the quotation to the customer by mail. When doing
 so, you can choose a mail template or use the default one.
+
+If you want to fill sale fields from the answers:
+
+#. In the *Options* tab of the questions go to the *Sales* section.
+#. Set *Sale the sale field* you want to fill with the given answer.
