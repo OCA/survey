@@ -21,6 +21,11 @@ msgid "Advanced Backup"
 msgstr ""
 
 #. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__allowed_sale_order_field_ids
+msgid "Allowed Sale Order Field"
+msgstr ""
+
+#. module: survey_sale_generation
 #: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__generate_quotations
 msgid ""
 "Check it to generate sale orders from the survey answers. You'll need to "
@@ -104,6 +109,11 @@ msgid "If other, please specify:"
 msgstr ""
 
 #. module: survey_sale_generation
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q4_sug2
+msgid "Internet"
+msgstr ""
+
+#. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.mail_management
 #: model:product.template,name:survey_sale_generation.mail_management_product_template
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug3
@@ -113,6 +123,11 @@ msgstr ""
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q0_1
 msgid "Name"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:survey.question,comments_message:survey_sale_generation.survey_support_q4
+msgid "Other:"
 msgstr ""
 
 #. module: survey_sale_generation
@@ -143,8 +158,18 @@ msgid "Quotation Mail Template"
 msgstr ""
 
 #. module: survey_sale_generation
+#: model:survey.question,title:survey_sale_generation.survey_support_q4
+msgid "Referenced by"
+msgstr ""
+
+#. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_user_input__sale_order_id
 msgid "Sale Order"
+msgstr ""
+
+#. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__sale_order_field
+msgid "Sale Order Field"
 msgstr ""
 
 #. module: survey_sale_generation
@@ -222,11 +247,17 @@ msgid "Survey User Input"
 msgstr ""
 
 #. module: survey_sale_generation
+#: model:survey.question.answer,value:survey_sale_generation.survey_support_q4_sug1
+msgid "TV"
+msgstr ""
+
+#. module: survey_sale_generation
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q0
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q0_1
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q1
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q2
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q3
+#: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q4
 msgid "The answer you entered is not valid."
 msgstr ""
 
@@ -244,6 +275,7 @@ msgstr ""
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q1
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q2
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q3
+#: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q4
 msgid "This question requires an answer."
 msgstr ""
 
