@@ -46,6 +46,16 @@ odoo.define("survey.tour_test_survey_sale_generation", function (require) {
                     "div.js_question-wrapper:contains('Choose your extras') span:contains('Mail Management')",
             },
             {
+                content: "Referenced by",
+                trigger:
+                    "div.js_question-wrapper:contains('Referenced by') span:contains('Other:')",
+            },
+            {
+                content: "Referenced by: other",
+                trigger: "div.o_survey_comment_container textarea",
+                run: "text Mr. Odoo",
+            },
+            {
                 content: "Click Submit",
                 trigger: "button[value='finish']",
             },
