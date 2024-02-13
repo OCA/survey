@@ -61,6 +61,7 @@ class SurveyUserInput(models.Model):
                         vals[field_name] += line.suggested_answer_id.value
                 else:
                     vals[field_name] = line.suggested_answer_id.value
+        vals["generating_survey_user_input_id"] = self.id
         return vals
 
     def _create_contact_post_process(self, partner):
