@@ -26,6 +26,27 @@ class SurveyUserInput(models.Model):
                     "contact_name": self.nickname,
                 }
             )
+        # Fill sale.order fields from answers
+        elegible_inputs = self.user_input_line_ids.filtered(
+            lambda x: x.question_id.crm_lead_field and not x.skipped
+        )
+        basic_inputs = elegible_inputs.filtered(
+            lambda x: x.answer_type not in {"suggestion"}
+        )
+        vals.update(
+            {
+                line.question_id.crm_lead_field.name: line[f"value_{line.answer_type}"]
+                for line in basic_inputs
+            }
+        )
+        for line in elegible_inputs - basic_inputs:
+            field_name = line.question_id.crm_lead_field.name
+            value = (
+                line.suggested_answer_id.value
+                if line.answer_type == "suggestion"
+                else line[f"value_{line.answer_type}"]
+            )
+            vals[field_name] = value
         return vals
 
     def _prepare_lead_description(self):
