@@ -18,6 +18,11 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #. module: survey_crm_generation
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_ids
+msgid "Allowed Crm Lead Field"
+msgstr ""
+
+#. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q3
 msgid "And your name?"
 msgstr "¿Y tu nombre? "
@@ -37,6 +42,11 @@ msgstr "Conviértete en miembro OCA"
 #: model_terms:ir.ui.view,arch_db:survey_crm_generation.survey_question_form
 msgid "CRM"
 msgstr "CRM"
+
+#. module: survey_crm_generation
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__crm_lead_field
+msgid "Crm Lead Field"
+msgstr ""
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_survey__crm_tag_ids
@@ -71,6 +81,11 @@ msgid "If other, please specify:"
 msgstr "Si es otro, especifíquelo:"
 
 #. module: survey_crm_generation
+#: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug2
+msgid "Internet"
+msgstr ""
+
+#. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Iniciativa/Oportunidad"
@@ -85,6 +100,16 @@ msgstr "Asociación OCA"
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_user_input__opportunity_id
 msgid "Opportunity"
 msgstr "Oportunidad"
+
+#. module: survey_crm_generation
+#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q4
+msgid "Other:"
+msgstr ""
+
+#. module: survey_crm_generation
+#: model:survey.question,title:survey_crm_generation.survey_oca_q4
+msgid "Referenced by"
+msgstr ""
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__crm_tag_ids
@@ -120,9 +145,15 @@ msgid "Survey User Input"
 msgstr "Respuestas de los usuarios"
 
 #. module: survey_crm_generation
+#: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug1
+msgid "TV"
+msgstr ""
+
+#. module: survey_crm_generation
 #: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q0
 #: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q1
 #: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q3
+#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q4
 msgid "The answer you entered is not valid."
 msgstr "La respuesta que has introducido no es válida."
 
@@ -130,6 +161,7 @@ msgstr "La respuesta que has introducido no es válida."
 #: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q0
 #: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q1
 #: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q3
+#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q4
 msgid "This question requires an answer."
 msgstr "Esta pregunta requiere una respuesta."
 
