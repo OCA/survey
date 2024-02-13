@@ -30,3 +30,4 @@ class SurveyContactGenerationTests(SurveyContactGenerationCase):
         )
         self.assertEqual(partner, self.user_input.partner_id)
         self.assertEqual(partner.parent_id.name, "My Company Name")
+        self.assertEqual(partner.generating_survey_user_input_id, self.user_input)

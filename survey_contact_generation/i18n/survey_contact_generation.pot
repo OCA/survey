@@ -29,6 +29,7 @@ msgid "Company name"
 msgstr ""
 
 #. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_res_partner
 #: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_form
 #: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_question_form
 msgid "Contact"
@@ -83,6 +84,12 @@ msgstr ""
 #. module: survey_contact_generation
 #: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__generate_contact
 msgid "Generate contacts for anonymous survey users"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_res_partner__generating_survey_user_input_id
+#: model:ir.model.fields,field_description:survey_contact_generation.field_res_users__generating_survey_user_input_id
+msgid "Generating Survey User Input"
 msgstr ""
 
 #. module: survey_contact_generation
