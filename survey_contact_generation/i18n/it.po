@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-12 10:38+0000\n"
+"PO-Revision-Date: 2024-02-26 07:16+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -93,7 +93,7 @@ msgstr "Genera contatti per utenti sondaggio anonimo"
 #: model:ir.model.fields,field_description:survey_contact_generation.field_res_partner__generating_survey_user_input_id
 #: model:ir.model.fields,field_description:survey_contact_generation.field_res_users__generating_survey_user_input_id
 msgid "Generating Survey User Input"
-msgstr ""
+msgstr "Generazione risposte utente sondaggio"
 
 #. module: survey_contact_generation
 #: model:survey.question,comments_message:survey_contact_generation.survey_contact_q0
