@@ -70,7 +70,7 @@ class TestReport(common.TestSurveyCommon):
     def test_report(self):
         report = self.env.ref("survey_xlsx.report_survey_xlsx")
         self.assertEqual(report.report_type, "xlsx")
-        rep = report._render(self.survey.ids, {})
+        rep = self.env["ir.actions.report"]._render(report, self.survey.ids, {})
         wb = open_workbook(file_contents=rep[0])
         sheet = wb.sheet_by_index(0)
 
