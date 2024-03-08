@@ -39,7 +39,6 @@ class SurveySurvey(models.Model):
     def _get_formio_components(self):
         """
         Pages are not supported yet.
-
         Returns a list of dict representing survey questions as form.io components
         """
         self.ensure_one()
@@ -55,15 +54,12 @@ class SurveySurvey(models.Model):
         """
         Form.io datetimes are given in the user's timezone and with an offset.
         Odoo wants naïve datetimes.
-
         Returns a naïve datetime as a string
-
         Parameters:
         datetime_str: string representing a datetime with an offset
         """
         # In the json given by form.io, the offset is formatted as +hh:mm
         # To be able to use strptime we need it to be formated as +hhmm
-
         # We can't use the fromisoformat function because it's only available
         # in Python v3.7+ and Odoo v13 is compatible with Python v3.6
         index = datetime_str.rfind(":")
@@ -73,9 +69,7 @@ class SurveySurvey(models.Model):
         ).astimezone(pytz.UTC)
         return utc_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
-    def _from_formio_multiple_choice_to_odoo(
-        self, question_id, multiple_choice_answers_dict
-    ):
+    def _from_formio_multiple_choice_to_odoo(self, multiple_choice_answers_dict):
         """
         For a multiple choice question, the form.io answer has the
         following format:
@@ -84,25 +78,18 @@ class SurveySurvey(models.Model):
           "answer_2_value": true/false
           ....
         }}
-        Odoo expects the following format:
-        {"question_id_answer_id": "answer_id"}
+        Odoo expects the following format: [answer_id, answer_id, ...]
         Form.io returns all the answers with true or false but odoo doesn't
         distinguish them like that. If the answer isn't selected, it shouldn't appear
-        in the dictionnary containing the answers.
-
-        Returns a dictionnary with the correct format.
-
+        in the list containing the answers.
+        Returns a list with the correct format.
         Parameters:
         question_id: id of the survey.question
         multiple_choice_answers_dict: dict given by form.io for a multiple choice question
         """
-        answers_dict = {}
-        multiple_choice_answers_dict = {
-            key: value for (key, value) in multiple_choice_answers_dict.items() if value
-        }
-        for answer in multiple_choice_answers_dict.keys():
-            answers_dict[question_id + "_" + answer[1:]] = answer[1:]
-        return answers_dict
+        return [
+            key[1:] for (key, value) in multiple_choice_answers_dict.items() if value
+        ]
 
     def generate_formio_json(self):
         """
@@ -112,7 +99,6 @@ class SurveySurvey(models.Model):
         display = self._get_formio_display()
         title = self.title
         components = self._get_formio_components()
-
         form_json = json.dumps(
             {"display": display, "title": title, "components": components}
         )
@@ -122,7 +108,6 @@ class SurveySurvey(models.Model):
         """
         If no user_input_id is given, creates a user_input with the values in formio_output.
         If there is a user_input_id, updates that user_input with the values in formio_output.
-
         Parameters:
         formio_output: json given by form.io as a dictionnary
         user_input_id: survey.user_input id
@@ -161,12 +146,9 @@ class SurveySurvey(models.Model):
                 if question.question_type == "multiple_choice":
                     answers_dict = form_io_answers[question_label]
                     form_io_answers.pop(question_label)
-                    form_io_answers.update(
-                        self._from_formio_multiple_choice_to_odoo(
-                            question_label, answers_dict
-                        )
-                    )
-                self.env["survey.user_input_line"].save_lines(
-                    user_input_id.id, question, form_io_answers, question_label
-                )
+                    form_io_answers[
+                        question_label
+                    ] = self._from_formio_multiple_choice_to_odoo(answers_dict)
+                answer = form_io_answers.get(question_label)
+                user_input_id.save_lines(question, answer)
         return user_input_id

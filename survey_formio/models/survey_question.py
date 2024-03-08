@@ -5,8 +5,8 @@
 from odoo import models
 
 ODOO_TO_FORM_IO_TYPES_DICT = {
-    "free_text": "textarea",
-    "textbox": "textfield",
+    "text_box": "textarea",
+    "char_box": "textfield",
     "numerical_box": "number",
     "date": "datetime",
     "datetime": "datetime",
@@ -21,7 +21,6 @@ class SurveyQuestion(models.Model):
     def _get_formio_common_parameters(self):
         """
         Returns a dict representing the common parameters for all form.io components.
-
         Form.io parameters:
         - type : required
         - key : required
@@ -45,7 +44,6 @@ class SurveyQuestion(models.Model):
     def _get_formio_validate_parameters(self):
         """
         Returns a dict representing the validation parameters of a form.io component
-
         Form.io parameters:
         - validate.required
         """
@@ -55,7 +53,6 @@ class SurveyQuestion(models.Model):
     def _get_formio_textarea_parameters(self):
         """
         Returns a dict containing parameters specific to a text area component
-
         Form.io parameters:
         - rows : required but no corresponding parameter in survey.
                  Set to default form.io value
@@ -68,7 +65,6 @@ class SurveyQuestion(models.Model):
     def _get_formio_textfield_parameters(self):
         """
         Returns a dict containing parameters specific to a text field component
-
         This function does not take validation_length_min, validation_length_max
         and validation_error_msg into account yet.
         """
@@ -78,10 +74,8 @@ class SurveyQuestion(models.Model):
     def _get_formio_number_parameters(self):
         """
         Returns a dict containing parameters specific to a number component
-
         This function does not take validation_min_float_value and validation_max_float_value
         into account yet.
-
         Form.io parameters:
         - validate.min : not supported at the moment
         - validate.max : not supported at the moment
@@ -92,13 +86,10 @@ class SurveyQuestion(models.Model):
     def _get_formio_datetime_parameters(self, is_datetime=True):
         """
         Returns a dict containing parameters specific to a datetime component
-
         This function does not take validation_min_date_time, validation_max_date_time
         and validation_error_msg into account yet.
-
         Parameters:
         is_datetime: boolean that determines if the time picker is available or not
-
         Form.io parameters:
         - datePicker.minMode : required but no corresponding parameter in survey.
                                Set to default form.io value
@@ -119,35 +110,31 @@ class SurveyQuestion(models.Model):
     def _get_formio_radio_parameters(self):
         """
         Returns a dict containing parameters specific to a radio component
-
         This function does not take display_mode, column_nb and comments_allowed
         into account yet.
-
         Form.io parameters:
         - values: list of dict {"label": label, "value": value}
         """
         self.ensure_one()
         return {
             "values": [
-                {"label": label.value, "value": f"a{label.id}"}
-                for label in self.labels_ids
+                {"label": suggested_answer.value, "value": f"a{suggested_answer.id}"}
+                for suggested_answer in self.suggested_answer_ids
             ]
         }
 
     def _get_formio_selectboxes_parameters(self):
         """
         Returns a dict containing parameters specific to a select boxes component
-
         This function does not take column_nb and comments_allowed into account yet.
-
         Form.io parameters:
         - values: list of dict {"label": label, "value": value}
         """
         self.ensure_one()
         return {
             "values": [
-                {"label": label.value, "value": f"a{label.id}"}
-                for label in self.labels_ids
+                {"label": suggested_answer.value, "value": f"a{suggested_answer.id}"}
+                for suggested_answer in self.suggested_answer_ids
             ]
         }
 
@@ -156,11 +143,10 @@ class SurveyQuestion(models.Model):
         Returns a dict representing a question as a valid formio component
         """
         self.ensure_one()
-
         specific = {}
-        if self.question_type == "free_text":
+        if self.question_type == "text_box":
             specific = self._get_formio_textarea_parameters()
-        elif self.question_type == "textbox":
+        elif self.question_type == "char_box":
             specific = self._get_formio_textfield_parameters()
         elif self.question_type == "numerical_box":
             specific = self._get_formio_number_parameters()
@@ -175,7 +161,6 @@ class SurveyQuestion(models.Model):
         else:
             # This question_type is not supported
             return False
-
         common = self._get_formio_common_parameters()
         validate = self._get_formio_validate_parameters()
         # merge validate and specific dictionnaries

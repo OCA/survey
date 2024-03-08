@@ -8,18 +8,24 @@ from odoo.tests import common
 from ..models.survey_question import ODOO_TO_FORM_IO_TYPES_DICT
 
 
-class TestSurveyFormIo(common.SavepointCase):
+class TestSurveyFormIo(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.survey_public = cls.env["survey.survey"].create(
-            {"title": "Test Public Survey", "access_mode": "public", "state": "open"}
+            {
+                "title": "Test Public Survey",
+                "access_mode": "public",
+            }
         )
         cls.env["survey.question"].create(
             cls._get_questions_vals_list(cls, cls.survey_public.id)
         )
         cls.survey_private = cls.env["survey.survey"].create(
-            {"title": "Test Private Survey", "access_mode": "token", "state": "open"}
+            {
+                "title": "Test Private Survey",
+                "access_mode": "token",
+            }
         )
         cls.env["survey.question"].create(
             cls._get_questions_vals_list(cls, cls.survey_private.id)
@@ -31,14 +37,14 @@ class TestSurveyFormIo(common.SavepointCase):
                 "title": "Test Free Text",
                 "survey_id": survey_id,
                 "sequence": 1,
-                "question_type": "free_text",
+                "question_type": "text_box",
                 "constr_mandatory": True,
             },
             {
-                "title": "Test TextBox",
+                "title": "Test char_box",
                 "survey_id": survey_id,
                 "sequence": 2,
-                "question_type": "textbox",
+                "question_type": "char_box",
             },
             {
                 "title": "Test Numerical Box",
@@ -64,7 +70,7 @@ class TestSurveyFormIo(common.SavepointCase):
                 "survey_id": survey_id,
                 "sequence": 2,
                 "question_type": "simple_choice",
-                "labels_ids": [
+                "suggested_answer_ids": [
                     (0, 0, {"value": "A"}),
                     (0, 0, {"value": "B"}),
                     (0, 0, {"value": "C"}),
@@ -75,7 +81,7 @@ class TestSurveyFormIo(common.SavepointCase):
                 "survey_id": survey_id,
                 "sequence": 2,
                 "question_type": "multiple_choice",
-                "labels_ids": [
+                "suggested_answer_ids": [
                     (0, 0, {"value": 1}),
                     (0, 0, {"value": 2}),
                     (0, 0, {"value": 3}),
@@ -85,10 +91,10 @@ class TestSurveyFormIo(common.SavepointCase):
 
     def _get_answers_json(self, survey_id):
         free_text_question = survey_id.question_ids.filtered(
-            lambda q: q.question_type == "free_text"
+            lambda q: q.question_type == "text_box"
         )
         text_box_question = survey_id.question_ids.filtered(
-            lambda q: q.question_type == "textbox"
+            lambda q: q.question_type == "char_box"
         )
         numerical_box_question = survey_id.question_ids.filtered(
             lambda q: q.question_type == "numerical_box"
@@ -113,19 +119,19 @@ class TestSurveyFormIo(common.SavepointCase):
                 f"q{date_question.id}": "2023-02-01T00:00:00+01:00",
                 f"q{date_time_question.id}": "2023-02-01T12:00:00+01:00",
                 f"q{simple_choice_question.id}": (
-                    f"a{simple_choice_question.labels_ids[1].id}"
+                    f"a{simple_choice_question.suggested_answer_ids[1].id}"
                 ),
                 f"q{multiple_choice_question.id}": {
-                    f"a{multiple_choice_question.labels_ids[0].id}": True,
-                    f"a{multiple_choice_question.labels_ids[1].id}": True,
-                    f"a{multiple_choice_question.labels_ids[2].id}": False,
+                    f"a{multiple_choice_question.suggested_answer_ids[0].id}": True,
+                    f"a{multiple_choice_question.suggested_answer_ids[1].id}": True,
+                    f"a{multiple_choice_question.suggested_answer_ids[2].id}": False,
                 },
             }
         }
 
     def _get_required_answers_json(self, survey_id):
         free_text_question = survey_id.question_ids.filtered(
-            lambda q: q.question_type == "free_text"
+            lambda q: q.question_type == "text_box"
         )
         return {"data": {f"q{free_text_question.id}": "test answer 1"}}
 
@@ -164,7 +170,6 @@ class TestSurveyFormIo(common.SavepointCase):
             self.assertEqual(
                 component["validate"]["required"], question.constr_mandatory
             )
-
         private_survey_formio_dict = json.loads(
             self.survey_private.generate_formio_json()
         )
@@ -191,23 +196,24 @@ class TestSurveyFormIo(common.SavepointCase):
             if question.question_type == "datetime":
                 self.assertTrue(component["enableTime"])
             if question.question_type in ["simple_choice", "multiple_choice"]:
-                self.assertEqual(len(component["values"]), len(question.labels_ids))
+                self.assertEqual(
+                    len(component["values"]), len(question.suggested_answer_ids)
+                )
                 self.assertEqual(
                     [d["label"] for d in component["values"]],
-                    question.labels_ids.mapped("value"),
+                    question.suggested_answer_ids.mapped("value"),
                 )
-
         self.env["survey.question"].create(
             {
                 "survey_id": self.survey_public.id,
                 "title": "Test Matrix",
                 "question_type": "matrix",
-                "labels_ids": [
+                "suggested_answer_ids": [
                     (0, 0, {"value": "A"}),
                     (0, 0, {"value": "B"}),
                     (0, 0, {"value": "C"}),
                 ],
-                "labels_ids_2": [
+                "matrix_row_ids": [
                     (0, 0, {"value": 1}),
                     (0, 0, {"value": 2}),
                     (0, 0, {"value": 3}),
@@ -239,19 +245,18 @@ class TestSurveyFormIo(common.SavepointCase):
         self.survey_public.user_input_from_formio(answers)
         self.assertEqual(self.survey_public.answer_count, 1)
         user_input = self.survey_public.user_input_ids[0]
-
         # 7 questions answered but for the multiple choice there's a line per answer
         self.assertEqual(len(user_input.user_input_line_ids), 8)
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
-                lambda uil: uil.answer_type == "free_text"
-            ).value_free_text,
+                lambda uil: uil.answer_type == "text_box"
+            ).value_text_box,
             "test answer 1",
         )
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
-                lambda uil: uil.answer_type == "number"
-            ).value_number,
+                lambda uil: uil.answer_type == "numerical_box"
+            ).value_numerical_box,
             10,
         )
         simple_choice_question = self.survey_public.question_ids.filtered(
@@ -260,10 +265,9 @@ class TestSurveyFormIo(common.SavepointCase):
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
                 lambda uil: uil.question_id == simple_choice_question
-            ).value_suggested,
-            simple_choice_question.labels_ids[1],
+            ).suggested_answer_id,
+            simple_choice_question.suggested_answer_ids[1],
         )
-
         multiple_choice_question = self.survey_public.question_ids.filtered(
             lambda q: q.question_type == "multiple_choice"
         )
@@ -279,12 +283,12 @@ class TestSurveyFormIo(common.SavepointCase):
             len(
                 user_input.user_input_line_ids.filtered(
                     lambda uil: uil.question_id == multiple_choice_question
-                    and uil.value_suggested == multiple_choice_question.labels_ids[2]
+                    and uil.suggested_answer_id
+                    == multiple_choice_question.suggested_answer_ids[2]
                 )
             ),
             0,
         )
-
         self.assertEqual(self.survey_private.answer_count, 0)
         answers = self._get_answers_json(self.survey_private)
         self.survey_private.user_input_from_formio(answers)
@@ -310,11 +314,10 @@ class TestSurveyFormIo(common.SavepointCase):
         self.assertEqual(len(user_input.user_input_line_ids), 1)
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
-                lambda uil: uil.answer_type == "free_text"
-            ).value_free_text,
+                lambda uil: uil.answer_type == "text_box"
+            ).value_text_box,
             "test answer 1",
         )
-
         self.assertEqual(self.survey_private.answer_count, 0)
         answers = self._get_required_answers_json(self.survey_private)
         self.survey_private.user_input_from_formio(answers)
@@ -339,19 +342,18 @@ class TestSurveyFormIo(common.SavepointCase):
         self.survey_public.user_input_from_formio(answers, public_user_input.id)
         self.assertEqual(self.survey_public.answer_count, 1)
         user_input = self.survey_public.user_input_ids[0]
-
         # 7 questions answered but for the multiple choice there's a line per answer
         self.assertEqual(len(user_input.user_input_line_ids), 8)
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
-                lambda uil: uil.answer_type == "free_text"
-            ).value_free_text,
+                lambda uil: uil.answer_type == "text_box"
+            ).value_text_box,
             "test answer 1",
         )
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
-                lambda uil: uil.answer_type == "number"
-            ).value_number,
+                lambda uil: uil.answer_type == "numerical_box"
+            ).value_numerical_box,
             10,
         )
         simple_choice_question = self.survey_public.question_ids.filtered(
@@ -360,10 +362,9 @@ class TestSurveyFormIo(common.SavepointCase):
         self.assertEqual(
             user_input.user_input_line_ids.filtered(
                 lambda uil: uil.question_id == simple_choice_question
-            ).value_suggested,
-            simple_choice_question.labels_ids[1],
+            ).suggested_answer_id,
+            simple_choice_question.suggested_answer_ids[1],
         )
-
         private_user_input = self.survey_private._create_answer()
         self.assertEqual(self.survey_private.answer_count, 1)
         answers = self._get_answers_json(self.survey_private)
