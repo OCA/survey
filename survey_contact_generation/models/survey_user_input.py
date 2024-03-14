@@ -72,6 +72,10 @@ class SurveyUserInput(models.Model):
             subtype_id=self.env.ref("mail.mt_note").id,
         )
 
+    def _get_existing_partner(self, email):
+        """Hook method that can be used to change the behavior of contact generation"""
+        return self.env["res.partner"].search([("email", "=", email)], limit=1)
+
     def _mark_done(self):
         """Generate the contact when the survey is submitted"""
         for user_input in self.filtered(
@@ -81,9 +85,7 @@ class SurveyUserInput(models.Model):
             partner = False
             email = vals.get("email")
             if email:
-                partner = self.env["res.partner"].search(
-                    [("email", "=", email)], limit=1
-                )
+                partner = self._get_existing_partner(email)
             if not partner:
                 partner = self.env["res.partner"].create(vals)
                 self._create_contact_post_process(partner)
