@@ -9,7 +9,7 @@ class SurveyUserInput(models.Model):
     sale_order_id = fields.Many2one(comodel_name="sale.order")
 
     def _prepare_quotation(self):
-        return {
+        vals = {
             "partner_id": self.partner_id.id or self.create_uid.partner_id.id,
             "origin": self.survey_id.title,
             "survey_user_input_id": self.id,
@@ -20,6 +20,30 @@ class SurveyUserInput(models.Model):
                 self.survey_id.crm_team_id.user_id.id or self.survey_id.user_id.id
             ),
         }
+        # Fill sale.order fields from answers
+        elegible_inputs = self.user_input_line_ids.filtered(
+            lambda x: x.question_id.sale_order_field and not x.skipped
+        )
+        basic_inputs = elegible_inputs.filtered(
+            lambda x: x.answer_type not in {"suggestion"}
+        )
+        vals.update(
+            {
+                line.question_id.sale_order_field.name: line[
+                    f"value_{line.answer_type}"
+                ]
+                for line in basic_inputs
+            }
+        )
+        for line in elegible_inputs - basic_inputs:
+            field_name = line.question_id.sale_order_field.name
+            value = (
+                line.suggested_answer_id.value
+                if line.answer_type == "suggestion"
+                else line[f"value_{line.answer_type}"]
+            )
+            vals[field_name] = value
+        return vals
 
     def _prepare_quotation_line(self, input_line, product):
         if input_line.question_id.question_type == "numerical_box":
