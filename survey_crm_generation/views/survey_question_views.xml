@@ -10,6 +10,8 @@
                         name="show_in_lead_description"
                         attrs="{'invisible': [('question_type', 'in', ['matrix', 'simple_choice', 'multiple_choice'])]}"
                     />
+                    <field name="allowed_crm_lead_field_ids" invisible="1" />
+                    <field name="crm_lead_field" widget="selection" />
                 </group>
             </xpath>
         </field>

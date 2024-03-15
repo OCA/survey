@@ -35,6 +35,17 @@ odoo.define(
                     run: "text Tecnativa",
                 },
                 {
+                    content: "Referenced by",
+                    trigger:
+                        "div.js_question-wrapper:contains('Referenced by') span:contains('Other:')",
+                },
+                {
+                    content: "Referenced by: other",
+                    trigger:
+                        "div.js_question-wrapper:contains('Referenced by') textarea",
+                    run: "text Mr. Odoo",
+                },
+                {
                     content: "Click Submit",
                     trigger: "button[value='finish']",
                 },

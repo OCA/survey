@@ -47,3 +47,4 @@ class SurveyCrmGenerationTests(SurveyCrmGenerationCase):
             self.generated_lead.description,
             expected_lead_description,
         )
+        self.assertEqual("Mr. Odoo", self.generated_lead.referred)
