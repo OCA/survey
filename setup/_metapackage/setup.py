@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-survey_question_type_five_star>=16.0dev,<16.1dev',
+        'odoo-addon-survey_xlsx>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
