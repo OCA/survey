@@ -17,30 +17,14 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: survey_xlsx
+#. odoo-python
 #: code:addons/survey_xlsx/report/report_survey_xlsx.py:0
 #, python-format
 msgid "Created on"
 msgstr "Creato il"
 
 #. module: survey_xlsx
-#: model:ir.model.fields,field_description:survey_xlsx.field_report_survey_xlsx__display_name
-#: model:ir.model.fields,field_description:survey_xlsx.field_survey_user_input_line__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: survey_xlsx
-#: model:ir.model.fields,field_description:survey_xlsx.field_report_survey_xlsx__id
-#: model:ir.model.fields,field_description:survey_xlsx.field_survey_user_input_line__id
-msgid "ID"
-msgstr "ID"
-
-#. module: survey_xlsx
-#: model:ir.model.fields,field_description:survey_xlsx.field_report_survey_xlsx____last_update
-#: model:ir.model.fields,field_description:survey_xlsx.field_survey_user_input_line____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: survey_xlsx
+#. odoo-python
 #: code:addons/survey_xlsx/report/report_survey_xlsx.py:0
 #, python-format
 msgid "Partner"
@@ -60,3 +44,12 @@ msgstr "Resoconto sondaggio XLSX"
 #: model:ir.model,name:survey_xlsx.model_report_survey_xlsx
 msgid "XLSX Report to show all the results for the survey"
 msgstr "Resoconto XLSX per visualizzare tutti i risultati del sondaggio"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
