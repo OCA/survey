@@ -104,7 +104,7 @@ class SurveyUserInput(models.Model):
         """Send the answers when submitted on the so configured surveys"""
         res = super()._mark_done()
         for user_input in self.filtered(
-            lambda x: x.survey_id.send_result_mail and x.partner_id.email or x.email
+            lambda x: x.survey_id.send_result_mail and (x.partner_id.email or x.email)
         ):
             template = self.survey_id.result_mail_template_id or self.env.ref(
                 "survey_result_mail.mail_template_user_input_result_inline"
