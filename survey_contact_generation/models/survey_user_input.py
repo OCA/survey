@@ -72,9 +72,9 @@ class SurveyUserInput(models.Model):
             subtype_id=self.env.ref("mail.mt_note").id,
         )
 
-    def _get_existing_partner(self, email):
+    def _get_existing_partner(self, email, limit=1):
         """Hook method that can be used to change the behavior of contact generation"""
-        return self.env["res.partner"].search([("email", "=", email)], limit=1)
+        return self.env["res.partner"].search([("email", "=ilike", email)], limit=limit)
 
     def _mark_done(self):
         """Generate the contact when the survey is submitted"""
