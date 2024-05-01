@@ -1,8 +1,9 @@
 # Copyright 2023 Jose Zambudio - Aures Tic <jose@aurestic.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import base64
+import contextlib
 
-from odoo import _, fields, models, tools
+from odoo import _, fields, models
 from odoo.tools.mimetypes import guess_mimetype
 
 
@@ -57,7 +58,7 @@ class SurveyQuestion(models.Model):
                 except ValueError:
                     errors.update({self.id: "This is not a file"})
                     return errors
-                with tools.ignore(Exception):
+                with contextlib.suppress(Exception):
                     # 0 answer to mandatory question
                     if self.constr_mandatory and not data:
                         errors.update({self.id: self.constr_error_msg})

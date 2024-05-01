@@ -9,14 +9,15 @@ from odoo.addons.survey.tests import common
 
 
 class TestSurvey(common.SurveyCase):
-    def setUp(self):
-        super(TestSurvey, self).setUp()
-        User = self.env["res.users"].with_context({"no_reset_password": True})
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        User = cls.env["res.users"].with_context(no_reset_password=True)
         (group_survey_user, group_employee) = (
-            self.ref("survey.group_survey_user"),
-            self.ref("base.group_user"),
+            cls.env.ref("survey.group_survey_user").id,
+            cls.env.ref("base.group_user").id,
         )
-        self.survey_manager = User.create(
+        cls.survey_manager = User.create(
             {
                 "name": "Maria Riera",
                 "login": "Riera",
@@ -26,7 +27,7 @@ class TestSurvey(common.SurveyCase):
                         6,
                         0,
                         [
-                            self.ref("survey.group_survey_manager"),
+                            cls.env.ref("survey.group_survey_manager").id,
                             group_survey_user,
                             group_employee,
                         ],
@@ -34,40 +35,40 @@ class TestSurvey(common.SurveyCase):
                 ],
             }
         )
-        self.survey1 = (
-            self.env["survey.survey"]
-            .with_user(self.survey_manager)
+        cls.survey1 = (
+            cls.env["survey.survey"]
+            .with_user(cls.survey_manager)
             .create({"title": "S0", "page_ids": [(0, 0, {"title": "P0"})]})
         )
-        self.page1 = (
-            self.env["survey.question"]
-            .with_user(self.survey_manager)
+        cls.page1 = (
+            cls.env["survey.question"]
+            .with_user(cls.survey_manager)
             .create(
                 {
                     "title": "First page",
-                    "survey_id": self.survey1.id,
+                    "survey_id": cls.survey1.id,
                     "sequence": 1,
                     "is_page": True,
                 }
             )
         )
-        self.user_input1 = (
-            self.env["survey.user_input"]
-            .with_user(self.survey_manager)
+        cls.user_input1 = (
+            cls.env["survey.user_input"]
+            .with_user(cls.survey_manager)
             .create(
                 {
-                    "survey_id": self.survey1.id,
-                    "partner_id": self.survey_manager.partner_id.id,
+                    "survey_id": cls.survey1.id,
+                    "partner_id": cls.survey_manager.partner_id.id,
                 }
             )
         )
-        self.question_binary = (
-            self.env["survey.question"]
-            .with_user(self.survey_manager)
+        cls.question_binary = (
+            cls.env["survey.question"]
+            .with_user(cls.survey_manager)
             .create(
                 {
                     "title": "Test Binary",
-                    "page_id": self.page1.id,
+                    "page_id": cls.page1.id,
                     "question_type": "binary",
                     "allowed_filemimetypes": "application/pdf",
                     "max_filesize": 1024,
@@ -76,14 +77,14 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        self.question_multi_binary = (
-            self.env["survey.question"]
-            .with_user(self.survey_manager)
+        cls.question_multi_binary = (
+            cls.env["survey.question"]
+            .with_user(cls.survey_manager)
             .create(
                 {
                     "title": "Test Binary",
-                    "page_id": self.page1.id,
-                    "question_type": "binary",
+                    "page_id": cls.page1.id,
+                    "question_type": "multi_binary",
                     "allowed_filemimetypes": "image/png",
                     "max_filesize": 2097152,
                     "validation_required": True,
@@ -94,12 +95,12 @@ class TestSurvey(common.SurveyCase):
             "survey_question_type_binary", "static", "description", "icon.png"
         )
         with open(module_icon, "rb") as img:
-            self.image_base64 = base64.b64encode(img.read())
+            cls.image_base64 = base64.b64encode(img.read())
         module_html = get_module_resource(
             "survey_question_type_binary", "static", "description", "index.html"
         )
         with open(module_html, "rb") as file:
-            self.html = base64.b64encode(file.read())
+            cls.html = base64.b64encode(file.read())
 
     def test_01_question_binary_with_error_values(self):
         self.assertEqual(
