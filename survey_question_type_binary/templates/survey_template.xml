@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template
-        id="assets_frontend"
-        inherit_id="survey.survey_assets"
-        name="Survey assets"
-    >
-        <xpath
-            expr="//script[@src='/survey/static/src/js/survey_form.js']"
-            position="after"
-        >
-            <script
-                type="text/javascript"
-                src="/survey_question_type_binary/static/src/js/survey_form.js"
-            />
-        </xpath>
-    </template>
 
     <template
         id="question_conainer_inh_type_binary"
@@ -45,7 +30,7 @@
                         />
                     </t>
                     <t t-elif="answer_binary.value_binary">
-                        <p><t t-esc="answer_binary.filename" /></p>
+                        <p><t t-out="answer_binary.filename" /></p>
                     </t>
                     <t t-else="">
                         <input
