@@ -64,3 +64,12 @@ class SurveyUserInputLine(models.Model):
                             rec.question_id.allowed_filemimetypes
                         )
                     )
+
+    def _compute_display_name(self):
+        super()._compute_display_name()
+        for line in self:
+            if line.answer_type == "binary" and line.answer_binary_ids:
+                line.display_name = line.answer_binary_ids.filename
+            if line.answer_type == "multi_binary" and line.answer_binary_ids:
+                line.display_name = _("%s File(s)") % len(line.answer_binary_ids)
+        return True
