@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,6 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: survey_question_type_binary
+#. odoo-python
+#: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
+#, python-format
+msgid "%s File(s)"
+msgstr ""
 
 #. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_question_form_inherit_question_type_binary
@@ -70,9 +77,6 @@ msgid "Created on"
 msgstr ""
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__display_name
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input__display_name
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__display_name
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__display_name
 msgid "Display Name"
 msgstr ""
@@ -95,9 +99,6 @@ msgid "Filename"
 msgstr ""
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__id
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input__id
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__id
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__id
 msgid "ID"
 msgstr ""
@@ -120,9 +121,6 @@ msgid "Is Binary Image"
 msgstr ""
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question____last_update
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input____last_update
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line____last_update
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary____last_update
 msgid "Last Modified on"
 msgstr ""
@@ -153,6 +151,7 @@ msgid "Multiple: Binary"
 msgstr ""
 
 #. module: survey_question_type_binary
+#. odoo-python
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
@@ -185,12 +184,14 @@ msgid "Survey User Input Line Binary"
 msgstr ""
 
 #. module: survey_question_type_binary
+#. odoo-python
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
 msgid "The answer must be in the right type"
 msgstr ""
 
 #. module: survey_question_type_binary
+#. odoo-python
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
