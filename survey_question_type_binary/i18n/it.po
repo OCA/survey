@@ -17,6 +17,13 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: survey_question_type_binary
+#. odoo-python
+#: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
+#, python-format
+msgid "%s File(s)"
+msgstr ""
+
+#. module: survey_question_type_binary
 #: model_terms:ir.ui.view,arch_db:survey_question_type_binary.survey_question_form_inherit_question_type_binary
 msgid "<i class=\"fa fa-upload fa-2x\" title=\"upload\"/> Upload binary"
 msgstr "<i class=\"fa fa-upload fa-2x\" title=\"upload\"/> Carica binario"
@@ -73,9 +80,6 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__display_name
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input__display_name
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__display_name
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
@@ -88,8 +92,8 @@ msgstr "Documento"
 #. module: survey_question_type_binary
 #: model:ir.model.fields,help:survey_question_type_binary.field_survey_question__allowed_filemimetypes
 msgid ""
-"File mime types separated by commas (E.g: image/png,image/jpeg). Leave empty"
-" to allow any value."
+"File mime types separated by commas (E.g: image/png,image/jpeg). Leave empty "
+"to allow any value."
 msgstr ""
 "Tipi MIME file separati da virgole (Es. image/png,image/jpeg). Lasciare "
 "vuoto per consentire qualsiasi valore."
@@ -100,9 +104,6 @@ msgid "Filename"
 msgstr "Nome file"
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__id
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input__id
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line__id
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__id
 msgid "ID"
 msgstr "ID"
@@ -110,8 +111,8 @@ msgstr "ID"
 #. module: survey_question_type_binary
 #: model:ir.model.fields,help:survey_question_type_binary.field_survey_question__max_filesize
 msgid ""
-"Indicate maximum file size in bytes (Default 50MB). Leave empty to allow any"
-" value."
+"Indicate maximum file size in bytes (Default 50MB). Leave empty to allow any "
+"value."
 msgstr ""
 "Indica la dimensione file massima in byte (predefinito 50MB). Lasciare vuoto "
 "per consentire qualsiasi valore."
@@ -127,9 +128,6 @@ msgid "Is Binary Image"
 msgstr "È immagine binaria"
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question____last_update
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input____last_update
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line____last_update
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary____last_update
 msgid "Last Modified on"
 msgstr "Ultima modifica il"
@@ -160,6 +158,7 @@ msgid "Multiple: Binary"
 msgstr "Multiplo: binario"
 
 #. module: survey_question_type_binary
+#. odoo-python
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
@@ -192,12 +191,14 @@ msgid "Survey User Input Line Binary"
 msgstr "Riga risposta binaria utente al sondaggio"
 
 #. module: survey_question_type_binary
+#. odoo-python
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
 msgid "The answer must be in the right type"
 msgstr "La risposta deve essere del tipo corretto"
 
 #. module: survey_question_type_binary
+#. odoo-python
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
