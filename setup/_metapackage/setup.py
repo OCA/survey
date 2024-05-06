@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-survey Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-survey_question_type_binary>=16.0dev,<16.1dev',
         'odoo-addon-survey_question_type_five_star>=16.0dev,<16.1dev',
         'odoo-addon-survey_xlsx>=16.0dev,<16.1dev',
     ],
