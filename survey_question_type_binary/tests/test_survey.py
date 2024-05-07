@@ -83,7 +83,7 @@ class TestSurvey(common.SurveyCase):
                 {
                     "title": "Test Binary",
                     "page_id": self.page1.id,
-                    "question_type": "binary",
+                    "question_type": "multi_binary",
                     "allowed_filemimetypes": "image/png",
                     "max_filesize": 2097152,
                     "validation_required": True,
