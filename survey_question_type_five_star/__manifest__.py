@@ -5,11 +5,18 @@
     "name": "Survey five stars question type",
     "summary": """
         This module add five stars rating as question type for survey page""",
-    "version": "14.0.1.0.1",
+    "version": "15.0.1.0.0",
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
     "depends": ["survey"],
     "data": ["views/survey_question.xml", "templates/survey_template.xml"],
     "demo": [],
+    "assets": {
+        "survey.survey_assets": [
+            "survey_question_type_five_star/static/src/js/survey.js",
+            "survey_question_type_five_star/static/src/scss/parameters.scss",
+            "survey_question_type_five_star/static/src/scss/survey.scss",
+        ],
+    },
 }
