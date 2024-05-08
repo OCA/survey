@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_survey
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-18 12:41+0000\n"
+"PO-Revision-Date: 2016-09-18 12:41+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Finnish (https://www.transifex.com/oca/teams/23907/fi/)\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
+msgid ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_company_count', "
+"'&lt;', 2)]}\">Surveys</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('surveys_company_count', '&gt;', 1)]}\">Survey</span>"
+msgstr ""
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
+msgid ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', '&lt;', "
+"2)]}\">Surveys</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('surveys_count', '&gt;', 1)]}\">Survey</span>"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_count
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_count
+msgid "Company Surveys Count"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model,name:partner_survey.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_invisible
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_invisible
+msgid "Hide surveys link on partner contact if needed"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_invisible
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_invisible
+msgid "Hide surveys link on partner if needed"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
+msgid "Partner"
+msgstr "Kumppani"
+
+#. module: partner_survey
+#: model:ir.model,name:partner_survey.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.actions.act_window,name:partner_survey.res_partner_action_surveys
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_inputs
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_inputs
+msgid "Surveys"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_count
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_count
+msgid "Surveys Count"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_lines
+#: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_lines
+msgid "Surveys answers"
+msgstr ""
