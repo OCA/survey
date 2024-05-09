@@ -71,11 +71,7 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        self.answer_tag1 = "{}_{}_{}".format(
-            self.survey1.id,
-            self.page1.id,
-            self.question1.id,
-        )
+        self.answer_tag1 = f"{self.survey1.id}_{self.page1.id}_{self.question1.id}"
         self._type_match["nps_rate"] = ("numerical_box", "value_numerical_box")
 
     def test_01_question_nps_rate_with_error_values(self):

@@ -9,14 +9,18 @@
   </template>
   <template id="result" inherit_id="survey.survey_page_statistics_question">
     <xpath
-      expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']/parent::t"
-      position="after">
+            expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']/parent::t"
+            position="after"
+        >
       <t t-if="question.question_type == 'nps_rate'">
         <t t-call="survey.question_result_number_or_date_or_datetime" />
       </t>
     </xpath>
   </template>
-  <template id="result_user" inherit_id="survey.question_result_number_or_date_or_datetime">
+  <template
+        id="result_user"
+        inherit_id="survey.question_result_number_or_date_or_datetime"
+    >
     <!-- <xpath expr="//a[@t-field='input_line.value_date']" position="after">
       <a
         t-if="question.question_type == 'nps_rate'"
@@ -41,64 +45,74 @@
     <div class="row">
       <div class="nps_rate nps_rate_widget">
         <label
-          for="num10"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 10 else ''}">
+                    for="num10"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 10 else ''}"
+                >
           10
         </label>
         <label
-          for="num9"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 9 else ''}">
+                    for="num9"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 9 else ''}"
+                >
           9
         </label>
         <label
-          for="num8"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 8 else ''}">
+                    for="num8"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 8 else ''}"
+                >
           8
         </label>
         <label
-          for="num7"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 7 else ''}">
+                    for="num7"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 7 else ''}"
+                >
           7
         </label>
         <label
-          for="num6"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 6 else ''}">
+                    for="num6"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 6 else ''}"
+                >
           6
         </label>
         <label
-          for="num5"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 5 else ''}">
+                    for="num5"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 5 else ''}"
+                >
           5
         </label>
         <label
-          for="num4"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 4 else ''}">
+                    for="num4"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 4 else ''}"
+                >
           4
         </label>
         <label
-          for="num3"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 3 else ''}">
+                    for="num3"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 3 else ''}"
+                >
           3
         </label>
         <label
-          for="num2"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 2 else ''}">
+                    for="num2"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 2 else ''}"
+                >
           2
         </label>
         <label
-          for="num1"
-          t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 1 else ''}">
+                    for="num1"
+                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 1 else ''}"
+                >
           1
         </label>
         <input
-          type="number"
-          step="any"
-          class="form-control"
-          t-att-data-question-type="question.question_type"
-          t-att-name="question.id"
-          hidden="hidden"
-          t-att-value="answer_lines[0].value_numerical_box if answer_lines else None"
-        />
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    t-att-data-question-type="question.question_type"
+                    t-att-name="question.id"
+                    hidden="hidden"
+                    t-att-value="answer_lines[0].value_numerical_box if answer_lines else None"
+                />
       </div>
     </div>
   </template>
