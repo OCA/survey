@@ -5,26 +5,29 @@ from odoo import fields, models
 
 
 class SurveyQuestion(models.Model):
-
     _inherit = "survey.question"
 
-    validation_multiple_answers_min = fields.Integer("Minimum Number of Answers")
-    validation_multiple_answers_max = fields.Integer("Maximum Number of Answers")
+    validation_multi_answers_min = fields.Integer(
+        "Minimum Number of Answers",
+    )
+    validation_multi_answers_max = fields.Integer(
+        "Maximum Number of Answers",
+    )
 
     _sql_constraints = [
         (
             "non_neg_multiple_ans_min",
-            "CHECK (validation_multiple_answers_min >= 0)",
+            "CHECK (validation_multi_answers_min >= 0)",
             "The minimum number of answers must be non-negative!",
         ),
         (
             "non_neg_multiple_ans_max",
-            "CHECK (validation_multiple_answers_max >= 0)",
+            "CHECK (validation_multi_answers_max >= 0)",
             "The maximum number of answers must be non-negative!",
         ),
         (
             "validation_multiple_ans",
-            "CHECK (validation_multiple_answers_min <= validation_multiple_answers_max)",
+            "CHECK (validation_multi_answers_min <= validation_multi_answers_max)",
             "Max number of multiple answers cannot be smaller "
             "than min number of multiple answers!",
         ),
@@ -41,11 +44,11 @@ class SurveyQuestion(models.Model):
         answer_count = len(answer) if isinstance(answer, list) else 1
         if (
             self.validation_required
-            and self.validation_multiple_answers_max > 0
+            and self.validation_multi_answers_max > 0
             and not (
-                self.validation_multiple_answers_min
+                self.validation_multi_answers_min
                 <= answer_count
-                <= self.validation_multiple_answers_max
+                <= self.validation_multi_answers_max
             )
         ):
             return {self.id: self.validation_error_msg}

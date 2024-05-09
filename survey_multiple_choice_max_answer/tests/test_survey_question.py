@@ -77,7 +77,7 @@ class TestSurvey(TransactionCase):
         self.question_multiple_choice.write(
             {
                 "validation_required": True,
-                "validation_multiple_answers_max": 3,
+                "validation_multi_answers_max": 3,
                 "validation_error_msg": error_msg,
             }
         )
@@ -103,8 +103,8 @@ class TestSurvey(TransactionCase):
         self.question_multiple_choice.write(
             {
                 "validation_required": True,
-                "validation_multiple_answers_min": 1,
-                "validation_multiple_answers_max": 3,
+                "validation_multi_answers_min": 1,
+                "validation_multi_answers_max": 3,
                 "validation_error_msg": error_msg,
             }
         )
@@ -131,8 +131,8 @@ class TestSurvey(TransactionCase):
         self.question_multiple_choice.write(
             {
                 "validation_required": True,
-                "validation_multiple_answers_min": 3,
-                "validation_multiple_answers_max": 3,
+                "validation_multi_answers_min": 3,
+                "validation_multi_answers_max": 3,
                 "validation_error_msg": error_msg,
             }
         )
@@ -156,15 +156,15 @@ class TestSurvey(TransactionCase):
         """
         If a user activates the validation_required (for another reason
         than limiting the number of allowed answers) but keeps
-        validation_multiple_answers_max to 0, the check must not be applied.
+        validation_multi_answers_max to 0, the check must not be applied.
         -> Answering with 3 answers is allowed.
         """
         error_msg = "TOO MANY ANSWERS"
         self.question_multiple_choice.write(
             {
                 "validation_required": True,
-                "validation_multiple_answers_min": 0,
-                "validation_multiple_answers_max": 0,
+                "validation_multi_answers_min": 0,
+                "validation_multi_answers_max": 0,
                 "validation_error_msg": error_msg,
             }
         )

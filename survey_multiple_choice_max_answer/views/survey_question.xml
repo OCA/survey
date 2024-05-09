@@ -3,7 +3,9 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
   <record model="ir.ui.view" id="survey_question_form_view">
-    <field name="name">survey.question.form (in survey_multiple_choice_max_answer)</field>
+    <field
+            name="name"
+        >survey.question.form (in survey_multiple_choice_max_answer)</field>
     <field name="model">survey.question</field>
     <field name="inherit_id" ref="survey.survey_question_form" />
     <field name="arch" type="xml">
@@ -13,8 +15,8 @@
             <field name="validation_required" nolabel="1" />
             <label for="validation_required" />
             <group invisible="validation_required == False">
-              <field name="validation_multiple_answers_min" />
-              <field name="validation_multiple_answers_max" />
+              <field name="validation_multi_answers_min" />
+              <field name="validation_multi_answers_max" />
               <field name="validation_error_msg" />
             </group>
           </div>

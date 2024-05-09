@@ -41,12 +41,12 @@ msgstr ""
 "numero di risposte multiple!"
 
 #. module: survey_multiple_choice_max_answer
-#: model:ir.model.fields,field_description:survey_multiple_choice_max_answer.field_survey_question__validation_multiple_answers_max
+#: model:ir.model.fields,field_description:survey_multiple_choice_max_answer.field_survey_question__validation_multi_answers_max
 msgid "Maximum Number of Answers"
 msgstr "Numero massimo risposte"
 
 #. module: survey_multiple_choice_max_answer
-#: model:ir.model.fields,field_description:survey_multiple_choice_max_answer.field_survey_question__validation_multiple_answers_min
+#: model:ir.model.fields,field_description:survey_multiple_choice_max_answer.field_survey_question__validation_multi_answers_max
 msgid "Minimum Number of Answers"
 msgstr "Numero minimo risposte"
 
