@@ -8,13 +8,19 @@
     </xpath>
   </template>
   <template id="result" inherit_id="survey.survey_page_statistics_question">
-    <xpath expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']" position="after">
+    <xpath
+            expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']"
+            position="after"
+        >
       <t t-if="question.question_type == 'star_rate'">
         <t t-call="survey.question_result_number_or_date_or_datetime" />
       </t>
     </xpath>
   </template>
-  <template id="result_user" inherit_id="survey.question_result_number_or_date_or_datetime">
+  <template
+        id="result_user"
+        inherit_id="survey.question_result_number_or_date_or_datetime"
+    >
     <!-- <xpath expr="//a[@t-field='input_line.value_date']" position="after">
       <a
         t-if="question.question_type == 'star_rate'"
@@ -39,34 +45,34 @@
     <div class="row">
       <div class="rate rate_widget">
         <label
-          for="star5"
-          t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 5 else 'fa-star-o'}"
-        />
+                    for="star5"
+                    t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 5 else 'fa-star-o'}"
+                />
         <label
-          for="star4"
-          t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 4 else 'fa-star-o'}"
-        />
+                    for="star4"
+                    t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 4 else 'fa-star-o'}"
+                />
         <label
-          for="star3"
-          t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 3 else 'fa-star-o'}"
-        />
+                    for="star3"
+                    t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 3 else 'fa-star-o'}"
+                />
         <label
-          for="star2"
-          t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 2 else 'fa-star-o'}"
-        />
+                    for="star2"
+                    t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 2 else 'fa-star-o'}"
+                />
         <label
-          for="star1"
-          t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 1 else 'fa-star-o'}"
-        />
+                    for="star1"
+                    t-attf-class="fa #{'checked fa-star' if answer_lines and answer_lines.value_numerical_box >= 1 else 'fa-star-o'}"
+                />
         <input
-          type="number"
-          step="any"
-          class="form-control"
-          t-att-data-question-type="question.question_type"
-          t-att-name="question.id"
-          hidden="hidden"
-          t-att-value="answer_lines[0].value_numerical_box if answer_lines else None"
-        />
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    t-att-data-question-type="question.question_type"
+                    t-att-name="question.id"
+                    hidden="hidden"
+                    t-att-value="answer_lines[0].value_numerical_box if answer_lines else None"
+                />
       </div>
     </div>
   </template>

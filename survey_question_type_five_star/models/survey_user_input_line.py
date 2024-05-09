@@ -16,7 +16,9 @@ class SurveyUserInput(models.Model):
         if question.question_type in ["star_rate"]:
             return self._save_line_simple_answer(question, old_answers, answer)
 
-        return super()._save_lines(question, answer, comment=comment, overwrite_existing=overwrite_existing)
+        return super()._save_lines(
+            question, answer, comment=comment, overwrite_existing=overwrite_existing
+        )
 
     def _get_line_answer_values(self, question, answer, answer_type):
         vals = super()._get_line_answer_values(question, answer, answer_type)
