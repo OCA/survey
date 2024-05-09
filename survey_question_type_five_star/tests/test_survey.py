@@ -9,12 +9,12 @@ from odoo.addons.survey.tests import common
 class TestSurvey(common.SurveyCase):
     def setUp(self):
         super().setUp()
-        User = self.env["res.users"].with_context(no_reset_password=True)
+        user = self.env["res.users"].with_context(no_reset_password=True)
         (group_survey_user, group_employee) = (
             self.ref("survey.group_survey_user"),
             self.ref("base.group_user"),
         )
-        self.survey_manager = User.create(
+        self.survey_manager = user.create(
             {
                 "name": "Nerea Riera",
                 "login": "Riera",
@@ -71,7 +71,11 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        self.answer_tag1 = f"{self.survey1.id}_{self.page1.id}_{self.question1.id}"
+        self.answer_tag1 = "{}_{}_{}".format(
+            self.survey1.id,
+            self.page1.id,
+            self.question1.id,
+        )
         self._type_match["star_rate"] = ("numerical_box", "value_numerical_box")
 
     def test_01_question_star_rate_with_error_values(self):
@@ -90,7 +94,7 @@ class TestSurvey(common.SurveyCase):
 
     def test_02_question_star_rate_with_valid_values(self):
         for i in ("0", "3", "5"):
-            self.user_input1.save_lines(question=self.question1, answer=i)
+            self.user_input1._save_lines(question=self.question1, answer=i)
             self.assertEqual(
                 self.user_input1.user_input_line_ids.filtered(
                     lambda r: r.question_id == self.question1
@@ -101,4 +105,4 @@ class TestSurvey(common.SurveyCase):
     def test_03_question_star_rate_with_constr_mandatory(self):
         self.question1.constr_mandatory = True
         with self.assertRaises(ValidationError):
-            self.user_input1.save_lines(question=self.question1, answer="0")
+            self.user_input1._save_lines(question=self.question1, answer="0")

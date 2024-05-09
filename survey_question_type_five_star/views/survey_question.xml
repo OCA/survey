@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
                 <!-- Five start rating -->
-                <div attrs="{'invisible': [('question_type', '!=', 'star_rate')]}">
+                <div invisible="question_type != 'star_rate'">
                     <i class="fa fa-star fa-2x" title="star1" />
                     <i class="fa fa-star fa-2x" title="star2" />
                     <i class="fa fa-star fa-2x" title="star3" />

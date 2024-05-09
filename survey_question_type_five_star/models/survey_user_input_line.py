@@ -8,15 +8,15 @@ from odoo.exceptions import ValidationError
 class SurveyUserInput(models.Model):
     _inherit = "survey.user_input"
 
-    def save_lines(self, question, answer, comment=None):
+    def _save_lines(self, question, answer, comment=None, overwrite_existing=True):
         old_answers = self.env["survey.user_input.line"].search(
             [("user_input_id", "=", self.id), ("question_id", "=", question.id)]
         )
 
         if question.question_type in ["star_rate"]:
-            self._save_line_simple_answer(question, old_answers, answer)
-        else:
-            return super().save_lines(question, answer, comment=comment)
+            return self._save_line_simple_answer(question, old_answers, answer)
+
+        return super()._save_lines(question, answer, comment=comment, overwrite_existing=overwrite_existing)
 
     def _get_line_answer_values(self, question, answer, answer_type):
         vals = super()._get_line_answer_values(question, answer, answer_type)
