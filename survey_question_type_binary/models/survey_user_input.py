@@ -6,7 +6,7 @@ from odoo import models
 class SurveyUserInput(models.Model):
     _inherit = "survey.user_input"
 
-    def save_lines(self, question, answer, comment=None):
+    def _save_lines(self, question, answer, comment=None, overwrite_existing=True):
         old_answers = self.env["survey.user_input.line"].search(
             [
                 ("user_input_id", "=", self.id),
@@ -15,7 +15,7 @@ class SurveyUserInput(models.Model):
         )
 
         if question.question_type in ("binary", "multi_binary"):
-            if not isinstance(answer, (list, tuple)):
+            if not isinstance(answer, list | tuple):
                 answer = [answer]
             if not answer:
                 answer = [False]
@@ -24,19 +24,19 @@ class SurveyUserInput(models.Model):
                     question, old_answers, answer_binary
                 )
         else:
-            super(SurveyUserInput, self).save_lines(question, answer, comment=comment)
+            super()._save_lines(
+                question, answer, comment=comment, overwrite_existing=overwrite_existing
+            )
         return True
 
     def _get_line_answer_values(self, question, answer, answer_type):
-        vals = super(SurveyUserInput, self)._get_line_answer_values(
-            question, answer, answer_type
-        )
+        vals = super()._get_line_answer_values(question, answer, answer_type)
         if answer_type in ("binary", "multi_binary") and answer:
             if answer_type == "binary":
                 del vals["value_binary"]
             else:
                 del vals["value_multi_binary"]
-            if not isinstance(answer, (list, tuple)):
+            if not isinstance(answer, list | tuple):
                 answer = [answer]
             answer_binary_datas = []
             for answer_binary in answer:

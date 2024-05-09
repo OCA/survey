@@ -3,8 +3,9 @@
 # from odoo.exceptions import ValidationError
 import base64
 
-from odoo.modules.module import get_module_resource
+from odoo.tools.misc import file_path
 
+# from odoo.modules.module import get_module_resource
 from odoo.addons.survey.tests import common
 
 
@@ -12,12 +13,12 @@ class TestSurvey(common.SurveyCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        User = cls.env["res.users"].with_context(no_reset_password=True)
+        user = cls.env["res.users"].with_context(no_reset_password=True)
         (group_survey_user, group_employee) = (
             cls.env.ref("survey.group_survey_user").id,
             cls.env.ref("base.group_user").id,
         )
-        cls.survey_manager = User.create(
+        cls.survey_manager = user.create(
             {
                 "name": "Maria Riera",
                 "login": "Riera",
@@ -91,13 +92,17 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        module_icon = get_module_resource(
-            "survey_question_type_binary", "static", "description", "icon.png"
+        # module_icon = get_module_resource("survey_question_type_binary",
+        #    "static","description","icon.png")
+        module_icon = file_path(
+            "survey_question_type_binary/static/description/icon.png"
         )
         with open(module_icon, "rb") as img:
             cls.image_base64 = base64.b64encode(img.read())
-        module_html = get_module_resource(
-            "survey_question_type_binary", "static", "description", "index.html"
+        # module_html = get_module_resource("survey_question_type_binary",
+        #      "static","description","index.html")
+        module_html = file_path(
+            "survey_question_type_binary/static/description/index.html"
         )
         with open(module_html, "rb") as file:
             cls.html = base64.b64encode(file.read())
@@ -120,12 +125,13 @@ class TestSurvey(common.SurveyCase):
             {self.question_binary.id: f"The file cannot exceed {1 / 1024}MB in size."},
         )
         self.question_binary.max_filesize = 2097152  # Increse to 2.0MB
+        question_binary_id = (
+            "Only files with {} mime types are allowed.".format("application/pdf"),
+        )
         self.assertEqual(
             self.question_binary.validate_question({"data": self.image_base64}),
             {
-                self.question_binary.id: "Only files with {} mime types are allowed.".format(
-                    "application/pdf"
-                )
+                self.question_binary.id: question_binary_id,
             },
         )
 
@@ -136,7 +142,7 @@ class TestSurvey(common.SurveyCase):
             self.question_binary.validate_question({"data": self.image_base64}),
             {},
         )
-        self.user_input1.save_lines(
+        self.user_input1._save_lines(
             question=self.question_binary,
             answer={
                 "data": self.image_base64,
@@ -163,7 +169,7 @@ class TestSurvey(common.SurveyCase):
         )
 
     def test_04_question_binary_data(self):
-        self.user_input1.save_lines(
+        self.user_input1._save_lines(
             question=self.question_multi_binary,
             answer=[
                 {

@@ -5,7 +5,7 @@
     "name": "Survey binary question type",
     "summary": """
         This module add binary field as question type for survey page""",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "author": "Aures TIC, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",

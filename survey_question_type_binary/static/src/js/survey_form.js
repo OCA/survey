@@ -1,10 +1,12 @@
 /* Copyright 2023 Aures Tic - Jose Zambudio
    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). */
 
-odoo.define("survey_question_type_binary", function (require) {
+odoo.define("survey_question_type_binary", [], function () {
     "use strict";
 
-    const survey_form = require("survey.form");
+    const survey_form = odoo.loader.modules.get("@survey/js/survey_form")[
+        Symbol.for("default")
+    ];
 
     survey_form.include({
         _getSubmitBinariesValues: function (params) {
@@ -55,29 +57,26 @@ odoo.define("survey_question_type_binary", function (require) {
         _submitForm: function (options) {
             const self = this;
             const params = {};
-            const binaryPrimises = this._getSubmitBinariesValues(params);
-            if (binaryPrimises.length > 0 && !this.options.isStartScreen) {
-                const $form = this.$("form");
+            const binaryPrimises = self._getSubmitBinariesValues(params);
+
+            if (binaryPrimises.length > 0 && !self.options.isStartScreen) {
+                const $form = self.$("form");
                 const formData = new FormData($form[0]);
 
                 if (options.previousPageId) {
                     params.previous_page_id = options.previousPageId;
                 }
-                this._prepareSubmitValues(formData, params);
+                self._prepareSubmitValues(formData, params);
+                var route = "/survey/submit";
                 Promise.all(binaryPrimises).then(function () {
-                    const submitPromise = self._rpc({
-                        route: _.str.sprintf(
-                            "%s/%s/%s",
-                            "/survey/submit",
-                            self.options.surveyToken,
-                            self.options.answerToken
-                        ),
-                        params: params,
-                    });
+                    const submitPromise = self.rpc(
+                        `${route}/${self.options.surveyToken}/${self.options.answerToken}`,
+                        params
+                    );
                     self._nextScreen(submitPromise, options);
                 });
             } else {
-                return this._super(options);
+                return self._super(options);
             }
         },
     });
