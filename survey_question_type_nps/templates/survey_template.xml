@@ -8,10 +8,7 @@
     </xpath>
   </template>
   <template id="result" inherit_id="survey.survey_page_statistics_question">
-    <xpath
-            expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']/parent::t"
-            position="after"
-        >
+    <xpath expr="//div[hasclass('o_survey_question_description')]" position="after">
       <t t-if="question.question_type == 'nps_rate'">
         <t t-call="survey.question_result_number_or_date_or_datetime" />
       </t>
