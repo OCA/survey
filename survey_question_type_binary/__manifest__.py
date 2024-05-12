@@ -14,6 +14,7 @@
         "security/ir.model.access.csv",
         "views/survey_question.xml",
         "views/survey_user_input_line.xml",
+        "views/survey_user_input_line_binary.xml",
         "templates/survey_template.xml",
     ],
     "assets": {
