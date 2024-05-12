@@ -59,3 +59,14 @@ class SurveyUserInputLineBinary(models.Model):
                 input_line.value_binary
             ).count("=", -2)
             input_line.is_binary_image = input_line.value_binary_type in VALID_MIMETYPES
+
+    def download_binary(self):
+        url = "/web/content/?model=survey.user_input.line_binary&download=true"
+        field_data = "&filename_field=filename&field=value_binary"
+        file_data = f"&id={self.id}&filename={self.filename}"
+        return {
+            "type": "ir.actions.act_url",
+            "url": url + field_data + file_data,
+            "target": "new",
+            "close": True,
+        }
