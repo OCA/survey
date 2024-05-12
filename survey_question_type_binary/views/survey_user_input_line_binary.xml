@@ -13,11 +13,11 @@
         </sheet>
         <footer>
           <button
-            string="Download File"
-            class="btn btn-primary"
-            type="object"
-            name="download_binary"
-          />
+                        string="Download File"
+                        class="btn btn-primary"
+                        type="object"
+                        name="download_binary"
+                    />
         </footer>
       </form>
     </field>
