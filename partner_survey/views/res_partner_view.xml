@@ -19,7 +19,7 @@
                     type="object"
                     icon="fa-list-alt"
                     name="action_view_surveys"
-                    attrs="{'invisible': ['|', '|', ('surveys_count', '=', 0), ('is_company', '=', True), ('surveys_invisible', '=', True)]}"
+                    invisible="surveys_count == 0 or is_company or surveys_invisible"
                 >
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_value">
@@ -27,11 +27,11 @@
                         </span>
                         <span
                             class="o_stat_text"
-                            attrs="{'invisible': [('surveys_count', '&lt;', 2)]}"
+                            invisible="surveys_count &lt; 2"
                         >Surveys</span>
                         <span
                             class="o_stat_text"
-                            attrs="{'invisible': [('surveys_count', '&gt;', 1)]}"
+                            invisible="surveys_count &gt; 1"
                         >Survey</span>
                     </div>
                 </button>
@@ -40,7 +40,7 @@
                     type="object"
                     icon="fa-list-alt"
                     name="action_view_surveys"
-                    attrs="{'invisible': ['|', '|', ('surveys_company_count', '=', 0), ('is_company', '=', False), ('surveys_company_invisible', '=', True)]}"
+                    invisible="surveys_company_count == 0 or not is_company or surveys_company_invisible"
                 >
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_value">
@@ -48,11 +48,11 @@
                         </span>
                         <span
                             class="o_stat_text"
-                            attrs="{'invisible': [('surveys_company_count', '&lt;', 2)]}"
+                            invisible="surveys_company_count &lt; 2"
                         >Surveys</span>
                         <span
                             class="o_stat_text"
-                            attrs="{'invisible': [('surveys_company_count', '&gt;', 1)]}"
+                            invisible="surveys_company_count &gt; 1"
                         >Survey</span>
                     </div>
                 </button>
