@@ -29,7 +29,7 @@ class SurveyQuestion(models.Model):
     def validate_question(self, answer, comment=None):
         if self.question_type in ("binary", "multi_binary"):
             return self.validate_binary(answer)
-        return super(SurveyQuestion, self).validate_question(answer, comment=comment)
+        return super().validate_question(answer, comment=comment)
 
     def validate_binary(self, answers):
         self.ensure_one()
@@ -38,7 +38,7 @@ class SurveyQuestion(models.Model):
         if self.constr_mandatory and not answers:
             errors.update({self.id: self.constr_error_msg})
         if answers:
-            if not isinstance(answers, (list, tuple)):
+            if not isinstance(answers | (list, tuple)):
                 answers = [answers]
             for answer in answers:
                 try:

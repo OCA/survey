@@ -123,9 +123,11 @@ class TestSurvey(common.SurveyCase):
         self.assertEqual(
             self.question_binary.validate_question({"data": self.image_base64}),
             {
-                self.question_binary.id: "Only files with {} mime types are allowed.".format(
-                    "application/pdf"
-                )
+                self.question_binary.id:
+                    "Only files with {} mime types are allowed."
+                    .format(
+                        "application/pdf"
+                    )
             },
         )
 
@@ -136,7 +138,7 @@ class TestSurvey(common.SurveyCase):
             self.question_binary.validate_question({"data": self.image_base64}),
             {},
         )
-        self.user_input1.save_lines(
+        self.user_input1._save_lines(
             question=self.question_binary,
             answer={
                 "data": self.image_base64,
@@ -163,7 +165,7 @@ class TestSurvey(common.SurveyCase):
         )
 
     def test_04_question_binary_data(self):
-        self.user_input1.save_lines(
+        self.user_input1._save_lines(
             question=self.question_multi_binary,
             answer=[
                 {
