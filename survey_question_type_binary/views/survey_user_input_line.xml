@@ -102,5 +102,20 @@
         </xpath>
     </field>
 </record>
-
+<record id="view_survey_user_input_line_binary_form" model="ir.ui.view">
+    <field name="name">survey.user.input.line.binary.form</field>
+    <field name="model">survey.user_input.line_binary</field>
+    <field name="arch" type="xml">
+        <form string="Survey User Input Line Binary">
+            <sheet>
+                <group>
+                    <field name="value_binary" filename="filename" readonly="1" />
+                    <field name="value_binary_type" readonly="1" />
+                    <field name="value_binary_size" readonly="1" />
+                    <field name="is_binary_image" readonly="1" />
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
 </odoo>
