@@ -22,28 +22,20 @@ msgstr ""
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
 msgid ""
-"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_company_count', "
-"'&lt;', 2)]}\">Surveys</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
-"[('surveys_company_count', '&gt;', 1)]}\">Survey</span>"
+"<span class=\"o_stat_text\" invisible=\"surveys_company_count &lt; "
+"2\">Surveys</span>\n"
+"                        <span class=\"o_stat_text\" invisible="
+"\"surveys_company_count &gt; 1\">Survey</span>"
 msgstr ""
-"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_company_count', "
-"'&lt;', 2)]}\">Encuestas</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
-"[('surveys_company_count', '&gt;', 1)]}\">Encuesta</span>"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
 msgid ""
-"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', '&lt;', "
-"2)]}\">Surveys</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
-"[('surveys_count', '&gt;', 1)]}\">Survey</span>"
+"<span class=\"o_stat_text\" invisible=\"surveys_count &lt; 2\">Surveys</"
+"span>\n"
+"                        <span class=\"o_stat_text\" invisible="
+"\"surveys_count &gt; 1\">Survey</span>"
 msgstr ""
-"<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', '&lt;', "
-"2)]}\">Encuestas</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
-"[('surveys_count', '&gt;', 1)]}\">Encuesta</span>"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_count
@@ -53,6 +45,7 @@ msgstr "Recuento de encuestas de empresas"
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_res_partner
+#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
 msgid "Contact"
 msgstr "Contacto"
 
@@ -68,11 +61,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_invisible
 msgid "Hide surveys link on partner if needed"
 msgstr "Oculte el enlace de las encuestas en el socio si es necesario"
-
-#. module: partner_survey
-#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
-msgid "Partner"
-msgstr "Empresa"
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_survey_user_input_line
@@ -97,6 +85,31 @@ msgstr "Recuento de encuestas"
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_lines
 msgid "Surveys answers"
 msgstr "Respuestas a encuestas"
+
+#~ msgid ""
+#~ "<span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('surveys_company_count', '&lt;', 2)]}\">Surveys</span>\n"
+#~ "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('surveys_company_count', '&gt;', 1)]}\">Survey</span>"
+#~ msgstr ""
+#~ "<span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('surveys_company_count', '&lt;', 2)]}\">Encuestas</span>\n"
+#~ "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('surveys_company_count', '&gt;', 1)]}\">Encuesta</span>"
+
+#~ msgid ""
+#~ "<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', "
+#~ "'&lt;', 2)]}\">Surveys</span>\n"
+#~ "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('surveys_count', '&gt;', 1)]}\">Survey</span>"
+#~ msgstr ""
+#~ "<span class=\"o_stat_text\" attrs=\"{'invisible': [('surveys_count', "
+#~ "'&lt;', 2)]}\">Encuestas</span>\n"
+#~ "                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+#~ "[('surveys_count', '&gt;', 1)]}\">Encuesta</span>"
+
+#~ msgid "Partner"
+#~ msgstr "Empresa"
 
 #~ msgid "Survey number"
 #~ msgstr "Encuestas"
