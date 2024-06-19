@@ -123,11 +123,9 @@ class TestSurvey(common.SurveyCase):
         self.assertEqual(
             self.question_binary.validate_question({"data": self.image_base64}),
             {
-                self.question_binary.id:
-                    "Only files with {} mime types are allowed."
-                    .format(
-                        "application/pdf"
-                    )
+                self.question_binary.id: "Only files with {} mime types are allowed.".format(
+                    "application/pdf"
+                )
             },
         )
 
