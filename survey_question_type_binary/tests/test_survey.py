@@ -120,13 +120,10 @@ class TestSurvey(common.SurveyCase):
             {self.question_binary.id: f"The file cannot exceed {1 / 1024}MB in size."},
         )
         self.question_binary.max_filesize = 2097152  # Increse to 2.0MB
+        message = "Only files with {} mime types are allowed."
         self.assertEqual(
             self.question_binary.validate_question({"data": self.image_base64}),
-            {
-                self.question_binary.id: "Only files with {} mime types are allowed.".format(
-                    "application/pdf"
-                )
-            },
+            {self.question_binary.id: message.format("application/pdf")},
         )
 
     def test_02_question_binary_with_valid_values(self):

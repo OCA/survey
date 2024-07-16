@@ -38,7 +38,7 @@ class SurveyQuestion(models.Model):
         if self.constr_mandatory and not answers:
             errors.update({self.id: self.constr_error_msg})
         if answers:
-            if not isinstance(answers | (list, tuple)):
+            if not isinstance(answers, (list | tuple)):
                 answers = [answers]
             for answer in answers:
                 try:

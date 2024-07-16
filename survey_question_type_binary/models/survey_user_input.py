@@ -15,7 +15,7 @@ class SurveyUserInput(models.Model):
         )
 
         if question.question_type in ("binary", "multi_binary"):
-            if not isinstance(answer | (list, tuple)):
+            if not isinstance(answer, (list | tuple)):
                 answer = [answer]
             if not answer:
                 answer = [False]
@@ -36,7 +36,7 @@ class SurveyUserInput(models.Model):
                 del vals["value_binary"]
             else:
                 del vals["value_multi_binary"]
-            if not isinstance(answer | (list, tuple)):
+            if not isinstance(answer, (list | tuple)):
                 answer = [answer]
             answer_binary_datas = []
             for answer_binary in answer:
