@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Remove "Powered by Odoo" -->
+    <template
+        id="frontend_layout_remove_brand"
+        inherit_id="survey.layout"
+        customize_show="True"
+        name="Remove Odoo Promotional Link"
+        priority="999"
+    >
+        <xpath expr="//div[hasclass('o_survey_brand_message')]/div[hasclass('d-inline-block')]" position="replace" />
+    </template>
+</odoo>
