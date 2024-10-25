@@ -32,7 +32,12 @@ relevant infos concerning the request. To do so:
 #. Set *Show in sale order comment* on if you want those answers on the internal
    notification.
 
-If you want to use a quotation template you can choose it from the options: *Sale Order Template*.
+If you want the generated quotation to use a quotation template you can either:
+
+- Choose it from the general survey options: *Sale Order Template*.
+- In a single answer question, choose set the quotation depending on the answer.
+
+The answer value will prevail over the general option.
 
 You can also configure the survey to send the quotation to the customer by mail. When doing
 so, you can choose a mail template or use the default one.

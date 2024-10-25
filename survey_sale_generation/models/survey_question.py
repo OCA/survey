@@ -53,6 +53,7 @@ class SurveyLabel(models.Model):
     _inherit = "survey.question.answer"
 
     product_ids = fields.Many2many(comodel_name="product.product")
+    sale_order_template_id = fields.Many2one(comodel_name="sale.order.template")
 
     @api.onchange("product_ids")
     def _onchange_product_ids(self):
