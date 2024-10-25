@@ -178,6 +178,7 @@ msgid "Sale Order Field"
 msgstr ""
 
 #. module: survey_sale_generation
+#: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__sale_order_template_id
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__sale_order_template_id
 msgid "Sale Order Template"
 msgstr ""

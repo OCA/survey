@@ -9,13 +9,17 @@ class SurveyUserInput(models.Model):
     sale_order_id = fields.Many2one(comodel_name="sale.order")
 
     def _prepare_quotation(self):
+        sale_template = (
+            self.user_input_line_ids.suggested_answer_id.sale_order_template_id
+            or self.survey_id.sale_order_template_id
+        )
         vals = {
             "partner_id": self.partner_id.id or self.create_uid.partner_id.id,
             "origin": self.survey_id.title,
             "survey_user_input_id": self.id,
             "company_id": self.create_uid.company_id.id,
             "team_id": self.survey_id.crm_team_id.id,
-            "sale_order_template_id": self.survey_id.sale_order_template_id.id,
+            "sale_order_template_id": sale_template.id,
             "user_id": (
                 self.survey_id.crm_team_id.user_id.id or self.survey_id.user_id.id
             ),
