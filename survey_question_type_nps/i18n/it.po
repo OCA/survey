@@ -25,43 +25,33 @@ msgstr "10"
 #: model_terms:ir.ui.view,arch_db:survey_question_type_nps.survey_question_form
 msgid ""
 "<i class=\"fa fa-frown-o fa-2x text-danger\" title=\"face1\"/>\n"
-"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title=\"face2\"/>\n"
-"                    <i class=\"fa fa-frown-o fa-2x text-danger\" title=\"face3\"/>\n"
-"                    <i class=\"fa fa-meh-o fa-2x text-warning\" title=\"face4\"/>\n"
-"                    <i class=\"fa fa-smile-o fa-2x text-success\" title=\"face5\"/>"
+"                    <i class=\"fa fa-frown-o fa-2x text-danger\" "
+"title=\"face2\"/>\n"
+"                    <i class=\"fa fa-frown-o fa-2x text-danger\" "
+"title=\"face3\"/>\n"
+"                    <i class=\"fa fa-meh-o fa-2x text-warning\" "
+"title=\"face4\"/>\n"
+"                    <i class=\"fa fa-smile-o fa-2x text-success\" "
+"title=\"face5\"/>"
 msgstr ""
 
 #. module: survey_question_type_nps
-#: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
+#: model_terms:ir.ui.view,arch_db:survey_question_type_nps.avg_nps
+msgid ""
+"<span class=\"badge text-bg-secondary only_left_radius px-2 pt-1\">Average </"
+"span>"
+msgstr ""
+
+#. module: survey_question_type_nps
+#. odoo-python
 #: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
 #, python-format
 msgid "Answer is not in the right range"
 msgstr ""
 
 #. module: survey_question_type_nps
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_question__display_name
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input__display_name
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input_line__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: survey_question_type_nps
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_question__id
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input__id
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input_line__id
-msgid "ID"
-msgstr "ID"
-
-#. module: survey_question_type_nps
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_question____last_update
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input____last_update
-#: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input_line____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: survey_question_type_nps
 #: model_terms:ir.ui.view,arch_db:survey_question_type_nps.avg_nps
-msgid "NPS Average"
+msgid "Average"
 msgstr ""
 
 #. module: survey_question_type_nps
@@ -70,6 +60,7 @@ msgid "NPS Rating"
 msgstr ""
 
 #. module: survey_question_type_nps
+#. odoo-python
 #: code:addons/survey_question_type_nps/models/survey_user_input_line.py:0
 #, python-format
 msgid "NPS rate question must have numeric answer"
@@ -99,3 +90,12 @@ msgstr "Riga risposta utente al sondaggio"
 #: model:ir.model.fields,field_description:survey_question_type_nps.field_survey_user_input_line__value_nps
 msgid "Value Nps"
 msgstr ""
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
