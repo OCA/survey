@@ -18,7 +18,6 @@ class SurveyInvitationCase(TransactionCase):
         create_test_data(cls)
         survey_form = Form(cls.env["survey.survey"])
         survey_form.title = "survey 1"
-        survey_form.session_state = "in_progress"
         with survey_form.question_and_page_ids.new() as question_form:
             question_form.title = "are you a robot?"
             question_form.question_type = "text_box"
