@@ -23,8 +23,8 @@ msgstr ""
 msgid ""
 "<span class=\"o_stat_text\" invisible=\"surveys_company_count &lt; "
 "2\">Surveys</span>\n"
-"                        <span class=\"o_stat_text\" invisible="
-"\"surveys_company_count &gt; 1\">Survey</span>"
+"                        <span class=\"o_stat_text\" "
+"invisible=\"surveys_company_count &gt; 1\">Survey</span>"
 msgstr ""
 
 #. module: partner_survey
@@ -32,8 +32,8 @@ msgstr ""
 msgid ""
 "<span class=\"o_stat_text\" invisible=\"surveys_count &lt; 2\">Surveys</"
 "span>\n"
-"                        <span class=\"o_stat_text\" invisible="
-"\"surveys_count &gt; 1\">Survey</span>"
+"                        <span class=\"o_stat_text\" "
+"invisible=\"surveys_count &gt; 1\">Survey</span>"
 msgstr ""
 
 #. module: partner_survey

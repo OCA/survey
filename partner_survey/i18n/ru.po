@@ -16,17 +16,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
 msgid ""
 "<span class=\"o_stat_text\" invisible=\"surveys_company_count &lt; "
 "2\">Surveys</span>\n"
-"                        <span class=\"o_stat_text\" invisible="
-"\"surveys_company_count &gt; 1\">Survey</span>"
+"                        <span class=\"o_stat_text\" "
+"invisible=\"surveys_company_count &gt; 1\">Survey</span>"
 msgstr ""
 
 #. module: partner_survey
@@ -34,8 +34,8 @@ msgstr ""
 msgid ""
 "<span class=\"o_stat_text\" invisible=\"surveys_count &lt; 2\">Surveys</"
 "span>\n"
-"                        <span class=\"o_stat_text\" invisible="
-"\"surveys_count &gt; 1\">Survey</span>"
+"                        <span class=\"o_stat_text\" "
+"invisible=\"surveys_count &gt; 1\">Survey</span>"
 msgstr ""
 
 #. module: partner_survey

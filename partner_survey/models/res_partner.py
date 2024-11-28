@@ -59,7 +59,7 @@ class ResPartner(models.Model):
 
     def action_view_surveys(self):
         action = self.env.ref("partner_survey.res_partner_action_surveys").read()[0]
-        action["view_mode"] = "tree"
+        action["view_mode"] = "list"
         action["domain"] = [
             "|",
             ("partner_id", "in", self.ids),
