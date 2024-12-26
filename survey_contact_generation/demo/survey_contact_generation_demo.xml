@@ -5,6 +5,7 @@
         <field name="title">Contact Creation Survey</field>
         <field name="access_token">80e5f1e2-1a9d-4c51-8e23-09e93f7fa2c5</field>
         <field name="access_mode">public</field>
+        <field name="questions_layout">one_page</field>
         <field name="users_can_go_back" eval="True" />
         <field name="generate_contact" eval="True" />
         <field name="create_parent_contact" eval="True" />
