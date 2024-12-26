@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20240104\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-31 07:39+0000\n"
+"PO-Revision-Date: 2024-12-31 07:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: survey_purchase
+#: model:ir.model,name:survey_purchase.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: survey_purchase
+#: model:ir.model,name:survey_purchase.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: survey_purchase
+#: model:ir.model.fields,field_description:survey_purchase.field_res_company__survey_purchase_id
+#: model:ir.model.fields,field_description:survey_purchase.field_res_config_settings__survey_purchase_id
+msgid "Default Purchase Survey"
+msgstr "Encuesta de compra por defecto"
+
+#. module: survey_purchase
+#: model:ir.model,name:survey_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: survey_purchase
+#: model_terms:ir.ui.view,arch_db:survey_purchase.res_config_settings_form_inherit
+msgid "Purchase Survey"
+msgstr "Encuesta de compra"
+
+#. module: survey_purchase
+#: model_terms:ir.ui.view,arch_db:survey_purchase.purchase_order_form_inherit
+msgid "Start Survey"
+msgstr "Comenzar encuesta"
+
+#. module: survey_purchase
+#: model_terms:ir.ui.view,arch_db:survey_purchase.purchase_order_form_inherit
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: survey_purchase
+#: model:ir.model.fields,field_description:survey_purchase.field_purchase_order__survey_count
+msgid "Survey Count"
+msgstr "Recuento de encuestas"
