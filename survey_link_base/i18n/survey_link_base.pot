@@ -1,0 +1,172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_link_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20240429\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-30 19:25+0000\n"
+"PO-Revision-Date: 2024-12-30 19:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_link_base
+#: model_terms:ir.ui.view,arch_db:survey_link_base.survey_link_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: survey_link_base
+#: model_terms:ir.ui.view,arch_db:survey_link_base.res_config_settings_view_form_inherit
+msgid "Contacts Survey"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,help:survey_link_base.field_survey_link_wizard__date_deadline
+msgid ""
+"Deadline to which the invitation to        respond for this survey is valid."
+" If the field is empty,        the invitation is still valid."
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__date_deadline
+msgid "Deadline to which the invitation to respond is valid"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_res_company__survey_contacts_default_id
+#: model:ir.model.fields,field_description:survey_link_base.field_res_config_settings__survey_contacts_default_id
+msgid "Default Survey for Contacts"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,help:survey_link_base.field_res_company__survey_contacts_default_id
+#: model:ir.model.fields,help:survey_link_base.field_res_config_settings__survey_contacts_default_id
+msgid "Default survey for contacts"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__origin_id
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_user_input__origin_id
+msgid "Origin"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__origin_model
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_user_input__origin_model
+msgid "Origin Model"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__share_link
+msgid "Share Link"
+msgstr ""
+
+#. module: survey_link_base
+#: model_terms:ir.ui.view,arch_db:survey_link_base.survey_link_wizard_form_view
+msgid "Start"
+msgstr ""
+
+#. module: survey_link_base
+#: model_terms:ir.ui.view,arch_db:survey_link_base.res_partner_form_view_inherit
+msgid "Start Survey"
+msgstr ""
+
+#. module: survey_link_base
+#. odoo-python
+#: code:addons/survey_link_base/wizard/survey_link_wizard.py:0
+#: model:ir.model,name:survey_link_base.model_survey_survey
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__survey_id
+#: model_terms:ir.ui.view,arch_db:survey_link_base.res_config_settings_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:survey_link_base.res_partner_form_view_inherit
+#, python-format
+msgid "Survey"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_res_partner__survey_count
+#: model:ir.model.fields,field_description:survey_link_base.field_res_users__survey_count
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_mixin__survey_count
+msgid "Survey Count"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_survey_link_wizard
+msgid "Survey Link Wizard"
+msgstr ""
+
+#. module: survey_link_base
+#. odoo-python
+#: code:addons/survey_link_base/models/survey_link_mixin.py:0
+#, python-format
+msgid "Survey Share Link"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_survey_link_mixin
+msgid "survey.link.mixin"
+msgstr ""
