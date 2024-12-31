@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="crm_lead_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_survey_link_wizard"
+                    string="Start Survey"
+                    type="object"
+                    class="btn-success"
+                    groups="survey.group_survey_user"
+                />
+            </xpath>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button
+                    type="object"
+                    name="action_view_survey_answer"
+                    class="oe_stat_button"
+                    icon="fa-pencil"
+                >
+                    <field
+                        name="survey_answer_count"
+                        widget="statinfo"
+                        string="Survey"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
