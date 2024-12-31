@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_survey_link_wizard"
+                    string="Start Survey"
+                    type="object"
+                    class="btn-success"
+                    groups="survey.group_survey_user"
+                />
+            </xpath>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button
+                    type="object"
+                    name="action_view_survey_answer"
+                    class="oe_stat_button"
+                    icon="fa-pencil"
+                >
+                    <field
+                        name="survey_answer_count"
+                        widget="statinfo"
+                        string="Survey"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

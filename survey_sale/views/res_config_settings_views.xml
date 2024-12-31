@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_form_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//div[contains(@data-key,'sale_management')]"
+                position="inside"
+            >
+                <h2>Sale Survey</h2>
+                <div
+                    class="row mt16 o_settings_container"
+                    name="survey_sale_setting_container"
+                >
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <div class="row mt16">
+                                <label
+                                    class="o_label_form col-6 col-lg-6"
+                                    for="survey_sale_id"
+                                />
+                                <field
+                                    name="survey_sale_id"
+                                    class="o_input col-6 col-lg-6 p-0"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
