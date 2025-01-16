@@ -10,9 +10,9 @@
         <field name="model">survey.question</field>
         <field name="inherit_id" ref="survey.survey_question_form" />
         <field name="arch" type="xml">
-            <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
+            <xpath expr="//div[hasclass('o_preview_questions')]" position="inside">
                 <div
-                    attrs="{'invisible': [('question_type', 'not in',('binary','multi_binary'))]}"
+                    attrs="{'invisible': [('question_type', 'not in', ('binary', 'multi_binary'))]}"
                 >
                     <i class="fa fa-upload fa-2x" title="upload" /> Upload binary
                 </div>
