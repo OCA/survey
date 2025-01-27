@@ -25,5 +25,5 @@ class SurveyRepresentativeMixin(models.AbstractModel):
         """Users can set the field independently of the answer, but the answer rules"""
         for record in self:
             record.survey_representative_partner_id = (
-                self.survey_user_input_id.representative_partner_id
+                record.survey_user_input_id.representative_partner_id
             )
