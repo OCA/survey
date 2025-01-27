@@ -7,12 +7,13 @@ class SurveySurvey(models.Model):
     _inherit = "survey.survey"
 
     allow_partner_representing = fields.Boolean(
-        help="A user with the proper permissions, could do the survey on behalf of other"
+        help="A user with the proper permissions, could do the survey on "
+        "behalf of other"
     )
 
     def _create_answer(self, *args, **kwargs):
-        """Inject the context so the partner representation is only done on a normal
-        survey workflow"""
+        # Inject the context so the partner representation is only done on a normal
+        # survey workflow
         if self.allow_partner_representing:
             self = self.with_context(survey_partner_representative=True)
         return super()._create_answer(*args, **kwargs)

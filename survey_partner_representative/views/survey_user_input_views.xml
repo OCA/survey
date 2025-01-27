@@ -7,7 +7,7 @@
             <field name="partner_id" position="after">
                 <field
                     name="representative_partner_id"
-                    attrs="{'invisible': [('representative_partner_id', '=', False)]}"
+                    invisible="not representative_partner_id"
                 />
             </field>
         </field>

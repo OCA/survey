@@ -9,7 +9,7 @@ class Survey(Survey):
     def _check_validity(
         self, survey_token, answer_token, ensure_token=True, check_partner=True
     ):
-        """Avoid partner mismatching error"""
+        # Avoid partner mismatching error
         survey_sudo, _answer_sudo = self._fetch_from_access_token(
             survey_token, answer_token
         )

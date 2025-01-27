@@ -1,17 +1,14 @@
 /** @odoo-module */
 
-import tour from "web_tour.tour";
+import {registry} from "@web/core/registry";
 
-tour.register(
-    "test_survey_representative",
-    {
-        test: true,
-        url: "/survey/start/80e5f1e2-1a9d-4c51-8e23-4abc7534",
-    },
-    [
+registry.category("web_tour.tours").add("test_survey_representative", {
+    test: true,
+    url: "/survey/start/80e5f1e2-1a9d-4c51-8e23-4abc7534",
+    steps: () => [
         {
             content: "Click on Start",
-            trigger: "button.btn:contains('Start Survey')",
+            trigger: 'button.btn:contains("Start")',
         },
         {
             content: "Name",
@@ -19,9 +16,17 @@ tour.register(
             run: "text Mr. Odoo",
         },
         {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
+        },
+        {
             content: "Email",
             trigger: "div.js_question-wrapper:contains('Email') input",
             run: "text mrodoo@test.com",
+        },
+        {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
         },
         {
             content: "What meal?",
@@ -41,5 +46,5 @@ tour.register(
             content: "Thank you",
             trigger: "h1:contains('Thank you!')",
         },
-    ]
-);
+    ],
+});

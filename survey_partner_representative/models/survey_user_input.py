@@ -14,7 +14,7 @@ class SurveyUserInput(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        """Remove the user information so the survey is made anonymously"""
+        # Remove the user information so the survey is made anonymously
         answers = super().create(vals_list)
         if (
             self.env.context.get("survey_partner_representative")

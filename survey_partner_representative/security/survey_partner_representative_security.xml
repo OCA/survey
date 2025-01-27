@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2024 Tecnativa - David Vidal
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-<odoo>
+<odoo noupdate="1">
     <record id="partner_representative" model="res.groups">
         <field name="name">Representative on surveys</field>
         <field name="category_id" ref="base.module_category_hidden" />
