@@ -39,13 +39,6 @@ msgid "Fish"
 msgstr "Pescado"
 
 #. module: survey_partner_representative
-#: model:survey.question,comments_message:survey_partner_representative.survey_representative_q0
-#: model:survey.question,comments_message:survey_partner_representative.survey_representative_q1
-#: model:survey.question,comments_message:survey_partner_representative.survey_representative_q5
-msgid "If other, please specify:"
-msgstr "Si es otra, especifique por favor:"
-
-#. module: survey_partner_representative
 #: model:survey.survey,title:survey_partner_representative.survey_representative_demo
 msgid "Meal preferences"
 msgstr "Preferencias para la comida"
@@ -87,23 +80,9 @@ msgid "Survey User Input"
 msgstr "Respuesta de usuario"
 
 #. module: survey_partner_representative
-#: model:survey.question,validation_error_msg:survey_partner_representative.survey_representative_q0
-#: model:survey.question,validation_error_msg:survey_partner_representative.survey_representative_q1
-#: model:survey.question,validation_error_msg:survey_partner_representative.survey_representative_q5
-msgid "The answer you entered is not valid."
-msgstr "La respuesta que ha introducido no es válida."
-
-#. module: survey_partner_representative
 #: model:ir.model.fields,help:survey_partner_representative.field_survey_user_input__representative_partner_id
 msgid "This partner filled this survey on behalf of other"
 msgstr "Este contacto relleno la encuesta en representación de otro"
-
-#. module: survey_partner_representative
-#: model:survey.question,constr_error_msg:survey_partner_representative.survey_representative_q0
-#: model:survey.question,constr_error_msg:survey_partner_representative.survey_representative_q1
-#: model:survey.question,constr_error_msg:survey_partner_representative.survey_representative_q5
-msgid "This question requires an answer."
-msgstr "Esta pregunta requiere una respuesta."
 
 #. module: survey_partner_representative
 #: model:ir.model,name:survey_partner_representative.model_survey_representative_mixin
@@ -120,3 +99,12 @@ msgstr "Vegano"
 #: model:survey.question,title:survey_partner_representative.survey_representative_q5
 msgid "What would you like for dinner?"
 msgstr "¿Qué le gustaría para cenar?"
+
+#~ msgid "If other, please specify:"
+#~ msgstr "Si es otra, especifique por favor:"
+
+#~ msgid "The answer you entered is not valid."
+#~ msgstr "La respuesta que ha introducido no es válida."
+
+#~ msgid "This question requires an answer."
+#~ msgstr "Esta pregunta requiere una respuesta."
