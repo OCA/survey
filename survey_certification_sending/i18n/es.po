@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_certification_sending
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 06:59+0000\n"
+"PO-Revision-Date: 2025-02-21 08:01+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: survey_certification_sending
+#: code:addons/survey_certification_sending/models/survey_user_input.py:0
+#, python-format
+msgid "%s certification(s) successfully sent."
+msgstr "%s certificación(es) enviada(s) con éxito."
+
+#. module: survey_certification_sending
+#: code:addons/survey_certification_sending/models/survey_user_input.py:0
+#: model:ir.model.fields,field_description:survey_certification_sending.field_survey_user_input__certification_sent
+#, python-format
+msgid "Certification Sent"
+msgstr "Certificación enviada"
+
+#. module: survey_certification_sending
+#: model:ir.model,name:survey_certification_sending.model_mail_template
+msgid "Email Templates"
+msgstr ""
+
+#. module: survey_certification_sending
+#: model:ir.model.fields,help:survey_certification_sending.field_survey_user_input__certification_sent
+msgid "It indicates if the certification has been sent."
+msgstr "Indica si la certificación ha sido enviada."
+
+#. module: survey_certification_sending
+#: code:addons/survey_certification_sending/models/survey_user_input.py:0
+#, python-format
+msgid "No Certifications Sent"
+msgstr "Certificaciones no enviadas"
+
+#. module: survey_certification_sending
+#: model:ir.actions.server,name:survey_certification_sending.ir_actions_server_send_certification
+msgid "Send Certification Email"
+msgstr "Enviar certificación por correo electrónico"
+
+#. module: survey_certification_sending
+#: model:ir.model.fields,field_description:survey_certification_sending.field_survey_survey__skip_certification_email
+msgid "Skip Certification Email"
+msgstr "Omitir correo de certificación"
+
+#. module: survey_certification_sending
+#: model:ir.model.fields,help:survey_certification_sending.field_survey_survey__skip_certification_email
+msgid ""
+"Skip sending the certification automatically after successful completion of "
+"the survey."
+msgstr ""
+"Omitir el envío automático de la certificación una vez completada con éxito "
+"la la encuesta."
+
+#. module: survey_certification_sending
+#: model:ir.model,name:survey_certification_sending.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_certification_sending
+#: model:ir.model,name:survey_certification_sending.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_certification_sending
+#: code:addons/survey_certification_sending/models/survey_user_input.py:0
+#, python-format
+msgid "The survey does not meet the conditions."
+msgstr "La encuesta no cumple las condiciones."
