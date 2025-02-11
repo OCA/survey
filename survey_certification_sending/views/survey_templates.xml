@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Tecnativa - Pilar Vargas
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="survey_fill_form_done" inherit_id="survey.survey_fill_form_done">
+        <xpath
+            expr="//div[a[contains(@t-att-href, '/survey/%s/get_certification')]]"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >survey.certification and not survey.skip_certification_email</attribute>
+        </xpath>
+    </template>
+</odoo>
