@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_user_input_view_form" model="ir.ui.view">
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form" />
+        <field name="arch" type="xml">
+            <field name="scoring_success" position="after">
+                <field
+                    name="certification_sent"
+                    readonly="1"
+                    attrs="{'invisible': [('scoring_type', '=', 'no_scoring')]}"
+                />
+            </field>
+        </field>
+    </record>
+
+    <!-- Server action to send multiple certification-->
+    <record id="ir_actions_server_send_certification" model="ir.actions.server">
+        <field name="name">Send Certification Email</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="survey.model_survey_user_input" />
+        <field name="state">code</field>
+        <field name="code">
+            action = records.action_manual_send_certification()
+        </field>
+        <field name="binding_model_id" ref="survey.model_survey_user_input" />
+        <field name="binding_view_types">list,form</field>
+    </record>
+</odoo>
