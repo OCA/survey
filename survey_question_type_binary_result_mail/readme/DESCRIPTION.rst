@@ -1,0 +1,1 @@
+This module adds compatibility between the survey_question_type_binary and suervey_result_mail modules
