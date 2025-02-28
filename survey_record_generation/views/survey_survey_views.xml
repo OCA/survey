@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="survey_survey_view_form" model="ir.ui.view">
+        <field name="name">survey.survey.view.form.inherit.record.generation</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="record_creation" string="Record creation">
+                    <field name="survey_record_creation_ids">
+                        <tree>
+                            <field name="name" />
+                            <field name="model_id" />
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="name" />
+                                <field name="model_id" />
+                                <field name="field_values_ids">
+                                    <tree>
+                                        <field name="field_id" />
+                                        <field name="displayed_value" />
+                                        <field name="unicity_check" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="model_id" invisible="1" />
+                                            <field name="field_id" />
+                                            <field name="unicity_check" />
+                                            <field
+                                                name="field_relation"
+                                                invisible="1"
+                                            />
+                                            <field name="field_type" invisible="1" />
+                                            <div colspan="2">
+                                                <field name="field_help" />
+                                            </div>
+                                            <field name="survey_id" invisible="1" />
+                                            <field name="value_origin" />
+                                            <field
+                                                name="allowed_question_ids"
+                                                invisible="1"
+                                            />
+                                        </group>
+                                        <div
+                                            attrs="{'invisible':['|',('value_origin','!=','fixed'),('field_id','=',False)]}"
+                                        >
+                                            <group>
+                                                <field
+                                                    name="displayed_value"
+                                                    invisible="1"
+                                                />
+                                                <field
+                                                    name="fixed_value_char"
+                                                    attrs="{'invisible':[('field_type','in',['selection','text','html','integer','float','date','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_selection"
+                                                    attrs="{'invisible':[('field_type','in',['char','text','html','integer','float','date','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_text"
+                                                    attrs="{'invisible':[('field_type','in',['char','selection','html','integer','float','date','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_html"
+                                                    attrs="{'invisible':[('field_type','in',['char','selection','text','integer','float','date','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_integer"
+                                                    attrs="{'invisible':[('field_type','in',['char','selection','text','html','float','date','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_float"
+                                                    attrs="{'invisible':[('field_type','in',['char','selection','text','html','integer','date','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_date"
+                                                    attrs="{'invisible':[('field_type','in',['char','selection','text','html','integer','float','datetime','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_datetime"
+                                                    attrs="{'invisible':[('field_type','in',['char','selection','text','html','integer','float','date','many2one','many2many'])]}"
+                                                />
+                                                <field
+                                                    name="fixed_value_many2one"
+                                                    attrs="{'invisible':[('field_type','!=','many2one')]}"
+                                                    readonly="False"
+                                                    options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                                                />
+                                                <field
+                                                    name="fixed_value_many2many"
+                                                    attrs="{'invisible':[('field_type','not in',['one2many','many2many'])]}"
+                                                >
+                                                    <tree editable="bottom">
+                                                        <field
+                                                            name="survey_record_creation_field_values_id"
+                                                            invisible="1"
+                                                        />
+                                                        <field
+                                                            name="value_reference"
+                                                            options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                                                        />
+                                                    </tree>
+                                                </field>
+                                            </group>
+                                        </div>
+                                        <div
+                                            attrs="{'invisible':['|',('value_origin','!=','question'),('field_id','=',False)]}"
+                                        >
+                                            <group>
+                                                <field name="question_id" />
+                                            </group>
+                                        </div>
+                                        <div
+                                            attrs="{'invisible':['|','|',('value_origin','!=','other_record'),('field_id','=',False),('field_type','!=','many2one')]}"
+                                        >
+                                            <group>
+                                                <field name="other_created_record_id" />
+                                            </group>
+                                        </div>
+                                    </form>
+                                </field>
+                                <div colspan="2">
+                                    <field name="warning_message" />
+                                </div>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

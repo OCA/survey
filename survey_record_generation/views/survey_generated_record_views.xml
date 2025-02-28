@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_generated_record_view_tree" model="ir.ui.view">
+        <field name="name">survey.generated.record.view.tree</field>
+        <field name="model">survey.generated.record</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="survey_record_creation_name" />
+                <field name="survey_record_creation_id" />
+                <field name="user_input_id" />
+                <field name="created_record_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="survey_generated_record_view_form" model="ir.ui.view">
+        <field name="name">survey.generated.record.view.form</field>
+        <field name="model">survey.generated.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="survey_record_creation_name" />
+                    <field name="survey_record_creation_id" />
+                    <field name="user_input_id" />
+                    <field name="created_record_id" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="survey_generated_record_view_search" model="ir.ui.view">
+        <field name="name">survey.generated.record.view.search</field>
+        <field name="model">survey.generated.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="survey_record_creation_name" />
+                <field name="survey_record_creation_id" />
+                <field name="user_input_id" />
+                <field name="created_record_id" />
+            </search>
+        </field>
+    </record>
+
+
+    <record id="survey_generated_record_action" model="ir.actions.act_window">
+        <field name="name">Generated records</field>
+        <field name="res_model">survey.generated.record</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="survey_generated_record_view_search" />
+        <field
+            name="context"
+        >{'search_default_group_by_survey_record_creation_name': True}</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_empty_folder">
+            No generated records found
+        </p>
+        </field>
+    </record>
+</odoo>

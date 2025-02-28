@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_survey_record_creation,survey.record.creation,survey_record_generation.model_survey_record_creation,survey.group_survey_user,1,1,1,1
+access_survey_record_creation_field_values,survey.record.creation.field.values,survey_record_generation.model_survey_record_creation_field_values,survey.group_survey_user,1,1,1,1
+access_survey_record_creation_field_values_x2m,survey.record.creation.field.values.x2m,survey_record_generation.model_survey_record_creation_field_values_x2m,survey.group_survey_user,1,1,1,1
+access_survey_generated_record,survey.generated.record,survey_record_generation.model_survey_generated_record,survey.group_survey_user,1,1,1,1

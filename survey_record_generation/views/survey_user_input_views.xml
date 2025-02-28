@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record
+        id="survey_user_input_view_form_survey_record_generation"
+        model="ir.ui.view"
+    >
+        <field name="name">survey.user_input.view.form.survey.record.generation</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_redirect_to_generated_records"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-files-o"
+                >
+                    <field
+                        string="Generated records"
+                        name="attempts_count"
+                        widget="statinfo"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

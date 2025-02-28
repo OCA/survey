@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="name">survey.question.view.form.inherit.record.generation</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='suggested_answer_ids']" position="before">
+                <field name="answer_values_type" />
+                <field
+                    name="model_id"
+                    attrs="{'invisible':[('answer_values_type','!=','record')]}"
+                />
+                <field name="model_name" invisible="1" />
+                <field
+                    name="fill_domain"
+                    widget="domain"
+                    options="{'model': 'model_name'}"
+                    attrs="{'invisible':['|',('answer_values_type','!=','record'),('model_id','=',False)]}"
+                />
+                <button
+                    name="fill"
+                    string="Empty and fill"
+                    type="object"
+                    colspan="2"
+                    help="Empty the list and fill it with all items of selected model matching domain"
+                    attrs="{'invisible':[('answer_values_type','!=','record')]}"
+                />
+            </xpath>
+            <xpath expr="//field[@name='suggested_answer_ids']" position="attributes">
+                <attribute
+                    name="context"
+                >{'default_question_id': active_id, 'default_model_id': model_id}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='suggested_answer_ids']/tree" position="inside">
+                <field name="answer_values_type" invisible="1" />
+                <field name="model_id" invisible="1" />
+                <field
+                    name="record_id"
+                    options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                    attrs="{'invisible':[('answer_values_type','!=','record')]}"
+                />
+                <field
+                    name="value_char"
+                    attrs="{'invisible':[('answer_values_type','!=','value')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

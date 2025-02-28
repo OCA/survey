@@ -1,0 +1,1 @@
+This module allows to generate any record from surveys answers.
