@@ -47,43 +47,43 @@
             <div class="nps_rate nps_rate_widget">
                 <label
                     for="num10"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 10 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 10 else ''}"
                 >10</label>
                 <label
                     for="num9"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 9 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 9 else ''}"
                 >9</label>
                 <label
                     for="num8"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 8 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 8 else ''}"
                 >8</label>
                 <label
                     for="num7"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 7 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 7 else ''}"
                 >7</label>
                 <label
                     for="num6"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 6 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 6 else ''}"
                 >6</label>
                 <label
                     for="num5"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 5 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 5 else ''}"
                 >5</label>
                 <label
                     for="num4"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 4 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 4 else ''}"
                 >4</label>
                 <label
                     for="num3"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 3 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 3 else ''}"
                 >3</label>
                 <label
                     for="num2"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 2 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 2 else ''}"
                 >2</label>
                 <label
                     for="num1"
-                    t-attf-class="#{'checked' if answer_lines and answer_lines.value_numerical_box == 1 else ''}"
+                    t-attf-class="o_survey_choice_btn ms-3 me-3 mb-3 text-center rounded-circle lh-lg float-end #{'checked' if answer_lines and answer_lines.value_numerical_box == 1 else ''}"
                 >1</label>
                 <input
                     type="number"

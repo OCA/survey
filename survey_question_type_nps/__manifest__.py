@@ -15,7 +15,6 @@
     "assets": {
         "survey.survey_assets": [
             "survey_question_type_nps/static/src/js/survey.js",
-            "survey_question_type_nps/static/src/scss/parameters.scss",
             "survey_question_type_nps/static/src/scss/survey.scss",
         ],
     },
