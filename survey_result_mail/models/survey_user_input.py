@@ -59,8 +59,14 @@ class SurveyUserInput(models.Model):
         )
         questions_dict = {}
         for answer in given_answers.filtered(lambda x: x.answer_type != "suggestion"):
+            if answer.answer_type == "date":
+                value = format_date(self.env, answer.value_date)
+            elif answer.answer_type == "datetime":
+                value = format_datetime(self.env, answer.value_datetime)
+            else:
+                value = answer[f"value_{answer.answer_type}"]
             questions_dict[answer.question_id] = _answer_element(
-                answer.question_id.title, answer[f"value_{answer.answer_type}"]
+                answer.question_id.title, value
             )
         for answer in given_answers.filtered(
             lambda x: x.question_id.question_type == "simple_choice"
