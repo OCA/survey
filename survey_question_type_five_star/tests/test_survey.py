@@ -90,7 +90,7 @@ class TestSurvey(common.SurveyCase):
 
     def test_02_question_star_rate_with_valid_values(self):
         for i in ("0", "3", "5"):
-            self.user_input1.save_lines(question=self.question1, answer=i)
+            self.user_input1._save_lines(question=self.question1, answer=i)
             self.assertEqual(
                 self.user_input1.user_input_line_ids.filtered(
                     lambda r: r.question_id == self.question1
@@ -101,4 +101,4 @@ class TestSurvey(common.SurveyCase):
     def test_03_question_star_rate_with_constr_mandatory(self):
         self.question1.constr_mandatory = True
         with self.assertRaises(ValidationError):
-            self.user_input1.save_lines(question=self.question1, answer="0")
+            self.user_input1._save_lines(question=self.question1, answer="0")

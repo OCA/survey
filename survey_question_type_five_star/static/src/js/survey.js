@@ -1,10 +1,14 @@
 /* Copyright 2018 ACSONE SA/NV
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).*/
-odoo.define("survey_question_type_five_star.survey", function (require) {
+odoo.define("survey_question_type_five_star", [], function () {
     "use strict";
-    var SurveyFormWidget = require("survey.form");
-    SurveyFormWidget.include({
-        events: _.extend({}, SurveyFormWidget.prototype.events, {
+
+    const survey_form = odoo.loader.modules.get("@survey/js/survey_form")[
+        Symbol.for("default")
+    ];
+
+    survey_form.include({
+        events: $.extend({}, survey_form.prototype.events, {
             "click .rate > label": "_onClickFiveStarLabel",
         }),
         _onClickFiveStarLabel: function (event) {

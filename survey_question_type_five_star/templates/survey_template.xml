@@ -21,13 +21,13 @@
         id="result_user"
         inherit_id="survey.question_result_number_or_date_or_datetime"
     >
-        <xpath expr="//a[@t-field='input_line.value_date']" position="after">
+        <!-- <xpath expr="//a[@t-field='input_line.value_date']" position="after">
             <a
                 t-if="question.question_type == 'star_rate'"
                 t-att-href="input_line.user_input_id.get_print_url()"
                 t-field="input_line.value_numerical_box"
             />
-        </xpath>
+        </xpath> -->
         <xpath expr="//tbody/tr/td/span" position="after">
             <span t-if="question.question_type == 'star_rate'" t-esc="common_line[0]" />
         </xpath>
