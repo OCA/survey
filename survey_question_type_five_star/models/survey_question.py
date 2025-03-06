@@ -6,7 +6,6 @@ from odoo import fields, models, tools
 
 
 class SurveyQuestion(models.Model):
-
     _inherit = "survey.question"
 
     question_type = fields.Selection(
