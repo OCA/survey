@@ -16,14 +16,10 @@ class SurveyUserInput(models.Model):
         if question.question_type in ["nps_rate"]:
             return self._save_line_simple_answer(question, old_answers, answer)
         else:
-            return super(SurveyUserInput, self).save_lines(
-                question, answer, comment=comment
-            )
+            return super().save_lines(question, answer, comment=comment)
 
     def _get_line_answer_values(self, question, answer, answer_type):
-        vals = super(SurveyUserInput, self)._get_line_answer_values(
-            question, answer, answer_type
-        )
+        vals = super()._get_line_answer_values(question, answer, answer_type)
         if answer_type == "nps_rate" and answer:
             value = float(answer)
             nps = 1 if value >= 9 else -1 if value <= 6 else 0
@@ -39,7 +35,6 @@ class SurveyUserInput(models.Model):
 
 
 class SurveyUserInputLine(models.Model):
-
     _inherit = "survey.user_input.line"
 
     value_nps = fields.Integer()
