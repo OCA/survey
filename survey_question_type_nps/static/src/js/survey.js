@@ -1,10 +1,12 @@
 /* Copyright 2018 ACSONE SA/NV
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).*/
-odoo.define("survey_question_type_nps", function (require) {
+odoo.define("survey_question_type_nps", [], function () {
     "use strict";
-    var SurveyFormWidget = require("survey.form");
+    var SurveyFormWidget = odoo.loader.modules.get("@survey/js/survey_form")[
+        Symbol.for("default")
+    ];
     SurveyFormWidget.include({
-        events: _.extend({}, SurveyFormWidget.prototype.events, {
+        events: $.extend({}, SurveyFormWidget.prototype.events, {
             "click .nps_rate > label": "_onClickNPSLabel",
         }),
         _onClickNPSLabel: function (event) {

@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import collections
 
-from odoo import fields, models, tools
+from odoo import fields, models
 
 
 class SurveyQuestion(models.Model):
@@ -52,7 +52,7 @@ class SurveyQuestion(models.Model):
                 errors.update({answer_tag: "This is not a number"})
                 return errors
             # Answer is not in the right range
-            with tools.ignore(Exception):
+            else:
                 # 0 answer to mandatory question
                 if self.constr_mandatory:
                     if floatanswer == 0:

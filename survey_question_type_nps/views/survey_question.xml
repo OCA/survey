@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
                 <!-- NPS rating -->
-                <div attrs="{'invisible': [('question_type', '!=', 'nps_rate')]}">
+                <div invisible="question_type != 'nps_rate'">
                     <i class="fa fa-frown-o fa-2x text-danger" title="face1" />
                     <i class="fa fa-frown-o fa-2x text-danger" title="face2" />
                     <i class="fa fa-frown-o fa-2x text-danger" title="face3" />

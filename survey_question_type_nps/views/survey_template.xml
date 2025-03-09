@@ -21,6 +21,7 @@
         id="result_user"
         inherit_id="survey.question_result_number_or_date_or_datetime"
     >
+        <!--
         <xpath expr="//a[@t-field='input_line.value_date']" position="after">
             <a
                 t-if="question.question_type == 'nps_rate'"
@@ -28,6 +29,7 @@
                 t-field="input_line.value_numerical_box"
             />
         </xpath>
+        -->
         <t t-elif="question.question_type == 'datetime'" position="after">
             <span
                 t-elif="question.question_type == 'nps_rate'"
@@ -103,6 +105,7 @@
     >
         <t t-if="question.question_type == 'numerical_box'" position="after">
             <t t-if="question.question_type == 'nps_rate'">
+                <span t-esc="common_line[0]" />
                 <span class="float-end mt8">
                     <div
                         class="btn-group o_survey_results_question_pill"
