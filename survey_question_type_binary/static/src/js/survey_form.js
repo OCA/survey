@@ -1,10 +1,12 @@
 /* Copyright 2023 Aures Tic - Jose Zambudio
    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). */
-
-odoo.define("survey_question_type_binary", function (require) {
+odoo.define("survey_question_type_binary", [], function () {
     "use strict";
 
-    const survey_form = require("survey.form");
+    const survey_form = odoo.loader.modules.get("@survey/js/survey_form")[
+        Symbol.for("default")
+    ];
+    const rpc = odoo.loader.modules.get("@web/core/network/rpc").rpc;
 
     survey_form.include({
         _getSubmitBinariesValues: function (params) {
@@ -40,6 +42,7 @@ odoo.define("survey_question_type_binary", function (require) {
             });
         },
         _readFileAsDataURL: function (file) {
+            /* eslint-disable no-undef */
             return $.Deferred(function (deferred) {
                 $.extend(new FileReader(), {
                     onload: function (e) {
@@ -51,6 +54,7 @@ odoo.define("survey_question_type_binary", function (require) {
                     },
                 }).readAsDataURL(file);
             }).promise();
+            /* eslint-enable no-undef */
         },
         _submitForm: function (options) {
             const self = this;
@@ -58,22 +62,18 @@ odoo.define("survey_question_type_binary", function (require) {
             const binaryPrimises = this._getSubmitBinariesValues(params);
             if (binaryPrimises.length > 0 && !this.options.isStartScreen) {
                 const $form = this.$("form");
+                /* eslint-disable no-undef */
                 const formData = new FormData($form[0]);
-
+                /* eslint-enable no-undef */
                 if (options.previousPageId) {
                     params.previous_page_id = options.previousPageId;
                 }
                 this._prepareSubmitValues(formData, params);
                 Promise.all(binaryPrimises).then(function () {
-                    const submitPromise = self._rpc({
-                        route: _.str.sprintf(
-                            "%s/%s/%s",
-                            "/survey/submit",
-                            self.options.surveyToken,
-                            self.options.answerToken
-                        ),
-                        params: params,
-                    });
+                    const submitPromise = rpc(
+                        `/survey/submit/${self.options.surveyToken}/${self.options.answerToken}`,
+                        params
+                    );
                     self._nextScreen(submitPromise, options);
                 });
             } else {
