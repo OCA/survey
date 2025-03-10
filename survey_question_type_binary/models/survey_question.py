@@ -29,7 +29,7 @@ class SurveyQuestion(models.Model):
     def validate_question(self, answer, comment=None):
         if self.question_type in ("binary", "multi_binary"):
             return self.validate_binary(answer)
-        return super(SurveyQuestion, self).validate_question(answer, comment=comment)
+        return super().validate_question(answer, comment=comment)
 
     def validate_binary(self, answers):
         self.ensure_one()
