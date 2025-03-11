@@ -23,7 +23,7 @@ class SurveyQuestion(models.Model):
         ),
         (
             "validation_multiple_ans",
-            "CHECK (validation_multiple_answers_min <= validation_multiple_answers_max)",
+            "CHECK (validation_multiple_answers_min <= validation_multiple_answers_max)",  # noqa: E501
             "Max number of multiple answers cannot be smaller "
             "than min number of multiple answers!",
         ),
@@ -49,3 +49,15 @@ class SurveyQuestion(models.Model):
         ):
             return {self.id: self.validation_error_msg}
         return res
+
+
+class SurveyUserInput(models.Model):
+    _inherit = "survey.user_input"
+
+    def _save_lines(self, question, answer, comment=None, overwrite_existing=True):
+        if any(
+            question.question_type == "multiple_choice" and question.validation_required
+            for question in self.survey_id.question_ids
+        ):
+            overwrite_existing = True
+        return super()._save_lines(question, answer, comment, overwrite_existing)
