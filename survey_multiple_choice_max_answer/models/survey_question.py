@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class SurveyQuestion(models.Model):
-
     _inherit = "survey.question"
 
     validation_multiple_answers_min = fields.Integer("Minimum Number of Answers")
