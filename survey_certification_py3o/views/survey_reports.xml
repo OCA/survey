@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- py3o Reports -->
+    <record id="custom_certification_report" model="ir.actions.report">
+        <field name="name">Custom Certifications</field>
+        <field name="model">survey.user_input</field>
+        <field name="report_name">py3o_custom_certification</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">pdf</field>
+        <field name="binding_model_id" ref="survey.model_survey_user_input" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
