@@ -6,18 +6,16 @@ from odoo import api, fields, models
 class SurveyQuestion(models.Model):
     _inherit = "survey.question"
 
-    allowed_field_ids = fields.Many2many(
-        comodel_name="ir.model.fields",
-        compute="_compute_allowed_field_ids",
+    allowed_field_domain = fields.Binary(
+        compute="_compute_allowed_field_domain",
     )
     res_partner_field = fields.Many2one(
         string="Contact field",
         comodel_name="ir.model.fields",
-        domain="[('id', 'in', allowed_field_ids)]",
     )
 
     @api.depends("question_type")
-    def _compute_allowed_field_ids(self):
+    def _compute_allowed_field_domain(self):
         type_mapping = {
             "char_box": ["char", "text"],
             "text_box": ["html"],
@@ -28,16 +26,14 @@ class SurveyQuestion(models.Model):
             "multiple_choice": ["many2many", "html", "char"],
         }
         for record in self:
-            record.allowed_field_ids = (
-                self.env["ir.model.fields"]
-                .search(
-                    [
-                        ("model", "=", "res.partner"),
-                        ("ttype", "in", type_mapping.get(record.question_type, [])),
-                    ]
-                )
-                .ids
-            )
+            allowed_types = type_mapping.get(record.question_type, [])
+            domain = [
+                ("model", "=", "res.partner"),
+                ("ttype", "in", allowed_types),
+                ("store", "=", True),
+                ("readonly", "=", False),
+            ]
+            record.allowed_field_domain = domain
 
 
 class SurveyQuestionAnswer(models.Model):
@@ -57,10 +53,9 @@ class SurveyQuestionAnswer(models.Model):
             return result
         res = self.env[partner_field.relation].search([], limit=1)
         if res:
-            result["res_partner_field_resource_ref"] = "%s,%s" % (
-                partner_field.relation,
-                res.id,
-            )
+            result[
+                "res_partner_field_resource_ref"
+            ] = f"{partner_field.relation},{res.id}"
         return result
 
     @api.model
