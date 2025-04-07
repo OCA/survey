@@ -20,8 +20,10 @@
     </p>
 </div>
     </field>
-    <field name="report_template" ref="survey_result_report" />
-    <field name="report_name">Survey Results</field>
+    <field
+            name="report_template_ids"
+            eval="[(4, ref('survey_result_mail.survey_result_report'))]"
+        />
     <field name="lang">{{object.partner_id.lang}}</field>
     <field name="auto_delete" eval="True" />
 </record>
