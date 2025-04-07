@@ -66,10 +66,10 @@ class SurveyUserInput(models.Model):
 
     def _create_contact_post_process(self, partner):
         """After creating the lead send an internal message with the input link"""
-        partner.message_post_with_view(
+        partner.message_post_with_source(
             "mail.message_origin_link",
-            values={"self": partner, "origin": self.survey_id},
-            subtype_id=self.env.ref("mail.mt_note").id,
+            render_values={"self": partner, "origin": self.survey_id},
+            subtype_xmlid="mail.mt_note",
         )
 
     def _get_existing_partner(self, email, limit=1):
@@ -79,7 +79,7 @@ class SurveyUserInput(models.Model):
     def _mark_done(self):
         """Generate the contact when the survey is submitted"""
         for user_input in self.filtered(
-            lambda r: r.survey_id.generate_contact and not self.partner_id
+            lambda r: r.survey_id.generate_contact and not r.partner_id
         ):
             vals = user_input._prepare_partner()
             partner = False
