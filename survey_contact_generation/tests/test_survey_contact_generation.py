@@ -18,6 +18,7 @@ class SurveyContactGenerationCase(SurveyCase, HttpCase):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
             "test_survey_contact_generation",
+            step_delay=1000,
         )
         self.user_input = self.survey.user_input_ids - initial_user_inputs
 
