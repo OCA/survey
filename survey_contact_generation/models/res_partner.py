@@ -6,4 +6,6 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    generating_survey_user_input_id = fields.Many2one(comodel_name="survey.user_input")
+    generating_survey_user_input_id = fields.Many2one(
+        comodel_name="survey.user_input", copy=False, readonly=True
+    )
