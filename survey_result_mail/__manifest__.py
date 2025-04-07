@@ -3,12 +3,12 @@
 {
     "name": "Survey Result Mail",
     "summary": "Send survey answers to the survey user",
-    "version": "15.0.1.1.2",
+    "version": "17.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
     "author": "Tecnativa, Odoo Community Association (OCA)",
-    "maintainers": ["chienandalu"],
+    "maintainers": ["pilarvargas-tecnativa"],
     "license": "AGPL-3",
     "depends": ["survey"],
     "data": [

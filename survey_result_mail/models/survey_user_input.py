@@ -116,6 +116,6 @@ class SurveyUserInput(models.Model):
                 "survey_result_mail.mail_template_user_input_result_inline"
             )
             template.send_mail(
-                user_input.id, notif_layout="mail.mail_notification_light"
+                user_input.id, email_layout_xmlid="mail.mail_notification_light"
             )
         return res
