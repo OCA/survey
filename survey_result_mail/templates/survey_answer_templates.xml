@@ -4,6 +4,7 @@
         <field name="name">Survey answers for print</field>
         <field name="inherit_id" ref="survey.survey_page_print" />
         <field name="mode">primary</field>
+        <field name="priority">999</field>
         <field name="arch" type="xml">
             <xpath expr="//t[@t-call='survey.layout']" position="attributes">
                 <attribute name="t-call">web.layout</attribute>
@@ -11,23 +12,50 @@
             <xpath expr="//t[@t-if='answer.test_entry']" position="attributes">
                 <attribute name="t-if">False</attribute>
             </xpath>
-            <xpath expr="//t[@t-call='survey.question_text_box']" position="attributes">
-                <attribute
-                    name="t-call"
-                >survey_result_mail.question_text_box</attribute>
+            <xpath expr="//t[@t-call='survey.question_text_box']" position="replace">
+                <t
+                    t-if="question.question_type == 'text_box'"
+                    t-call="survey.question_text_box"
+                />
             </xpath>
-            <xpath expr="//t[@t-call='survey.question_char_box']" position="attributes">
-                <attribute
-                    name="t-call"
-                >survey_result_mail.question_char_box</attribute>
+            <xpath expr="//t[@t-call='survey.question_text_box']" position="replace">
+                <t
+                    t-if="question.question_type == 'text_box'"
+                    t-call="survey.question_text_box"
+                />
+            </xpath>
+            <xpath expr="//t[@t-call='survey.question_char_box']" position="replace">
+                <t
+                    t-if="question.question_type == 'char_box'"
+                    t-call="survey_result_mail.question_char_box"
+                />
             </xpath>
             <xpath
                 expr="//t[@t-call='survey.question_numerical_box']"
-                position="attributes"
+                position="replace"
             >
-                <attribute
-                    name="t-call"
-                >survey_result_mail.question_numerical_box</attribute>
+                <t
+                    t-if="question.question_type == 'numerical_box'"
+                    t-call="survey_result_mail.question_numerical_box"
+                />
+            </xpath>
+            <xpath
+                expr="//t[@t-call='survey.question_numerical_box']"
+                position="replace"
+            >
+                <t
+                    t-if="question.question_type == 'numerical_box'"
+                    t-call="survey_result_mail.question_numerical_box"
+                />
+            </xpath>
+            <xpath
+                expr="//t[@t-call='survey.question_numerical_box']"
+                position="replace"
+            >
+                <t
+                    t-if="question.question_type == 'numerical_box'"
+                    t-call="survey_result_mail.question_numerical_box"
+                />
             </xpath>
             <xpath expr="//t[@t-call='survey.question_date']" position="attributes">
                 <attribute name="t-call">survey_result_mail.question_date</attribute>
@@ -39,22 +67,27 @@
             </xpath>
             <xpath
                 expr="//t[@t-call='survey.question_simple_choice']"
-                position="attributes"
+                position="replace"
             >
-                <attribute
-                    name="t-call"
-                >survey_result_mail.question_simple_choice</attribute>
+                <t
+                    t-if="question.question_type == 'simple_choice'"
+                    t-call="survey_result_mail.question_simple_choice"
+                />
             </xpath>
             <xpath
                 expr="//t[@t-call='survey.question_multiple_choice']"
-                position="attributes"
+                position="replace"
             >
-                <attribute
-                    name="t-call"
-                >survey_result_mail.question_multiple_choice</attribute>
+                <t
+                    t-if="question.question_type == 'multiple_choice'"
+                    t-call="survey_result_mail.question_multiple_choice"
+                />
             </xpath>
-            <xpath expr="//t[@t-call='survey.question_matrix']" position="attributes">
-                <attribute name="t-call">survey_result_mail.question_matrix</attribute>
+            <xpath expr="//t[@t-call='survey.question_matrix']" position="replace">
+                <t
+                    t-if="question.question_type == 'matrix'"
+                    t-call="survey_result_mail.question_matrix"
+                />
             </xpath>
         </field>
     </record>
@@ -140,20 +173,20 @@
 
                     <label
                         t-att-for="str(question.id) + '_' + str(label.id)"
-                        t-att-class="'o_survey_choice_btn mr-2 mb-2 py-1 px-3 rounded %s %s' % (answer_class, 'o_survey_selected' if answer_selected else '')"
+                        t-att-class="'o_survey_choice_btn me-2 mb-2 py-1 px-3 rounded %s %s' % (answer_class, 'o_survey_selected' if answer_selected else '')"
                     >
 
-                        <span class="ml-2">
+                        <span class="ms-2">
                         <t
                                 t-if="answer_line and answer_line.suggested_answer_id.id == label.id"
                             >
                             <i
-                                    class="ml-2 fa fa-check-circle float-right mt-1 position-relative"
+                                    class="ms-2 fa fa-check-circle float-end mt-1 position-relative"
                                 />
                         </t>
                         <t t-else="">
                             <i
-                                    class="ml-2 fa fa-circle-thin float-right mt-1 position-relative"
+                                    class="ms-2 fa fa-circle-thin float-end mt-1 position-relative"
                                 />
                         </t>
                         <t t-out="label.value" />
@@ -161,26 +194,28 @@
                     </label>
                 </t>
             </div>
+        </div>
+        <div class="row">
             <div
                 t-if='question.comments_allowed and question.comment_count_as_answer'
                 class="js_comments col-lg-12"
             >
                 <div class="d-flex flex-wrap">
                     <label
-                        t-att-class="'o_survey_choice_btn mr-2 py-1 px-3 rounded %s' % ('o_survey_selected' if comment_line else '')"
+                        t-att-class="'o_survey_choice_btn me-2 py-1 px-3 rounded %s' % ('o_survey_selected' if comment_line else '')"
                     >
                         <t t-set="item_idx" t-value="item_idx + 1" />
                         <t t-if="comment_line">
                             <i
-                                class="ml-2 fa fa-check-circle float-right mt-1 position-relative"
+                                class="ms-2 fa fa-check-circle float-end mt-1 position-relative"
                             />
                         </t>
                         <t t-else="">
                             <i
-                                class="ml-2 fa fa-circle-thin float-right mt-1 position-relative"
+                                class="ms-2 fa fa-circle-thin float-end mt-1 position-relative"
                             />
                         </t>
-                        <span class="ml-2" t-field="question.comments_message" />
+                        <span class="ms-2" t-field="question.comments_message" />
                     </label>
                 </div>
                 <div
@@ -191,7 +226,7 @@
             </div>
             <div
                 t-if='question.comments_allowed and not question.comment_count_as_answer'
-                class="col-lg-12 o_survey_comment_container mx-1 mt-3 pl-3 pr-4"
+                class="col-lg-12 o_survey_comment_container mx-1 mt-3 ps-3 pe-4"
             >
                 <span t-out="comment_line.value_char_box if comment_line else ''" />
             </div>
@@ -241,17 +276,17 @@
                         t-value="'bg-danger'"
                     />
                     <label
-                        t-att-class="'o_survey_choice_btn mr-2 py-1 px-3 rounded %s %s' % (answer_class, 'o_survey_selected' if answer_line else '')"
+                        t-att-class="'o_survey_choice_btn me-2 py-1 px-3 rounded %s %s' % (answer_class, 'o_survey_selected' if answer_line else '')"
                     >
-                        <span class="ml-2">
+                        <span class="ms-2">
                             <t t-if="answer_line">
                                 <i
-                                    class="ml-2 fa fa-check-square float-right mt-1 position-relative"
+                                    class="ms-2 fa fa-check-square float-end mt-1 position-relative"
                                 />
                             </t>
                             <t t-else="">
                                 <i
-                                    class="ml-2 fa fa-square-o float-right mt-1 position-relative"
+                                    class="ms-2 fa fa-square-o float-end mt-1 position-relative"
                                 />
                             </t>
                             <t t-out="label.value" />
@@ -259,25 +294,27 @@
                     </label>
                 </t>
             </div>
+        </div>
+        <div class="row">
             <div
                 t-if='question.comments_allowed and question.comment_count_as_answer'
                 class="js_ck_comments col-lg-12"
             >
                 <div class="d-flex flex-wrap">
                     <label
-                        t-att-class="'o_survey_choice_btn mr-2 py-1 px-3 rounded %s' % ('o_survey_selected' if comment_line else '')"
+                        t-att-class="'o_survey_choice_btn me-2 py-1 px-3 rounded %s' % ('o_survey_selected' if comment_line else '')"
                     >
                         <t t-set="item_idx" t-value="item_idx + 1" />
-                        <span class="ml-2" t-field="question.comments_message" />
+                        <span class="ms-2" t-field="question.comments_message" />
                         <t t-if="comment_line">
                             <i
-                                class="ml-2 fa fa-check-square float-right mt-1 position-relative"
-                            />
+                                class="ms-2 fa fa-check-square float-end mt-1 position-relative"
+                            />&#160;
                         </t>
                         <t t-else="">
                             <i
-                                class="ml-2 fa fa-square-o float-right mt-1 position-relative"
-                            />
+                                class="ms-2 fa fa-square-o float-end mt-1 position-relative"
+                            />&#160;
                         </t>
                     </label>
                 </div>
@@ -287,12 +324,12 @@
                     <span t-out="comment_line.value_char_box if comment_line else ''" />
                 </div>
             </div>
-            <div
-                t-if='question.comments_allowed and not question.comment_count_as_answer'
-                class="col-lg-12 o_survey_comment_container mx-1 mt-3 p-3 border"
-            >
-                <span t-out="comment_line.value_char_box if comment_line else ''" />
-            </div>
+        </div>
+        <div
+            t-if='question.comments_allowed and not question.comment_count_as_answer'
+            class="col-lg-12 o_survey_comment_container mx-1 mt-3 p-3 border"
+        >
+            <span t-out="comment_line.value_char_box if comment_line else ''" />
         </div>
     </template>
 
@@ -324,7 +361,7 @@
                     t-as="row_label"
                     t-att-id="row_label.id"
                 >
-                    <th class="border-0 font-weight-normal text-left"><span
+                    <th class="border-0 font-weight-normal text-start"><span
                             t-field="row_label.value"
                         /></th>
                     <t t-foreach="question.suggested_answer_ids" t-as="col_label">
