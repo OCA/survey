@@ -6,7 +6,7 @@
         inherit_id="survey.question_container"
     >
         <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
-            <t t-if="question.question_type in ('binary', 'multi_binary')">
+            <t t-if="question.question_type in ('binary', 'multi_binary', 'signature')">
                 <t t-call="survey_question_type_binary.question_binary" />
             </t>
         </xpath>
@@ -14,7 +14,7 @@
 
     <template id="survey_page_print" inherit_id="survey.survey_page_print">
         <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
-            <t t-if="question.question_type in ('binary', 'multi_binary')">
+            <t t-if="question.question_type in ('binary', 'multi_binary', 'signature')">
                 <t t-call="survey_question_type_binary.question_binary" />
             </t>
         </xpath>
@@ -45,12 +45,26 @@
             </t>
             <t t-else="">
                 <input
-                    type="file"
+                    t-attf-id="survey_{{question.question_type}}_input_id"
+                    t-att-type="'hidden' if question.question_type == 'signature' else 'file'"
                     t-att-name="question.id"
                     t-on-change="binaryChange"
                     t-att-data-question-type="question.question_type"
                     t-att-multiple="question.question_type == 'multi_binary' and 'multiple' or False"
                 />
+
+                <button
+                    id="survey_signature_btn_id"
+                    type="button"
+                    class="btn btn-outline-primary"
+                    t-if="question.question_type == 'signature'"
+                >Sign</button>
+                <img
+                    id="survey_signature_img_id"
+                    t-if="question.question_type == 'signature'"
+                    style="width:100%;height:100%"
+                />
+
             </t>
         </div>
     </template>

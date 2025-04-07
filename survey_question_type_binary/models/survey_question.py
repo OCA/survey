@@ -14,6 +14,7 @@ class SurveyQuestion(models.Model):
         selection_add=[
             ("binary", "Binary"),
             ("multi_binary", "Multiple: Binary"),
+            ("signature", "Signature"),
         ]
     )
     allowed_filemimetypes = fields.Char(
@@ -27,7 +28,7 @@ class SurveyQuestion(models.Model):
     )
 
     def validate_question(self, answer, comment=None):
-        if self.question_type in ("binary", "multi_binary"):
+        if self.question_type in ("binary", "multi_binary", "signature"):
             return self.validate_binary(answer)
         return super(SurveyQuestion, self).validate_question(answer, comment=comment)
 

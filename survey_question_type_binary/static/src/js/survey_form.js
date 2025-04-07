@@ -19,6 +19,11 @@ odoo.define("survey_question_type_binary", function (require) {
                             self._getSubmitAnswersBinary(params, $(this))
                         );
                         break;
+                    case "signature":
+                        promises = promises.concat(
+                            self._getSubmitAnswersSignature(params, $(this))
+                        );
+                        break;
                 }
             });
             return promises;
@@ -26,6 +31,42 @@ odoo.define("survey_question_type_binary", function (require) {
         _getSubmitAnswersBinary: function (params, $input) {
             const question_id = $input.attr("name");
             return Array.prototype.map.call($input[0].files, (file) => {
+                return this._readFileAsDataURL(file).then(function (sDataURL) {
+                    if (!params[question_id]) {
+                        params[question_id] = [];
+                    }
+                    params[question_id].push({
+                        data: sDataURL.split(",")[1],
+                        filename: file.name,
+                        size: file.size,
+                        type: file.type,
+                    });
+                });
+            });
+        },
+        _dataURLtoFile: function (dataurl, filename) {
+            const arr = dataurl.split(",");
+            const mime = arr[0].match(/:(.*?);/)[1];
+            const bstr = atob(arr[1]);
+            let n = bstr.length;
+            const u8arr = new Uint8Array(n);
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            return new File([u8arr], filename, {type: mime});
+        },
+        _getSubmitAnswersSignature: function (params, $input) {
+            const question_id = $input.attr("name");
+            const img = document.getElementById("survey_signature_img_id");
+            let files = [];
+            if (img && img.src) {
+                const base64 = img.src;
+                const file = this._dataURLtoFile(base64, "signature.png");
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                files = dataTransfer.files;
+            }
+            return Array.prototype.map.call(files, (file) => {
                 return this._readFileAsDataURL(file).then(function (sDataURL) {
                     if (!params[question_id]) {
                         params[question_id] = [];

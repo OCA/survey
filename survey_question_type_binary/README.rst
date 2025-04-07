@@ -46,6 +46,9 @@ In addition to the binary option, a Multi: Binary option is supported which has
 the same functionality as the single option but allows the user to add more than
 one file.
 
+In addition to them, there is a signature option. 
+Which is technically a binary but it allows user to sign or upload a signature.
+
 Bug Tracker
 ===========
 
@@ -68,6 +71,7 @@ Contributors
 ~~~~~~~~~~~~
 
 * Jose Zambudio <jose@aurestic.es>
+* Mohamed Alkobrosli <malkobrosly@kencove.com>
 
 Maintainers
 ~~~~~~~~~~~

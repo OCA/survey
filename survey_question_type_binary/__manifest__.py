@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "author": "Aures TIC, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
-    "depends": ["survey"],
+    "depends": ["web", "survey"],
     "data": [
         "security/ir.model.access.csv",
         "views/survey_question.xml",
@@ -19,6 +19,7 @@
     "assets": {
         "survey.survey_assets": [
             "/survey_question_type_binary/static/src/js/survey_form.js",
+            "/survey_question_type_binary/static/src/js/sign.esm.js",
         ],
     },
 }

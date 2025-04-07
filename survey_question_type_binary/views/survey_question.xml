@@ -12,24 +12,24 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet/group[2]/group[2]/div" position="inside">
                 <div
-                    attrs="{'invisible': [('question_type', 'not in',('binary','multi_binary'))]}"
+                    attrs="{'invisible': [('question_type', 'not in',('binary','multi_binary', 'signature'))]}"
                 >
                     <i class="fa fa-upload fa-2x" title="upload" /> Upload binary
                 </div>
             </xpath>
             <xpath expr="//field[@name='validation_email']/../.." position="attributes">
                 <attribute name="attrs">
-                {'invisible': [('question_type', 'not in', ['char_box', 'numerical_box', 'date', 'datetime', "binary", "multi_binary"])]}</attribute>
+                {'invisible': [('question_type', 'not in', ['char_box', 'numerical_box', 'date', 'datetime', "binary", "multi_binary", "signature"])]}</attribute>
             </xpath>
 
             <xpath expr="//field[@name='validation_length_min']" position="before">
                 <field
                     name="allowed_filemimetypes"
-                    attrs="{'invisible': [('question_type','not in',('binary','multi_binary'))]}"
+                    attrs="{'invisible': [('question_type','not in',('binary','multi_binary', 'signature'))]}"
                 />
                 <field
                     name="max_filesize"
-                    attrs="{'invisible': [('question_type','not in',('binary','multi_binary'))]}"
+                    attrs="{'invisible': [('question_type','not in',('binary','multi_binary', 'signature'))]}"
                 />
             </xpath>
         </field>

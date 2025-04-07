@@ -11,6 +11,7 @@ class SurveyUserInputLine(models.Model):
         selection_add=[
             ("binary", "Binary"),
             ("multi_binary", "Multi: Binary"),
+            ("signature", "Signature"),
         ]
     )
     answer_binary_ids = fields.One2many(
@@ -23,7 +24,7 @@ class SurveyUserInputLine(models.Model):
     def _check_answer_type_skipped(self):
         super_check = self
         for line in self:
-            if line.answer_type not in ("binary", "multi_binary"):
+            if line.answer_type not in ("binary", "multi_binary", "signature"):
                 continue
             super_check -= line
             field_name = "answer_binary_ids"
@@ -39,9 +40,10 @@ class SurveyUserInputLine(models.Model):
     def _check_binary_answer(self):
         for rec in self:
             if (
-                rec.question_id.question_type not in ("binary", "multi_binary")
+                rec.question_id.question_type
+                not in ("binary", "multi_binary", "signature")
                 or not rec.answer_type
-                or rec.answer_type not in ("binary", "multi_binary")
+                or rec.answer_type not in ("binary", "multi_binary", "signature")
             ):
                 continue
             for answer_binary in rec.answer_binary_ids:
@@ -72,4 +74,6 @@ class SurveyUserInputLine(models.Model):
                 line.display_name = line.answer_binary_ids.filename
             if line.answer_type == "multi_binary" and line.answer_binary_ids:
                 line.display_name = _("%s File(s)") % len(line.answer_binary_ids)
+            if line.answer_type == "signature" and line.answer_binary_ids:
+                line.display_name = line.answer_binary_ids.filename
         return True

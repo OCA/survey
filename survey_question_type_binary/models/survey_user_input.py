@@ -14,7 +14,7 @@ class SurveyUserInput(models.Model):
             ]
         )
 
-        if question.question_type in ("binary", "multi_binary"):
+        if question.question_type in ("binary", "multi_binary", "signature"):
             if not isinstance(answer, (list, tuple)):
                 answer = [answer]
             if not answer:
@@ -31,11 +31,14 @@ class SurveyUserInput(models.Model):
         vals = super(SurveyUserInput, self)._get_line_answer_values(
             question, answer, answer_type
         )
-        if answer_type in ("binary", "multi_binary") and answer:
+
+        if answer_type in ("binary", "multi_binary", "signature") and answer:
             if answer_type == "binary":
                 del vals["value_binary"]
-            else:
+            elif answer_type == "multi_binary":
                 del vals["value_multi_binary"]
+            elif answer_type == "signature":
+                del vals["value_signature"]
             if not isinstance(answer, (list, tuple)):
                 answer = [answer]
             answer_binary_datas = []
