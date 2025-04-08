@@ -16,7 +16,6 @@ class SurveyUserInputLine(models.Model):
     answer_binary_ids = fields.One2many(
         comodel_name="survey.user_input.line_binary",
         inverse_name="input_line_id",
-        readonly=True,
     )
 
     @api.constrains("skipped", "answer_type")
@@ -44,6 +43,11 @@ class SurveyUserInputLine(models.Model):
                 or rec.answer_type not in ("binary", "multi_binary")
             ):
                 continue
+
+            if rec.answer_type == "binary" and len(rec.answer_binary_ids) > 1:
+                raise ValidationError(
+                    _("Multiple files are not allowed in single file questions.")
+                )
             for answer_binary in rec.answer_binary_ids:
                 if (
                     rec.question_id.max_filesize
@@ -69,7 +73,7 @@ class SurveyUserInputLine(models.Model):
         super()._compute_display_name()
         for line in self:
             if line.answer_type == "binary" and line.answer_binary_ids:
-                line.display_name = line.answer_binary_ids.filename
+                line.display_name = line.answer_binary_ids[0].filename
             if line.answer_type == "multi_binary" and line.answer_binary_ids:
                 line.display_name = _("%s File(s)") % len(line.answer_binary_ids)
         return True

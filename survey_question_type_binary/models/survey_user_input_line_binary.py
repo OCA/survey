@@ -27,7 +27,6 @@ class SurveyUserInputLineBinary(models.Model):
     )
     value_binary = fields.Binary(
         required=True,
-        readonly=True,
     )
     filename = fields.Char(
         required=True,
@@ -52,10 +51,18 @@ class SurveyUserInputLineBinary(models.Model):
     @api.depends("value_binary")
     def _compute_binary_data(self):
         for input_line in self:
-            input_line.value_binary_type = guess_mimetype(
-                base64.b64decode(input_line.value_binary)
-            )
-            input_line.value_binary_size = (len(input_line.value_binary) * 3) / 4 - str(
-                input_line.value_binary
-            ).count("=", -2)
-            input_line.is_binary_image = input_line.value_binary_type in VALID_MIMETYPES
+            if not input_line.value_binary:
+                input_line.value_binary_type = ""
+                input_line.value_binary_size = 0
+                input_line.is_binary_image = False
+                input_line.filename = ""
+            else:
+                input_line.value_binary_type = guess_mimetype(
+                    base64.b64decode(input_line.value_binary)
+                )
+                input_line.value_binary_size = (
+                    len(input_line.value_binary) * 3
+                ) / 4 - str(input_line.value_binary).count("=", -2)
+                input_line.is_binary_image = (
+                    input_line.value_binary_type in VALID_MIMETYPES
+                )
