@@ -28,21 +28,23 @@ odoo.define("survey_question_type_binary", function (require) {
             });
             return promises;
         },
-        _getSubmitAnswersBinary: function (params, $input) {
-            const question_id = $input.attr("name");
-            return Array.prototype.map.call($input[0].files, (file) => {
-                return this._readFileAsDataURL(file).then(function (sDataURL) {
-                    if (!params[question_id]) {
-                        params[question_id] = [];
-                    }
-                    params[question_id].push({
-                        data: sDataURL.split(",")[1],
-                        filename: file.name,
-                        size: file.size,
-                        type: file.type,
-                    });
+        _filesArrayDataUrl: function (files, question_id, params) {
+            return Array.prototype.map.call(files, async (file) => {
+                const sDataURL = await this._readFileAsDataURL(file);
+                if (!params[question_id]) {
+                    params[question_id] = [];
+                }
+                params[question_id].push({
+                    data: sDataURL.split(",")[1],
+                    filename: file.name,
+                    size: file.size,
+                    type: file.type,
                 });
             });
+        },
+        _getSubmitAnswersBinary: function (params, $input) {
+            const question_id = $input.attr("name");
+            return this._filesArrayDataUrl($input[0].files, question_id, params);
         },
         _dataURLtoFile: function (dataurl, filename) {
             const arr = dataurl.split(",");
@@ -66,19 +68,7 @@ odoo.define("survey_question_type_binary", function (require) {
                 dataTransfer.items.add(file);
                 files = dataTransfer.files;
             }
-            return Array.prototype.map.call(files, (file) => {
-                return this._readFileAsDataURL(file).then(function (sDataURL) {
-                    if (!params[question_id]) {
-                        params[question_id] = [];
-                    }
-                    params[question_id].push({
-                        data: sDataURL.split(",")[1],
-                        filename: file.name,
-                        size: file.size,
-                        type: file.type,
-                    });
-                });
-            });
+            return this._filesArrayDataUrl(files, question_id, params);
         },
         _readFileAsDataURL: function (file) {
             return $.Deferred(function (deferred) {
