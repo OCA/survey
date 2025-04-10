@@ -126,6 +126,7 @@ Contributors
 
    -  David Vidal
    -  Stefan Ungureanu
+   -  Pilar Vargas
 
 Maintainers
 -----------
@@ -140,13 +141,13 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-.. |maintainer-chienandalu| image:: https://github.com/chienandalu.png?size=40px
-    :target: https://github.com/chienandalu
-    :alt: chienandalu
+.. |maintainer-pilarvargas-tecnativa| image:: https://github.com/pilarvargas-tecnativa.png?size=40px
+    :target: https://github.com/pilarvargas-tecnativa
+    :alt: pilarvargas-tecnativa
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-chienandalu| 
+|maintainer-pilarvargas-tecnativa| 
 
 This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/17.0/survey_sale_generation>`_ project on GitHub.
 
