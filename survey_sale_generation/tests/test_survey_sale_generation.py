@@ -29,6 +29,7 @@ class SurveySaleGenerationCase(SurveyCase, HttpCase):
             f"/survey/start/{self.survey.access_token}",
             "test_survey_sale_generation",
             login="portal",
+            step_delay=1000,
         )
         self.user_input = self.survey.user_input_ids - initial_user_inputs
         self.generated_sale = self.user_input.sale_order_id

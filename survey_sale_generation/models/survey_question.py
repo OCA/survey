@@ -24,6 +24,7 @@ class SurveyQuestion(models.Model):
         comodel_name="ir.model.fields",
         domain="[('id', 'in', allowed_sale_order_field_ids)]",
     )
+    generate_quotations = fields.Boolean(related="survey_id.generate_quotations")
 
     @api.depends("question_type")
     def _compute_allowed_sale_order_field_ids(self):
