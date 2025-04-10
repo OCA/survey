@@ -17,13 +17,13 @@ Survey sale generation
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsurvey-lightgray.png?logo=github
-    :target: https://github.com/OCA/survey/tree/15.0/survey_sale_generation
+    :target: https://github.com/OCA/survey/tree/17.0/survey_sale_generation
     :alt: OCA/survey
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/survey-15-0/survey-15-0-survey_sale_generation
+    :target: https://translation.odoo-community.org/projects/survey-17-0/survey-17-0-survey_sale_generation
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=15.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -40,58 +40,66 @@ Configuration
 
 You can configure either a new or an existing survey.
 
-#. Go to *Surveys* and choose an existing one or create it.
-#. In the *Options* tab, *Sales* group, set *Generate Quotations* on.
-#. You can set your preferred sales team for the generated quotations.
+1. Go to *Surveys* and choose an existing one or create it.
+2. In the *Options* tab, *Sales* group, set *Generate Quotations* on.
+3. You can set your preferred sales team for the generated quotations.
 
 Now you'll have to configure the products linked to the questions.
 
 For *Numerical value* questions:
 
-#. In the *Answers* tab choose the linked products.
-#. The resulting quotation will have as many items of that products as the user defines.
+1. In the *Answers* tab choose the linked products.
+2. The resulting quotation will have as many items of that products as
+   the user defines.
 
 For *Multiple choice: only one answer*:
 
-#. In the *Answers* tab link multiple products to every given choice.
-#. The resulting quotation will have the products linked to the survey user's choice.
+1. In the *Answers* tab link multiple products to every given choice.
+2. The resulting quotation will have the products linked to the survey
+   user's choice.
 
 For *Multiple choice: multiple answers allowed*:
 
-#. In the *Answers* tab link products to every given choice.
-#. The resulting quotation will have the products linked to the survey user's choices.
-#. By default a unit of product will be added per answer to the quotation. If you want
-   to set a variable choice, you can link a numeric question that will act as multiplier.
+1. In the *Answers* tab link products to every given choice.
+2. The resulting quotation will have the products linked to the survey
+   user's choices.
+3. By default a unit of product will be added per answer to the
+   quotation. If you want to set a variable choice, you can link a
+   numeric question that will act as multiplier.
 
-When the survey is submited an internal message is generated in the resulting quotation
-with a link to the user answers. Optionally, you can configure some of the questions so
-their input values are shown in such message. This way it can be easier to track some
-relevant infos concerning the request. To do so:
+When the survey is submited an internal message is generated in the
+resulting quotation with a link to the user answers. Optionally, you can
+configure some of the questions so their input values are shown in such
+message. This way it can be easier to track some relevant infos
+concerning the request. To do so:
 
-#. In the *Options* tab of the questions go to the *Sales* section.
-#. Set *Show in sale order comment* on if you want those answers on the internal
-   notification.
+1. In the *Options* tab of the questions go to the *Sales* section.
+2. Set *Show in sale order comment* on if you want those answers on the
+   internal notification.
 
-If you want the generated quotation to use a quotation template you can either:
+If you want the generated quotation to use a quotation template you can
+either:
 
-- Choose it from the general survey options: *Sale Order Template*.
-- In a single answer question, choose set the quotation depending on the answer.
+-  Choose it from the general survey options: *Sale Order Template*.
+-  In a single answer question, choose set the quotation depending on
+   the answer.
 
 The answer value will prevail over the general option.
 
-You can also configure the survey to send the quotation to the customer by mail. When doing
-so, you can choose a mail template or use the default one.
+You can also configure the survey to send the quotation to the customer
+by mail. When doing so, you can choose a mail template or use the
+default one.
 
 If you want to fill sale fields from the answers:
 
-#. In the *Options* tab of the questions go to the *Sales* section.
-#. Set *Sale the sale field* you want to fill with the given answer.
+1. In the *Options* tab of the questions go to the *Sales* section.
+2. Set *Sale the sale field* you want to fill with the given answer.
 
 Usage
 =====
 
-Once the survey is configured, the users can fill them up as usual. The quotations will
-be generated according to the survey users' choices.
+Once the survey is configured, the users can fill them up as usual. The
+quotations will be generated according to the survey users' choices.
 
 Bug Tracker
 ===========
@@ -99,7 +107,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/survey/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_sale_generation%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_sale_generation%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -107,20 +115,20 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`_
+-  `Tecnativa <https://www.tecnativa.com>`__
 
-  * David Vidal
-  * Stefan Ungureanu
+   -  David Vidal
+   -  Stefan Ungureanu
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -140,6 +148,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-chienandalu| 
 
-This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/15.0/survey_sale_generation>`_ project on GitHub.
+This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/17.0/survey_sale_generation>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
