@@ -7,7 +7,8 @@
             <field name="client_order_ref" position="after">
                 <field
                     name="survey_user_input_id"
-                    attrs="{'invisible': [('survey_user_input_id', '=', False)]}"
+                    invisible="not survey_user_input_id"
+                    readonly="1"
                 />
             </field>
         </field>

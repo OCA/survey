@@ -7,7 +7,8 @@
             <field name="partner_id" position="before">
                 <field
                     name="sale_order_id"
-                    attrs="{'invisible': [('sale_order_id', '=', False)]}"
+                    invisible="not sale_order_id"
+                    readonly="1"
                 />
             </field>
         </field>

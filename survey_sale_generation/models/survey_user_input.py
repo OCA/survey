@@ -1,5 +1,7 @@
 # Copyright 2022 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+from markupsafe import Markup
+
 from odoo import SUPERUSER_ID, Command, _, fields, models
 
 
@@ -83,21 +85,25 @@ class SurveyUserInput(models.Model):
             "This order has been created from this survey input: "
             "<a href=# data-oe-model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
         ) % {"id": self.id, "title": self.survey_id.title}
+
         additional_comment = self._prepare_quotation_comment()
         if additional_comment:
             message += (
                 f"<p>{_('Relevant answer informations:')}</p>"
-                f"<p>{additional_comment}</p>"
+                f"<ul>{additional_comment}</ul>"
             )
-        # Avoid sending the message as a public user
-        sale_sudo.with_user(SUPERUSER_ID).message_post(body=message)
+        sale_sudo.with_user(SUPERUSER_ID).message_post(
+            body=Markup(message),
+            message_type="comment",
+            subtype_xmlid="mail.mt_note",
+        )
         if self.survey_id.send_quotation_to_customer:
             email_act = sale_sudo.with_user(SUPERUSER_ID).action_quotation_send()
             email_ctx = email_act.get("context", {})
-            template = self.survey_id.quotation_mail_template_id.id or email_ctx.get(
-                "default_template_id"
-            )
-            sale_sudo.with_context(**email_ctx).message_post_with_template(template)
+            template = self.survey_id.quotation_mail_template_id or self.env[
+                "mail.template"
+            ].browse(email_ctx.get("default_template_id"))
+            sale_sudo.with_context(**email_ctx).message_post_with_source(template)
 
     def _mark_done(self):
         """Generate the sale order when the survey is submitted"""
@@ -120,7 +126,7 @@ class SurveyUserInput(models.Model):
         )
         # Trigger the template default in advance or we could loose our lines
         if self.sale_order_id.sale_order_template_id:
-            self.sale_order_id.onchange_sale_order_template_id()
+            self.sale_order_id._onchange_sale_order_template_id()
         quotable_lines_pairs = []
         # We can set multiple products, so for each one a sale line is created
         for input_line in quotable_lines:

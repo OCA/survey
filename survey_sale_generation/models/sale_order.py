@@ -6,4 +6,4 @@ from odoo import fields, models
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    survey_user_input_id = fields.Many2one(comodel_name="survey.user_input")
+    survey_user_input_id = fields.Many2one(comodel_name="survey.user_input", copy=False)
