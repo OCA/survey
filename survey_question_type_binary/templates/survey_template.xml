@@ -58,6 +58,8 @@
                     type="button"
                     class="btn btn-outline-primary"
                     t-if="question.question_type == 'signature'"
+                    t-att-data-participant-name="answer.partner_id.name if answer.partner_id else False"
+                    t-att-data-participant-id="answer.partner_id.id if answer.partner_id else False"
                 >Sign</button>
                 <img
                     id="survey_signature_img_id"
