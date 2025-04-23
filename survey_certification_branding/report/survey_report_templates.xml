@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="certification_report_view_modern"
+        inherit_id="survey.certification_report_view_modern"
+        priority="109"
+    >
+        <xpath
+            expr="//span[@t-field='user_input.env.company.display_name']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not user_input.survey_id.certification_company_name</attribute>
+        </xpath>
+        <xpath
+            expr="//span[@t-field='user_input.env.company.display_name']"
+            position="after"
+        >
+            <t t-else="">
+                <span
+                    class="certification-company"
+                    t-field="user_input.survey_id.certification_company_name"
+                />
+            </t>
+        </xpath>
+
+        <xpath
+            expr="//span[@t-field='user_input.env.company.logo']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not user_input.survey_id.certification_logo_512</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='user_input.env.company.logo']" position="after">
+            <t t-else="">
+                <span
+                    class="certification-company-logo"
+                    t-field="user_input.survey_id.certification_logo_512"
+                    t-options="{'widget': 'image'}"
+                    role="img"
+                />
+            </t>
+        </xpath>
+    </template>
+
+    <template
+        id="certification_report_view_classic"
+        inherit_id="survey.certification_report_view_classic"
+        priority="109"
+    >
+        <xpath
+            expr="//span[@t-field='user_input.env.company.display_name']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not user_input.survey_id.certification_company_name</attribute>
+        </xpath>
+        <xpath
+            expr="//span[@t-field='user_input.env.company.display_name']"
+            position="after"
+        >
+            <t t-else="">
+                <span
+                    class="certification-company"
+                    t-field="user_input.survey_id.certification_company_name"
+                />
+            </t>
+        </xpath>
+
+        <xpath
+            expr="//span[@t-field='user_input.env.company.logo']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not user_input.survey_id.certification_logo_512</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='user_input.env.company.logo']" position="after">
+            <t t-else="">
+                <span
+                    class="certification-company-logo"
+                    t-field="user_input.survey_id.certification_logo_512"
+                    t-options="{'widget': 'image'}"
+                    role="img"
+                />
+            </t>
+        </xpath>
+
+    </template>
+
+
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Binhex
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="survey_survey_view_form">
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <page name="options" position="inside">
+                <group
+                    name="certification_branding"
+                    string="Certification Branding"
+                    attrs="{'invisible': [('certification', '=', False)]}"
+                >
+                        <group>
+                        <field
+                            name="certification_company_name"
+                            string="Company Name"
+                        />
+                        </group>
+                        <group>
+                        <field
+                            name="certification_logo_512"
+                            widget="image"
+                            string="Logo"
+                            class="oe_avatar float-start"
+                        />
+                        </group>
+                </group>
+            </page>
+        </field>
+    </record>
+
+
+
+</odoo>

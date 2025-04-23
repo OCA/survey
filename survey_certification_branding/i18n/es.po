@@ -1,0 +1,60 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_certification_branding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-24 01:39+0000\n"
+"PO-Revision-Date: 2025-04-24 01:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_certification_branding
+#: model:ir.model.fields,field_description:survey_certification_branding.field_survey_survey__certification_company_name
+msgid "Certification - Company Name"
+msgstr "Certificación - Nombre de la Empresa"
+
+#. module: survey_certification_branding
+#: model:ir.model.fields,field_description:survey_certification_branding.field_survey_survey__certification_logo_512
+msgid "Certification - Logo"
+msgstr "Certificación - Logotipo"
+
+#. module: survey_certification_branding
+#: model_terms:ir.ui.view,arch_db:survey_certification_branding.survey_survey_view_form
+msgid "Certification Branding"
+msgstr "Personalización de Certificado"
+
+#. module: survey_certification_branding
+#: model_terms:ir.ui.view,arch_db:survey_certification_branding.survey_survey_view_form
+msgid "Company Name"
+msgstr "Nombre de la Empresa"
+
+#. module: survey_certification_branding
+#: model:ir.model.fields,help:survey_certification_branding.field_survey_survey__certification_company_name
+msgid ""
+"Company name to be used in the certification report. If left blank, the "
+"company name will be used."
+msgstr "Nombre de la empresa que se utilizará en el informe de certificación. Si se deja en blanco, se utilizará el nombre de la empresa."
+
+#. module: survey_certification_branding
+#: model_terms:ir.ui.view,arch_db:survey_certification_branding.survey_survey_view_form
+msgid "Logo"
+msgstr "Logotipo"
+
+#. module: survey_certification_branding
+#: model:ir.model.fields,help:survey_certification_branding.field_survey_survey__certification_logo_512
+msgid ""
+"Logo to be used in the certification report. It will be resized to a maximum"
+" of 512x512 pixels. If left blank, the company logo will be used."
+msgstr "Logotipo que se utilizará en el informe de certificación. Se redimensionará a un máximo de 512x512 píxeles. Si se deja en blanco, se utilizará el logotipo de la empresa."
+
+#. module: survey_certification_branding
+#: model:ir.model,name:survey_certification_branding.model_survey_survey
+msgid "Survey"
+msgstr "Encuesta"
