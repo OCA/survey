@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -121,11 +121,6 @@ msgid "Is Binary Image"
 msgstr ""
 
 #. module: survey_question_type_binary
-#: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -180,6 +175,7 @@ msgstr ""
 
 #. module: survey_question_type_binary
 #: model:ir.model,name:survey_question_type_binary.model_survey_user_input_line_binary
+#: model_terms:ir.ui.view,arch_db:survey_question_type_binary.view_survey_user_input_line_binary_form
 msgid "Survey User Input Line Binary"
 msgstr ""
 
