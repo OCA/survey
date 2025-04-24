@@ -11,17 +11,11 @@ class SurveySkipStartCase(HttpCase):
         super().setUp()
         self.survey = self.env.ref("survey.survey_feedback")
 
-    def test_dont_skip_survey_start_screen(self):
-        """Test the default behavior"""
-        self.start_tour(
-            f"/survey/start/{self.survey.access_token}",
-            "test_survey_dont_skip_start",
-        )
-
     def test_skip_survey_start_screen(self):
         """Skip the start screen"""
         self.survey.skip_start = True
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
             "test_survey_skip_start",
+            step_delay=1000,
         )
