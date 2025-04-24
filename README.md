@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 17.0.1.0.0 |  | Link partners with their survey results
 [survey_partner_representative](survey_partner_representative/) | 17.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Fill the survey on behalf of others
+[survey_question_type_binary](survey_question_type_binary/) | 17.0.1.0.0 |  | This module add binary field as question type for survey page
 [survey_result_mail](survey_result_mail/) | 17.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Send survey answers to the survey user
 
 [//]: # (end addons)
