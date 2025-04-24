@@ -1,37 +1,15 @@
-/** @odoo-module */
+/** @odoo-module **/
 
-import tour from "web_tour.tour";
+import {registry} from "@web/core/registry";
 
-tour.register(
-    "test_survey_dont_skip_start",
-    {
-        test: true,
-        url: "/survey/start/b135640d-14d4-4748-9ef6-344ca256531e",
-    },
-    [
+registry.category("web_tour.tours").add("test_survey_skip_start", {
+    test: true,
+    url: "/survey/start/b135640d-14d4-4748-9ef6-344ca256531e",
+    steps: () => [
         {
-            content: "Click on Start",
-            trigger: "button.btn:contains('Start Survey')",
-        },
-        {
-            content: "And then we fill in the survey...",
-            trigger: "div.js_question-wrapper:contains('Where do you live') input",
+            content: "Answer Where do you live",
+            trigger: 'div.js_question-wrapper:contains("Where do you live") input',
             run: "text Spain",
         },
-    ]
-);
-
-tour.register(
-    "test_survey_skip_start",
-    {
-        test: true,
-        url: "/survey/start/b135640d-14d4-4748-9ef6-344ca256531e",
-    },
-    [
-        {
-            content: "We dive right into the survey form...",
-            trigger: "div.js_question-wrapper:contains('Where do you live') input",
-            run: "text Spain",
-        },
-    ]
-);
+    ],
+});
