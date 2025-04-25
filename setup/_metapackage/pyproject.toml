@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-survey"
-version = "17.0.20250425.2"
+version = "17.0.20250425.3"
 dependencies = [
     "odoo-addon-partner_survey>=17.0dev,<17.1dev",
     "odoo-addon-survey_contact_generation>=17.0dev,<17.1dev",
@@ -9,6 +9,7 @@ dependencies = [
     "odoo-addon-survey_question_type_binary>=17.0dev,<17.1dev",
     "odoo-addon-survey_result_mail>=17.0dev,<17.1dev",
     "odoo-addon-survey_sale_generation>=17.0dev,<17.1dev",
+    "odoo-addon-survey_skip_start>=17.0dev,<17.1dev",
 ]
 classifiers=[
     "Programming Language :: Python",

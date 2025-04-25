@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [survey_question_type_binary](survey_question_type_binary/) | 17.0.1.0.0 |  | This module add binary field as question type for survey page
 [survey_result_mail](survey_result_mail/) | 17.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Send survey answers to the survey user
 [survey_sale_generation](survey_sale_generation/) | 17.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Generate sale orders from surveys
+[survey_skip_start](survey_skip_start/) | 17.0.1.0.1 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Skip the surveys start screen and go directly to fill the form
 
 [//]: # (end addons)
 
