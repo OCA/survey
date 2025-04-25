@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_order_form">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="client_order_ref" position="after">
+                <field
+                    name="survey_user_input_id"
+                    invisible="not survey_user_input_id"
+                    readonly="1"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
