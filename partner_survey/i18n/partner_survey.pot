@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -35,6 +35,7 @@ msgstr ""
 
 #. module: partner_survey
 #: model:ir.model,name:partner_survey.model_res_partner
+#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
 msgid "Contact"
 msgstr ""
 
@@ -48,11 +49,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_invisible
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_invisible
 msgid "Hide surveys link on partner if needed"
-msgstr ""
-
-#. module: partner_survey
-#: model:ir.model.fields,field_description:partner_survey.field_survey_user_input_line__partner_id
-msgid "Partner"
 msgstr ""
 
 #. module: partner_survey
