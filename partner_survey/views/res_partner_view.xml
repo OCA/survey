@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_action_surveys" model="ir.actions.act_window">
+        <field name="name">Surveys</field>
+        <field name="res_model">survey.user_input</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Partner Form with survey answers</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="surveys_invisible" invisible="1" />
+                <field name="surveys_company_invisible" invisible="1" />
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    icon="fa-list-alt"
+                    name="action_view_surveys"
+                    attrs="{'invisible': ['|', '|', ('surveys_count', '=', 0), ('is_company', '=', True), ('surveys_invisible', '=', True)]}"
+                >
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="surveys_count" />
+                        </span>
+                        <span
+                            class="o_stat_text"
+                            attrs="{'invisible': [('surveys_count', '&lt;', 2)]}"
+                        >Surveys</span>
+                        <span
+                            class="o_stat_text"
+                            attrs="{'invisible': [('surveys_count', '&gt;', 1)]}"
+                        >Survey</span>
+                    </div>
+                </button>
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    icon="fa-list-alt"
+                    name="action_view_surveys"
+                    attrs="{'invisible': ['|', '|', ('surveys_company_count', '=', 0), ('is_company', '=', False), ('surveys_company_invisible', '=', True)]}"
+                >
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="surveys_company_count" />
+                        </span>
+                        <span
+                            class="o_stat_text"
+                            attrs="{'invisible': [('surveys_company_count', '&lt;', 2)]}"
+                        >Surveys</span>
+                        <span
+                            class="o_stat_text"
+                            attrs="{'invisible': [('surveys_company_count', '&gt;', 1)]}"
+                        >Survey</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
