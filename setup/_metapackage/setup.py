@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-partner_survey>=15.0dev,<15.1dev',
         'odoo-addon-survey_answer_generation>=15.0dev,<15.1dev',
+        'odoo-addon-survey_certification_sending>=15.0dev,<15.1dev',
         'odoo-addon-survey_contact_generation>=15.0dev,<15.1dev',
         'odoo-addon-survey_crm_generation>=15.0dev,<15.1dev',
         'odoo-addon-survey_crm_sale_generation>=15.0dev,<15.1dev',
