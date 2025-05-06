@@ -2,15 +2,15 @@
 /* Copyright 2022 Tecnativa - David Vidal
    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 */
-import SurveyFormWidget from "survey.form";
-import {_t} from "web.core";
+import SurveyFormWidget from "@survey/js/survey_form";
+import {_t} from "@web/core/l10n/translation";
 
 SurveyFormWidget.include({
     /**
      * Validate legal terms acceptance if present
      *
      * @override
-     * @param {JQuery} [$form] the survey form
+     * * @param {JQuery} [$form] the survey form
      * @returns {Boolean}
      */
     _validateForm: function ($form) {
