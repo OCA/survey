@@ -5,10 +5,7 @@
         <field name="inherit_id" ref="survey.survey_user_input_view_form" />
         <field name="arch" type="xml">
             <field name="user_input_line_ids" position="after">
-                <group
-                    name="metadata"
-                    attrs="{'invisible': [('user_metadata', '=', False)]}"
-                >
+                <group name="metadata" invisible="not user_metadata">
                     <field name="user_metadata" />
                 </group>
             </field>
