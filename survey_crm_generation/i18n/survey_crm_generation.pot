@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: survey_crm_generation
-#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_ids
-msgid "Allowed Crm Lead Field"
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_field_domain
+msgid "Allowed Field Domain"
 msgstr ""
 
 #. module: survey_crm_generation
@@ -24,7 +24,7 @@ msgid "And your name?"
 msgstr ""
 
 #. module: survey_crm_generation
-#: model:survey.survey,description:survey_crm_generation.become_partner
+#: model_terms:survey.survey,description:survey_crm_generation.become_partner
 msgid "Be part of the Odoo Community!"
 msgstr ""
 
@@ -67,13 +67,6 @@ msgstr ""
 #. module: survey_crm_generation
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__generate_leads
 msgid "Generate leads/opportunities linked to the generated quotations"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q0
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q1
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q3
-msgid "If other, please specify:"
 msgstr ""
 
 #. module: survey_crm_generation
@@ -141,22 +134,6 @@ msgstr ""
 #. module: survey_crm_generation
 #: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug1
 msgid "TV"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q0
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q1
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q3
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q4
-msgid "The answer you entered is not valid."
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q0
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q1
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q3
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q4
-msgid "This question requires an answer."
 msgstr ""
 
 #. module: survey_crm_generation

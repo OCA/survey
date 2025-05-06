@@ -34,12 +34,26 @@ registry.category("web_tour.tours").add("test_survey_crm_generation", {
             run: "text Tecnativa",
         },
         {
+            content: "Continue",
+            trigger: "button.btn.btn-primary[type='submit']",
+        },
+        {
+            content: "Referenced by",
+            trigger:
+                "div.js_question-wrapper:contains('Referenced by') span:contains('Other:')",
+        },
+        {
+            content: "Referenced by: other",
+            trigger: "div.js_question-wrapper:contains('Referenced by') textarea",
+            run: "text Mr. Odoo",
+        },
+        {
             content: "Click Submit",
             trigger: "button[value='finish']",
         },
         {
             content: "Thank you",
-            trigger: "h1:contains('Thank you!')",
+            trigger: "div.o_survey_finished",
         },
     ],
 });
