@@ -8,20 +8,16 @@ class SurveyQuestion(models.Model):
 
     show_in_lead_description = fields.Boolean()
     # Save into model fields
-    allowed_crm_lead_field_ids = fields.Many2many(
-        comodel_name="ir.model.fields",
-        compute="_compute_allowed_crm_lead_field_ids",
+    allowed_field_domain = fields.Binary(
+        compute="_compute_allowed_field_domain",
     )
-    crm_lead_field = fields.Many2one(
-        comodel_name="ir.model.fields",
-        domain="[('id', 'in', allowed_crm_lead_field_ids)]",
-    )
+    crm_lead_field = fields.Many2one(comodel_name="ir.model.fields")
 
     @api.depends("question_type")
-    def _compute_allowed_crm_lead_field_ids(self):
+    def _compute_allowed_field_domain(self):
         type_mapping = {
             "char_box": ["char", "text"],
-            "text_box": ["html", "text"],
+            "text_box": ["html", "text", "char"],
             "numerical_box": ["integer", "float", "html", "char"],
             "date": ["date", "text", "char"],
             "datetime": ["datetime", "html", "char"],
@@ -29,13 +25,11 @@ class SurveyQuestion(models.Model):
             "multiple_choice": ["html", "char"],
         }
         for record in self:
-            record.allowed_crm_lead_field_ids = (
-                self.env["ir.model.fields"]
-                .search(
-                    [
-                        ("model", "=", "crm.lead"),
-                        ("ttype", "in", type_mapping.get(record.question_type, [])),
-                    ]
-                )
-                .ids
-            )
+            allowed_types = type_mapping.get(record.question_type, [])
+            domain = [
+                ("model", "=", "crm.lead"),
+                ("ttype", "in", allowed_types),
+                ("store", "=", True),
+                ("readonly", "=", False),
+            ]
+            record.allowed_field_domain = domain

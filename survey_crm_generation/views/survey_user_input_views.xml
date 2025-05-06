@@ -5,7 +5,11 @@
         <field name="inherit_id" ref="survey.survey_user_input_view_form" />
         <field name="arch" type="xml">
             <field name="partner_id" position="before">
-                <field name="opportunity_id" invisible="not opportunity_id" />
+                <field
+                    name="opportunity_id"
+                    invisible="not opportunity_id"
+                    readonly="1"
+                />
             </field>
         </field>
     </record>

@@ -8,6 +8,7 @@
                 <field
                     name="survey_user_input_id"
                     invisible="not survey_user_input_id"
+                    readonly="1"
                 />
             </xpath>
         </field>
