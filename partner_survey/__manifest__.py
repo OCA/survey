@@ -7,7 +7,11 @@
     "category": "Marketing",
     "version": "16.0.1.0.0",
     "depends": ["contacts", "survey"],
-    "data": ["views/res_partner_view.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "wizard/take_survey.xml",
+        "views/res_partner_view.xml",
+    ],
     "author": "Tecnativa, Camptocamp, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
     "license": "AGPL-3",
