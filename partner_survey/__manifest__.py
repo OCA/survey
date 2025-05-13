@@ -5,7 +5,7 @@
     "name": "Partner Survey",
     "summary": "Link partners with their survey results",
     "category": "Marketing",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "depends": ["contacts", "survey"],
     "data": [
         "security/ir.model.access.csv",
