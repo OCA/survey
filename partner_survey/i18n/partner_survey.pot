@@ -28,6 +28,11 @@ msgid ""
 msgstr ""
 
 #. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.res_partner_survey_survey_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_count
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_count
 msgid "Company Surveys Count"
@@ -40,6 +45,26 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.res_partner_survey_survey_wizard
+msgid "Grant Badge To"
+msgstr ""
+
+#. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_invisible
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_invisible
 msgid "Hide surveys link on partner contact if needed"
@@ -49,6 +74,65 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_invisible
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__surveys_company_invisible
 msgid "Hide surveys link on partner if needed"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
+msgid ""
+"Open a wizard showing available surveys to choose from which one to take"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__partner_ids
+msgid "Partner"
+msgstr ""
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.res_partner_survey_survey_wizard
+msgid "Select a survey for this partner"
+msgstr ""
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.res_partner_survey_survey_wizard
+msgid "Send Survey Link to Partner"
+msgstr ""
+
+#. module: partner_survey
+#. odoo-python
+#: code:addons/partner_survey/wizard/take_survey.py:0
+#: model:ir.actions.act_window,name:partner_survey.action_res_partner_survey_survey_wizard
+#, python-format
+msgid "Share a Survey"
+msgstr ""
+
+#. module: partner_survey
+#: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
+msgid "Share a survey"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model.fields,field_description:partner_survey.field_res_partner_survey_survey_wizard__survey_id
+msgid "Survey"
 msgstr ""
 
 #. module: partner_survey
@@ -73,4 +157,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__survey_input_lines
 #: model:ir.model.fields,field_description:partner_survey.field_res_users__survey_input_lines
 msgid "Surveys answers"
+msgstr ""
+
+#. module: partner_survey
+#: model:ir.model,name:partner_survey.model_res_partner_survey_survey_wizard
+msgid "res.partner.survey.survey.wizard"
 msgstr ""
