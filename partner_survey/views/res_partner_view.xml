@@ -57,6 +57,17 @@
                     </div>
                 </button>
             </xpath>
+            <xpath expr="//div" position="before">
+                <header>
+                    <button
+                        name="%(action_res_partner_survey_survey_wizard)d"
+                        type="action"
+                        string="Share a survey"
+                        class="d-none d-sm-block"
+                        help="Open a wizard showing available surveys to choose from which one to take"
+                    />
+                </header>
+            </xpath>
         </field>
     </record>
 </odoo>

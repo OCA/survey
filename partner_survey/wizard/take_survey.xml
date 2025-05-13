@@ -1,0 +1,39 @@
+<odoo>
+    <record id="res_partner_survey_survey_wizard" model="ir.ui.view">
+        <field name="name">res.partner.survey.survey.wizard.form</field>
+        <field name="model">res.partner.survey.survey.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Grant Badge To">
+                Select a survey for this partner
+                <field name="partner_ids" readonly="1" widget="many2many_tags" />
+                <group>
+                    <field name="survey_id" nolabel="1" colspan="2" />
+                </group>
+                <footer>
+                    <button
+                        string="Send Survey Link to Partner"
+                        type="object"
+                        name="action_take_survey"
+                        class="btn-primary"
+                        data-hotkey="q"
+                    />
+                    <button
+                        string="Cancel"
+                        special="cancel"
+                        data-hotkey="z"
+                        class="btn-secondary"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_res_partner_survey_survey_wizard" model="ir.actions.act_window">
+        <field name="name">Share a Survey</field>
+        <field name="res_model">res.partner.survey.survey.wizard</field>
+        <field name="target">new</field>
+        <field name="context">{'default_partner_ids': active_ids}</field>
+         <field name="view_id" ref="res_partner_survey_survey_wizard" />
+        <field name="binding_model_id" ref="base.model_res_partner" />
+    </record>
+</odoo>
