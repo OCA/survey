@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='comments_allowed']/.." position="after">
+                <group name="crm" string="CRM">
+                    <field
+                        name="show_in_lead_description"
+                        invisible="question_type in ['matrix', 'simple_choice', 'multiple_choice']"
+                    />
+                    <field name="allowed_field_domain" invisible="1" />
+                    <field
+                        name="crm_lead_field"
+                        options="{'no_create': True, 'no_open': True}"
+                        domain="allowed_field_domain"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

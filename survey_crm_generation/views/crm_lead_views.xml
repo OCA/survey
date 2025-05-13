@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="crm_lead_view_form" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='Misc']/field[@name='team_id']" position="after">
+                <field
+                    name="survey_user_input_id"
+                    invisible="not survey_user_input_id"
+                    readonly="1"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
