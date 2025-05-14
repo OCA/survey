@@ -12,7 +12,8 @@ class SurveyUserInput(models.Model):
 
     def _mark_done(self):
         for user_input in self:
-            # The response is marked as sent in anticipation that it will be sent safely.
+            # The response is marked as sent in anticipation that it will be sent
+            # safely.
             if (
                 user_input.survey_id.certification
                 and user_input.scoring_success
@@ -43,7 +44,7 @@ class SurveyUserInput(models.Model):
                 template = user_input.survey_id.certification_mail_template_id
                 if template:
                     template.send_mail(
-                        user_input.id, notif_layout="mail.mail_notification_light"
+                        user_input.id, email_layout_xmlid="mail.mail_notification_light"
                     )
                     user_input.certification_sent = True
                     sent_count += 1
