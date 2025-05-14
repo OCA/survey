@@ -12,7 +12,7 @@ class MailTemplate(models.Model):
         force_send=False,
         raise_exception=False,
         email_values=None,
-        notif_layout=False,
+        email_layout_xmlid=False,
     ):
         if self.model == "survey.user_input":
             skip_ids = self.env.context.get("skip_certification_email_ids", [])
@@ -20,5 +20,5 @@ class MailTemplate(models.Model):
             if survey.id in skip_ids:
                 return False
         return super().send_mail(
-            res_id, force_send, raise_exception, email_values, notif_layout
+            res_id, force_send, raise_exception, email_values, email_layout_xmlid
         )
