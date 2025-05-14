@@ -8,7 +8,7 @@
                 <field
                     name="certification_sent"
                     readonly="1"
-                    attrs="{'invisible': [('scoring_type', '=', 'no_scoring')]}"
+                    invisible="scoring_type == 'no_scoring'"
                 />
             </field>
         </field>
