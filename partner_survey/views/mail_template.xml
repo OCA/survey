@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="email_template_form" model="ir.ui.view">
+        <field name="name">mail.template.default.share</field>
+        <field name="model">mail.template</field>
+        <field name="inherit_id" ref="mail.email_template_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='email_settings']/group" position="inside">
+                <field name="model_name" invisible="1" />
+                <field
+                    name="set_default_for_share"
+                    force_save="1"
+                    attrs="{'invisible': [('model_name', '!=', 'survey.user_input')]}"
+                />
+                <field
+                    name="survey_id"
+                    attrs="{'invisible': [('model_name', '!=', 'survey.user_input')]}"
+                />
+                <field name="state_ids" widget="many2many_tags" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

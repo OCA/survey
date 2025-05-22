@@ -6,10 +6,11 @@
     "summary": "Link partners with their survey results",
     "category": "Marketing",
     "version": "16.0.1.1.0",
-    "depends": ["contacts", "survey"],
+    "depends": ["contacts", "survey", "mail"],
     "data": [
         "security/ir.model.access.csv",
         "wizard/take_survey.xml",
+        "views/mail_template.xml",
         "views/res_partner_view.xml",
     ],
     "author": "Tecnativa, Camptocamp, Odoo Community Association (OCA)",

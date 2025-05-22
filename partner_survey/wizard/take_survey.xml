@@ -7,7 +7,10 @@
                 Select a survey for this partner
                 <field name="partner_ids" readonly="1" widget="many2many_tags" />
                 <group>
-                    <field name="survey_id" nolabel="1" colspan="2" />
+                    <field name="survey_id" />
+                </group>
+                <group attrs="{'invisible': [('survey_id', '=', False)]}">
+                    <field name="state_id" />
                 </group>
                 <footer>
                     <button
