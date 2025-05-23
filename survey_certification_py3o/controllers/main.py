@@ -1,6 +1,5 @@
 # Copyright 2025 Tecnativa - Pilar Vargas
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import SUPERUSER_ID
 from odoo.http import content_disposition, request
 
 from odoo.addons.survey.controllers.main import Survey
@@ -11,9 +10,13 @@ class Survey(Survey):
         if not user_input.py3o_template_id:
             return super()._generate_report(user_input, download=download)
         report = (
-            request.env.ref("survey_certification_py3o.custom_certification_report")
-            .with_user(SUPERUSER_ID)
-            ._render_py3o([user_input.id], data={"report_type": "pdf"})[0]
+            request.env["ir.actions.report"]
+            .sudo()
+            ._render_py3o(
+                "survey_certification_py3o.custom_certification_report",
+                [user_input.id],
+                data={"report_type": "pdf"},
+            )[0]
         )
         report_content_disposition = content_disposition("Certification.pdf")
         if not download:
