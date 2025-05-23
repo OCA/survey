@@ -1,8 +1,32 @@
+import io
+import os
+import zipfile
+from base64 import b64encode
+
+from odoo.tools import misc
+
 from odoo.addons.survey.tests.common import TestSurveyCommon
 
 
 class TestCertificationPy3o(TestSurveyCommon):
     def test_certification_py3o(self):
+        demo_odt_path = misc.file_path(
+            "survey_certification_py3o/demo/demo_report_certification.odt"
+        )
+        self.assertTrue(os.path.isfile(demo_odt_path))
+        with open(demo_odt_path, "rb") as f:
+            odt_data = f.read()
+            try:
+                zipfile.ZipFile(io.BytesIO(odt_data)).testzip()
+            except zipfile.BadZipFile:
+                self.fail("The .odt file is invalid (not a correct ZIP file).")
+        py3o_template = self.env["py3o.template"].create(
+            {
+                "name": "Demo Report Certification Template",
+                "py3o_template_data": b64encode(odt_data),
+                "filetype": "odt",
+            }
+        )
         test_certification = self.env["survey.survey"].create(
             {
                 "title": "Test Certification py3o",
@@ -18,6 +42,7 @@ class TestCertificationPy3o(TestSurveyCommon):
                 ).id,
                 "is_time_limited": True,
                 "time_limit": 10,
+                "py3o_template_id": py3o_template.id,
             }
         )
         q_01 = self._add_question(
@@ -55,3 +80,17 @@ class TestCertificationPy3o(TestSurveyCommon):
         self._add_answer_line(q_02, answer, q_02.suggested_answer_ids[2].id)
         answer.with_user(self.env.user).write({"state": "done"})
         answer._mark_done()
+        self.assertEqual(
+            answer.py3o_template_id.id, test_certification.py3o_template_id.id
+        )
+        report = (
+            self.env["ir.actions.report"]
+            .sudo()
+            ._render_py3o(
+                "survey_certification_py3o.custom_certification_report",
+                [answer.id],
+                data={"report_type": "pdf"},
+            )[0]
+        )
+        self.assertTrue(report)
+        self.assertIsInstance(report, bytes)
