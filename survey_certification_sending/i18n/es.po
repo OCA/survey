@@ -31,6 +31,11 @@ msgid "Certification Sent"
 msgstr "Certificación enviada"
 
 #. module: survey_certification_sending
+#: model:ir.model,name:survey_certification_sending.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: survey_certification_sending
 #: model:ir.model,name:survey_certification_sending.model_mail_template
 msgid "Email Templates"
 msgstr ""
@@ -52,11 +57,15 @@ msgid "Send Certification Email"
 msgstr "Enviar certificación por correo electrónico"
 
 #. module: survey_certification_sending
+#: model:ir.model.fields,field_description:survey_certification_sending.field_res_partner__skip_certification_email
+#: model:ir.model.fields,field_description:survey_certification_sending.field_res_users__skip_certification_email
 #: model:ir.model.fields,field_description:survey_certification_sending.field_survey_survey__skip_certification_email
 msgid "Skip Certification Email"
 msgstr "Omitir correo de certificación"
 
 #. module: survey_certification_sending
+#: model:ir.model.fields,help:survey_certification_sending.field_res_partner__skip_certification_email
+#: model:ir.model.fields,help:survey_certification_sending.field_res_users__skip_certification_email
 #: model:ir.model.fields,help:survey_certification_sending.field_survey_survey__skip_certification_email
 msgid ""
 "Skip sending the certification automatically after successful completion of "
