@@ -75,10 +75,10 @@ Authors
 Contributors
 ------------
 
-- `Tecnativa <https://www.tecnativa.com>`__
+-  `Tecnativa <https://www.tecnativa.com>`__
 
-  - David Vidal
-  - Pilar Vargas
+   -  David Vidal
+   -  Pilar Vargas
 
 Maintainers
 -----------
