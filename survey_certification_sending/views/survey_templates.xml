@@ -9,7 +9,7 @@
         >
             <attribute
                 name="t-if"
-            >survey.certification and not survey.skip_certification_email</attribute>
+            >survey.certification and (not survey.skip_certification_email and not answer.partner_id.skip_certification_email)</attribute>
         </xpath>
     </template>
 </odoo>
