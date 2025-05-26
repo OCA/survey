@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [partner_survey](partner_survey/) | 15.0.1.1.0 |  | Link partners with their survey results
 [survey_answer_generation](survey_answer_generation/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Link and compare answers from another survey
 [survey_certification_py3o](survey_certification_py3o/) | 15.0.1.0.1 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Survey Certification Py3o
-[survey_certification_sending](survey_certification_sending/) | 15.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Controls the automatic sending of certifications in surveys.
+[survey_certification_sending](survey_certification_sending/) | 15.0.1.1.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Controls the automatic sending of certifications in surveys.
 [survey_contact_generation](survey_contact_generation/) | 15.0.1.1.2 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate new contacts from surveys
 [survey_crm_generation](survey_crm_generation/) | 15.0.1.1.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate CRM leads/opportunities from surveys
 [survey_crm_sale_generation](survey_crm_sale_generation/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Link CRM leads to sale orders generated from surveys
