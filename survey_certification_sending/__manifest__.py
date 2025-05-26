@@ -12,6 +12,7 @@
     "license": "AGPL-3",
     "depends": ["survey"],
     "data": [
+        "views/res_partner_views.xml",
         "views/survey_survey_views.xml",
         "views/survey_templates.xml",
         "views/survey_user_views.xml",

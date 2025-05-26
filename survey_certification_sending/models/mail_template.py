@@ -15,9 +15,11 @@ class MailTemplate(models.Model):
         notif_layout=False,
     ):
         if self.model == "survey.user_input":
-            skip_ids = self.env.context.get("skip_certification_email_ids", [])
-            survey = self.env["survey.user_input"].browse(res_id).survey_id
-            if survey.id in skip_ids:
+            survey_input = self.env["survey.user_input"].browse(res_id)
+            if (
+                survey_input.survey_id.skip_certification_email
+                or survey_input.partner_id.skip_certification_email
+            ):
                 return False
         return super().send_mail(
             res_id, force_send, raise_exception, email_values, notif_layout

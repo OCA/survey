@@ -17,19 +17,12 @@ class SurveyUserInput(models.Model):
                 user_input.survey_id.certification
                 and user_input.scoring_success
                 and not user_input.survey_id.skip_certification_email
+                and not user_input.partner_id.skip_certification_email
                 and user_input.survey_id.certification_mail_template_id
                 and not user_input.test_entry
             ):
                 user_input.certification_sent = True
-        # Add ids of surveys that have to skip automatic sending to the context
-        return super(
-            SurveyUserInput,
-            self.with_context(
-                skip_certification_email_ids=self.mapped("survey_id")
-                .filtered(lambda s: s.skip_certification_email)
-                .ids
-            ),
-        )._mark_done()
+        return super()._mark_done()
 
     def action_manual_send_certification(self):
         # Send certifications manually only to those who passed the survey.
