@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_form" model="ir.ui.view">
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <field name="certification_mail_template_id" position="before">
+                <field
+                    name="py3o_template_id"
+                    string="Custom Template"
+                    invisible="not certification"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

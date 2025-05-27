@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_certification_py3o
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_certification_py3o
+#: model:ir.actions.report,name:survey_certification_py3o.custom_certification_report
+msgid "Custom Certifications"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model_terms:ir.ui.view,arch_db:survey_certification_py3o.survey_form
+msgid "Custom Template"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model:ir.model,name:survey_certification_py3o.model_mail_template
+msgid "Email Templates"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model:ir.model,name:survey_certification_py3o.model_py3o_report
+msgid "Report Py30"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model:ir.model,name:survey_certification_py3o.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model:ir.model,name:survey_certification_py3o.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_survey_survey__py3o_template_id
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_survey_user_input__py3o_template_id
+msgid "Template"
+msgstr ""
