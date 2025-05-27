@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 17.0.1.0.0 |  | Link partners with their survey results
+[survey_certification_py3o](survey_certification_py3o/) | 17.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Survey Certification Py3o
 [survey_certification_sending](survey_certification_sending/) | 17.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Controls the automatic sending of certifications in surveys.
 [survey_contact_generation](survey_contact_generation/) | 17.0.1.0.0 | [![pilarvargas-tecnativa](https://github.com/pilarvargas-tecnativa.png?size=30px)](https://github.com/pilarvargas-tecnativa) | Generate new contacts from surveys
 [survey_crm_generation](survey_crm_generation/) | 17.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate CRM leads/opportunities from surveys
