@@ -19,7 +19,7 @@ except ImportError:
 @freezegun.freeze_time("2022-04-26")
 class TestReport(common.TestSurveyCommon):
     def setUp(self):
-        super(TestReport, self).setUp()
+        super().setUp()
         self.question_date = (
             self.env["survey.question"]
             .with_user(self.survey_manager)
