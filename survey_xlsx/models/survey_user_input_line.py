@@ -8,7 +8,7 @@ class SurveyUserInputLine(models.Model):
 
     def _get_xlsx_value(self):
         if self.answer_type == "suggestion":
-            return self.suggested_answer_id.display_name
+            return self.suggested_answer_id.value
         if self.answer_type == "date":
             return self.value_date.isoformat()
-        return self["value_%s" % self.answer_type]
+        return self[f"value_{self.answer_type}"]
