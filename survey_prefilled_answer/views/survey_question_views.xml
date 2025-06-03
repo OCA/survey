@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="survey_question_form">
+        <field name="name">Custom form view for survey question</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <field name="question_placeholder" position="after">
+                <field
+                    name="suggested_prefilled_answer"
+                    attrs="{'invisible': [('question_type', '!=', 'char_box')]}"
+                />
+                <field
+                    name="suggested_prefilled_answer_multi"
+                    attrs="{'invisible': [('question_type', '!=', 'text_box')]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

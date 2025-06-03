@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="question_simple_choice" inherit_id="survey.question_simple_choice">
+        <xpath expr="//span[@t-field='label.value']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='label.value']" position="after">
+            <t t-if="prefilled_answers and prefilled_answers.get(label)">
+                <span class="ms-2 text-break" t-out="prefilled_answers[label]" />
+            </t>
+            <t t-else="">
+                <span class="ms-2 text-break" t-field='label.value' />
+            </t>
+        </xpath>
+    </template>
+
+    <template
+        id="question_multiple_choice"
+        inherit_id="survey.question_multiple_choice"
+    >
+        <xpath expr="//span[@t-field='label.value']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='label.value']" position="after">
+            <t t-if="prefilled_answers and prefilled_answers.get(label)">
+                <span class="ms-2 text-break" t-out="prefilled_answers[label]" />
+            </t>
+            <t t-else="">
+                <span class="ms-2 text-break" t-field='label.value' />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="question_char_box" inherit_id="survey.question_char_box">
+        <xpath expr="//input" position="attributes">
+            <attribute name="t-att-value">
+            answer_lines[0].value_char_box if answer_lines
+            else
+            (prefilled_answers.get(question, None) if prefilled_answers else None)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="question_text_box" inherit_id="survey.question_text_box">
+        <xpath expr="//textarea/t" position="attributes">
+            <attribute name="t-if">answer_lines or prefilled_answers</attribute>
+            <attribute name="t-esc">
+            answer_lines[0].value_text_box if answer_lines
+            else
+            (prefilled_answers.get(question, None) if prefilled_answers else None)
+            </attribute>
+        </xpath>
+    </template>
+</odoo>
