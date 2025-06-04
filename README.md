@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [survey_conditional_question](survey_conditional_question/) | 14.0.1.0.0 |  | Survey Conditional Questions
-[survey_description](survey_description/) | 14.0.1.0.0 | [![remi-filament](https://github.com/remi-filament.png?size=30px)](https://github.com/remi-filament) | Displays description and thank you fields for survey, page and question.
+[survey_description](survey_description/) | 14.0.1.0.0 | <a href='https://github.com/remi-filament'><img src='https://github.com/remi-filament.png' width='32' height='32' style='border-radius:50%;' alt='remi-filament'/></a> | Displays description and thank you fields for survey, page and question.
 [survey_multiple_choice_max_answer](survey_multiple_choice_max_answer/) | 14.0.1.0.0 |  | This module adds the possibility to limit the number of answers for a multiple choice question.
 [survey_question_type_binary](survey_question_type_binary/) | 14.0.1.0.0 |  | This module add binary field as question type for survey page
 [survey_question_type_five_star](survey_question_type_five_star/) | 14.0.1.0.1 |  | This module add five stars rating as question type for survey page
