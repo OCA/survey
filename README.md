@@ -22,16 +22,16 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 13.0.1.0.0 |  | Link partners with their survey results
-[survey_contact_generation](survey_contact_generation/) | 13.0.1.1.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate new contacts from surveys
-[survey_crm_generation](survey_crm_generation/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate CRM leads/opportunities from surveys
-[survey_crm_sale_generation](survey_crm_sale_generation/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Link CRM leads to sale orders generated from surveys
-[survey_description](survey_description/) | 13.0.1.0.0 | [![remi-filament](https://github.com/remi-filament.png?size=30px)](https://github.com/remi-filament) | Displays description and thank you fields for survey, page and question
+[survey_contact_generation](survey_contact_generation/) | 13.0.1.1.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate new contacts from surveys
+[survey_crm_generation](survey_crm_generation/) | 13.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate CRM leads/opportunities from surveys
+[survey_crm_sale_generation](survey_crm_sale_generation/) | 13.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Link CRM leads to sale orders generated from surveys
+[survey_description](survey_description/) | 13.0.1.0.0 | <a href='https://github.com/remi-filament'><img src='https://github.com/remi-filament.png' width='32' height='32' style='border-radius:50%;' alt='remi-filament'/></a> | Displays description and thank you fields for survey, page and question
 [survey_formio](survey_formio/) | 13.0.1.0.2 |  | This module allows the generation of a form.io compatible JSON for a survey.
-[survey_legal](survey_legal/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Require legal terms before survey submit
+[survey_legal](survey_legal/) | 13.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Require legal terms before survey submit
 [survey_question_type_five_star](survey_question_type_five_star/) | 13.0.1.0.1 |  | This module add five stars rating as question type for survey page
-[survey_resource_booking](survey_resource_booking/) | 13.0.1.0.2 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Access survey answers from resource booking
-[survey_result_mail](survey_result_mail/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Send survey answers to the survey user
-[survey_sale_generation](survey_sale_generation/) | 13.0.1.1.1 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Generate sale orders from surveys
+[survey_resource_booking](survey_resource_booking/) | 13.0.1.0.2 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Access survey answers from resource booking
+[survey_result_mail](survey_result_mail/) | 13.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Send survey answers to the survey user
+[survey_sale_generation](survey_sale_generation/) | 13.0.1.1.1 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate sale orders from surveys
 [survey_xlsx](survey_xlsx/) | 13.0.1.0.0 |  | XLSX Report to show the survey results
 
 [//]: # (end addons)
