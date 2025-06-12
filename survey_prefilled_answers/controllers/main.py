@@ -12,14 +12,22 @@ from odoo.addons.survey.controllers.main import Survey
 
 class CustomSurvey(Survey):
     def render_value(self, value):
-        rendered_answer = None
         if value:
             partner = request.env.user.partner_id
             render_env = request.env["mail.render.mixin"].sudo()
-            rendered_answer = render_env._render_template(
-                value, partner._name, [partner.id]
-            )[partner.id]
-        return rendered_answer
+            try:
+                rendered_answer = render_env._render_template(
+                    value, partner._name, [partner.id]
+                )[partner.id]
+                return rendered_answer or False
+            except Exception as e:
+                # handel ValueError raised for NameError or AttributeError
+                error_msg = str(e).lower()
+                if "nameerror" in error_msg or "attributeerror" in error_msg:
+                    return False
+                else:
+                    raise
+        return False
 
     def get_prefilled_answers(self, questions):
         # require participants to be logged in to make sure thier own field values be filled in
@@ -50,9 +58,9 @@ class CustomSurvey(Survey):
 
     def _prepare_survey_data(self, survey_sudo, answer_sudo, **post):
         data = super()._prepare_survey_data(survey_sudo, answer_sudo, **post)
-        question = data.get("question")
         if survey_sudo.users_login_required:
-            data["prefilled_answers"] = self.get_prefilled_answers(question)
+            questions = survey_sudo.question_ids
+            data["prefilled_answers"] = self.get_prefilled_answers(questions)
         return data
 
     @http.route(

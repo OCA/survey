@@ -13,10 +13,18 @@ class SurveyUserInputLine(models.Model):
         partner = self.user_input_id.partner_id
         suggested_answer_value = suggested_answer_id.value
         render_env = self.env["mail.render.mixin"].sudo()
-        rendered_answer = render_env._render_template(
-            suggested_answer_value, partner._name, [partner.id]
-        )[partner.id]
-        return rendered_answer or False
+        try:
+            rendered_answer = render_env._render_template(
+                suggested_answer_value, partner._name, [partner.id]
+            )[partner.id]
+            return rendered_answer or False
+        except Exception as e:
+            # handel ValueError raised for NameError or AttributeError
+            error_msg = str(e).lower()
+            if "nameerror" in error_msg or "attributeerror" in error_msg:
+                return False
+            else:
+                raise
 
     @api.depends("answer_type")
     def _compute_display_name(self):
