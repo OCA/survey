@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -93,18 +93,6 @@ msgid "Generating Survey User Input"
 msgstr ""
 
 #. module: survey_contact_generation
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q0
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q1
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q2
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q3
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q5
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q6
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q_company_name
-msgid "If other, please specify:"
-msgstr ""
-
-#. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q0
 msgid "Name"
 msgstr ""
@@ -159,30 +147,6 @@ msgstr ""
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q6
 msgid "Tags"
-msgstr ""
-
-#. module: survey_contact_generation
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q0
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q1
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q2
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q3
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q5
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q6
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q_company_name
-msgid "The answer you entered is not valid."
-msgstr ""
-
-#. module: survey_contact_generation
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q0
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q1
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q2
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q3
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q5
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q6
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q_company_name
-msgid "This question requires an answer."
 msgstr ""
 
 #. module: survey_contact_generation
