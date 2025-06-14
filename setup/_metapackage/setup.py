@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo-addon-survey_certification_branding>=16.0dev,<16.1dev',
         'odoo-addon-survey_contact_generation>=16.0dev,<16.1dev',
         'odoo-addon-survey_formio>=16.0dev,<16.1dev',
+        'odoo-addon-survey_link_base>=16.0dev,<16.1dev',
         'odoo-addon-survey_question_type_binary>=16.0dev,<16.1dev',
         'odoo-addon-survey_question_type_five_star>=16.0dev,<16.1dev',
         'odoo-addon-survey_question_type_nps>=16.0dev,<16.1dev',
