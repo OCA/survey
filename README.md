@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 16.0.1.1.0 |  | Link partners with their survey results
 [survey_contact_generation](survey_contact_generation/) | 16.0.1.1.2 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate new contacts from surveys
+[survey_formio](survey_formio/) | 16.0.1.0.0 |  | This module allows the generation of a form.io compatible JSON for a survey.
 [survey_question_type_binary](survey_question_type_binary/) | 16.0.1.0.0 |  | This module add binary field as question type for survey page
 [survey_question_type_five_star](survey_question_type_five_star/) | 16.0.1.0.0 |  | This module adds five stars rating as question type for survey page
 [survey_question_type_nps](survey_question_type_nps/) | 16.0.1.0.0 |  | This module add nps rating as question type for survey page
