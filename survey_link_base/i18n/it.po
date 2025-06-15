@@ -1,0 +1,130 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_link_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: survey_link_base
+#: model_terms:ir.ui.view,arch_db:survey_link_base.survey_link_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,help:survey_link_base.field_survey_link_wizard__date_deadline
+msgid ""
+"Deadline to which the invitation to        respond for this survey is valid."
+" If the field is empty,        the invitation is still valid."
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__date_deadline
+msgid "Deadline to which the invitation to respond is valid"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__res_id
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_user_input__res_id
+msgid "Res"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__res_model
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_user_input__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__share_link
+msgid "Share Link"
+msgstr ""
+
+#. module: survey_link_base
+#: model_terms:ir.ui.view,arch_db:survey_link_base.survey_link_wizard_form_view
+msgid "Start"
+msgstr ""
+
+#. module: survey_link_base
+#. odoo-python
+#: code:addons/survey_link_base/wizard/survey_link_wizard.py:0
+#: model:ir.model,name:survey_link_base.model_survey_survey
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__survey_id
+#, python-format
+msgid "Survey"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model.fields,field_description:survey_link_base.field_survey_link_mixin__survey_answer_count
+msgid "Survey Answer Count"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_survey_link_wizard
+msgid "Survey Link Wizard"
+msgstr ""
+
+#. module: survey_link_base
+#. odoo-python
+#: code:addons/survey_link_base/models/survey_link_mixin.py:0
+#, python-format
+msgid "Survey Share Link"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_link_base
+#: model:ir.model,name:survey_link_base.model_survey_link_mixin
+msgid "survey.link.mixin"
+msgstr ""
