@@ -1,30 +1,32 @@
 # Copyright 2021 Tecnativa - Jairo Llopis
+# Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from datetime import datetime
 
 from freezegun import freeze_time
 
 from odoo.exceptions import UserError
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests.common import Form
+
+from odoo.addons.base.tests.common import BaseCommon
 
 from ...resource_booking.tests.common import create_test_data
 
 
-@freeze_time("2021-02-26 09:00:00", tick=True)
-class SurveyInvitationCase(TransactionCase):
+class SurveyInvitationCase(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         create_test_data(cls)
         survey_form = Form(cls.env["survey.survey"])
         survey_form.title = "survey 1"
-        survey_form.session_state = "in_progress"
         with survey_form.question_and_page_ids.new() as question_form:
             question_form.title = "are you a robot?"
             question_form.question_type = "text_box"
         cls.survey = survey_form.save()
         cls.rbt.survey_id = cls.survey
 
+    @freeze_time("2021-02-26 09:00:00", tick=True)
     def test_new_booking_survey_invitation(self):
         """New booking gets invited to survey."""
         # Clear mail queue to avoid pollution
