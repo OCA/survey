@@ -14,6 +14,7 @@ class ResourceBooking(models.Model):
         comodel_name="survey.user_input",
         string="Survey user input",
         tracking=True,
+        copy=False,
         help="User responses to survey, as specified in the resource booking type.",
     )
 
