@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-survey"
-version = "17.0.20250527.0"
+version = "17.0.20250619.0"
 dependencies = [
     "odoo-addon-partner_survey>=17.0dev,<17.1dev",
     "odoo-addon-survey_certification_py3o>=17.0dev,<17.1dev",
@@ -12,6 +12,7 @@ dependencies = [
     "odoo-addon-survey_multi_company>=17.0dev,<17.1dev",
     "odoo-addon-survey_partner_representative>=17.0dev,<17.1dev",
     "odoo-addon-survey_question_type_binary>=17.0dev,<17.1dev",
+    "odoo-addon-survey_resource_booking>=17.0dev,<17.1dev",
     "odoo-addon-survey_result_mail>=17.0dev,<17.1dev",
     "odoo-addon-survey_sale_generation>=17.0dev,<17.1dev",
     "odoo-addon-survey_skip_start>=17.0dev,<17.1dev",
