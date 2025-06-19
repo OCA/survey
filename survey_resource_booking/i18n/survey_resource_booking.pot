@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_resource_booking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid "Cannot invite to fill survey because booking not confirmed: %s"
+msgstr ""
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid ""
+"Cannot send survey invitation for this booking because the requester has no "
+"email: %s"
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.actions.server,name:survey_resource_booking.action_invite_survey
+msgid "Invite to fill survey"
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.model,name:survey_resource_booking.model_resource_booking
+msgid "Resource Booking"
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.model,name:survey_resource_booking.model_resource_booking_type
+msgid "Resource Booking Type"
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,field_description:survey_resource_booking.field_resource_booking_type__survey_id
+msgid "Survey"
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,field_description:survey_resource_booking.field_resource_booking__survey_user_input_id
+msgid "Survey user input"
+msgstr ""
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid "This booking's requester was already invited to fill survey: %s"
+msgstr ""
+
+#. module: survey_resource_booking
+#: code:addons/survey_resource_booking/models/resource_booking.py:0
+#, python-format
+msgid "This booking's type has no survey defined: %s"
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,help:survey_resource_booking.field_resource_booking__survey_user_input_id
+msgid "User responses to survey, as specified in the resource booking type."
+msgstr ""
+
+#. module: survey_resource_booking
+#: model:ir.model.fields,help:survey_resource_booking.field_resource_booking_type__survey_id
+msgid "You will be able to invite requesters to respond to this survey."
+msgstr ""
