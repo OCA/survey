@@ -32,17 +32,17 @@ class SurveyUserInput(models.Model):
             question, answer, answer_type
         )
         if answer_type in ("binary", "multi_binary") and answer:
-            if answer_type == "binary":
-                del vals["value_binary"]
-            else:
-                del vals["value_multi_binary"]
+            vals.pop("value_binary", None)
+            vals.pop("value_multi_binary", None)
             if not isinstance(answer, (list, tuple)):
                 answer = [answer]
-            answer_binary_datas = []
+            new_entries = []
             for answer_binary in answer:
                 data = answer_binary.get("data")
                 filename = answer_binary.get("filename")
-                answer_binary_datas += [
+                if not data:
+                    continue
+                new_entries.append(
                     (
                         0,
                         0,
@@ -51,6 +51,10 @@ class SurveyUserInput(models.Model):
                             "filename": filename,
                         },
                     )
-                ]
-            vals.update({"answer_binary_ids": answer_binary_datas})
+                )
+            if answer_type == "binary":
+                vals["answer_binary_ids"] = [(5, 0, 0)] + new_entries
+            elif answer_type == "multi_binary":
+                vals.setdefault("answer_binary_ids", [])
+                vals["answer_binary_ids"].extend(new_entries)
         return vals
