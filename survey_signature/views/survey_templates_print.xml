@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <template
+        id="survey_signature.survey_page_print"
+        inherit_id="survey.survey_page_print"
+        name="Add signature fields in survey_page_print"
+    >
+        <xpath expr="//div[hasclass('o_survey_question_error')]" position="before">
+            <!-- Add your fields here -->
+            <t t-if="question.question_type == 'signature'">
+                <t t-call="survey_signature.question_signature" />
+            </t>
+        </xpath>
+    </template>
+</odoo>

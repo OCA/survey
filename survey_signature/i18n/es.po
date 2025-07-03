@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_signature
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20240429\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-03 08:40+0000\n"
+"PO-Revision-Date: 2025-07-03 09:41+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: survey_signature
+#: model:ir.model.fields,field_description:survey_signature.field_survey_user_input_line__answer_type
+msgid "Answer Type"
+msgstr "Tipo de respuesta"
+
+#. module: survey_signature
+#: model_terms:ir.ui.view,arch_db:survey_signature.question_signature
+msgid "Clear"
+msgstr "Limpiar"
+
+#. module: survey_signature
+#. odoo-python
+#: code:addons/survey_signature/models/survey_user_input_line.py:0
+#, python-format
+msgid "Not Signed"
+msgstr "No firmado"
+
+#. module: survey_signature
+#: model:ir.model.fields,field_description:survey_signature.field_survey_question__question_type
+msgid "Question Type"
+msgstr "Tipo de Pregunta"
+
+#. module: survey_signature
+#. odoo-python
+#: code:addons/survey_signature/models/survey_question.py:0
+#: code:addons/survey_signature/models/survey_user_input_line.py:0
+#: model:ir.model.fields,field_description:survey_signature.field_survey_user_input_line__value_signature
+#: model:ir.model.fields.selection,name:survey_signature.selection__survey_question__question_type__signature
+#: model:ir.model.fields.selection,name:survey_signature.selection__survey_user_input_line__answer_type__signature
+#, python-format
+msgid "Signature"
+msgstr "Firma"
+
+#. module: survey_signature
+#. odoo-python
+#: code:addons/survey_signature/models/survey_user_input_line.py:0
+#, python-format
+msgid "Signed"
+msgstr "Firmado"
+
+#. module: survey_signature
+#: model:ir.model,name:survey_signature.model_survey_question
+msgid "Survey Question"
+msgstr ""
+
+#. module: survey_signature
+#: model:ir.model,name:survey_signature.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_signature
+#: model:ir.model,name:survey_signature.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr ""
