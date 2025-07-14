@@ -15,14 +15,16 @@ class SurveyUserInput(models.Model):
         compute="_compute_diff_user_input_line_count"
     )
 
-    def save_lines(self, question, answer, comment=None):
+    def _save_lines(self, question, answer, comment=None, overwrite_existing=True):
         """Sync the answers for the next question when they're saved so we don't have
         to repeat the logic again"""
-        res = super().save_lines(question, answer, comment=comment)
+        res = super()._save_lines(
+            question, answer, comment=comment, overwrite_existing=overwrite_existing
+        )
         if question.next_survey_question_id and self.next_survey_input_id:
             self.next_survey_input_id.with_context(
                 save_next_question_answer=True
-            ).save_lines(question.next_survey_question_id, answer, comment)
+            )._save_lines(question.next_survey_question_id, answer, comment)
         return res
 
     def _get_line_answer_values(self, question, answer, answer_type):

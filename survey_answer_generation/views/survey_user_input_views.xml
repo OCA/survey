@@ -6,13 +6,10 @@
         <field name="arch" type="xml">
             <field name="survey_id" position="after">
                 <field name="diff_user_input_line_count" invisible="1" />
-                <field
-                    name="origin_input_id"
-                    attrs="{'invisible': [('origin_input_id', '=', False)]}"
-                />
+                <field name="origin_input_id" invisible="not origin_input_id" />
                 <field
                     name="next_survey_input_id"
-                    attrs="{'invisible': [('next_survey_input_id', '=', False)]}"
+                    invisible="not next_survey_input_id"
                 />
             </field>
             <xpath
@@ -30,12 +27,12 @@
                 <field
                     name="diff_with_origin"
                     optional="hide"
-                    attrs="{'column_invisible': [('parent.origin_input_id', '=', False)]}"
+                    column_invisible="not parent.origin_input_id"
                 />
                 <field
                     name="origin_input_line"
                     optional="hide"
-                    attrs="{'column_invisible': [('parent.origin_input_id', '=', False)]}"
+                    column_invisible="not parent.origin_input_id"
                 />
             </xpath>
         </field>

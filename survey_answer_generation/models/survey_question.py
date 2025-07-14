@@ -9,7 +9,10 @@ class SurveyQuestion(models.Model):
     next_survey_id = fields.Many2one(related="survey_id.next_survey_id")
     next_survey_question_id = fields.Many2one(
         comodel_name="survey.question",
-        domain="[('survey_id', '=', next_survey_id), ('question_type', '=', question_type)]",
+        domain=(
+            "[('survey_id', '=', next_survey_id), "
+            "('question_type', '=', question_type)]"
+        ),
         help="Prefill this answer of the next survey with the answer of this one",
     )
 
