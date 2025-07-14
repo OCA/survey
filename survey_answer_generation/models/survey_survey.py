@@ -17,7 +17,7 @@ class SurveySurvey(models.Model):
         email=False,
         test_entry=False,
         check_attempts=True,
-        **additional_vals
+        **additional_vals,
     ):
         """We link the next user input right away so we can sync the responses when
         they're submitted"""
@@ -27,7 +27,7 @@ class SurveySurvey(models.Model):
             email=email,
             test_entry=test_entry,
             check_attempts=check_attempts,
-            **additional_vals
+            **additional_vals,
         )
         for user_input in user_inputs.filtered("survey_id.next_survey_id"):
             next_survey_input = user_input.survey_id.next_survey_id._create_answer(
@@ -35,7 +35,7 @@ class SurveySurvey(models.Model):
                 email=email,
                 test_entry=test_entry,
                 check_attempts=check_attempts,
-                **additional_vals
+                **additional_vals,
             )
             user_input.next_survey_input_id = next_survey_input
             next_survey_input.origin_input_id = user_input
