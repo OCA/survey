@@ -17,13 +17,13 @@ Survey answer generation
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsurvey-lightgray.png?logo=github
-    :target: https://github.com/OCA/survey/tree/15.0/survey_answer_generation
+    :target: https://github.com/OCA/survey/tree/17.0/survey_answer_generation
     :alt: OCA/survey
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/survey-15-0/survey-15-0-survey_answer_generation
+    :target: https://translation.odoo-community.org/projects/survey-17-0/survey-17-0-survey_answer_generation
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=15.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -40,23 +40,26 @@ Configuration
 
 You can configure either a new or an existing survey.
 
-#. Go to *Surveys* and choose an existing one or create it.
-#. In the *Options* tab, *Questions* group, choose the *Next Survey*.
+1. Go to *Surveys* and choose an existing one or create it.
+2. In the *Options* tab, *Questions* group, choose the *Next Survey*.
 
-Now you'll have to configure the destination questions linked to this survey's questions.
+Now you'll have to configure the destination questions linked to this
+survey's questions.
 
-#. Go to the *Answers* tab choose the linked question.
-#. For simple/multiple choice qustions you'll have to link the answers as well.
+1. Go to the *Answers* tab choose the linked question.
+2. For simple/multiple choice qustions you'll have to link the answers
+   as well.
 
 Usage
 =====
 
-Once the survey is configured, the users can fill them up as usual. The answers in the
-next survey will be prefilled according to the linked questions.
+Once the survey is configured, the users can fill them up as usual. The
+answers in the next survey will be prefilled according to the linked
+questions.
 
-If the user changes any response in the next question, we can tell the difference in
-the backend: go to the participation and in the answers tree let the column
-*Diff with origin* show.
+If the user changes any response in the next question, we can tell the
+difference in the backend: go to the participation and in the answers
+tree let the column *Diff with origin* show.
 
 Bug Tracker
 ===========
@@ -64,7 +67,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/survey/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_answer_generation%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_answer_generation%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -72,19 +75,19 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`_
+-  `Tecnativa <https://www.tecnativa.com>`__
 
-  * David Vidal
+   -  David Vidal
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -104,6 +107,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-chienandalu| 
 
-This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/15.0/survey_answer_generation>`_ project on GitHub.
+This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/17.0/survey_answer_generation>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
