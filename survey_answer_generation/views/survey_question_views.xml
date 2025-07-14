@@ -4,20 +4,20 @@
         <field name="model">survey.question</field>
         <field name="inherit_id" ref="survey.survey_question_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='suggested_answer_ids']/.." position="after">
+            <xpath expr="//field[@name='suggested_answer_ids']" position="after">
                 <group name="Next survey question">
                     <field name="next_survey_id" invisible="1" />
                     <field
                         name="next_survey_question_id"
-                        attrs="{'invisible': [('next_survey_id', '=', False)]}"
+                        invisible="not next_survey_id"
                     />
                 </group>
             </xpath>
             <xpath expr="//field[@name='value']" position="after">
-                <field name="next_survey_question_id" invisible="1" />
+                <field name="next_survey_question_id" column_invisible="1" />
                 <field
                     name="next_survey_question_answer_id"
-                    attrs="{'column_invisible': [('parent.next_survey_question_id', '=', 'False')]}"
+                    column_invisible="not parent.next_survey_question_id"
                 />
             </xpath>
         </field>
