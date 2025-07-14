@@ -3,12 +3,12 @@
 {
     "name": "Survey answer generation",
     "summary": "Link and compare answers from another survey",
-    "version": "15.0.1.0.0",
+    "version": "17.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
     "author": "Tecnativa, Odoo Community Association (OCA)",
-    "maintainers": ["chienandalu"],
+    "maintainers": ["pilarvargas-tecnativa"],
     "license": "AGPL-3",
     "depends": ["survey"],
     "data": [
