@@ -36,6 +36,7 @@ class SurveyContactGenerationCase(SurveyCase, HttpCase):
         self.start_tour(
             f"/survey/start/{self.origin_survey.access_token}",
             "test_survey_contact_generation",
+            step_delay=1000,
         )
         new_input = self.origin_survey.user_input_ids - self.existing_inputs
         partner = self.env["res.partner"].search(
@@ -47,6 +48,7 @@ class SurveyContactGenerationCase(SurveyCase, HttpCase):
         self.start_tour(
             f"/survey/{self.next_survey.access_token}/{next_answer.access_token}",
             "test_survey_contact_update",
+            step_delay=1000,
         )
         self.assertEqual(partner.name, "My Updated Name")
         self.assertEqual(partner.parent_id.name, "My Updated Company Name")

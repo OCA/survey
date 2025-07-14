@@ -1,88 +1,96 @@
 /** @odoo-module */
-import tour from "web_tour.tour";
+import {registry} from "@web/core/registry";
 
-tour.register(
-    "test_survey_contact_update",
-    {
-        test: true,
-    },
-    [
+registry.category("web_tour.tours").add("test_survey_contact_update", {
+    test: true,
+    steps: () => [
         {
             content: "Click on Start",
             trigger: "button.btn:contains('Start Survey')",
         },
         {
-            content: "Name",
-            trigger: "div.js_question-wrapper:contains('Name') input",
-            run: "text My Updated Name",
-        },
-        {
             content: "Company Name",
-            trigger: "div.js_question-wrapper:contains('Company name') input",
+            trigger: "div.js_question-wrapper input",
             run: "text My Updated Company Name",
         },
         {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
+        },
+        {
+            content: "Name",
+            trigger: "div.js_question-wrapper input",
+            run: "text My Updated Name",
+        },
+        {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
+        },
+        {
             content: "Email",
-            trigger: "div.js_question-wrapper:contains('Email') input",
+            trigger: "div.js_question-wrapper input",
             run: "text survey_contact_generation@test.com",
         },
         {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
+        },
+        {
             content: "Notes",
-            trigger: "div.js_question-wrapper:contains('Notes') textarea",
+            trigger: "div.js_question-wrapper textarea",
             run: "text This is a test note",
         },
         {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
+        },
+        {
             content: "Color",
-            trigger: "div.js_question-wrapper:contains('Color') input",
+            trigger: "div.js_question-wrapper input",
             run: "text 1",
         },
         {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
+        },
+        {
             content: "Date",
-            trigger: "div.js_question-wrapper:contains('Date') input",
+            trigger: "div.js_question-wrapper input",
             run: "text 01/01/2023",
+        },
+        {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
         },
         {
             content: "Country",
             trigger:
-                "div.js_question-wrapper:contains('Country') label:contains('Romania') i",
-            run: function () {
-                $(
-                    "div.js_question-wrapper:contains('Country') label:contains('Romania') i"
-                ).prop("checked", true);
-            },
+                "div.js_question-wrapper label:contains('Romania') i.fa-circle-thin",
         },
         {
             content: "Tags",
-            trigger:
-                "div.js_question-wrapper:contains('Tags') label:contains('Prospects') i",
-            run: function () {
-                $(
-                    "div.js_question-wrapper:contains('Tags') label:contains('Prospects') i"
-                ).prop("checked", true);
-            },
+            trigger: "div.js_question-wrapper label:contains('Prospects') i",
         },
         {
             content: "Tags",
-            trigger:
-                "div.js_question-wrapper:contains('Tags') label:contains('Vendor') i",
-            run: function () {
-                $(
-                    "div.js_question-wrapper:contains('Tags') label:contains('Vendor') i"
-                ).prop("checked", true);
-            },
+            trigger: "div.js_question-wrapper label:contains('Vendor') i",
+        },
+        {
+            content: "Submit and go to Next Page",
+            trigger: 'button[value="next"]',
         },
         {
             content: "Street",
-            trigger: "div.js_question-wrapper:contains('Street') input",
+            trigger: "div.js_question-wrapper input",
             run: "text Main Street, 42",
         },
         {
             content: "Click Submit",
-            trigger: "button[value='finish']",
+            trigger: "button[value='finish'].btn-secondary",
         },
         {
             content: "Thank you",
             trigger: "h1:contains('Thank you!')",
         },
-    ]
-);
+    ],
+});
