@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [survey_placeholder](survey_placeholder/) | 15.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Placeholders in survey questions
 [survey_resource_booking](survey_resource_booking/) | 15.0.1.0.1 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Access survey answers from resource booking
 [survey_result_mail](survey_result_mail/) | 15.0.1.1.2 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Send survey answers to the survey user
-[survey_sale_generation](survey_sale_generation/) | 15.0.2.2.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate sale orders from surveys
+[survey_sale_generation](survey_sale_generation/) | 15.0.2.2.1 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate sale orders from surveys
 [survey_skip_start](survey_skip_start/) | 15.0.1.0.1 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Skip the surveys start screen and go directly to fill the form
 [survey_xlsx](survey_xlsx/) | 15.0.1.0.0 |  | XLSX Report to show the survey results
 
