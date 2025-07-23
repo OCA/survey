@@ -32,5 +32,47 @@ odoo.define("survey_question_type_nps", function (require) {
                 }
             });
         },
+
+        _validateForm: function ($form, formData) {
+            var errors = {};
+            this._resetErrors();
+            var data = {};
+            formData.forEach(function (value, key) {
+                data[key] = value;
+            });
+
+            var inactiveQuestionIds = this.options.sessionInProgress
+                ? []
+                : this._getInactiveConditionalQuestionIds();
+
+            $form.find("[data-question-type]").each(function () {
+                var $input = $(this);
+                var $questionWrapper = $input.closest(".js_question-wrapper");
+                var questionId = $questionWrapper.attr("id");
+
+                // If question is inactive, skip validation.
+                if (inactiveQuestionIds.includes(parseInt(questionId))) {
+                    return;
+                }
+
+                var questionRequired = $questionWrapper.data("required");
+                var constrErrorMsg = $questionWrapper.data("constrErrorMsg");
+                var validationErrorMsg = $questionWrapper.data("validationErrorMsg");
+
+                switch ($input.data("questionType")) {
+                    case "nps_rate":
+                        if (questionRequired && !$input.val()) {
+                            errors[questionId] = constrErrorMsg || validationErrorMsg;
+                        }
+                        break;
+                }
+            });
+
+            if (_.keys(errors).length > 0) {
+                this._showErrors(errors);
+                return false;
+            }
+            return this._super.apply(this, arguments);
+        },
     });
 });
