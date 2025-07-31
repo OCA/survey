@@ -58,9 +58,9 @@ class CustomSurvey(Survey):
 
     def _prepare_survey_data(self, survey_sudo, answer_sudo, **post):
         data = super()._prepare_survey_data(survey_sudo, answer_sudo, **post)
-        if survey_sudo.users_login_required:
-            questions = survey_sudo.question_ids
-            data["prefilled_answers"] = self.get_prefilled_answers(questions)
+        # if survey_sudo.users_login_required: # we ignore this line but not sure yet
+        questions = survey_sudo.question_ids
+        data["prefilled_answers"] = self.get_prefilled_answers(questions)
         return data
 
     @http.route(
