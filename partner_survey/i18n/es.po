@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-10 03:03+0000\n"
-"PO-Revision-Date: 2022-02-14 15:17+0000\n"
-"Last-Translator: Olga Marco Puértolas <olga.marco@creublanca.es>\n"
+"PO-Revision-Date: 2025-08-07 15:25+0000\n"
+"Last-Translator: Miquel Romera <mromera@pmsastro.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
@@ -27,6 +27,10 @@ msgid ""
 "                        <span class=\"o_stat_text\" "
 "invisible=\"surveys_company_count &gt; 1\">Survey</span>"
 msgstr ""
+"<span class=\"o_stat_text\" invisible=\"surveys_company_count &lt; 2\""
+">Encuesta</span>\n"
+"<span class=\"o_stat_text\" invisible=\"surveys_company_count &gt; 1\""
+">Encuesta</span>"
 
 #. module: partner_survey
 #: model_terms:ir.ui.view,arch_db:partner_survey.view_partner_form
@@ -36,6 +40,10 @@ msgid ""
 "                        <span class=\"o_stat_text\" "
 "invisible=\"surveys_count &gt; 1\">Survey</span>"
 msgstr ""
+"<span class=\"o_stat_text\" invisible=\"surveys_count &lt; 2\""
+">Encuesta</span>\n"
+"<span class=\"o_stat_text\" invisible=\"surveys_count &gt; 1\""
+">Encuesta</span>"
 
 #. module: partner_survey
 #: model:ir.model.fields,field_description:partner_survey.field_res_partner__surveys_company_count
