@@ -6,28 +6,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-08-16 12:07+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: survey_link_base
 #: model_terms:ir.ui.view,arch_db:survey_link_base.survey_link_wizard_form_view
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: survey_link_base
 #: model:ir.model.fields,help:survey_link_base.field_survey_link_wizard__date_deadline
@@ -35,63 +37,65 @@ msgid ""
 "Deadline to which the invitation to        respond for this survey is valid."
 " If the field is empty,        the invitation is still valid."
 msgstr ""
+"Scadenza entro la quale è valido l'invito a        rispondere a questo "
+"sondaggio. Se il campo è vuoto,        l'invito è comunque valido."
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__date_deadline
 msgid "Deadline to which the invitation to respond is valid"
-msgstr ""
+msgstr "Termine ultimo entro il quale è valido l'invito a rispondere"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__res_id
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_user_input__res_id
 msgid "Res"
-msgstr ""
+msgstr "Res"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__res_model
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_user_input__res_model
 msgid "Res Model"
-msgstr ""
+msgstr "Modello res"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__share_link
 msgid "Share Link"
-msgstr ""
+msgstr "Condividi collegamento"
 
 #. module: survey_link_base
 #: model_terms:ir.ui.view,arch_db:survey_link_base.survey_link_wizard_form_view
 msgid "Start"
-msgstr ""
+msgstr "Avvio"
 
 #. module: survey_link_base
 #. odoo-python
@@ -100,31 +104,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_wizard__survey_id
 #, python-format
 msgid "Survey"
-msgstr ""
+msgstr "Sondaggio"
 
 #. module: survey_link_base
 #: model:ir.model.fields,field_description:survey_link_base.field_survey_link_mixin__survey_answer_count
 msgid "Survey Answer Count"
-msgstr ""
+msgstr "Conteggio risposte sondaggio"
 
 #. module: survey_link_base
 #: model:ir.model,name:survey_link_base.model_survey_link_wizard
 msgid "Survey Link Wizard"
-msgstr ""
+msgstr "Procedura guidata collegamento sondaggio"
 
 #. module: survey_link_base
 #. odoo-python
 #: code:addons/survey_link_base/models/survey_link_mixin.py:0
 #, python-format
 msgid "Survey Share Link"
-msgstr ""
+msgstr "Collegamento condivisione sondaggio"
 
 #. module: survey_link_base
 #: model:ir.model,name:survey_link_base.model_survey_user_input
 msgid "Survey User Input"
-msgstr ""
+msgstr "Risposta utente al sondaggio"
 
 #. module: survey_link_base
 #: model:ir.model,name:survey_link_base.model_survey_link_mixin
 msgid "survey.link.mixin"
-msgstr ""
+msgstr "survey.link.mixin"
