@@ -48,7 +48,7 @@ class ReportSurveyXlsx(models.AbstractModel):
         self._pre_generate_xlsx_report_header(sheet, results, cols, bold)
         # One column by question
         for question in results.question_ids:
-            sheet.write(0, cols["question_%s" % question.id], question.title, bold)
+            sheet.write(0, cols[f"question_{question.id}"], question.title, bold)
         self._post_generate_xlsx_report_header(sheet, results, n_cols, bold)
         user_inputs = self.env["survey.user_input"].search(
             self._get_input_domain(results)
@@ -56,7 +56,7 @@ class ReportSurveyXlsx(models.AbstractModel):
         for user_input in user_inputs:
             self._add_extra_data(data[user_input.id], user_input, cols)
             for user_answer in user_input.user_input_line_ids:
-                question_id = "question_%s" % user_answer.question_id.id
+                question_id = f"question_{user_answer.question_id.id}"
                 if question_id not in cols or user_answer.skipped:
                     # We should ignore old removed questions
                     continue

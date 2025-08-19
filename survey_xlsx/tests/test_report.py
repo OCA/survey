@@ -1,19 +1,18 @@
 # Copyright 2022 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import io
 import logging
 from datetime import date
 
 import freezegun
+import openpyxl
 
 from odoo.addons.survey.tests import common
 
 _logger = logging.getLogger(__name__)
 
-try:
-    from xlrd import open_workbook
-except ImportError:
-    _logger.debug("Can not import xlrd`.")
+
 
 
 @freezegun.freeze_time("2022-04-26")
@@ -44,7 +43,11 @@ class TestReport(common.TestSurveyCommon):
             sequence=5,
         )
 
-        answer = self._add_answer(self.survey, False, email="public@example.com")
+        answer = self._add_answer(
+            self.survey,
+            self.survey_manager.partner_id,
+            email=self.survey_manager.partner_id.email,
+        )
         self._add_answer_line(self.question_ft, answer, "FIRST ANSWER")
         self._add_answer_line(self.question_num, answer, 1)
         self._add_answer_line(self.question_date, answer, date.today())
@@ -71,14 +74,15 @@ class TestReport(common.TestSurveyCommon):
         report = self.env.ref("survey_xlsx.report_survey_xlsx")
         self.assertEqual(report.report_type, "xlsx")
         rep = self.env["ir.actions.report"]._render(report, self.survey.ids, {})
-        wb = open_workbook(file_contents=rep[0])
-        sheet = wb.sheet_by_index(0)
 
-        self.assertEqual(sheet.cell(1, 2).value, "FIRST ANSWER")
-        self.assertEqual(sheet.cell(2, 2).value, "SECOND ANSWER")
-        self.assertEqual(sheet.cell(1, 3).value, 1)
-        self.assertEqual(sheet.cell(2, 3).value, 2)
-        self.assertEqual(sheet.cell(1, 4).value, "2022-04-26")
-        self.assertFalse(sheet.cell(2, 4).value)
-        self.assertEqual(sheet.cell(1, 5).value, "FIRST")
-        self.assertEqual(sheet.cell(2, 5).value, "SECOND")
+        report_file = io.BytesIO(rep[0])
+        wb = openpyxl.load_workbook(report_file)
+        sheet = wb.worksheets[0]
+        self.assertEqual(sheet.cell(2, 3).value, "FIRST ANSWER")
+        self.assertEqual(sheet.cell(3, 3).value, "SECOND ANSWER")
+        self.assertEqual(sheet.cell(2, 4).value, 1)
+        self.assertEqual(sheet.cell(3, 4).value, 2)
+        self.assertEqual(sheet.cell(2, 6).value, "2022-04-26")
+        self.assertFalse(sheet.cell(3, 6).value)
+        self.assertEqual(sheet.cell(2, 7).value, "FIRST")
+        self.assertEqual(sheet.cell(3, 7).value, "SECOND")
