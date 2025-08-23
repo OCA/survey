@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="survey_invite_view_form_sms">
+        <field name="name">survey.invite.view.form.sms</field>
+        <field name="model">survey.invite</field>
+        <field name="inherit_id" ref="survey.survey_invite_view_form" />
+        <field name="arch" type="xml">
+            <button name="action_invite" position="attributes">
+                <attribute name="string">Send email</attribute>
+                <attribute name="context">{'send_method': 'email'}</attribute>
+                <attribute name="name">action_invite_base</attribute>
+            </button>
+            <button name="action_invite_base" position="after">
+                <button
+                    name="action_invite_base"
+                    string="Send sms"
+                    class="btn-primary"
+                    type="object"
+                    context="{'send_method': 'sms'}"
+                    data-hotkey="s"
+                />
+                <button
+                    name="action_invite_base"
+                    string="Send email &amp; sms"
+                    class="btn-primary"
+                    type="object"
+                    context="{'send_method': 'both'}"
+                    data-hotkey="b"
+                />
+            </button>
+        </field>
+    </record>
+</odoo>
