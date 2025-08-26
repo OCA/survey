@@ -15,87 +15,87 @@
                         <field name="is_binary_image" />
                         <field name="filename" />
                         <templates>
-                            <t t-name="kanban-box">
-                                <div class="oe_kanban_global_click">
-                                    <div class="o_kanban_image">
-                                        <img
-                                            alt="Contact image"
-                                            t-if="record.is_binary_image.raw_value"
-                                            t-att-src="kanban_image('survey.user_input.line_binary', 'value_binary', record.id.raw_value)"
+                            <t t-name="card" class="flex-row">
+                                <aside>
+                                    <t t-if="record.is_binary_image.raw_value">
+                                        <field
+                                            name="value_binary"
+                                            widget="image"
+                                            alt="Image"
                                         />
-                                        <t t-if="!record.is_binary_image.raw_value">
-                                            <i
-                                                t-if="record.value_binary_type.raw_value == 'application/pdf'"
-                                                class="fa fa-file-pdf-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                            <i
-                                                t-if="record.value_binary_type.raw_value.includes('word')"
-                                                class="fa fa-file-word-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                            <i
-                                                t-if="record.value_binary_type.raw_value.includes('excel') or record.value_binary_type.raw_value.includes('spreadsheet')"
-                                                class="fa fa-file-excel-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                            <i
-                                                t-if="record.value_binary_type.raw_value.includes('powerpoint') or record.value_binary_type.raw_value.includes('presentation')"
-                                                class="fa fa-file-powerpoint-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                            <i
-                                                t-if="record.value_binary_type.raw_value == 'text/plain'"
-                                                class="fa fa-file-text-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                            <i
-                                                t-if="record.value_binary_type.raw_value == 'text/html' or record.value_binary_type.raw_value == 'application/json'"
-                                                class="fa fa-file-code-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                            <i
-                                                t-if="record.value_binary_type.raw_value.includes('zip')"
-                                                class="fa fa-file-archive-o"
-                                                aria-label="Document"
-                                                role="img"
-                                                title="Document"
-                                                style="font-size: 4.5rem;"
-                                            />
-                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <i
+                                            t-if="record.value_binary_type.raw_value == 'application/pdf'"
+                                            class="fa fa-file-pdf-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                        <i
+                                            t-if="record.value_binary_type.raw_value.includes('word')"
+                                            class="fa fa-file-word-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                        <i
+                                            t-if="record.value_binary_type.raw_value.includes('excel') or record.value_binary_type.raw_value.includes('spreadsheet')"
+                                            class="fa fa-file-excel-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                        <i
+                                            t-if="record.value_binary_type.raw_value.includes('powerpoint') or record.value_binary_type.raw_value.includes('presentation')"
+                                            class="fa fa-file-powerpoint-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                        <i
+                                            t-if="record.value_binary_type.raw_value == 'text/plain'"
+                                            class="fa fa-file-text-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                        <i
+                                            t-if="record.value_binary_type.raw_value == 'text/html' or record.value_binary_type.raw_value == 'application/json'"
+                                            class="fa fa-file-code-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                        <i
+                                            t-if="record.value_binary_type.raw_value.includes('zip')"
+                                            class="fa fa-file-archive-o"
+                                            aria-label="Document"
+                                            role="img"
+                                            title="Document"
+                                            style="font-size: 4.5rem;"
+                                        />
+                                    </t>
+                                </aside>
+                                <main class="ms-2">
+                                    <div>
+                                        <strong>Filename: </strong>
+                                        <field name="filename" />
                                     </div>
-                                    <div class="oe_kanban_details">
-                                        <div>
-                                            <strong>Filename: </strong>
-                                            <field name="filename" />
-                                        </div>
-                                        <div>
-                                            <strong>MIME Type: </strong>
-                                            <field name="value_binary_type" />
-                                        </div>
-                                        <div><strong>Size: </strong><field
-                                            name="value_binary_size"
-                                        /> bytes</div>
+                                    <div>
+                                        <strong>MIME Type: </strong>
+                                        <field name="value_binary_type" />
                                     </div>
-                                </div>
+                                    <div><strong>Size: </strong><field
+                                        name="value_binary_size"
+                                    /> bytes</div>
+                                </main>
                             </t>
                         </templates>
                     </kanban>

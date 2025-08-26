@@ -3,7 +3,7 @@
 # from odoo.exceptions import ValidationError
 import base64
 
-from odoo.modules.module import get_module_resource
+import odoo
 
 from odoo.addons.survey.tests import common
 
@@ -91,13 +91,13 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        module_icon = get_module_resource(
-            "survey_question_type_binary", "static", "description", "icon.png"
+        module_icon = odoo.tools.misc.file_path(
+            "survey_question_type_binary/static/description/icon.png"
         )
         with open(module_icon, "rb") as img:
             cls.image_base64 = base64.b64encode(img.read())
-        module_html = get_module_resource(
-            "survey_question_type_binary", "static", "description", "index.html"
+        module_html = odoo.tools.misc.file_path(
+            "survey_question_type_binary/static/description/index.html"
         )
         with open(module_html, "rb") as file:
             cls.html = base64.b64encode(file.read())
