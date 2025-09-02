@@ -15,7 +15,7 @@ class SurveyUserInput(models.Model):
             "partner_id": self.partner_id.id,
             "user_id": self.survey_id.crm_team_id.user_id.id,
             "team_id": self.survey_id.crm_team_id.id,
-            "company_id": self.create_uid.company_id.id,
+            "company_id": self.env.company.id,
             "survey_user_input_id": self.id,
             "description": self._prepare_lead_description(),
         }
