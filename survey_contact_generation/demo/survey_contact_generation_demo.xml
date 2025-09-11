@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-<!--    Survey-->
+    <!--    Survey-->
     <record model="survey.survey" id="survey_contact_creation">
         <field name="title">Contact Creation Survey</field>
         <field name="access_token">80e5f1e2-1a9d-4c51-8e23-09e93f7fa2c5</field>
