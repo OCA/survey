@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    Survey-->
+    <record model="survey.survey" id="survey_contact_creation">
+        <field name="title">Contact Creation Survey</field>
+        <field name="access_token">80e5f1e2-1a9d-4c51-8e23-09e93f7fa2c5</field>
+        <field name="access_mode">public</field>
+        <field name="users_can_go_back" eval="True" />
+        <field name="generate_contact" eval="True" />
+        <field name="create_parent_contact" eval="True" />
+    </record>
+    <record model="survey.question" id="survey_contact_q_company_name">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">0</field>
+        <field name="title">Company name</field>
+        <field name="question_type">char_box</field>
+        <field name="constr_mandatory" eval="True" />
+        <field name="res_partner_field" ref="base.field_res_partner__company_name" />
+    </record>
+    <record model="survey.question" id="survey_contact_q0">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">0</field>
+        <field name="title">Name</field>
+        <field name="question_type">char_box</field>
+        <field name="constr_mandatory" eval="True" />
+        <field name="res_partner_field" ref="base.field_res_partner__name" />
+    </record>
+    <record model="survey.question" id="survey_contact_q1">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">1</field>
+        <field name="title">Email</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__email" />
+    </record>
+    <record model="survey.question" id="survey_contact_q2">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">2</field>
+        <field name="title">Notes</field>
+        <field name="question_type">text_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__comment" />
+    </record>
+    <record model="survey.question" id="survey_contact_q3">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">3</field>
+        <field name="title">Color</field>
+        <field name="question_type">numerical_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__color" />
+    </record>
+    <record model="survey.question" id="survey_contact_q4">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">4</field>
+        <field name="title">Date</field>
+        <field name="question_type">date</field>
+        <field name="res_partner_field" ref="base.field_res_partner__date" />
+    </record>
+    <record model="survey.question" id="survey_contact_q5">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">4</field>
+        <field name="title">Country</field>
+        <field name="question_type">simple_choice</field>
+        <field name="res_partner_field" ref="base.field_res_partner__country_id" />
+    </record>
+    <record model="survey.question.answer" id="survey_contact_q5_sug1">
+        <field name="question_id" ref="survey_contact_q5" />
+        <field name="sequence">1</field>
+        <field name="value">Spain</field>
+        <field name="res_partner_field_resource_ref" ref="base.es" />
+    </record>
+    <record model="survey.question.answer" id="survey_contact_q5_sug2">
+        <field name="question_id" ref="survey_contact_q5" />
+        <field name="sequence">2</field>
+        <field name="value">Romania</field>
+        <field name="res_partner_field_resource_ref" ref="base.ro" />
+    </record>
+    <record model="survey.question" id="survey_contact_q6">
+        <field name="survey_id" ref="survey_contact_creation" />
+        <field name="sequence">4</field>
+        <field name="title">Tags</field>
+        <field name="question_type">multiple_choice</field>
+        <field name="res_partner_field" ref="base.field_res_partner__category_id" />
+    </record>
+    <record model="survey.question.answer" id="survey_contact_q6_sug1">
+        <field name="question_id" ref="survey_contact_q6" />
+        <field name="sequence">1</field>
+        <field name="value">Vendor</field>
+        <field
+            name="res_partner_field_resource_ref"
+            ref="base.res_partner_category_0"
+        />
+    </record>
+    <record model="survey.question.answer" id="survey_contact_q6_sug2">
+        <field name="question_id" ref="survey_contact_q6" />
+        <field name="sequence">2</field>
+        <field name="value">Prospects</field>
+        <field
+            name="res_partner_field_resource_ref"
+            ref="base.res_partner_category_2"
+        />
+    </record>
+    <record model="survey.question.answer" id="survey_contact_q6_sug3">
+        <field name="question_id" ref="survey_contact_q6" />
+        <field name="sequence">3</field>
+        <field name="value">Employees</field>
+        <field
+            name="res_partner_field_resource_ref"
+            ref="base.res_partner_category_3"
+        />
+    </record>
+</odoo>
