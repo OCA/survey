@@ -8,7 +8,7 @@ from odoo.addons.survey.tests import common
 
 class TestSurvey(common.SurveyCase):
     def setUp(self):
-        super(TestSurvey, self).setUp()
+        super().setUp()
         User = self.env["res.users"].with_context(**{"no_reset_password": True})
         (group_survey_user, group_employee) = (
             self.ref("survey.group_survey_user"),
@@ -71,11 +71,7 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        self.answer_tag1 = "{}_{}_{}".format(
-            self.survey1.id,
-            self.page1.id,
-            self.question1.id,
-        )
+        self.answer_tag1 = f"{self.survey1.id}_{self.page1.id}_{self.question1.id}"
         self._type_match["nps_rate"] = ("numerical_box", "value_numerical_box")
 
     def test_01_question_nps_rate_with_error_values(self):

@@ -8,7 +8,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
     display: none;
 }
 .nps_rate_widget > label {
-    font: 20px Arial, sans-serif;
+    font:
+        20px Arial,
+        sans-serif;
 
     width: 2em;
     height: 2em;
@@ -28,7 +30,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
     margin: 10px;
 
     @include media-breakpoint-down(md) {
-        font: 16px Arial, sans-serif;
+        font:
+            16px Arial,
+            sans-serif;
 
         width: 1.5em;
         height: 1.5em;
