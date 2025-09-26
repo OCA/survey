@@ -9,6 +9,69 @@
     </template>
     <template id="result" inherit_id="survey.survey_page_statistics_question">
         <xpath
+            expr="//span[@t-if=&quot;question.question_type in ['numerical_box', 'scale']&quot;]"
+            position="after"
+        >
+            <span
+                t-if="question.question_type in ['numerical_box', 'scale']"
+                class="d-flex gap-1 my-1 me-2"
+            >
+                <div
+                    class="btn-group o_survey_results_question_pill"
+                    role="group"
+                    aria-label="Maximum"
+                >
+                    <span
+                        class="badge text-bg-secondary only_left_radius px-2 pt-1"
+                    >Max</span>
+                    <span
+                        class="badge text-bg-success only_right_radius px-2 pt-1"
+                        t-esc="question_data['numerical_max']"
+                    />
+                </div>
+                <div
+                    class="btn-group o_survey_results_question_pill"
+                    role="group"
+                    aria-label="Minimum"
+                >
+                    <span
+                        class="badge text-bg-secondary only_left_radius px-2 pt-1"
+                    >Min</span>
+                    <span
+                        class="badge text-bg-danger only_right_radius px-2 pt-1"
+                        t-esc="question_data['numerical_min']"
+                    />
+                </div>
+                <div
+                    class="btn-group o_survey_results_question_pill"
+                    role="group"
+                    aria-label="Average"
+                >
+                    <span
+                        class="badge text-bg-secondary only_left_radius px-2 pt-1"
+                    >Avg</span>
+                    <span
+                        class="badge text-bg-warning only_right_radius px-2 pt-1"
+                        t-esc="question_data['numerical_average']"
+                    />
+                </div>
+            </span>
+        </xpath>
+        <xpath
+            expr="//li[@t-elif=&quot;question.question_type in ['numerical_box', 'date', 'datetime']&quot;]"
+            position="after"
+        >
+            <a
+                t-att-href="'#survey_stats_question_%d' % question.id"
+                t-att-aria-controls="'survey_stats_question_%d' % question.id"
+                data-bs-toggle="tab"
+                role="tab"
+                class="o_survey_results_data_tab nav-link btn btn-light py-1 px-2 active"
+            >
+                <i class="fa fa-trophy" />
+            </a>
+        </xpath>
+        <xpath
             expr="//t[@t-call='survey.question_result_number_or_date_or_datetime']"
             position="after"
         >
@@ -21,13 +84,6 @@
         id="result_user"
         inherit_id="survey.question_result_number_or_date_or_datetime"
     >
-        <xpath expr="//a[@t-field='input_line.value_date']" position="after">
-            <a
-                t-if="question.question_type == 'nps_rate'"
-                t-att-href="input_line.user_input_id.get_print_url()"
-                t-field="input_line.value_numerical_box"
-            />
-        </xpath>
         <t t-elif="question.question_type == 'datetime'" position="after">
             <span
                 t-elif="question.question_type == 'nps_rate'"
@@ -96,29 +152,5 @@
                 />
             </div>
         </div>
-    </template>
-    <template
-        id="avg_nps"
-        inherit_id="survey.question_result_number_or_date_or_datetime"
-    >
-        <t t-if="question.question_type == 'numerical_box'" position="after">
-            <t t-if="question.question_type == 'nps_rate'">
-                <span class="float-end mt8">
-                    <div
-                        class="btn-group o_survey_results_question_pill"
-                        role="group"
-                        aria-label="Average"
-                    >
-                        <span
-                            class="badge text-bg-secondary only_left_radius px-2 pt-1"
-                        >Average </span>
-                        <span
-                            class="badge text-bg-warning only_right_radius px-2 pt-1"
-                            t-esc="question_data['average_nps']"
-                        />
-                    </div>
-                </span>
-            </t>
-        </t>
     </template>
 </odoo>

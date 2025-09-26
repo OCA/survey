@@ -71,8 +71,17 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        self.answer_tag1 = f"{self.survey1.id}_{self.page1.id}_{self.question1.id}"
-        self._type_match["nps_rate"] = ("numerical_box", "value_numerical_box")
+        self.question2 = (
+            self.env["survey.question"]
+            .with_user(self.survey_manager)
+            .create(
+                {
+                    "page_id": self.page1.id,
+                    "question_type": "numerical_box",
+                    "title": "Question 2",
+                }
+            )
+        )
 
     def test_01_question_nps_rate_with_error_values(self):
         error_results = [
@@ -82,25 +91,74 @@ class TestSurvey(common.SurveyCase):
         ]
         for i in range(len(error_results)):
             self.assertEqual(
-                self.question1.validate_nps_rate(
-                    {self.answer_tag1: error_results[i][0]}, self.answer_tag1
-                ),
-                {self.answer_tag1: error_results[i][1]},
+                self.question1.validate_question(error_results[i][0]),
+                {self.question1.id: error_results[i][1]},
             )
+        self.question1.validation_required = False
+        self.assertEqual(
+            self.question1.validate_question(-1),
+            {},
+        )
 
     def test_02_question_nps_rate_with_valid_values(self):
         for i in ("0", "6", "8"):
-            self.user_input1.save_lines(question=self.question1, answer=i)
+            self.user_input1._save_lines(question=self.question1, answer=i)
             self.assertEqual(
                 self.user_input1.user_input_line_ids.filtered(
                     lambda r: r.question_id == self.question1
                 ).value_numerical_box,
                 float(i),
             )
+            self.assertEqual(self.question1.validate_question(i), {})
+        self.assertTrue(
+            self.question1._get_stats_summary_data(
+                self.user_input1.user_input_line_ids.filtered(
+                    lambda r: r.question_id == self.question1
+                )
+            )
+        )
 
     def test_03_question_nps_rate_with_constr_mandatory(self):
         self.question1.constr_mandatory = True
         with self.assertRaises(ValidationError):
-            self.user_input1.save_lines(question=self.question1, answer="0")
+            self.user_input1._save_lines(question=self.question1, answer="0")
         with self.assertRaises(ValidationError):
-            self.user_input1.save_lines(question=self.question1, answer="11")
+            self.user_input1._save_lines(question=self.question1, answer="11")
+
+    def test_04_question_nps_rate_validation_errors(self):
+        with self.assertRaises(ValidationError):
+            self.user_input1._save_lines(question=self.question1, answer="-1")
+        survey_user_input_line_obj = self.env["survey.user_input.line"]
+        with self.assertRaises(ValidationError):
+            input_line_1 = survey_user_input_line_obj.create(
+                [
+                    {
+                        "user_input_id": self.user_input1.id,
+                        "question_id": self.question1.id,
+                        "value_char_box": "Lukas",
+                    }
+                ]
+            )
+            input_line_1.answer_type = False
+        with self.assertRaises(ValidationError):
+            survey_user_input_line_obj.create(
+                [
+                    {
+                        "user_input_id": self.user_input1.id,
+                        "question_id": self.question1.id,
+                        "answer_type": "char_box",
+                        "value_char_box": "lukas",
+                    }
+                ]
+            )
+
+    def test_05_other_questions(self):
+        self.user_input1._save_lines(question=self.question2, answer="2")
+        self.assertEqual(self.question2.validate_question("2"), {})
+        self.assertTrue(
+            self.question2._get_stats_summary_data(
+                self.user_input1.user_input_line_ids.filtered(
+                    lambda r: r.question_id == self.question2
+                )
+            )
+        )

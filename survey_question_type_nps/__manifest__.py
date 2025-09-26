@@ -5,7 +5,7 @@
     "name": "Survey nps question type",
     "summary": """
         This module add nps rating as question type for survey page""",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
@@ -14,7 +14,7 @@
     "demo": [],
     "assets": {
         "survey.survey_assets": [
-            "survey_question_type_nps/static/src/js/survey.js",
+            "survey_question_type_nps/static/src/js/survey.esm.js",
             "survey_question_type_nps/static/src/scss/parameters.scss",
             "survey_question_type_nps/static/src/scss/survey.scss",
         ],
