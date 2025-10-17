@@ -8,7 +8,7 @@
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
     "author": "Tecnativa, Odoo Community Association (OCA)",
-    "maintainers": ["chienandalu"],
+    "maintainers": ["pilarvargas-tecnativa"],
     "license": "AGPL-3",
     "depends": ["survey"],
     "data": [
