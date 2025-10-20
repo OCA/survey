@@ -15,5 +15,7 @@ class SurveySurvey(models.Model):
         """The survey template checks the state of the inputs to show the start screen
         or not. Setting the state we go directly to the form"""
         inputs = super()._create_answer(*args, **additional_vals)
-        inputs.filtered("survey_id.skip_start").state = "in_progress"
+        inputs.filtered(
+            lambda input: input.survey_id.skip_start and not input.is_session_answer
+        ).state = "in_progress"
         return inputs
