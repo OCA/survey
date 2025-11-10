@@ -8,13 +8,13 @@ class SurveyQuestion(models.Model):
 
     show_in_lead_description = fields.Boolean()
     # Save into model fields
-    allowed_field_domain = fields.Binary(
-        compute="_compute_allowed_field_domain",
+    allowed_crm_lead_field_domain = fields.Binary(
+        compute="_compute_allowed_crm_lead_field_domain",
     )
     crm_lead_field = fields.Many2one(comodel_name="ir.model.fields")
 
     @api.depends("question_type")
-    def _compute_allowed_field_domain(self):
+    def _compute_allowed_crm_lead_field_domain(self):
         type_mapping = {
             "char_box": ["char", "text"],
             "text_box": ["html", "text", "char"],
@@ -32,4 +32,4 @@ class SurveyQuestion(models.Model):
                 ("store", "=", True),
                 ("readonly", "=", False),
             ]
-            record.allowed_field_domain = domain
+            record.allowed_crm_lead_field_domain = domain
