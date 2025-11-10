@@ -6,8 +6,8 @@ from odoo import api, fields, models
 class SurveyQuestion(models.Model):
     _inherit = "survey.question"
 
-    allowed_field_domain = fields.Binary(
-        compute="_compute_allowed_field_domain",
+    allowed_partner_field_domain = fields.Binary(
+        compute="_compute_allowed_partner_field_domain",
     )
     res_partner_field = fields.Many2one(
         string="Contact field",
@@ -15,7 +15,7 @@ class SurveyQuestion(models.Model):
     )
 
     @api.depends("question_type")
-    def _compute_allowed_field_domain(self):
+    def _compute_allowed_partner_field_domain(self):
         type_mapping = {
             "char_box": ["char", "text"],
             "text_box": ["html"],
@@ -33,7 +33,7 @@ class SurveyQuestion(models.Model):
                 ("store", "=", True),
                 ("readonly", "=", False),
             ]
-            record.allowed_field_domain = domain
+            record.allowed_partner_field_domain = domain
 
 
 class SurveyQuestionAnswer(models.Model):
