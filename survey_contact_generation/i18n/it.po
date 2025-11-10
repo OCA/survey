@@ -17,9 +17,9 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: survey_contact_generation
-#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_field_ids
-msgid "Allowed Field"
-msgstr "Campi permessi"
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_partner_field_domain
+msgid "Allowed Partner Field Domain"
+msgstr ""
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q3
@@ -96,18 +96,6 @@ msgid "Generating Survey User Input"
 msgstr "Generazione risposte utente sondaggio"
 
 #. module: survey_contact_generation
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q0
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q1
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q2
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q3
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q4
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q5
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q6
-#: model:survey.question,comments_message:survey_contact_generation.survey_contact_q_company_name
-msgid "If other, please specify:"
-msgstr "Se altro, specificare:"
-
-#. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q0
 msgid "Name"
 msgstr "Nome"
@@ -167,30 +155,18 @@ msgid "Tags"
 msgstr "Etichette"
 
 #. module: survey_contact_generation
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q0
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q1
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q2
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q3
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q4
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q5
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q6
-#: model:survey.question,validation_error_msg:survey_contact_generation.survey_contact_q_company_name
-msgid "The answer you entered is not valid."
-msgstr "La risposta data non è valida."
-
-#. module: survey_contact_generation
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q0
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q1
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q2
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q3
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q4
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q5
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q6
-#: model:survey.question,constr_error_msg:survey_contact_generation.survey_contact_q_company_name
-msgid "This question requires an answer."
-msgstr "Questa domanda richiede una risposta."
-
-#. module: survey_contact_generation
 #: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug1
 msgid "Vendor"
 msgstr "Fornitore"
+
+#~ msgid "Allowed Field"
+#~ msgstr "Campi permessi"
+
+#~ msgid "If other, please specify:"
+#~ msgstr "Se altro, specificare:"
+
+#~ msgid "The answer you entered is not valid."
+#~ msgstr "La risposta data non è valida."
+
+#~ msgid "This question requires an answer."
+#~ msgstr "Questa domanda richiede una risposta."
