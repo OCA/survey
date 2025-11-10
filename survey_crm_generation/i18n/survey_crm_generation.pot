@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: survey_crm_generation
-#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_field_domain
-msgid "Allowed Field Domain"
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_domain
+msgid "Allowed Crm Lead Field Domain"
 msgstr ""
 
 #. module: survey_crm_generation
