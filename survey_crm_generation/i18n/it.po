@@ -17,9 +17,9 @@ msgstr ""
 "X-Generator: Weblate 5.10.4\n"
 
 #. module: survey_crm_generation
-#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_ids
-msgid "Allowed Crm Lead Field"
-msgstr "Campo contatto CRM abilitato"
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_domain
+msgid "Allowed Crm Lead Field Domain"
+msgstr ""
 
 #. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q3
@@ -27,7 +27,7 @@ msgid "And your name?"
 msgstr "E il suo nome?"
 
 #. module: survey_crm_generation
-#: model:survey.survey,description:survey_crm_generation.become_partner
+#: model_terms:survey.survey,description:survey_crm_generation.become_partner
 msgid "Be part of the Odoo Community!"
 msgstr "Partecipa alla comunità Odoo!"
 
@@ -71,13 +71,6 @@ msgstr "Genera contatti"
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__generate_leads
 msgid "Generate leads/opportunities linked to the generated quotations"
 msgstr "Genera contatti/opportunità collegati alle domande generate"
-
-#. module: survey_crm_generation
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q0
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q1
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q3
-msgid "If other, please specify:"
-msgstr "Se altro, specificare:"
 
 #. module: survey_crm_generation
 #: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug2
@@ -148,22 +141,18 @@ msgid "TV"
 msgstr "TV"
 
 #. module: survey_crm_generation
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q0
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q1
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q3
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q4
-msgid "The answer you entered is not valid."
-msgstr "La risposta data non è valida."
-
-#. module: survey_crm_generation
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q0
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q1
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q3
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q4
-msgid "This question requires an answer."
-msgstr "Questa domanda richiede una risposta."
-
-#. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q1
 msgid "Your company name?"
 msgstr "Il nome della sua azienda?"
+
+#~ msgid "Allowed Crm Lead Field"
+#~ msgstr "Campo contatto CRM abilitato"
+
+#~ msgid "If other, please specify:"
+#~ msgstr "Se altro, specificare:"
+
+#~ msgid "The answer you entered is not valid."
+#~ msgstr "La risposta data non è valida."
+
+#~ msgid "This question requires an answer."
+#~ msgstr "Questa domanda richiede una risposta."

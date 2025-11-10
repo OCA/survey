@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #. module: survey_crm_generation
-#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_ids
-msgid "Allowed Crm Lead Field"
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_domain
+msgid "Allowed Crm Lead Field Domain"
 msgstr ""
 
 #. module: survey_crm_generation
@@ -28,7 +28,7 @@ msgid "And your name?"
 msgstr "¿Y tu nombre? "
 
 #. module: survey_crm_generation
-#: model:survey.survey,description:survey_crm_generation.become_partner
+#: model_terms:survey.survey,description:survey_crm_generation.become_partner
 msgid "Be part of the Odoo Community!"
 msgstr "¡Se parte de la comunidad de Odoo!"
 
@@ -72,13 +72,6 @@ msgstr "Generación de iniciativa"
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__generate_leads
 msgid "Generate leads/opportunities linked to the generated quotations"
 msgstr "Generar iniciativas/oportunidades vinculadas a las ofertas generadas"
-
-#. module: survey_crm_generation
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q0
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q1
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q3
-msgid "If other, please specify:"
-msgstr "Si es otro, especifíquelo:"
 
 #. module: survey_crm_generation
 #: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug2
@@ -150,22 +143,15 @@ msgid "TV"
 msgstr ""
 
 #. module: survey_crm_generation
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q0
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q1
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q3
-#: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q4
-msgid "The answer you entered is not valid."
-msgstr "La respuesta que has introducido no es válida."
-
-#. module: survey_crm_generation
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q0
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q1
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q3
-#: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q4
-msgid "This question requires an answer."
-msgstr "Esta pregunta requiere una respuesta."
-
-#. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q1
 msgid "Your company name?"
 msgstr "¿El nombre de su empresa?"
+
+#~ msgid "If other, please specify:"
+#~ msgstr "Si es otro, especifíquelo:"
+
+#~ msgid "The answer you entered is not valid."
+#~ msgstr "La respuesta que has introducido no es válida."
+
+#~ msgid "This question requires an answer."
+#~ msgstr "Esta pregunta requiere una respuesta."

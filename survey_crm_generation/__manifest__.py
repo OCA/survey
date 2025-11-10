@@ -3,7 +3,7 @@
 {
     "name": "Survey leads generation",
     "summary": "Generate CRM leads/opportunities from surveys",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",

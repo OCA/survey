@@ -10,11 +10,11 @@
                         name="show_in_lead_description"
                         invisible="question_type in ['matrix', 'simple_choice', 'multiple_choice']"
                     />
-                    <field name="allowed_field_domain" invisible="1" />
+                    <field name="allowed_crm_lead_field_domain" invisible="1" />
                     <field
                         name="crm_lead_field"
                         options="{'no_create': True, 'no_open': True}"
-                        domain="allowed_field_domain"
+                        domain="allowed_crm_lead_field_domain"
                     />
                 </group>
             </xpath>
