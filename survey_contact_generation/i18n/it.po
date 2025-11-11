@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-26 07:16+0000\n"
+"PO-Revision-Date: 2025-11-11 12:42+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,12 +14,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_partner_field_domain
 msgid "Allowed Partner Field Domain"
-msgstr ""
+msgstr "Dominio campo partner consentito"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q3
