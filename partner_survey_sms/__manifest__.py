@@ -4,7 +4,7 @@
     "name": "Partner Survey SMS",
     "summary": "Send survey participation link via SMS",
     "category": "Marketing/Surveys",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Kencove, Camptocamp, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
     "license": "AGPL-3",

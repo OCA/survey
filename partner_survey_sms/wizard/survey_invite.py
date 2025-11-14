@@ -1,15 +1,15 @@
 # Copyright Odoo
 # Copyright 2025 Kencove - Mohamed Alkobrosli (http://kencove.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 import re
+import urllib.parse
 
-import werkzeug
-
-from odoo import _, models, tools
+from odoo import models
 from odoo.exceptions import UserError
+from odoo.tools.mail import email_normalize, email_split_and_format
 
 emails_split = re.compile(r"[;,\n\r]+")
+
 
 
 class take_survey_wizard(models.TransientModel):
@@ -28,7 +28,7 @@ class take_survey_wizard(models.TransientModel):
         valid_emails = []
         for email in emails_split.split(self.emails or ""):
             partner = False
-            email_normalized = tools.email_normalize(email)
+            email_normalized = email_normalize(email)
             if email_normalized:
                 limit = None if self.survey_users_login_required else 1
                 partner = Partner.search(
@@ -37,11 +37,11 @@ class take_survey_wizard(models.TransientModel):
             if partner:
                 valid_partners |= partner
             else:
-                email_formatted = tools.email_split_and_format(email)
+                email_formatted = email_split_and_format(email)
                 if email_formatted:
                     valid_emails.extend(email_formatted)
         if not valid_partners and not valid_emails:
-            raise UserError(_("Please enter at least one valid recipient."))
+            raise UserError(self.env._("Please enter at least one valid recipient."))
         answers = self._prepare_answers(valid_partners, valid_emails)
         send_method = self.env.context.get("send_method", "")
         if send_method == "email":
@@ -57,7 +57,9 @@ class take_survey_wizard(models.TransientModel):
 
     def send_sms(self, answer):
         survey_start_url = self._get_survey_start_url(answer)
-        body = self._render_field("body", answer.ids, post_process=True)[answer.id]
+        body = self._render_field("body", answer.ids, options={"post_process": True})[
+            answer.id
+        ]
         body_html = self.env["mail.render.mixin"]._replace_local_links(body)
         message = self.env["ir.fields.converter"].text_from_html(body_html)
         for number in filter(None, [answer.partner_id.phone, answer.partner_id.mobile]):
@@ -102,7 +104,7 @@ class take_survey_wizard(models.TransientModel):
 
     def _get_survey_start_url(self, answer):
         survey_start_url = (
-            werkzeug.urls.url_join(self.get_base_url(), answer.get_start_url())
+            urllib.parse.urljoin(self.get_base_url(), answer.get_start_url())
             if answer
             else False
         )

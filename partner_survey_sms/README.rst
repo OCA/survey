@@ -62,6 +62,10 @@ Contributors
 
   - Mohamed Alkobrosli
 
+- `Trobz <https://trobz.com/>`__:
+
+  - Thinh Banh Phuc
+
 Maintainers
 -----------
 

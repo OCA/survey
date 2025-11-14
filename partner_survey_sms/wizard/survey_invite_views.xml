@@ -3,8 +3,11 @@
     <record model="ir.ui.view" id="survey_invite_view_form_sms">
         <field name="name">survey.invite.view.form.sms</field>
         <field name="model">survey.invite</field>
-        <field name="inherit_id" ref="survey.survey_invite_view_form" />
+        <field name="inherit_id" ref="survey.survey_invite_view_form"/>
         <field name="arch" type="xml">
+            <field name="send_email" position="attributes">
+                <attribute name="string">Send by Email / SMS</attribute>
+            </field>
             <button name="action_invite" position="attributes">
                 <attribute name="string">Send email</attribute>
                 <attribute name="context">{'send_method': 'email'}</attribute>
@@ -16,6 +19,7 @@
                     string="Send sms"
                     class="btn-primary"
                     type="object"
+                    invisible="not send_email"
                     context="{'send_method': 'sms'}"
                     data-hotkey="s"
                 />
@@ -24,6 +28,7 @@
                     string="Send email &amp; sms"
                     class="btn-primary"
                     type="object"
+                    invisible="not send_email"
                     context="{'send_method': 'both'}"
                     data-hotkey="b"
                 />

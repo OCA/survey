@@ -2,10 +2,10 @@
 <data noupdate="0">
     <record id="partner_survey_sms_template_notification" model="sms.template">
         <field name="name">Partner Survey SMS: Survey Participation Notification</field>
-        <field name="body">
-        Hello  {{ object.display_name }}, {{ ctx['requested_by_user'] }} has requested your participation on the following survey: {{ ctx['link'] }}, {{ ctx['message'] }}
+        <field name="body">Hello {{ object.display_name }}, {{ ctx['requested_by_user'] }} has requested your
+            participation on the following survey: {{ ctx['link'] }}&#10; {{ ctx['message'] }}
         </field>
         <field name="lang">{{ object.lang }}</field>
-        <field name="model_id" ref="base.model_res_partner" />
+        <field name="model_id" ref="base.model_res_partner"/>
     </record>
 </data>
