@@ -13,7 +13,6 @@ emails_split = re.compile(r"[;,\n\r]+")
 
 
 class take_survey_wizard(models.TransientModel):
-
     _inherit = "survey.invite"
 
     def action_invite_base(self):
