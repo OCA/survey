@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_survey_view_form" model="ir.ui.view">
+        <field name="name">survey.survey.view.form.question.list.all</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='question_and_page_ids']/list"
+                position="attributes"
+            >
+                <attribute name="limit">10000</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

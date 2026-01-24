@@ -1,0 +1,1 @@
+- [Daniel Lo Nigro](https://d.sb/) <git@d.sb>
