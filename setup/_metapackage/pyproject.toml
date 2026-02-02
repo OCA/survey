@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-oca-survey"
-version = "18.0.20250218.0"
+version = "18.0.20260202.0"
 dependencies = [
     "odoo-addon-partner_survey==18.0.*",
+    "odoo-addon-survey_xlsx==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",

@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 18.0.1.0.0 |  | Link partners with their survey results
+[survey_xlsx](survey_xlsx/) | 18.0.1.0.0 |  | XLSX Report to show the survey results
 
 [//]: # (end addons)
 
