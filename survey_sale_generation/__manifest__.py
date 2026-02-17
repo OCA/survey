@@ -3,7 +3,7 @@
 {
     "name": "Survey sale generation",
     "summary": "Generate sale orders from surveys",
-    "version": "17.0.1.0.2",
+    "version": "17.0.1.0.3",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
