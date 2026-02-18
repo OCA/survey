@@ -73,7 +73,7 @@ registry.category("web_tour.tours").add("test_survey_sale_generation", {
         },
         {
             content: "Thank you",
-            trigger: "h1:contains('Thank you!')",
+            trigger: "div.o_survey_finished",
         },
     ],
 });
