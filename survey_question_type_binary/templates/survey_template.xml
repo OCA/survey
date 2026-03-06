@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <template
         id="question_conainer_inh_type_binary"
         inherit_id="survey.question_container"
     >
-        <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
-            <t t-if="question.question_type in ('binary', 'multi_binary')">
-                <t t-call="survey_question_type_binary.question_binary" />
-            </t>
+        <xpath expr="//t[@t-call='survey.question_matrix']" position="after">
+            <t
+                t-if="question.question_type in ('binary', 'multi_binary')"
+                t-call="survey_question_type_binary.question_binary"
+            />
         </xpath>
     </template>
 
     <template id="survey_page_print" inherit_id="survey.survey_page_print">
-        <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
-            <t t-if="question.question_type in ('binary', 'multi_binary')">
-                <t t-call="survey_question_type_binary.question_binary" />
-            </t>
+        <xpath expr="//t[@t-call='survey.question_matrix']" position="after">
+            <t
+                t-if="question.question_type in ('binary', 'multi_binary')"
+                t-call="survey_question_type_binary.question_binary"
+            />
         </xpath>
     </template>
 
@@ -30,7 +31,9 @@
                         />
                     </t>
                     <t t-elif="answer_binary.value_binary">
-                        <p><t t-out="answer_binary.filename" /></p>
+                        <p>
+                            <t t-out="answer_binary.filename" />
+                        </p>
                     </t>
                     <t t-else="">
                         <input

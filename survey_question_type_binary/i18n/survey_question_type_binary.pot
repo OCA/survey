@@ -150,7 +150,7 @@ msgstr ""
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
-msgid "Only files with {} mime types are allowed."
+msgid "Only files with %s mime types are allowed."
 msgstr ""
 
 #. module: survey_question_type_binary
@@ -191,7 +191,7 @@ msgstr ""
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
-msgid "The file cannot exceed {}MB in size."
+msgid "The file cannot exceed %sMB in size."
 msgstr ""
 
 #. module: survey_question_type_binary

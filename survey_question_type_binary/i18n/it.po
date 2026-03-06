@@ -162,8 +162,8 @@ msgstr "Multiplo: binario"
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
-msgid "Only files with {} mime types are allowed."
-msgstr "Sono consentiti solo file di tipo MIME {}."
+msgid "Only files with %s mime types are allowed."
+msgstr "Sono consentiti solo file di tipo MIME %s."
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_question__question_type
@@ -202,8 +202,8 @@ msgstr "La risposta deve essere del tipo corretto"
 #: code:addons/survey_question_type_binary/models/survey_question.py:0
 #: code:addons/survey_question_type_binary/models/survey_user_input_line.py:0
 #, python-format
-msgid "The file cannot exceed {}MB in size."
-msgstr "Il file non può superare i {}MB."
+msgid "The file cannot exceed %sMB in size."
+msgstr "Il file non può superare i %sMB."
 
 #. module: survey_question_type_binary
 #: model:ir.model.fields,field_description:survey_question_type_binary.field_survey_user_input_line_binary__value_binary

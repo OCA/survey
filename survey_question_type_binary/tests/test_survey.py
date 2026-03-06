@@ -2,8 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # from odoo.exceptions import ValidationError
 import base64
+from os.path import join as pjoin
 
-from odoo.modules.module import get_module_resource
+from odoo.modules.module import get_module_path
 
 from odoo.addons.survey.tests import common
 
@@ -22,7 +23,7 @@ class TestSurvey(common.SurveyCase):
                 "name": "Maria Riera",
                 "login": "Riera",
                 "email": "maria.riera@example.com",
-                "groups_id": [
+                "group_ids": [
                     (
                         6,
                         0,
@@ -91,14 +92,11 @@ class TestSurvey(common.SurveyCase):
                 }
             )
         )
-        module_icon = get_module_resource(
-            "survey_question_type_binary", "static", "description", "icon.png"
-        )
+        module_path = get_module_path("survey_question_type_binary")
+        module_icon = pjoin(module_path, "static", "description", "icon.png")
         with open(module_icon, "rb") as img:
             cls.image_base64 = base64.b64encode(img.read())
-        module_html = get_module_resource(
-            "survey_question_type_binary", "static", "description", "index.html"
-        )
+        module_html = pjoin(module_path, "static", "description", "index.html")
         with open(module_html, "rb") as file:
             cls.html = base64.b64encode(file.read())
 

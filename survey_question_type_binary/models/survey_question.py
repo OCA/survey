@@ -3,7 +3,7 @@
 import base64
 import contextlib
 
-from odoo import _, fields, models
+from odoo import fields, models
 from odoo.tools.mimetypes import guess_mimetype
 
 
@@ -28,10 +28,10 @@ class SurveyQuestion(models.Model):
 
     def validate_question(self, answer, comment=None):
         if self.question_type in ("binary", "multi_binary"):
-            return self.validate_binary(answer)
+            return self._validate_binary(answer)
         return super().validate_question(answer, comment=comment)
 
-    def validate_binary(self, answers):
+    def _validate_binary(self, answers):
         self.ensure_one()
         errors = {}
         # Empty answer to mandatory question
@@ -69,17 +69,19 @@ class SurveyQuestion(models.Model):
                         ):
                             errors.update(
                                 {
-                                    self.id: _(
-                                        "Only files with {} mime types are allowed."
-                                    ).format(self.allowed_filemimetypes)
+                                    self.id: self.env._(
+                                        "Only files with %s mime types are allowed.",
+                                        self.allowed_filemimetypes,
+                                    )
                                 }
                             )
                         if self.max_filesize and filesize > self.max_filesize:
                             errors.update(
                                 {
-                                    self.id: _(
-                                        "The file cannot exceed {}MB in size."
-                                    ).format(self.max_filesize / 1024 / 1024)
+                                    self.id: self.env._(
+                                        "The file cannot exceed %sMB in size.",
+                                        self.max_filesize / 1024 / 1024,
+                                    )
                                 }
                             )
         return errors

@@ -51,11 +51,9 @@ class SurveyUserInputLineBinary(models.Model):
 
     @api.depends("value_binary")
     def _compute_binary_data(self):
-        for input_line in self:
-            input_line.value_binary_type = guess_mimetype(
-                base64.b64decode(input_line.value_binary)
-            )
-            input_line.value_binary_size = (len(input_line.value_binary) * 3) / 4 - str(
-                input_line.value_binary
+        for line in self:
+            line.value_binary_type = guess_mimetype(base64.b64decode(line.value_binary))
+            line.value_binary_size = (len(line.value_binary) * 3) / 4 - str(
+                line.value_binary
             ).count("=", -2)
-            input_line.is_binary_image = input_line.value_binary_type in VALID_MIMETYPES
+            line.is_binary_image = line.value_binary_type in VALID_MIMETYPES
