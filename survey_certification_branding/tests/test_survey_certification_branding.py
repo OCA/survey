@@ -25,10 +25,10 @@ class TestSurveyCertificationBranding(common.TestSurveyCommon):
         certification = user_input.survey_id
         if certification.certification:
             self.assertIn(self.certification_company_name, res)
-            self.assertIn("certification_logo_512", res)
+            self.assertIn("certification-branding", res)
         else:
             self.assertNotIn(self.certification_company_name, res)
-            self.assertNotIn("certification_logo_512", res)
+            self.assertNotIn("certification-branding", res)
 
     def test_branding_fields_flow_and_certification_report_rendering(self):
         with self.with_user("survey_user"):
