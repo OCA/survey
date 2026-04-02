@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="survey_survey_view_form_inherit" model="ir.ui.view">
+        <field name="name">survey.survey.form - survey_question_group</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='question_and_page_ids']//tree//field[@name='question_type']"
+                position="after"
+            >
+                <field name="group_id" optional="hide" />
+            </xpath>
+            <xpath expr="//field[@name='question_and_page_ids']" position="after">
+                <button
+                    name="action_add_question_group"
+                    string="Add Question Group"
+                    type="object"
+                    class="btn-link"
+                    icon="fa-plus"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

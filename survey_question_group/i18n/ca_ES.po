@@ -1,0 +1,136 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_question_group
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-10 08:08+0000\n"
+"PO-Revision-Date: 2026-04-10 08:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_question_group
+#. odoo-python
+#: code:addons/survey_question_group/models/survey_survey.py:0
+#: model_terms:ir.ui.view,arch_db:survey_question_group.survey_add_question_group_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:survey_question_group.survey_survey_view_form_inherit
+#, python-format
+msgid "Add Question Group"
+msgstr "Afegeix un grup de preguntes"
+
+#. module: survey_question_group
+#: model:ir.model,name:survey_question_group.model_survey_add_question_group_wizard
+msgid "Add Question Group to Survey"
+msgstr "Afegeix un grup de preguntes a l'enquesta"
+
+#. module: survey_question_group
+#: model_terms:ir.ui.view,arch_db:survey_question_group.survey_add_question_group_wizard_view_form
+msgid "Add Questions"
+msgstr "Afegeix preguntes"
+
+#. module: survey_question_group
+#: model_terms:ir.ui.view,arch_db:survey_question_group.survey_add_question_group_wizard_view_form
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__create_uid
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__create_date
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__create_date
+msgid "Created on"
+msgstr "Creat el"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__display_name
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__id
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__id
+msgid "ID"
+msgstr "ID"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard____last_update
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group____last_update
+msgid "Last Modified on"
+msgstr "Modificat el"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__write_uid
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__write_uid
+msgid "Last Updated by"
+msgstr "Modificat per"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__write_date
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__write_date
+msgid "Last Updated on"
+msgstr "Modificat el"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__group_id
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question__group_id
+#: model_terms:ir.ui.view,arch_db:survey_question_group.survey_question_group_view_form
+msgid "Question Group"
+msgstr "Grup de preguntes"
+
+#. module: survey_question_group
+#: model:ir.actions.act_window,name:survey_question_group.survey_question_group_action
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_survey__question_group_ids
+#: model:ir.ui.menu,name:survey_question_group.survey_question_group_menu
+msgid "Question Groups"
+msgstr "Grups de preguntes"
+
+#. module: survey_question_group
+#: model:ir.model.fields,help:survey_question_group.field_survey_survey__question_group_ids
+msgid "Question groups associated with this survey."
+msgstr ""
+"Grups de preguntes per a expandir per a cadascun dels pacients quan s'ha "
+"creada a partir d'una plantilla."
+
+#. module: survey_question_group
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_question_group__question_ids
+#: model_terms:ir.ui.view,arch_db:survey_question_group.survey_question_group_view_form
+msgid "Questions"
+msgstr "Preguntes"
+
+#. module: survey_question_group
+#: model:ir.model.fields,help:survey_question_group.field_survey_question__group_id
+msgid "Reusable group of template questions this question belongs to."
+msgstr ""
+"Grup de preguntes que es repetirà per a cada pacient associat a l'enquesta."
+
+#. module: survey_question_group
+#: model:ir.model,name:survey_question_group.model_survey_survey
+#: model:ir.model.fields,field_description:survey_question_group.field_survey_add_question_group_wizard__survey_id
+msgid "Survey"
+msgstr "Enquesta"
+
+#. module: survey_question_group
+#: model:ir.model,name:survey_question_group.model_survey_question
+msgid "Survey Question"
+msgstr "Pregunta de l'enquesta"
+
+#. module: survey_question_group
+#: model:ir.model,name:survey_question_group.model_survey_question_group
+msgid "Survey Question Group"
+msgstr "Grup de preguntes de l'enquesta"
