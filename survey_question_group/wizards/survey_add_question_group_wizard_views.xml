@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="survey_add_question_group_wizard_view_form" model="ir.ui.view">
+        <field name="name">survey.add.question.group.wizard.form</field>
+        <field name="model">survey.add.question.group.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Add Question Group">
+                <group>
+                    <field name="survey_id" invisible="1" />
+                    <field name="group_id" />
+                </group>
+                <footer>
+                    <button
+                        name="action_confirm"
+                        string="Add Questions"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
