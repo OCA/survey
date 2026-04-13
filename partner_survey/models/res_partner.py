@@ -26,14 +26,14 @@ class ResPartner(models.Model):
         compute="_compute_surveys_company_invisible",
     )
 
-    @api.depends("is_company")
+    @api.depends("survey_inputs")
     def _compute_surveys_count(self):
-        read_group_res = (
+        survey_data = (
             self.env["survey.user_input"]
             .sudo()
-            .read_group([("partner_id", "in", self.ids)], ["partner_id"], "partner_id")
+            ._read_group([("partner_id", "in", self.ids)], ["partner_id"], ["__count"])
         )
-        data = {res["partner_id"][0]: res["partner_id_count"] for res in read_group_res}
+        data = {partner.id: count for partner, count in survey_data}
         for partner in self:
             partner.surveys_count = data.get(partner.id, 0)
 
@@ -43,7 +43,7 @@ class ResPartner(models.Model):
             child.surveys_count for child in self.child_ids
         )
 
-    @api.depends("is_company")
+    @api.depends("surveys_count", "certifications_count")
     def _compute_surveys_invisible(self):
         for partner in self:
             partner.surveys_invisible = (
@@ -53,7 +53,7 @@ class ResPartner(models.Model):
     @api.depends("surveys_company_count", "certifications_company_count")
     def _compute_surveys_company_invisible(self):
         for partner in self:
-            self.surveys_company_invisible = (
+            partner.surveys_company_invisible = (
                 partner.surveys_company_count == partner.certifications_company_count
             )
 
