@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="certification_report_view_modern"
+        inherit_id="survey.certification_report_view_modern"
+        priority="110"
+    >
+        <xpath expr="//div[@id='o_survey_certification']" position="after">
+            <t t-if="user_input.survey_id.certification_program_enabled">
+                <div style="page-break-after: always;" />
+                <div
+                    id="o_survey_certification_program"
+                    t-att-data-oe-model="user_input._name"
+                    t-att-data-oe-id="user_input.id"
+                    t-att-class="'article certification-wrapper modern %s' % layout_color"
+                >
+                    <div class="certification">
+                        <div class="certification-top">
+                            <h1>Program</h1>
+                        </div>
+                        <div class="certification-content">
+                            <t
+                                t-if="user_input.survey_id.certificate_program_layout == 'columns'"
+                            >
+                                <div class="row">
+                                    <div class="col-8 offset-2">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Hours</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr
+                                                    t-foreach="user_input.survey_id.certificate_program_line_ids"
+                                                    t-as="line"
+                                                >
+                                                    <th scope="row">
+                                                        <span t-field="line.name" />
+                                                    </th>
+                                                    <td>
+                                                        <span
+                                                            t-field="line.description"
+                                                        />
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="line.hours" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </t>
+                            <t
+                                t-elif="user_input.survey_id.certificate_program_layout == 'simple'"
+                            >
+                                <div class="row">
+                                    <div class="col-6 offset-3">
+                                        <ul
+                                            t-foreach="user_input.survey_id.certificate_program_line_ids.mapped('name')"
+                                            t-as="program_name"
+                                        >
+                                            <li t-esc="program_name" />
+                                        </ul>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <div
+                            class="certification-number"
+                            t-if="user_input.scoring_success"
+                        >
+                            Certification n°<t
+                                t-esc="str(user_input.id).rjust(10, '0')"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template
+        id="certification_report_view_classic"
+        inherit_id="survey.certification_report_view_classic"
+        priority="110"
+    >
+        <xpath expr="//div[@id='o_survey_certification']" position="after">
+            <div style="page-break-after: always;" />
+            <div
+                id="o_survey_certification_program"
+                t-att-data-oe-model="user_input._name"
+                t-att-data-oe-id="user_input.id"
+                t-att-class="'article certification-wrapper classic %s' % layout_color"
+            >
+                    <div class="certification">
+                        <div class="certification-top">
+                            <h1>Program</h1>
+                        </div>
+                        <div class="certification-content">
+                            <t
+                            t-if="user_input.survey_id.certificate_program_layout == 'columns'"
+                        >
+                                <div class="row">
+                                    <div class="col-8 offset-2">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Hours</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr
+                                                t-foreach="user_input.survey_id.certificate_program_line_ids"
+                                                t-as="line"
+                                            >
+                                                    <th scope="row">
+                                                        <span t-field="line.name" />
+                                                    </th>
+                                                    <td>
+                                                        <span
+                                                        t-field="line.description"
+                                                    />
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="line.hours" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </t>
+                            <t
+                            t-elif="user_input.survey_id.certificate_program_layout == 'simple'"
+                        >
+                                <div class="row">
+                                    <div class="col-6 offset-3">
+                                        <ul
+                                        t-foreach="user_input.survey_id.certificate_program_line_ids.mapped('name')"
+                                        t-as="program_name"
+                                    >
+                                            <li t-esc="program_name" />
+                                        </ul>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <div
+                        class="certification-number"
+                        t-if="user_input.scoring_success"
+                    >
+                            Certification n°<t
+                            t-esc="str(user_input.id).rjust(10, '0')"
+                        />
+                        </div>
+                    </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

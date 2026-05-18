@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_certification_program
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-18 10:18+0000\n"
+"PO-Revision-Date: 2026-05-18 10:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,help:survey_certification_program.field_survey_survey__certificate_program_layout
+msgid ""
+"1. Simple list: The program blocks will be displayed one below the other in a vertical layout.\n"
+"2. In columns: The program blocks will be displayed in a table.\n"
+msgstr "1.Limple: los bloques del programa se mostrarán uno debajo del otro en un diseño de lista.\n"
+"2. En columnas: los bloques del programa se mostrarán en una tabla.\n"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,help:survey_certification_program.field_survey_survey__certification_program_enabled
+msgid "Allows you to enable program lines"
+msgstr "Permite habilitar las líneas del programa"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_survey__certificate_program_layout
+msgid "Certificate Layout"
+msgstr "Diseño del certificado"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_survey__certification_program_enabled
+msgid "Certification Program"
+msgstr "Programa de certificación"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_survey__certificate_program_line_ids
+msgid "Certification Program Lines"
+msgstr "Líneas del programa de certificación"
+
+#. module: survey_certification_program
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.survey_survey_view_form
+msgid "Certification Programs"
+msgstr "Programas de certificación"
+
+#. module: survey_certification_program
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_classic
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_modern
+msgid "Certification n°"
+msgstr "Certificación n°"
+
+#. module: survey_certification_program
+#: model:ir.model.fields.selection,name:survey_certification_program.selection__survey_survey__certificate_program_layout__columns
+msgid "Columns"
+msgstr "Columnas"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__description
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_classic
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_modern
+msgid "Description"
+msgstr "Descripción"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__hours
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_classic
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_modern
+msgid "Hours"
+msgstr "Horas"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__id
+msgid "ID"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__name
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_classic
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_modern
+msgid "Name"
+msgstr "Nombre"
+
+#. module: survey_certification_program
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_classic
+#: model_terms:ir.ui.view,arch_db:survey_certification_program.certification_report_view_modern
+msgid "Program"
+msgstr "Programa"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: survey_certification_program
+#: model:ir.model.fields.selection,name:survey_certification_program.selection__survey_survey__certificate_program_layout__simple
+msgid "Simple"
+msgstr "Simple"
+
+#. module: survey_certification_program
+#: model:ir.model,name:survey_certification_program.model_survey_survey
+#: model:ir.model.fields,field_description:survey_certification_program.field_survey_certificate_program_line__survey_id
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: survey_certification_program
+#: model:ir.model,name:survey_certification_program.model_survey_certificate_program_line
+msgid "Survey Certificate Program Line"
+msgstr "Línea del Programa de Certificación"
+
+#. module: survey_certification_program
+#: model:ir.model.fields,help:survey_certification_program.field_survey_survey__certificate_program_line_ids
+msgid "The certification program lines associated with this survey."
+msgstr "Las líneas del programa de certificación asociadas con esta encuesta."
+
+#. module: survey_certification_program
+#: model:ir.model.fields,help:survey_certification_program.field_survey_certificate_program_line__survey_id
+msgid "The survey associated with this certification program line."
+msgstr "La encuesta asociada con esta línea del programa de certificación."
