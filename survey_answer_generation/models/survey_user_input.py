@@ -18,6 +18,8 @@ class SurveyUserInput(models.Model):
     def _save_lines(self, question, answer, comment=None, overwrite_existing=True):
         """Sync the answers for the next question when they're saved so we don't have
         to repeat the logic again"""
+        if self.origin_input_id:
+            overwrite_existing = True
         res = super()._save_lines(
             question, answer, comment=comment, overwrite_existing=overwrite_existing
         )
