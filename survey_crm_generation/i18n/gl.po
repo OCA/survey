@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-23 18:47+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_ids
@@ -22,23 +24,23 @@ msgstr ""
 #. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q3
 msgid "And your name?"
-msgstr ""
+msgstr "E o teu nome?"
 
 #. module: survey_crm_generation
 #: model:survey.survey,description:survey_crm_generation.become_partner
 msgid "Be part of the Odoo Community!"
-msgstr ""
+msgstr "Se parte da comunidade de Odoo!"
 
 #. module: survey_crm_generation
 #: model:survey.survey,title:survey_crm_generation.become_partner
 msgid "Become OCA Partner"
-msgstr ""
+msgstr "Convérteche en membro OCA"
 
 #. module: survey_crm_generation
 #: model_terms:ir.ui.view,arch_db:survey_crm_generation.survey_form
 #: model_terms:ir.ui.view,arch_db:survey_crm_generation.survey_question_form
 msgid "CRM"
-msgstr ""
+msgstr "CRM"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__crm_lead_field
@@ -48,34 +50,34 @@ msgstr ""
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_survey__crm_tag_ids
 msgid "Crm Tag"
-msgstr ""
+msgstr "Etiqueta CRM"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_survey__crm_team_id
 msgid "Crm Team"
-msgstr ""
+msgstr "Equipo CRM"
 
 #. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q0
 msgid "E-mail address"
-msgstr ""
+msgstr "Dirección de correo electrónico"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_survey__generate_leads
 msgid "Generate Leads"
-msgstr ""
+msgstr "Xeración de iniciativa"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__generate_leads
 msgid "Generate leads/opportunities linked to the generated quotations"
-msgstr ""
+msgstr "Xerar iniciativas/oportunidades vinculadas ás ofertas xeradas"
 
 #. module: survey_crm_generation
 #: model:survey.question,comments_message:survey_crm_generation.survey_oca_q0
 #: model:survey.question,comments_message:survey_crm_generation.survey_oca_q1
 #: model:survey.question,comments_message:survey_crm_generation.survey_oca_q3
 msgid "If other, please specify:"
-msgstr ""
+msgstr "Se é outro, especifíqueo:"
 
 #. module: survey_crm_generation
 #: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug2
@@ -85,18 +87,18 @@ msgstr ""
 #. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr ""
+msgstr "Iniciativa/Oportunidade"
 
 #. module: survey_crm_generation
 #: model:crm.tag,name:survey_crm_generation.tag_oca_partnership
 #: model:crm.team,name:survey_crm_generation.oca_partnership_leads
 msgid "OCA Partnership"
-msgstr ""
+msgstr "Asociación OCA"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_user_input__opportunity_id
 msgid "Opportunity"
-msgstr ""
+msgstr "Oportunidade"
 
 #. module: survey_crm_generation
 #: model:survey.question,comments_message:survey_crm_generation.survey_oca_q4
@@ -112,32 +114,33 @@ msgstr ""
 #: model:ir.model.fields,help:survey_crm_generation.field_survey_survey__crm_tag_ids
 msgid "Set the default crm tags in the generated leads/opportunities"
 msgstr ""
+"Establecer as etiquetas crm por defecto nas iniciativas/oportunidades xeradas"
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__show_in_lead_description
 msgid "Show In Lead Description"
-msgstr ""
+msgstr "Mostrar na descrición da iniciativa"
 
 #. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_survey_survey
 msgid "Survey"
-msgstr ""
+msgstr "Enquisa"
 
 #. module: survey_crm_generation
 #: model:crm.tag,name:survey_crm_generation.tag_survey_leads
 msgid "Survey Leads"
-msgstr ""
+msgstr "Enquisa da iniciativa"
 
 #. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_survey_question
 msgid "Survey Question"
-msgstr ""
+msgstr "Pregunta da enquisa"
 
 #. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_survey_user_input
 #: model:ir.model.fields,field_description:survey_crm_generation.field_crm_lead__survey_user_input_id
 msgid "Survey User Input"
-msgstr ""
+msgstr "Respostas dos usuarios"
 
 #. module: survey_crm_generation
 #: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug1
@@ -150,7 +153,7 @@ msgstr ""
 #: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q3
 #: model:survey.question,validation_error_msg:survey_crm_generation.survey_oca_q4
 msgid "The answer you entered is not valid."
-msgstr ""
+msgstr "A resposta que introduciches non é válida."
 
 #. module: survey_crm_generation
 #: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q0
@@ -158,9 +161,9 @@ msgstr ""
 #: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q3
 #: model:survey.question,constr_error_msg:survey_crm_generation.survey_oca_q4
 msgid "This question requires an answer."
-msgstr ""
+msgstr "Esta pregunta require unha resposta."
 
 #. module: survey_crm_generation
 #: model:survey.question,title:survey_crm_generation.survey_oca_q1
 msgid "Your company name?"
-msgstr ""
+msgstr "O nome da súa empresa?"
