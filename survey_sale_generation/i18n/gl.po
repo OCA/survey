@@ -6,20 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-23 18:47+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.advanced_backup
 #: model:product.template,name:survey_sale_generation.advanced_backup_product_template
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug2
 msgid "Advanced Backup"
-msgstr ""
+msgstr "Copia de seguridade avanzada"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__allowed_sale_order_field_ids
@@ -32,38 +34,40 @@ msgid ""
 "Check it to generate sale orders from the survey answers. You'll need to "
 "configure at least one question linked to a product."
 msgstr ""
+"Márqueo para xerar pedidos de venda a partir das respostas da enquisa. Terás "
+"que configurar polo menos unha pregunta vinculada a un produto."
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__quotation_mail_template_id
 msgid "Choose a template. Otherwise the default one will be used."
-msgstr ""
+msgstr "Escolla un modelo. Doutro xeito usarase a que existe por defecto."
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q3
 msgid "Choose your extras"
-msgstr ""
+msgstr "Elixe os teus extras"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q2
 msgid "Choose your subscription level"
-msgstr ""
+msgstr "Elixa o seu nivel de subscrición"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__crm_team_id
 msgid "Crm Team"
-msgstr ""
+msgstr "Equipo CRM"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.dedicated_server
 #: model:product.template,name:survey_sale_generation.dedicated_server_product_template
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug1
 msgid "Dedicated Server"
-msgstr ""
+msgstr "Servidor dedicado"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q0
 msgid "E-mail address"
-msgstr ""
+msgstr "Dirección de correo electrónico"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,help:survey_sale_generation.field_survey_question__product_uom_qty_question_id
@@ -73,32 +77,37 @@ msgid ""
 "members in your team?' and other could be 'Choose the membership type'. "
 "We'll want to multiply members by memberships in our sale line."
 msgstr ""
+"Para preguntas con múltiples respostas poderiamos querer ter en conta que "
+"cantidade de produto queremos pedir. Por exemplo, un pregunta podería ser: "
+"'Cantos membros hai no teu equipo?' e outra podería ser 'Escolle o tipo de "
+"membresía'. Quereremos multiplicar socios por tipos de membresía na nosa "
+"liña de venda."
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__generate_quotations
 msgid "Generate Quotations"
-msgstr ""
+msgstr "Xerar orzamentos"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug2
 msgid "Gold"
-msgstr ""
+msgstr "Ouro"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.gold_service
 #: model:product.template,name:survey_sale_generation.gold_service_product_template
 msgid "Gold support"
-msgstr ""
+msgstr "Soporte ouro"
 
 #. module: survey_sale_generation
 #: model:survey.survey,title:survey_sale_generation.survey_hire_support
 msgid "Hire Technical Support"
-msgstr ""
+msgstr "Contratar asistencia técnica"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q1
 msgid "How many hours will you hire monthly?"
-msgstr ""
+msgstr "Cantas horas vai contratar ao mes?"
 
 #. module: survey_sale_generation
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q0
@@ -107,7 +116,7 @@ msgstr ""
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q2
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q3
 msgid "If other, please specify:"
-msgstr ""
+msgstr "Se é outro, especifíqueo:"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q4_sug2
@@ -119,12 +128,12 @@ msgstr ""
 #: model:product.template,name:survey_sale_generation.mail_management_product_template
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q3_sug3
 msgid "Mail Management"
-msgstr ""
+msgstr "Xestión do correo"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q0_1
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: survey_sale_generation
 #: model:survey.question,comments_message:survey_sale_generation.survey_support_q4
@@ -134,29 +143,29 @@ msgstr ""
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug1
 msgid "Platinum"
-msgstr ""
+msgstr "Platino"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.platinum_service
 #: model:product.template,name:survey_sale_generation.platinum_service_product_template
 msgid "Platinum support"
-msgstr ""
+msgstr "Soporte platino"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_ids
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__product_ids
 msgid "Product"
-msgstr ""
+msgstr "Produto"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__product_uom_qty_question_id
 msgid "Product Uom Qty Question"
-msgstr ""
+msgstr "Pregunta de cantidade de produto"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__quotation_mail_template_id
 msgid "Quotation Mail Template"
-msgstr ""
+msgstr "Modelo de correo de orzamento"
 
 #. module: survey_sale_generation
 #: model:survey.question,title:survey_sale_generation.survey_support_q4
@@ -166,7 +175,7 @@ msgstr ""
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_user_input__sale_order_id
 msgid "Sale Order"
-msgstr ""
+msgstr "Pedido de venda"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__sale_order_field
@@ -177,76 +186,76 @@ msgstr ""
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question_answer__sale_order_template_id
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__sale_order_template_id
 msgid "Sale Order Template"
-msgstr ""
+msgstr "Modelo de orzamento"
 
 #. module: survey_sale_generation
 #: model_terms:ir.ui.view,arch_db:survey_sale_generation.survey_form
 #: model_terms:ir.ui.view,arch_db:survey_sale_generation.survey_question_form
 msgid "Sales"
-msgstr ""
+msgstr "Vendas"
 
 #. module: survey_sale_generation
 #: model:ir.model,name:survey_sale_generation.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Pedido de venda"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_survey__send_quotation_to_customer
 msgid "Send Quotation To Customer"
-msgstr ""
+msgstr "Enviar orzamento ao cliente"
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,help:survey_sale_generation.field_survey_survey__send_quotation_to_customer
 msgid "Send the quotation to the customer automatically."
-msgstr ""
+msgstr "Enviar o orzamento ao cliente automaticamente."
 
 #. module: survey_sale_generation
 #: model:ir.model.fields,field_description:survey_sale_generation.field_survey_question__show_in_sale_order_comment
 msgid "Show In Sale Order Comment"
-msgstr ""
+msgstr "Mostrar comentario en orde de venda"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q2_sug3
 msgid "Silver"
-msgstr ""
+msgstr "Prata"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.silver_service
 #: model:product.template,name:survey_sale_generation.silver_service_product_template
 msgid "Silver support"
-msgstr ""
+msgstr "Soporte prata"
 
 #. module: survey_sale_generation
 #: model:crm.team,name:survey_sale_generation.support_hiring
 msgid "Support Hiring"
-msgstr ""
+msgstr "Contratación de soporte"
 
 #. module: survey_sale_generation
 #: model:product.product,name:survey_sale_generation.support_hours
 #: model:product.template,name:survey_sale_generation.support_hours_product_template
 msgid "Support hours"
-msgstr ""
+msgstr "Horas de soporte"
 
 #. module: survey_sale_generation
 #: model:ir.model,name:survey_sale_generation.model_survey_survey
 msgid "Survey"
-msgstr ""
+msgstr "Enquisa"
 
 #. module: survey_sale_generation
 #: model:ir.model,name:survey_sale_generation.model_survey_question_answer
 msgid "Survey Label"
-msgstr ""
+msgstr "Etiqueta da enquisa"
 
 #. module: survey_sale_generation
 #: model:ir.model,name:survey_sale_generation.model_survey_question
 msgid "Survey Question"
-msgstr ""
+msgstr "Pregunta da enquisa"
 
 #. module: survey_sale_generation
 #: model:ir.model,name:survey_sale_generation.model_survey_user_input
 #: model:ir.model.fields,field_description:survey_sale_generation.field_sale_order__survey_user_input_id
 msgid "Survey User Input"
-msgstr ""
+msgstr "Entrada de usuario da enquisa"
 
 #. module: survey_sale_generation
 #: model:survey.question.answer,value:survey_sale_generation.survey_support_q4_sug1
@@ -261,7 +270,7 @@ msgstr ""
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q3
 #: model:survey.question,validation_error_msg:survey_sale_generation.survey_support_q4
 msgid "The answer you entered is not valid."
-msgstr ""
+msgstr "A resposta que introduciches non é válida."
 
 #. module: survey_sale_generation
 #: code:addons/survey_sale_generation/models/survey_user_input.py:0
@@ -270,6 +279,8 @@ msgid ""
 "This order has been created from this survey input: <a href=# data-oe-"
 "model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
 msgstr ""
+"Este pedido creouse a partir desta entrada de enquisa: <a href=# data-oe-"
+"model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
 
 #. module: survey_sale_generation
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q0
@@ -279,7 +290,7 @@ msgstr ""
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q3
 #: model:survey.question,constr_error_msg:survey_sale_generation.survey_support_q4
 msgid "This question requires an answer."
-msgstr ""
+msgstr "Esta pregunta require unha resposta."
 
 #. module: survey_sale_generation
 #: model:product.product,uom_name:survey_sale_generation.advanced_backup
@@ -297,4 +308,4 @@ msgstr ""
 #: model:product.template,uom_name:survey_sale_generation.silver_service_product_template
 #: model:product.template,uom_name:survey_sale_generation.support_hours_product_template
 msgid "Units"
-msgstr ""
+msgstr "Unidades"
