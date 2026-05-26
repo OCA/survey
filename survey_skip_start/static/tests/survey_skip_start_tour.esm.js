@@ -8,7 +8,7 @@ registry.category("web_tour.tours").add("test_survey_skip_start", {
         {
             content: "Answer Where do you live",
             trigger: 'div.js_question-wrapper:contains("Where do you live") input',
-            run: "text Spain",
+            run: "fill Spain",
         },
     ],
 });
