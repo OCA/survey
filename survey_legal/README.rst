@@ -50,6 +50,19 @@ To require legal terms acceptance in a survey, follow these steps:
 The users of the survey will be required to accept the legal terms
 before they can submit their answers to the questions.
 
+Usage
+=====
+
+Go to a survey which has the *Require legal terms acceptance* option set
+and you'll be required to accept the legal terms before you can submit
+your answers.
+
+Known issues / Roadmap
+======================
+
+- For the moment, it only works with one page layouts and the last page
+  of multi-page surveys.
+
 Bug Tracker
 ===========
 
