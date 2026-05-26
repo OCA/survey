@@ -11,10 +11,9 @@ SurveyFormWidget.include({
      *
      * @override
      * @param {JQuery} [$form] the survey form
-     * @param {FormData} [_formData] the form data
      * @returns {Boolean}
      */
-    _validateForm: function ($form, _formData) {
+    _validateForm: function ($form) {
         const [$legalTermsInput] = $form.find("#accepted_legal_terms");
         const res = this._super(...arguments);
         // The original method returns false when there are errors. We can break here
