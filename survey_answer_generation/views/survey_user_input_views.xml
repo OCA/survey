@@ -13,7 +13,7 @@
                 />
             </field>
             <xpath
-                expr="//field[@name='user_input_line_ids']//tree"
+                expr="//field[@name='user_input_line_ids']//list"
                 position="attributes"
             >
                 <attribute
@@ -21,7 +21,7 @@
                 >diff_with_origin != False</attribute>
             </xpath>
             <xpath
-                expr="//field[@name='user_input_line_ids']//tree//field[@name='answer_score']"
+                expr="//field[@name='user_input_line_ids']//list//field[@name='answer_score']"
                 position="after"
             >
                 <field
