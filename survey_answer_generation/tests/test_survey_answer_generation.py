@@ -145,6 +145,31 @@ class TestSurveyAnswerGeneration(TransactionCase):
         input1._mark_done()
         self.assertEqual(next_input.partner_id, self.partner)
 
+    def test_comment_syncs_to_next_survey(self):
+        """A comment on a linked question is synced to the next survey input."""
+        input1 = self._create_input(self.survey1)
+        input1._save_lines(self.text_q1, "Answer", comment="my comment")
+        next_input = input1.next_survey_input_id
+        comment_line = next_input.user_input_line_ids.filtered(
+            lambda line: line.question_id == self.text_q2
+            and line.answer_type == "char_box"
+        )
+        self.assertTrue(comment_line)
+
+    def test_diff_with_origin_suggestion_type(self):
+        """diff_with_origin is computed when a pre-filled suggestion answer changes."""
+        input1 = self._create_input(self.survey1)
+        input1._save_lines(self.choice_q1, self.option_a1.id)
+        next_input = input1.next_survey_input_id
+        option_b2 = self.env["survey.question.answer"].create(
+            {"question_id": self.choice_q2.id, "value": "Option B"}
+        )
+        synced_line = next_input.user_input_line_ids.filtered(
+            lambda line: line.question_id == self.choice_q2
+        )
+        synced_line.suggested_answer_id = option_b2
+        self.assertTrue(synced_line.diff_with_origin)
+
     def test_diff_line_count_computed(self):
         """diff_user_input_line_count reflects the number of lines with diffs."""
         input1 = self._create_input(self.survey1)
