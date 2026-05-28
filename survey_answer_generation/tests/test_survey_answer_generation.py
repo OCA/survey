@@ -72,17 +72,19 @@ class TestSurveyAnswerGeneration(TransactionCase):
         self.assertEqual(input1.next_survey_input_id.origin_input_id, input1)
 
     def test_create_answer_no_next_survey(self):
-        """Creating an answer for a survey with no next_survey_id has no linked input."""
+        """Creating an answer for a survey with no next_survey_id has no linked
+        input."""
         input2 = self._create_input(self.survey2)
         self.assertFalse(input2.next_survey_input_id)
 
     def test_save_text_answer_syncs_to_next_survey(self):
-        """Saving a char_box answer in survey1 pre-fills the linked question in survey2."""
+        """Saving a char_box answer in survey1 pre-fills the linked question in
+        survey2."""
         input1 = self._create_input(self.survey1)
         input1._save_lines(self.text_q1, "Hello OCA")
         next_input = input1.next_survey_input_id
         synced_line = next_input.user_input_line_ids.filtered(
-            lambda l: l.question_id == self.text_q2
+            lambda line: line.question_id == self.text_q2
         )
         self.assertTrue(synced_line)
         self.assertEqual(synced_line.value_char_box, "Hello OCA")
@@ -93,7 +95,7 @@ class TestSurveyAnswerGeneration(TransactionCase):
         input1._save_lines(self.choice_q1, self.option_a1.id)
         next_input = input1.next_survey_input_id
         synced_line = next_input.user_input_line_ids.filtered(
-            lambda l: l.question_id == self.choice_q2
+            lambda line: line.question_id == self.choice_q2
         )
         self.assertTrue(synced_line)
         self.assertEqual(synced_line.suggested_answer_id, self.option_a2)
@@ -119,7 +121,7 @@ class TestSurveyAnswerGeneration(TransactionCase):
         input1._save_lines(self.text_q1, "Original answer")
         next_input = input1.next_survey_input_id
         synced_line = next_input.user_input_line_ids.filtered(
-            lambda l: l.question_id == self.text_q2
+            lambda line: line.question_id == self.text_q2
         )
         # Simulate user changing the pre-filled answer in survey2
         synced_line.value_char_box = "Changed answer"
@@ -131,7 +133,7 @@ class TestSurveyAnswerGeneration(TransactionCase):
         input1._save_lines(self.text_q1, "Same answer")
         next_input = input1.next_survey_input_id
         synced_line = next_input.user_input_line_ids.filtered(
-            lambda l: l.question_id == self.text_q2
+            lambda line: line.question_id == self.text_q2
         )
         self.assertFalse(synced_line.diff_with_origin)
 
@@ -149,7 +151,7 @@ class TestSurveyAnswerGeneration(TransactionCase):
         input1._save_lines(self.text_q1, "Original")
         next_input = input1.next_survey_input_id
         synced_line = next_input.user_input_line_ids.filtered(
-            lambda l: l.question_id == self.text_q2
+            lambda line: line.question_id == self.text_q2
         )
         self.assertEqual(next_input.diff_user_input_line_count, 0)
         synced_line.value_char_box = "Modified"
