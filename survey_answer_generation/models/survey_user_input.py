@@ -39,9 +39,9 @@ class SurveyUserInput(models.Model):
                 suggested_answer = self.env["survey.question.answer"].browse(
                     suggested_answer_id
                 )
-                vals[
-                    "suggested_answer_id"
-                ] = suggested_answer.next_survey_question_answer_id.id
+                vals["suggested_answer_id"] = (
+                    suggested_answer.next_survey_question_answer_id.id
+                )
             origin_line = self.origin_input_id.user_input_line_ids.filtered(
                 lambda x: x.question_id.next_survey_question_id == question
                 and x.answer_type == "suggestion"
