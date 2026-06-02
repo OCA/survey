@@ -10,7 +10,7 @@ SurveyFormWidget.include({
      * Validate legal terms acceptance if present
      *
      * @override
-     * * @param {JQuery} [$form] the survey form
+     * @param {JQuery} [$form] the survey form
      * @returns {Boolean}
      */
     _validateForm: function ($form) {
