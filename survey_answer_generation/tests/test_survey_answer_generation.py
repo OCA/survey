@@ -182,3 +182,43 @@ class TestSurveyAnswerGeneration(TransactionCase):
         synced_line.value_char_box = "Modified"
         next_input._compute_diff_user_input_line_count()
         self.assertEqual(next_input.diff_user_input_line_count, 1)
+
+    def test_mark_done_no_next_survey_input(self):
+        """_mark_done on an input with no linked input completes without error."""
+        input2 = self._create_input(self.survey2)
+        self.assertFalse(input2.next_survey_input_id)
+        input2._mark_done()
+
+    def test_mark_done_partner_already_matches(self):
+        """_mark_done skips the partner update when the next input already has the
+        same partner."""
+        input1 = self._create_input(self.survey1, partner=self.partner)
+        input1.next_survey_input_id.partner_id = self.partner
+        input1._mark_done()
+        self.assertEqual(input1.next_survey_input_id.partner_id, self.partner)
+
+    def test_save_skipped_choice_syncs_to_next_survey(self):
+        """Saving a skipped (falsy) choice answer is synced without error and does
+        not set origin_input_line on the synced line."""
+        input1 = self._create_input(self.survey1)
+        input1._save_lines(self.choice_q1, False)
+        next_input = input1.next_survey_input_id
+        synced_line = next_input.user_input_line_ids.filtered(
+            lambda line: line.question_id == self.choice_q2
+        )
+        self.assertTrue(synced_line.skipped)
+        self.assertFalse(synced_line.origin_input_line)
+
+    def test_save_lines_to_next_input_without_origin_line(self):
+        """Saving directly to next_input with context but without a corresponding
+        origin line does not set origin_input_line on the saved line."""
+        input1 = self._create_input(self.survey1)
+        next_input = input1.next_survey_input_id
+        next_input.with_context(save_next_question_answer=True)._save_lines(
+            self.text_q2, "Direct value"
+        )
+        saved_line = next_input.user_input_line_ids.filtered(
+            lambda line: line.question_id == self.text_q2
+        )
+        self.assertTrue(saved_line)
+        self.assertFalse(saved_line.origin_input_line)
