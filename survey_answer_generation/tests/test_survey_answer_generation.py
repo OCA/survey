@@ -209,6 +209,19 @@ class TestSurveyAnswerGeneration(TransactionCase):
         self.assertTrue(synced_line.skipped)
         self.assertFalse(synced_line.origin_input_line)
 
+    def test_comment_on_choice_answer_syncs_origin_line(self):
+        """A comment on a linked choice question is synced to the next survey input
+        with origin_input_line set, exercising _get_line_comment_values."""
+        input1 = self._create_input(self.survey1)
+        input1._save_lines(self.choice_q1, self.option_a1.id, comment="my comment")
+        next_input = input1.next_survey_input_id
+        comment_line = next_input.user_input_line_ids.filtered(
+            lambda line: line.question_id == self.choice_q2
+            and line.answer_type == "char_box"
+        )
+        self.assertTrue(comment_line)
+        self.assertTrue(comment_line.origin_input_line)
+
     def test_save_lines_to_next_input_without_origin_line(self):
         """Saving directly to next_input with context but without a corresponding
         origin line does not set origin_input_line on the saved line."""
