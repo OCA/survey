@@ -3,7 +3,7 @@
 {
     "name": "Survey Result Mail",
     "summary": "Send survey answers to the survey user",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
