@@ -1,3 +1,7 @@
+# Copyright 2022 Tecnativa - David Vidal
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+from unittest.mock import patch
+
 from odoo.tests import tagged
 
 from odoo.addons.survey.tests.common import TestSurveyCommon
@@ -246,3 +250,114 @@ class TestCertificationsending(TestSurveyCommon):
         # Verify that the certification has been sent manually
         answer.action_manual_send_certification()
         self.assertTrue(answer.certification_sent)
+
+    # --- shared helper ---
+
+    def _make_passing_certification(self, title, extra_vals=None):
+        vals = {
+            "title": title,
+            "access_mode": "public",
+            "users_login_required": True,
+            "questions_layout": "page_per_question",
+            "users_can_go_back": True,
+            "scoring_type": "scoring_with_answers",
+            "scoring_success_min": 85.0,
+            "certification": True,
+            "certification_mail_template_id": self.env.ref(
+                "survey.mail_template_certification"
+            ).id,
+        }
+        if extra_vals:
+            vals.update(extra_vals)
+        survey = self.env["survey.survey"].create(vals)
+        q = self._add_question(
+            None,
+            "1+1",
+            "simple_choice",
+            sequence=1,
+            constr_mandatory=True,
+            constr_error_msg="Please select an answer",
+            survey_id=survey.id,
+            labels=[
+                {"value": "1"},
+                {"value": "2", "is_correct": True, "answer_score": 100.0},
+            ],
+        )
+        return survey, q
+
+    # --- survey_user_input.py coverage ---
+
+    def test_mark_done_test_entry_skips_certification(self):
+        survey, q = self._make_passing_certification("Test Entry No Cert")
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, q.suggested_answer_ids[1].id)
+        answer.write({"test_entry": True, "state": "done"})
+        answer._mark_done()
+        self.assertTrue(answer.scoring_success)
+        self.assertFalse(answer.certification_sent)
+
+    def test_mark_done_no_template_skips_certification(self):
+        survey, q = self._make_passing_certification(
+            "No Template No Cert",
+            extra_vals={"certification_mail_template_id": False},
+        )
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, q.suggested_answer_ids[1].id)
+        answer.write({"state": "done"})
+        answer._mark_done()
+        self.assertTrue(answer.scoring_success)
+        self.assertFalse(answer.certification_sent)
+
+    def test_manual_send_success_notification(self):
+        survey, q = self._make_passing_certification(
+            "Manual Send Success", extra_vals={"skip_certification_email": True}
+        )
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, q.suggested_answer_ids[1].id)
+        answer.write({"state": "done"})
+        answer._mark_done()
+        result = answer.action_manual_send_certification()
+        self.assertEqual(result["type"], "ir.actions.client")
+        self.assertEqual(result["params"]["type"], "success")
+        self.assertTrue(answer.certification_sent)
+
+    def test_manual_send_warning_when_not_passed(self):
+        survey, q = self._make_passing_certification("Manual Send Warning")
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, q.suggested_answer_ids[0].id)
+        answer.write({"state": "done"})
+        answer._mark_done()
+        result = answer.action_manual_send_certification()
+        self.assertEqual(result["type"], "ir.actions.client")
+        self.assertEqual(result["params"]["type"], "warning")
+        self.assertFalse(answer.certification_sent)
+
+    # --- mail_template.py coverage ---
+
+    def test_send_mail_returns_false_when_survey_skip(self):
+        survey, _q = self._make_passing_certification(
+            "Send Mail Survey Skip",
+            extra_vals={"skip_certification_email": True},
+        )
+        answer = self._add_answer(survey, self.env.user)
+        template = self.env.ref("survey.mail_template_certification")
+        self.assertFalse(template.send_mail(answer.id))
+
+    def test_send_mail_returns_false_when_partner_skip(self):
+        survey, _q = self._make_passing_certification("Send Mail Partner Skip")
+        answer = self._add_answer(survey, self.env.user)
+        answer.partner_id.write({"skip_certification_email": True})
+        template = self.env.ref("survey.mail_template_certification")
+        self.assertFalse(template.send_mail(answer.id))
+
+    def test_send_mail_proceeds_when_no_skip(self):
+        survey, _q = self._make_passing_certification("Send Mail Proceeds")
+        answer = self._add_answer(survey, self.env.user)
+        template = self.env.ref("survey.mail_template_certification")
+        with patch(
+            "odoo.addons.mail.models.mail_template.MailTemplate.send_mail",
+            return_value=True,
+        ) as mock_send:
+            result = template.send_mail(answer.id)
+            mock_send.assert_called_once()
+        self.assertTrue(result)
