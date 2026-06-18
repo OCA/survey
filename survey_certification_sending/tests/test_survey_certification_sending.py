@@ -332,6 +332,21 @@ class TestCertificationsending(TestSurveyCommon):
         self.assertEqual(result["params"]["type"], "warning")
         self.assertFalse(answer.certification_sent)
 
+    def test_manual_send_no_template_returns_warning(self):
+        # covers: if template: False branch — answer passed but no template set
+        survey, q = self._make_passing_certification(
+            "Manual Send No Template",
+            extra_vals={"certification_mail_template_id": False},
+        )
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, q.suggested_answer_ids[1].id)
+        answer.write({"state": "done"})
+        answer._mark_done()
+        result = answer.action_manual_send_certification()
+        self.assertEqual(result["type"], "ir.actions.client")
+        self.assertEqual(result["params"]["type"], "warning")
+        self.assertFalse(answer.certification_sent)
+
     # --- mail_template.py coverage ---
 
     def test_send_mail_returns_false_when_survey_skip(self):
