@@ -279,8 +279,9 @@ class TestSurveyResultMail(TestSurveyCommon):
         self.assertIn("Great", html)
 
     def test_compute_survey_result_bootstrap_mode(self):
-        # _render_user_input uses web.layout which needs an HTTP request context;
-        # mock it to verify the bootstrap branch calls the right method.
+        # Mock ir.ui.view._render_template (not _render_user_input) so the full
+        # body of _render_user_input is executed and covered, while avoiding the
+        # web.layout render that requires an HTTP request context.
         survey = self._make_result_survey("Bootstrap Mode")
         q = self._add_question(
             None,
@@ -293,11 +294,20 @@ class TestSurveyResultMail(TestSurveyCommon):
         answer = self._add_answer(survey, self.env.user)
         self._add_answer_line(q, answer, q.suggested_answer_ids[0].id)
         answer.write({"state": "done"})
-        with patch(
-            "odoo.addons.survey_result_mail.models.survey_user_input"
-            ".SurveyUserInput._render_user_input",
+        with patch.object(
+            type(self.env["ir.ui.view"]),
+            "_render_template",
             return_value="<p>bootstrap rendered</p>",
-        ) as mock_render:
+        ):
             html = answer.with_context(survey_result_mode="bootstrap").survey_result
-            mock_render.assert_called_once()
         self.assertTrue(html)
+
+    def test_compute_survey_result_unknown_mode(self):
+        # covers: elif mode == "basic" → False branch (mode is neither bootstrap
+        # nor basic — both if/elif evaluate to False, survey_result stays empty)
+        survey = self._make_result_survey("Unknown Mode")
+        q = self._add_question(None, "Q1", "char_box", sequence=1, survey_id=survey.id)
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, "something")
+        html = answer.with_context(survey_result_mode="unknown").survey_result
+        self.assertFalse(html)
