@@ -1,6 +1,7 @@
 # Copyright 2023 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import datetime
+from unittest.mock import patch
 
 from odoo.tests import tagged
 
@@ -259,7 +260,8 @@ class TestSurveyResultMail(TestSurveyCommon):
         )
         answer = self._add_answer(survey, self.env.user)
         self._add_answer_line(q_answered, answer, "Hello")
-        self._add_answer_line(q_skipped, answer, False, skipped=True)
+        # answer_type=False required: constraint rejects skipped=True + any answer_type
+        self._add_answer_line(q_skipped, answer, False, answer_type=False, skipped=True)
         html = answer._build_answers_html()
         self.assertIn("Hello", html)
         self.assertNotIn("Skipped question", html)
@@ -277,6 +279,8 @@ class TestSurveyResultMail(TestSurveyCommon):
         self.assertIn("Great", html)
 
     def test_compute_survey_result_bootstrap_mode(self):
+        # _render_user_input uses web.layout which needs an HTTP request context;
+        # mock it to verify the bootstrap branch calls the right method.
         survey = self._make_result_survey("Bootstrap Mode")
         q = self._add_question(
             None,
@@ -289,5 +293,11 @@ class TestSurveyResultMail(TestSurveyCommon):
         answer = self._add_answer(survey, self.env.user)
         self._add_answer_line(q, answer, q.suggested_answer_ids[0].id)
         answer.write({"state": "done"})
-        html = answer.with_context(survey_result_mode="bootstrap").survey_result
+        with patch(
+            "odoo.addons.survey_result_mail.models.survey_user_input"
+            ".SurveyUserInput._render_user_input",
+            return_value="<p>bootstrap rendered</p>",
+        ) as mock_render:
+            html = answer.with_context(survey_result_mode="bootstrap").survey_result
+            mock_render.assert_called_once()
         self.assertTrue(html)
