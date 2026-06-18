@@ -349,6 +349,30 @@ class TestCertificationsending(TestSurveyCommon):
 
     # --- mail_template.py coverage ---
 
+    def test_send_mail_non_survey_model_calls_super(self):
+        # This module overrides send_mail on ALL mail.template records.
+        # The guard "if self.model == 'survey.user_input'" ensures the skip
+        # logic never interferes with templates for other models.
+        # This test covers the False branch of that guard.
+        model_id = (
+            self.env["ir.model"].search([("model", "=", "res.partner")], limit=1).id
+        )
+        partner_template = self.env["mail.template"].create(
+            {
+                "name": "Test Non Survey Template",
+                "model_id": model_id,
+                "subject": "Test",
+                "body_html": "<p>Test</p>",
+            }
+        )
+        with patch(
+            "odoo.addons.mail.models.mail_template.MailTemplate.send_mail",
+            return_value=True,
+        ) as mock_send:
+            result = partner_template.send_mail(self.env.user.partner_id.id)
+            mock_send.assert_called_once()
+        self.assertTrue(result)
+
     def test_send_mail_returns_false_when_survey_skip(self):
         survey, _q = self._make_passing_certification(
             "Send Mail Survey Skip",
