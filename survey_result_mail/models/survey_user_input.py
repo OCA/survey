@@ -18,6 +18,8 @@ class SurveyUserInput(models.Model):
                 user_input.survey_result = user_input._render_user_input()
             elif mode == "basic":
                 user_input.survey_result = user_input._build_answers_html()
+            else:
+                user_input.survey_result = False
 
     def _render_user_input(self):
         """We're rendering the template results to add them to the pdf report"""
