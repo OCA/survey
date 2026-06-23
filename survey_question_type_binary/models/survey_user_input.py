@@ -37,19 +37,16 @@ class SurveyUserInput(models.Model):
                 del vals["value_binary"]
             else:
                 del vals["value_multi_binary"]
-            if not isinstance(answer, (list | tuple)):
-                answer = [answer]
-            answer_binary_datas = []
-            for answer_binary in answer:
-                data = answer_binary.get("data")
-                filename = answer_binary.get("filename")
-                answer_binary_datas += [
-                    Command.create(
-                        {
-                            "value_binary": data,
-                            "filename": filename,
-                        }
-                    )
-                ]
-            vals.update({"answer_binary_ids": answer_binary_datas})
+            vals.update(
+                {
+                    "answer_binary_ids": [
+                        Command.create(
+                            {
+                                "value_binary": answer.get("data"),
+                                "filename": answer.get("filename"),
+                            }
+                        )
+                    ]
+                }
+            )
         return vals

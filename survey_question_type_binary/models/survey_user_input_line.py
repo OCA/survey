@@ -26,8 +26,7 @@ class SurveyUserInputLine(models.Model):
             if line.answer_type not in ("binary", "multi_binary"):
                 continue
             super_check -= line
-            field_name = "answer_binary_ids"
-            if field_name and not line[field_name]:
+            if not line.answer_binary_ids:
                 raise ValidationError(
                     self.env._("The answer must be in the right type")
                 )
