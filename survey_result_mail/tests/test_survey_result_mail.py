@@ -250,6 +250,31 @@ class TestSurveyResultMail(TestSurveyCommon):
         self.assertIn("Apples", html)
         self.assertIn("Spring", html)
 
+    def test_build_answers_html_unknown_type_is_skipped(self):
+        """Answer lines whose answer_type has no value_<type> field are silently
+        skipped; the rest of the result still renders without error."""
+        survey = self._make_result_survey("Unknown Answer Type")
+        q_known = self._add_question(
+            None, "Date question", "date", sequence=1, survey_id=survey.id
+        )
+        q_unknown = self._add_question(
+            None, "Custom type question", "char_box", sequence=2, survey_id=survey.id
+        )
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q_known, answer, datetime.date(2024, 1, 1))
+        self._add_answer_line(q_unknown, answer, "should not appear")
+        # Simulate a custom answer_type with no matching value_<type> field by
+        # hiding value_char_box from _fields (mirrors e.g. survey_question_type_binary)
+        line_cls = type(self.env["survey.user_input.line"])
+        patched_fields = {
+            k: v for k, v in line_cls._fields.items() if k != "value_char_box"
+        }
+        with patch.object(line_cls, "_fields", patched_fields):
+            html = answer._build_answers_html()
+        self.assertIn("Date question", html)
+        self.assertNotIn("Custom type question", html)
+        self.assertNotIn("should not appear", html)
+
     def test_build_answers_html_skipped_excluded(self):
         survey = self._make_result_survey("Skipped HTML")
         q_answered = self._add_question(

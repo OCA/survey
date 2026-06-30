@@ -66,7 +66,12 @@ class SurveyUserInput(models.Model):
             elif answer.answer_type == "datetime":
                 value = format_datetime(self.env, answer.value_datetime)
             else:
-                value = answer[f"value_{answer.answer_type}"]
+                field_name = f"value_{answer.answer_type}"
+                if field_name not in answer._fields:
+                    # Skip answer types we don't know how to render (e.g. custom
+                    # types added by other modules without a value_<type> field)
+                    continue
+                value = answer[field_name]
             questions_dict[answer.question_id] = _answer_element(
                 answer.question_id.title, value
             )
@@ -105,7 +110,13 @@ class SurveyUserInput(models.Model):
                     row.value, " / ".join([x for x in answers if x])
                 )
             questions_dict[question] += "</ul></li>"
-        answers_html = "".join([questions_dict[q] for q in given_answers.question_id])
+        answers_html = "".join(
+            [
+                questions_dict[q]
+                for q in given_answers.question_id
+                if q in questions_dict
+            ]
+        )
         return Markup(answers_html)
 
     def _mark_done(self):
