@@ -3,3 +3,4 @@
   - Ernesto Tejeda
   - Stefan Ungureanu
   - Pilar Vargas
+  - Eduardo Ezerouali

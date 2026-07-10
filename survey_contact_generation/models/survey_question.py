@@ -13,6 +13,26 @@ class SurveyQuestion(models.Model):
         string="Contact field",
         comodel_name="ir.model.fields",
     )
+    survey_question_node_id = fields.Many2one(
+        comodel_name="survey.question",
+        string="Node",
+        help="Question opening the contact this one relates to. A question "
+        "mapped to the name opens a contact of its own, and hangs it from the "
+        "contact of this node. Any other question fills in a field of the "
+        "contact this node opened.",
+    )
+    # A many2one is just an id in the view, so we expose its name as a field
+    # to be able to use it in view modifiers
+    res_partner_field_name = fields.Char(related="res_partner_field.name")
+    res_partner_type = fields.Selection(
+        selection=lambda self: self.env["res.partner"]
+        ._fields["type"]
+        ._description_selection(self.env),
+        string="Contact address type",
+        help="Address type of the contact this question opens. Contacts share "
+        "their address with their parent, so a node holding an address of its "
+        "own needs a different type.",
+    )
 
     @api.depends("question_type")
     def _compute_allowed_partner_field_domain(self):

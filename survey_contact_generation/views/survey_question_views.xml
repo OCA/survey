@@ -11,6 +11,17 @@
                         options="{'no_create': True, 'no_open': True}"
                         domain="allowed_partner_field_domain"
                     />
+                    <field
+                        name="survey_question_node_id"
+                        options="{'no_create': True, 'no_open': True}"
+                        invisible="not res_partner_field"
+                        domain="[('survey_id', '=', survey_id), ('id', '!=', id), ('res_partner_field', '!=', False)]"
+                    />
+                    <field
+                        name="res_partner_type"
+                        invisible="res_partner_field_name != 'name'"
+                    />
+                    <field name="res_partner_field_name" invisible="1" />
                     <field name="allowed_partner_field_domain" invisible="1" />
                 </group>
             </xpath>
