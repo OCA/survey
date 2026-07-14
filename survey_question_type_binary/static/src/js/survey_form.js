@@ -1,3 +1,4 @@
+/* global FileReader, FormData */
 odoo.define("survey_question_type_binary", [], function () {
     "use strict";
 
