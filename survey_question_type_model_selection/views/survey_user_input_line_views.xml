@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_user_input_line_view_form" model="ir.ui.view">
+        <field name="name">survey.usr_input.line.form.inherit</field>
+        <field name="model">survey.user_input.line</field>
+        <field name="inherit_id" ref="survey.survey_user_input_line_view_form" />
+        <field name="arch" type="xml">
+            <field name="value_text_box" position="after">
+                <field name="value_model" invisible="answer_type != 'model'" />
+            </field>
+        </field>
+    </record>
+</odoo>
