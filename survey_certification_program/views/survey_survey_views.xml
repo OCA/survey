@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="survey_survey_view_form" model="ir.ui.view">
+        <field name="name">survey.survey.view.form.inherit</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form" />
+        <field name="arch" type="xml">
+            <field name="has_conditional_questions" position="after">
+                <field name="certification_program_enabled" />
+                <field
+                    name="certification_program_layout"
+                    attrs="{
+                    'invisible': [('certification_program_enabled', '=', False)],
+                    'required': [('certification_program_enabled', '=', True)]
+                }"
+                />
+            </field>
+
+            <notebook position="inside">
+                <page
+                    name="certification_program"
+                    string="Certification Programs"
+                    attrs="{'invisible': [('certification_program_enabled', '=', False)]}"
+                >
+                    <field
+                        name="certificate_program_line_ids"
+                        mode="tree"
+                        context="{'default_survey_id': active_id}"
+                    >
+                        <tree editable="bottom">
+                            <field name="sequence" widget="handle" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="hours" widget="float_time" />
+                            <field name="survey_id" invisible="True" />
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
