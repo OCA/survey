@@ -3,11 +3,11 @@
     <template id="survey_legal_terms" name="Survey legal terms acceptance">
         <div
             t-if="survey.legal_terms"
-            class="js_question-wrapper form-check col-lg-12"
+            class="js_question-wrapper form-check col-lg-12 ps-2"
             id="accepted_legal_terms_wrapper"
         >
             <input
-                class="form-check-input position-relative ml-0 mr-1"
+                class="form-check-input position-relative ms-0 me-2 mb-2"
                 type="checkbox"
                 name="accepted_legal_terms"
                 id="accepted_legal_terms"
