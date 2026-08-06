@@ -2,7 +2,6 @@
 <odoo>
     <record model="survey.survey" id="survey_representative_demo">
         <field name="title">Meal preferences</field>
-        <field name="access_token">80e5f1e2-1a9d-4c51-8e23-4abc7534</field>
         <field name="access_mode">public</field>
         <field name="users_can_go_back" eval="True" />
     </record>

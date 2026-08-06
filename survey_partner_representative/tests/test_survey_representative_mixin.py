@@ -1,7 +1,6 @@
 # Copyright 2024 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo_test_helper import FakeModelLoader
-
+from odoo.orm.model_classes import add_to_registry
 from odoo.tests import tagged
 
 from .test_survey_partner_representative import SurveyRepresentativeCase
@@ -12,19 +11,15 @@ class SurveyRepresentativeMixinCase(SurveyRepresentativeCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.loader = FakeModelLoader(cls.env, cls.__module__)
-        cls.loader.backup_registry()
         from .models import ResPartner
 
-        cls.loader.update_registry((ResPartner,))
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.loader.restore_registry()
-        super().tearDownClass()
+        add_to_registry(cls.registry, ResPartner)
+        cls.registry._setup_models__(cls.env.cr, ["test.model"])
+        cls.registry.init_models(cls.env.cr, ["test.model"], {"models_to_check": True})
+        cls.addClassCleanup(cls.registry.__delitem__, "test.model")
 
     def test_create_partner_representative_mixin(self):
-        self.representative_group.users |= self.portal_user
+        self.representative_group.all_user_ids |= self.user
         self.survey.allow_partner_representing = True
         self._do_survey()
         self.assertEqual(
@@ -33,18 +28,17 @@ class SurveyRepresentativeMixinCase(SurveyRepresentativeCase):
             "he partner should be empty",
         )
         self.assertEqual(
-            self.user_input.representative_partner_id,
-            self.portal_partner,
+            self.user_input.representative_partner_id.id,
+            self.user.partner_id.id,
             "The representative partner should the one filling the survey",
         )
-        partner = self.env["res.partner"].create(
+        partner = self.env["test.model"].create(
             {
-                "name": "Test generated partner representative",
                 "survey_user_input_id": self.user_input.id,
             }
         )
         self.assertEqual(
-            partner.survey_representative_partner_id,
-            self.portal_partner,
+            partner.survey_representative_partner_id.id,
+            self.user.partner_id.id,
             "The representative partner should the one filling the survey",
         )
