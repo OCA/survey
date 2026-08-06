@@ -3,7 +3,7 @@
 {
     "name": "Survey company rules",
     "summary": "Company security for surveys",
-    "version": "17.0.1.0.1",
+    "version": "19.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
