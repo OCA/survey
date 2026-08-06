@@ -28,8 +28,9 @@
                     aria-label="Model selection"
                     title="Model selection answers"
                 >
-                        <span>State</span><br />
-                        <i
+                    <span>State</span>
+                    <br />
+                    <i
                         class="fa fa-minus fa-4x"
                         role="img"
                         aria-label="Model selection"
