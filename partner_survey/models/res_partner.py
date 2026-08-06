@@ -31,9 +31,11 @@ class ResPartner(models.Model):
         read_group_res = (
             self.env["survey.user_input"]
             .sudo()
-            .read_group([("partner_id", "in", self.ids)], ["partner_id"], "partner_id")
+            ._read_group(
+                [("partner_id", "in", self.ids)], ["partner_id"], ["partner_id:count"]
+            )
         )
-        data = {res["partner_id"][0]: res["partner_id_count"] for res in read_group_res}
+        data = {res[0].id: res[1] for res in read_group_res}
         for partner in self:
             partner.surveys_count = data.get(partner.id, 0)
 
