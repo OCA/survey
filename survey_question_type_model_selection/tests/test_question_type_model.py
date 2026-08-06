@@ -11,6 +11,12 @@ class TestSurveyModelSelection(BaseCommon, HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.partner = cls.env["res.partner"].create({"name": "partner test survey"})
+        cls.user_portal = cls._create_new_portal_user(
+            partner_id=cls.partner.id,
+            login="portal_survey",
+            password="portal_survey",
+        )
         cls.survey = cls.env["survey.survey"].create(
             {
                 "title": "Test Question Model",
@@ -34,7 +40,7 @@ class TestSurveyModelSelection(BaseCommon, HttpCase):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
             "test_survey_question_model",
-            login="portal",
+            login="portal_survey",
         )
         self.assertTrue(self.survey.user_input_ids.user_input_line_ids)
 

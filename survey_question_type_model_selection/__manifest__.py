@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Survey model selection question type",
-    "version": "17.0.1.0.0",
+    "version": "19.0.1.0.0",
     "summary": "This module add model selection field as question type for survey page",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/survey",
