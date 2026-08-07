@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="name">survey.question.form.inherit</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='answers']" position="inside">
+                <group invisible="question_type != 'model'">
+                    <field
+                        name="question_model_id"
+                        options="{'no_create': True, 'no_open': True}"
+                    />
+                    <field name="question_model_name" invisible="1" />
+                    <field
+                        name="question_domain"
+                        string="Domain"
+                        widget="domain"
+                        options="{'model': 'question_model_name'}"
+                        invisible="not question_model_id"
+                    />
+                </group>
+            </xpath>
+            <xpath expr="//div[hasclass('o_preview_questions')]" position="inside">
+                <div
+                    invisible="question_type != 'model'"
+                    role="img"
+                    aria-label="Model selection"
+                    title="Model selection answers"
+                >
+                    <span>State</span>
+                    <br />
+                    <i
+                        class="fa fa-minus fa-4x"
+                        role="img"
+                        aria-label="Model selection"
+                        title="Model selection"
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

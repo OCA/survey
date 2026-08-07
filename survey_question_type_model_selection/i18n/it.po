@@ -1,0 +1,117 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_question_type_model_selection
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-07-28 08:46+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: survey_question_type_model_selection
+#: model_terms:ir.ui.view,arch_db:survey_question_type_model_selection.survey_question_form
+msgid ""
+"<span>State</span><br/>\n"
+"                        <i class=\"fa fa-minus fa-4x\" role=\"img\" aria-label=\"Model selection\" title=\"Model selection\"/>"
+msgstr ""
+"<span>Stato</span><br/>\n"
+"                        <i class=\"fa fa-minus fa-4x\" role=\"img\" aria-"
+"label=\"Model selection\" title=\"Sezione modello\"/>"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields,field_description:survey_question_type_model_selection.field_survey_user_input_line__answer_type
+msgid "Answer Type"
+msgstr "Tipo risposta"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields,field_description:survey_question_type_model_selection.field_survey_question__question_model_id
+msgid "Applies to"
+msgstr "Si applica a"
+
+#. module: survey_question_type_model_selection
+#: model_terms:ir.ui.view,arch_db:survey_question_type_model_selection.survey_question_form
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields,field_description:survey_question_type_model_selection.field_survey_question__question_domain
+msgid "Filter Domain"
+msgstr "Filtra dominio"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields,field_description:survey_question_type_model_selection.field_survey_question__question_model_name
+msgid "Model"
+msgstr "Modello"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields.selection,name:survey_question_type_model_selection.selection__survey_question__question_type__model
+#: model:ir.model.fields.selection,name:survey_question_type_model_selection.selection__survey_user_input_line__answer_type__model
+#: model_terms:ir.ui.view,arch_db:survey_question_type_model_selection.survey_question_form
+msgid "Model selection"
+msgstr "Selezione modello"
+
+#. module: survey_question_type_model_selection
+#: model_terms:ir.ui.view,arch_db:survey_question_type_model_selection.survey_question_form
+msgid "Model selection answers"
+msgstr "Risposte selezione modello"
+
+#. module: survey_question_type_model_selection
+#. odoo-javascript
+#: code:addons/survey_question_type_model_selection/static/src/js/survey_form.esm.js:0
+#, python-format
+msgid "No options available"
+msgstr "Nessuna opzione disponibile"
+
+#. module: survey_question_type_model_selection
+#. odoo-javascript
+#: code:addons/survey_question_type_model_selection/static/src/js/survey_form.esm.js:0
+#, python-format
+msgid "No results found"
+msgstr "Nessun risultato trovato"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields,field_description:survey_question_type_model_selection.field_survey_question__question_type
+msgid "Question Type"
+msgstr "Tipo di domanda"
+
+#. module: survey_question_type_model_selection
+#. odoo-javascript
+#: code:addons/survey_question_type_model_selection/static/src/js/survey_form.esm.js:0
+#, python-format
+msgid "Select or type..."
+msgstr "Selezionare o scrivere..."
+
+#. module: survey_question_type_model_selection
+#: model:ir.model.fields,field_description:survey_question_type_model_selection.field_survey_user_input_line__value_model
+msgid "Selection answer"
+msgstr "Selezione risposta"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model,name:survey_question_type_model_selection.model_survey_question
+msgid "Survey Question"
+msgstr "Domanda sondaggio"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model,name:survey_question_type_model_selection.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Risposta utente al sondaggio"
+
+#. module: survey_question_type_model_selection
+#: model:ir.model,name:survey_question_type_model_selection.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "Riga risposta utente al sondaggio"
+
+#. module: survey_question_type_model_selection
+#. odoo-javascript
+#: code:addons/survey_question_type_model_selection/static/src/js/survey_form.esm.js:0
+#, python-format
+msgid "Type to search..."
+msgstr "Scrivere per cercare..."

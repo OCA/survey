@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="question_model" name="Survey Model selection Searchable Single Input">
+        <div
+            class="js_question-wrapper"
+            t-att-id="question.id"
+            style="position: relative;"
+        >
+            <select
+                class="form-control survey-model-select"
+                t-att-id="'model_input_' + str(question.id)"
+                data-question-type="model"
+            >
+                <t t-foreach="question.get_model_options()" t-as="opt">
+                    <option
+                        t-att-value="opt[0]"
+                        t-att-data-model="opt[2]"
+                        t-att-selected="answer_lines and answer_lines == str(opt[0])"
+                    >
+                        <t t-esc="opt[1]" />
+                    </option>
+                </t>
+            </select>
+            <input
+                type="hidden"
+                t-att-id="'model_value_' + str(question.id)"
+                t-att-name="str(question.id)"
+                data-question-type="model"
+                t-att-value="answer_lines if answer_lines else ''"
+            />
+        </div>
+    </template>
+    <template
+        id="survey_question_model_inherit"
+        inherit_id="survey.question_container"
+        name="Survey: Inject model OWL"
+    >
+        <xpath expr="//t[@t-call='survey.question_matrix']" position="after">
+            <t t-if="question.question_type == 'model'">
+                <t t-call="survey_question_type_model_selection.question_model" />
+            </t>
+        </xpath>
+    </template>
+    <template id="survey_page_print" inherit_id="survey.survey_page_print">
+        <xpath expr="//t[@t-call='survey.question_matrix']/.." position="after">
+            <t
+                t-if="question.question_type == 'model'"
+                class="o_survey_print o_survey_comment_container p-0"
+            >
+                <div
+                    class="col-sm-12 o_survey_choice_btn py-1 px-3 w-100 h-100 rounded mb-3"
+                >
+                    <t t-set="first_line" t-value="answer_lines[:1]" />
+                    <span
+                        t-out="first_line.value_model.display_name if first_line and first_line.value_model else None"
+                    />
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
