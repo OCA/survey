@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,6 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__display_name
+#: model:ir.model.fields,field_description:survey_legal.field_survey_user_input__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__id
+#: model:ir.model.fields,field_description:survey_legal.field_survey_user_input__id
+msgid "ID"
+msgstr ""
 
 #. module: survey_legal
 #: model:ir.model.fields,field_description:survey_legal.field_survey_survey__legal_terms_link
@@ -58,7 +70,6 @@ msgstr ""
 
 #. module: survey_legal
 #. odoo-javascript
-#: code:addons/survey_legal/static/src/js/survey_form.esm.js:0
-#, python-format
+#: code:addons/survey_legal/static/src/overrides/interactions/survey_form.esm.js:0
 msgid "You must accept the legal terms"
 msgstr ""
