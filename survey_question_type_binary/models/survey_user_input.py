@@ -1,6 +1,7 @@
 # Copyright 2023 Jose Zambudio - Aures Tic <jose@aurestic.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import models
+from odoo.fields import Command
 
 
 class SurveyUserInput(models.Model):
@@ -43,13 +44,11 @@ class SurveyUserInput(models.Model):
                 data = answer_binary.get("data")
                 filename = answer_binary.get("filename")
                 answer_binary_datas += [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "value_binary": data,
                             "filename": filename,
-                        },
+                        }
                     )
                 ]
             vals.update({"answer_binary_ids": answer_binary_datas})
