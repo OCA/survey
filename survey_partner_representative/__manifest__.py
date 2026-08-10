@@ -3,7 +3,7 @@
 {
     "name": "Survey Partner Representative",
     "summary": "Fill the survey on behalf of others",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
