@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <template
         id="question_conainer_inh_type_binary"
         inherit_id="survey.question_container"
@@ -30,7 +29,9 @@
                         />
                     </t>
                     <t t-elif="answer_binary.value_binary">
-                        <p><t t-out="answer_binary.filename" /></p>
+                        <p>
+                            <t t-out="answer_binary.filename" />
+                        </p>
                     </t>
                     <t t-else="">
                         <input
