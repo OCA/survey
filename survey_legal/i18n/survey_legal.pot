@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_legal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__legal_terms_link
+msgid "Legal Terms Link"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__legal_terms_text
+msgid "Legal Terms Text"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,help:survey_legal.field_survey_user_input__user_metadata
+msgid ""
+"Metadata gathered during survey validation when legal terms are enabled"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_survey__legal_terms
+msgid "Require legal terms acceptance"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model,name:survey_legal.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model,name:survey_legal.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,help:survey_legal.field_survey_survey__legal_terms
+msgid ""
+"The users will be prompted to require the acceptance of the legal terms to "
+"be able to submit their answers"
+msgstr ""
+
+#. module: survey_legal
+#: model:ir.model.fields,field_description:survey_legal.field_survey_user_input__user_metadata
+msgid "User Metadata"
+msgstr ""
+
+#. module: survey_legal
+#. odoo-javascript
+#: code:addons/survey_legal/static/src/js/survey_form.esm.js:0
+#, python-format
+msgid "You must accept the legal terms"
+msgstr ""
