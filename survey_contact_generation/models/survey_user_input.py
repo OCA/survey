@@ -1,6 +1,6 @@
 # Copyright 2022 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import fields, models
+from odoo import models
 
 
 class SurveyUserInput(models.Model):
@@ -177,7 +177,7 @@ class SurveyUserInput(models.Model):
                 user_input._get_partner_groups(), self.env["survey.question"], partner
             )
             if not partner:
-                partner = fields.first(roots)
+                partner = next(iter(roots)) if len(roots) > 1 else roots
                 partner.sudo().generating_survey_user_input_id = user_input
             if partner:
                 user_input.update({"partner_id": partner.id, "email": partner.email})

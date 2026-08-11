@@ -1,4 +1,5 @@
 # Copyright 2026 Tecnativa - Eduardo Ezerouali
+# Copyright 2026 Tecnativa - Adasat Torres
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo.tests import TransactionCase, tagged
 
@@ -8,31 +9,100 @@ class TestSurveyContactNesting(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.survey = cls.env.ref("survey_contact_generation.survey_contact_nesting")
-        cls.q_company = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_company"
+        cls.survey = cls.env["survey.survey"].create(
+            {
+                "title": "Nested Contact Creation Survey",
+                "access_mode": "public",
+                "users_can_go_back": True,
+                "generate_contact": True,
+            }
         )
-        cls.q_workcenter_1 = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_workcenter_1"
+        cls.questions = cls.env["survey.question"]
+        cls.q_company = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 0,
+                "title": "Company name",
+                "question_type": "char_box",
+                "constr_mandatory": True,
+                "res_partner_field": cls.env.ref("base.field_res_partner__name").id,
+            }
         )
-        cls.q_workcenter_1_street = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_workcenter_1_street"
+        cls.q_workcenter_1 = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 1,
+                "title": "Workcenter 1",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__name").id,
+                "res_partner_type": "other",
+            }
         )
-        cls.q_employee_1 = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_employee_1"
+        cls.q_workcenter_1_street = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 2,
+                "title": "Workcenter 1 street",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__street").id,
+            }
         )
-        cls.q_employee_1_email = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_employee_1_email"
+        cls.q_employee_1 = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 3,
+                "title": "Workcenter 1 employee",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__name").id,
+            }
         )
-        cls.q_workcenter_2 = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_workcenter_2"
+        cls.q_employee_1_email = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 4,
+                "title": "Workcenter 1 employee email",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__email").id,
+            }
         )
-        cls.q_workcenter_2_street = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_workcenter_2_street"
+        cls.q_workcenter_2 = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 5,
+                "title": "Workcenter 2",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__name").id,
+                "res_partner_type": "other",
+            }
         )
-        cls.q_employee_2 = cls.env.ref(
-            "survey_contact_generation.survey_nesting_q_employee_2"
+        cls.q_workcenter_2_street = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 6,
+                "title": "Workcenter 2 street",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__street").id,
+            }
         )
+        cls.q_employee_2 = cls.questions.create(
+            {
+                "survey_id": cls.survey.id,
+                "sequence": 7,
+                "title": "Workcenter 2 employee",
+                "question_type": "char_box",
+                "res_partner_field": cls.env.ref("base.field_res_partner__name").id,
+            }
+        )
+        questions = {
+            question.sequence: question for question in cls.survey.question_ids
+        }
+        questions[1].survey_question_node_id = questions[0]
+        questions[2].survey_question_node_id = questions[1]
+        questions[3].survey_question_node_id = questions[1]
+        questions[4].survey_question_node_id = questions[3]
+        questions[5].survey_question_node_id = questions[0]
+        questions[6].survey_question_node_id = questions[5]
+        questions[7].survey_question_node_id = questions[5]
 
     def _answer(self, user_input, answers):
         """Answer the given `{question: value}` map with char box lines"""

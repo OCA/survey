@@ -4,3 +4,4 @@
   - Stefan Ungureanu
   - Pilar Vargas
   - Eduardo Ezerouali
+  - Adasat Torres

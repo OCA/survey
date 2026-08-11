@@ -229,15 +229,3 @@ msgstr ""
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_2_street
 msgid "Workcenter 2 street"
 msgstr ""
-
-#~ msgid "Allowed Field"
-#~ msgstr "Campo permitido"
-
-#~ msgid "If other, please specify:"
-#~ msgstr "Si es otro, especifíquelo:"
-
-#~ msgid "The answer you entered is not valid."
-#~ msgstr "La respuesta que has introducido no es válida."
-
-#~ msgid "This question requires an answer."
-#~ msgstr "Esta pregunta requiere una respuesta."
