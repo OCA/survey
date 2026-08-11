@@ -9,3 +9,6 @@ survey's questions.
 1.  Go to the *Answers* tab choose the linked question.
 2.  For simple/multiple choice qustions you'll have to link the answers
     as well.
+
+For the module to work correctly, the survey may need to allow users 
+to go back to the previous question.

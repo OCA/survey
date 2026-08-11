@@ -1,7 +1,7 @@
 # Copyright 2022 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, api, fields, models
-from odoo.tools import get_diff
+from odoo import api, fields, models
+from odoo.tools.misc import get_diff
 
 
 class SurveyUserInput(models.Model):
@@ -24,13 +24,22 @@ class SurveyUserInput(models.Model):
         if question.next_survey_question_id and self.next_survey_input_id:
             self.next_survey_input_id.with_context(
                 save_next_question_answer=True
-            )._save_lines(question.next_survey_question_id, answer, comment)
+            )._save_lines(
+                question.next_survey_question_id,
+                answer,
+                comment=comment,
+                overwrite_existing=overwrite_existing,
+            )
         return res
 
     def _get_line_answer_values(self, question, answer, answer_type):
         """Link the answers"""
         vals = super()._get_line_answer_values(question, answer, answer_type)
         if not self.env.context.get("save_next_question_answer"):
+            old_answers = self.env["survey.user_input.line"].search(
+                [("user_input_id", "=", self.id), ("question_id", "=", question.id)]
+            )
+            vals.update({"origin_input_line": old_answers.origin_input_line.id})
             return vals
         # Find out the next question answer id to save it instead of the current one
         if answer_type == "suggestion":
@@ -116,5 +125,6 @@ class SurveyUserInputLine(models.Model):
             if previous_value == current_value:
                 continue
             line.diff_with_origin = get_diff(
-                (previous_value, _("Previous")), (current_value, _("Current"))
+                (previous_value, self.env._("Previous")),
+                (current_value, self.env._("Current")),
             )

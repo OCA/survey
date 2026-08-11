@@ -21,13 +21,13 @@ Survey answer generation
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsurvey-lightgray.png?logo=github
-    :target: https://github.com/OCA/survey/tree/17.0/survey_answer_generation
+    :target: https://github.com/OCA/survey/tree/19.0/survey_answer_generation
     :alt: OCA/survey
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/survey-17-0/survey-17-0-survey_answer_generation
+    :target: https://translation.odoo-community.org/projects/survey-19-0/survey-19-0-survey_answer_generation
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=17.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/survey&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -54,6 +54,9 @@ survey's questions.
 2. For simple/multiple choice qustions you'll have to link the answers
    as well.
 
+For the module to work correctly, the survey may need to allow users to
+go back to the previous question.
+
 Usage
 =====
 
@@ -65,13 +68,16 @@ If the user changes any response in the next question, we can tell the
 difference in the backend: go to the participation and in the answers
 tree let the column *Diff with origin* show.
 
+To access the survey using the segguestion data, use the following URL:
+``survey/start/<access_token_from_survey>?answer_token=<access_token_from_answer>``
+
 Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/survey/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_answer_generation%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/survey/issues/new?body=module:%20survey_answer_generation%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -112,6 +118,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-pilarvargas-tecnativa| 
 
-This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/17.0/survey_answer_generation>`_ project on GitHub.
+This module is part of the `OCA/survey <https://github.com/OCA/survey/tree/19.0/survey_answer_generation>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

@@ -5,3 +5,6 @@ questions.
 If the user changes any response in the next question, we can tell the
 difference in the backend: go to the participation and in the answers
 tree let the column *Diff with origin* show.
+
+To access the survey using the segguestion data, use the following URL:
+`survey/start/<access_token_from_survey>?answer_token=<access_token_from_answer>`
