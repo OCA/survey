@@ -73,9 +73,9 @@ class SurveyQuestionAnswer(models.Model):
             return result
         res = self.env[partner_field.relation].search([], limit=1)
         if res:
-            result[
-                "res_partner_field_resource_ref"
-            ] = f"{partner_field.relation},{res.id}"
+            result["res_partner_field_resource_ref"] = (
+                f"{partner_field.relation},{res.id}"
+            )
         return result
 
     @api.model

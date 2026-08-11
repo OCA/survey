@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-<!--    A survey generating a hierarchy of contacts:
+    <!--    A survey generating a hierarchy of contacts:
 
         Company
         ├── Workcenter 1 (holds its own address)
@@ -23,7 +23,7 @@
         <field name="constr_mandatory" eval="True" />
         <field name="res_partner_field" ref="base.field_res_partner__name" />
     </record>
-<!--    First workcenter, hanging from the company-->
+    <!--    First workcenter, hanging from the company-->
     <record model="survey.question" id="survey_nesting_q_workcenter_1">
         <field name="survey_id" ref="survey_contact_nesting" />
         <field name="sequence">1</field>
@@ -57,7 +57,7 @@
         <field name="res_partner_field" ref="base.field_res_partner__email" />
         <field name="survey_question_node_id" ref="survey_nesting_q_employee_1" />
     </record>
-<!--    Second workcenter, sibling of the first one-->
+    <!--    Second workcenter, sibling of the first one-->
     <record model="survey.question" id="survey_nesting_q_workcenter_2">
         <field name="survey_id" ref="survey_contact_nesting" />
         <field name="sequence">5</field>
