@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_question_form" model="ir.ui.view">
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='comments_allowed']/.." position="after">
+                <group name="contact" string="Contact">
+                    <field
+                        name="res_partner_field"
+                        options="{'no_create': True, 'no_open': True}"
+                        domain="allowed_partner_field_domain"
+                    />
+                    <field name="allowed_partner_field_domain" invisible="1" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='suggested_answer_ids']" position="attributes">
+                <attribute
+                    name="context"
+                >{'default_question_id': id, 'default_res_partner_field': res_partner_field}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='suggested_answer_ids']//field[@name='value']"
+                position="after"
+            >
+                <field name="res_partner_field" column_invisible="1" />
+                <field
+                    name="res_partner_field_resource_ref"
+                    readonly="False"
+                    options="{'hide_model': True, 'no_create': True, 'no_edit': True, 'no_open': True}"
+                    column_invisible="not parent.res_partner_field"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
