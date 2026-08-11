@@ -1,6 +1,6 @@
 # Copyright 2025 Tecnativa - Pilar Vargas
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, fields, models
+from odoo import fields, models
 
 
 class SurveyUserInput(models.Model):
@@ -42,12 +42,15 @@ class SurveyUserInput(models.Model):
                     user_input.certification_sent = True
                     sent_count += 1
         if sent_count:
-            title = _("Certification Sent")
-            message = _("%s certification(s) successfully sent.") % sent_count
+            title = self.env._("Certification Sent")
+            message = self.env._(
+                "%(sent_count)s certification(s) successfully sent.",
+                sent_count=sent_count,
+            )
             notif_type = "success"
         else:
-            title = _("No Certifications Sent")
-            message = _("The survey does not meet the conditions.")
+            title = self.env._("No Certifications Sent")
+            message = self.env._("The survey does not meet the conditions.")
             notif_type = "warning"
         return {
             "type": "ir.actions.client",
