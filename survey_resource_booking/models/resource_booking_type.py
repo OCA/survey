@@ -8,7 +8,6 @@ class ResourceBookingType(models.Model):
 
     survey_id = fields.Many2one(
         comodel_name="survey.survey",
-        string="Survey",
         tracking=True,
         help="You will be able to invite requesters to respond to this survey.",
     )

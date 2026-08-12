@@ -6,7 +6,7 @@ from datetime import datetime
 from freezegun import freeze_time
 
 from odoo.exceptions import UserError
-from odoo.tests.common import Form
+from odoo.tests import Form
 
 from odoo.addons.base.tests.common import BaseCommon
 
