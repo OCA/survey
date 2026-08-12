@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,21 +16,6 @@ msgstr ""
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__allowed_crm_lead_field_domain
 msgid "Allowed Crm Lead Field Domain"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,title:survey_crm_generation.survey_oca_q3
-msgid "And your name?"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model_terms:survey.survey,description:survey_crm_generation.become_partner
-msgid "Be part of the Odoo Community!"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.survey,title:survey_crm_generation.become_partner
-msgid "Become OCA Partner"
 msgstr ""
 
 #. module: survey_crm_generation
@@ -55,8 +40,11 @@ msgid "Crm Team"
 msgstr ""
 
 #. module: survey_crm_generation
-#: model:survey.question,title:survey_crm_generation.survey_oca_q0
-msgid "E-mail address"
+#: model:ir.model.fields,field_description:survey_crm_generation.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__display_name
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_survey__display_name
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_user_input__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: survey_crm_generation
@@ -70,34 +58,21 @@ msgid "Generate leads/opportunities linked to the generated quotations"
 msgstr ""
 
 #. module: survey_crm_generation
-#: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug2
-msgid "Internet"
+#: model:ir.model.fields,field_description:survey_crm_generation.field_crm_lead__id
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_question__id
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_survey__id
+#: model:ir.model.fields,field_description:survey_crm_generation.field_survey_user_input__id
+msgid "ID"
 msgstr ""
 
 #. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_crm_lead
-msgid "Lead/Opportunity"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:crm.tag,name:survey_crm_generation.tag_oca_partnership
-#: model:crm.team,name:survey_crm_generation.oca_partnership_leads
-msgid "OCA Partnership"
+msgid "Lead"
 msgstr ""
 
 #. module: survey_crm_generation
 #: model:ir.model.fields,field_description:survey_crm_generation.field_survey_user_input__opportunity_id
 msgid "Opportunity"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,comments_message:survey_crm_generation.survey_oca_q4
-msgid "Other:"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,title:survey_crm_generation.survey_oca_q4
-msgid "Referenced by"
 msgstr ""
 
 #. module: survey_crm_generation
@@ -116,11 +91,6 @@ msgid "Survey"
 msgstr ""
 
 #. module: survey_crm_generation
-#: model:crm.tag,name:survey_crm_generation.tag_survey_leads
-msgid "Survey Leads"
-msgstr ""
-
-#. module: survey_crm_generation
 #: model:ir.model,name:survey_crm_generation.model_survey_question
 msgid "Survey Question"
 msgstr ""
@@ -129,14 +99,4 @@ msgstr ""
 #: model:ir.model,name:survey_crm_generation.model_survey_user_input
 #: model:ir.model.fields,field_description:survey_crm_generation.field_crm_lead__survey_user_input_id
 msgid "Survey User Input"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question.answer,value:survey_crm_generation.survey_oca_q4_sug1
-msgid "TV"
-msgstr ""
-
-#. module: survey_crm_generation
-#: model:survey.question,title:survey_crm_generation.survey_oca_q1
-msgid "Your company name?"
 msgstr ""
