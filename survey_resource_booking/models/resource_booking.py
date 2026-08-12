@@ -29,10 +29,7 @@ class ResourceBooking(models.Model):
                 )
             if one.survey_user_input_id.state == "done":
                 raise UserError(
-                    _(
-                        "This booking's requester was already invited "
-                        "to fill survey: %s"
-                    )
+                    _("This booking's requester was already invited to fill survey: %s")
                     % one.display_name
                 )
             if not one.survey_user_input_id:
