@@ -1,9 +1,10 @@
 [project]
 name = "odoo-addons-oca-survey"
-version = "19.0.20260812.1"
+version = "19.0.20260812.2"
 dependencies = [
     "odoo-addon-partner_survey==19.0.*",
     "odoo-addon-survey_certification_sending==19.0.*",
+    "odoo-addon-survey_crm_generation==19.0.*",
     "odoo-addon-survey_legal==19.0.*",
     "odoo-addon-survey_multi_company==19.0.*",
     "odoo-addon-survey_partner_representative==19.0.*",
