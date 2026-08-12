@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from markupsafe import Markup
 
-from odoo import SUPERUSER_ID, Command, _, fields, models
+from odoo import SUPERUSER_ID, Command, fields, models
 
 
 class SurveyUserInput(models.Model):
@@ -81,15 +81,18 @@ class SurveyUserInput(models.Model):
     def _create_quotation_post_process(self):
         """After creating the quotation send an internal message with practical info"""
         sale_sudo = self.sale_order_id.sudo()
-        message = _(
+        message = self.env._(
             "This order has been created from this survey input: "
-            "<a href=# data-oe-model=survey.user_input data-oe-id=%(id)d>%(title)s</a>"
-        ) % {"id": self.id, "title": self.survey_id.title}
+            "<a href=# data-oe-model=survey.user_input "
+            "data-oe-id=%(id)d>%(survey_title)s</a>",
+            id=self.id,
+            survey_title=self.survey_id.title,
+        )
 
         additional_comment = self._prepare_quotation_comment()
         if additional_comment:
             message += (
-                f"<p>{_('Relevant answer informations:')}</p>"
+                f"<p>{self.env._('Relevant answer informations:')}</p>"
                 f"<ul>{additional_comment}</ul>"
             )
         sale_sudo.with_user(SUPERUSER_ID).message_post(

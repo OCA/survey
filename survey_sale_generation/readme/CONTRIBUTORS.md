@@ -2,3 +2,4 @@
   - David Vidal
   - Stefan Ungureanu
   - Pilar Vargas
+  - Adasat Torres
