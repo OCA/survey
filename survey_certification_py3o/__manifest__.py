@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Survey Certification Py3o",
-    "version": "17.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "development_status": "Beta",
     "category": "Marketing/Survey",

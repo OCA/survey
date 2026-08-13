@@ -5,10 +5,10 @@ from base64 import b64encode
 
 from odoo.tools import misc
 
-from odoo.addons.survey.tests.common import TestSurveyCommon
+from odoo.addons.survey.tests.common import SurveyCase
 
 
-class TestCertificationPy3o(TestSurveyCommon):
+class TestCertificationPy3o(SurveyCase):
     def test_certification_py3o(self):
         demo_odt_path = misc.file_path(
             "survey_certification_py3o/demo/demo_report_certification.odt"
