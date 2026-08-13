@@ -23,6 +23,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 19.0.1.0.0 |  | Link partners with their survey results
+[survey_certification_py3o](survey_certification_py3o/) | 19.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Survey Certification Py3o
 [survey_certification_sending](survey_certification_sending/) | 19.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Controls the automatic sending of certifications in surveys.
 [survey_crm_generation](survey_crm_generation/) | 19.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate CRM leads/opportunities from surveys
 [survey_crm_generation_model_selection](survey_crm_generation_model_selection/) | 19.0.1.0.0 | <a href='https://github.com/eduezerouali-tecnativa'><img src='https://github.com/eduezerouali-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='eduezerouali-tecnativa'/></a> | Generate new leads from surveys using model selection
