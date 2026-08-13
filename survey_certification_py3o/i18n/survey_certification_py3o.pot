@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,8 +24,24 @@ msgid "Custom Template"
 msgstr ""
 
 #. module: survey_certification_py3o
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_mail_template__display_name
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_py3o_report__display_name
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_survey_survey__display_name
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_survey_user_input__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: survey_certification_py3o
 #: model:ir.model,name:survey_certification_py3o.model_mail_template
 msgid "Email Templates"
+msgstr ""
+
+#. module: survey_certification_py3o
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_mail_template__id
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_py3o_report__id
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_survey_survey__id
+#: model:ir.model.fields,field_description:survey_certification_py3o.field_survey_user_input__id
+msgid "ID"
 msgstr ""
 
 #. module: survey_certification_py3o
