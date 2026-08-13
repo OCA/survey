@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from markupsafe import Markup
 
-from odoo import models
+from odoo import Command, models
 
 
 class SurveyUserInput(models.Model):
@@ -15,7 +15,7 @@ class SurveyUserInput(models.Model):
                 if len(value) == 1:
                     res[key] = value.id
                 else:
-                    res[key] = [(6, 0, value.ids)]
+                    res[key] = Command.set(value.ids)
         return res
 
     def _build_answers_html(self, given_answers=False):

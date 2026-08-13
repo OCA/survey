@@ -3,7 +3,7 @@
 from markupsafe import Markup
 
 from odoo import Command
-from odoo.tests import HttpCase, tagged
+from odoo.tests import HttpCase, new_test_user, tagged
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -15,6 +15,7 @@ class SurveyCrmGenerationCase(BaseCommon, HttpCase):
         """We run the tour in the setup so we can share the tests case with other
         modules"""
         super().setUpClass()
+        cls.user = new_test_user(cls.env, login="test-user", groups="base.group_portal")
         cls.reference = cls.env["res.partner"].create({"name": "Reference Partner"})
         cls.tag_lead = cls.env["crm.tag"].create({"name": "Survey"})
         cls.tag_lead_partnership = cls.env["crm.tag"].create({"name": "Partnership"})
@@ -63,7 +64,7 @@ class SurveyCrmGenerationCase(BaseCommon, HttpCase):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
             "test_survey_crm_question_model",
-            login="portal",
+            login="test-user",
         )
         self.generated_lead = self.survey.user_input_ids.opportunity_id
         self.assertFalse(self.generated_lead.stage_id.is_won)
