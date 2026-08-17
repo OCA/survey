@@ -235,3 +235,18 @@ class TestSurveyAnswerGeneration(TransactionCase):
         )
         self.assertTrue(saved_line)
         self.assertFalse(saved_line.origin_input_line)
+
+    def test_overwrite_existing_forced_for_linked_answer(self):
+        """A pre-filled answer on a linked input can be overwritten through
+        _save_lines even when overwrite_existing=False, which is what the survey
+        controller passes for any question that isn't save_as_email/save_as_nickname.
+        Without origin_input_id forcing overwrite_existing=True, this raises
+        "This answer cannot be overwritten"."""
+        input1 = self._create_input(self.survey1)
+        input1._save_lines(self.text_q1, "Original answer")
+        next_input = input1.next_survey_input_id
+        next_input._save_lines(self.text_q2, "Changed answer", overwrite_existing=False)
+        synced_line = next_input.user_input_line_ids.filtered(
+            lambda line: line.question_id == self.text_q2
+        )
+        self.assertEqual(synced_line.value_char_box, "Changed answer")
