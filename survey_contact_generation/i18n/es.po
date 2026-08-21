@@ -1,0 +1,231 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_contact_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-14 11:55+0000\n"
+"PO-Revision-Date: 2023-11-11 18:37+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_question__res_partner_type
+msgid ""
+"Address type of the contact this question opens. Contacts share their "
+"address with their parent, so a node holding an address of its own needs a "
+"different type."
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_partner_field_domain
+msgid "Allowed Partner Field Domain"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q3
+msgid "Color"
+msgstr "Color"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q_company_name
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_company
+msgid "Company name"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_res_partner
+#: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_form
+#: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_question_form
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: survey_contact_generation
+#: model:survey.survey,title:survey_contact_generation.survey_contact_creation
+msgid "Contact Creation Survey"
+msgstr "Encuesta de creación de contactos"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_type
+msgid "Contact address type"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field
+msgid "Contact field"
+msgstr "Campo de contacto"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field_resource_ref
+msgid "Contact field value"
+msgstr "Valor del campo Contacto"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q5
+msgid "Country"
+msgstr "País"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__create_parent_contact
+msgid "Create Parent Contact"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q4
+msgid "Date"
+msgstr "Fecha"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q1
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug3
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field_name
+msgid "Field Name"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__generate_contact
+msgid "Generate Contact"
+msgstr "Generar contacto"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__generate_contact
+msgid "Generate contacts for anonymous survey users"
+msgstr "Generar contacto para encuestas anónimas"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_res_partner__generating_survey_user_input_id
+#: model:ir.model.fields,field_description:survey_contact_generation.field_res_users__generating_survey_user_input_id
+msgid "Generating Survey User Input"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: survey_contact_generation
+#: model:survey.survey,title:survey_contact_generation.survey_contact_nesting
+msgid "Nested Contact Creation Survey"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__survey_question_node_id
+msgid "Node"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q2
+msgid "Notes"
+msgstr "Notas"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug2
+msgid "Prospects"
+msgstr "Perspectivas"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_question__survey_question_node_id
+msgid ""
+"Question opening the contact this one relates to. A question mapped to the "
+"name opens a contact of its own, and hangs it from the contact of this node. "
+"Any other question fills in a field of the contact this node opened."
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug2
+msgid "Romania"
+msgstr "Rumanía"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__create_parent_contact
+msgid ""
+"Set the company_name in a question and a parent contact will be created to "
+"hold the generated one"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug1
+msgid "Spain"
+msgstr "España"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_survey
+msgid "Survey"
+msgstr "Planificación"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question_answer
+msgid "Survey Label"
+msgstr "Etiqueta de Encuesta"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question
+msgid "Survey Question"
+msgstr "Pregunta de la encuesta"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Entrada de usuario de la encuesta"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q6
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug1
+msgid "Vendor"
+msgstr "Vendedor"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_1
+msgid "Workcenter 1"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_employee_1
+msgid "Workcenter 1 employee"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_employee_1_email
+msgid "Workcenter 1 employee email"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_1_street
+msgid "Workcenter 1 street"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_2
+msgid "Workcenter 2"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_employee_2
+msgid "Workcenter 2 employee"
+msgstr ""
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_2_street
+msgid "Workcenter 2 street"
+msgstr ""

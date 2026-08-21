@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--    A survey generating a hierarchy of contacts:
+
+        Company
+        ├── Workcenter 1 (holds its own address)
+        │   └── Employee 1
+        └── Workcenter 2 (holds its own address)
+            └── Employee 2
+-->
+    <record model="survey.survey" id="survey_contact_nesting">
+        <field name="title">Nested Contact Creation Survey</field>
+        <field name="access_token">6c1b2f84-9a3d-4e77-b0c2-1d5e8a4f7c93</field>
+        <field name="access_mode">public</field>
+        <field name="users_can_go_back" eval="True" />
+        <field name="generate_contact" eval="True" />
+    </record>
+    <record model="survey.question" id="survey_nesting_q_company">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">0</field>
+        <field name="title">Company name</field>
+        <field name="question_type">char_box</field>
+        <field name="constr_mandatory" eval="True" />
+        <field name="res_partner_field" ref="base.field_res_partner__name" />
+    </record>
+    <!--    First workcenter, hanging from the company-->
+    <record model="survey.question" id="survey_nesting_q_workcenter_1">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">1</field>
+        <field name="title">Workcenter 1</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__name" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_company" />
+        <field name="res_partner_type">other</field>
+    </record>
+    <record model="survey.question" id="survey_nesting_q_workcenter_1_street">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">2</field>
+        <field name="title">Workcenter 1 street</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__street" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_workcenter_1" />
+    </record>
+    <record model="survey.question" id="survey_nesting_q_employee_1">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">3</field>
+        <field name="title">Workcenter 1 employee</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__name" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_workcenter_1" />
+    </record>
+    <record model="survey.question" id="survey_nesting_q_employee_1_email">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">4</field>
+        <field name="title">Workcenter 1 employee email</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__email" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_employee_1" />
+    </record>
+    <!--    Second workcenter, sibling of the first one-->
+    <record model="survey.question" id="survey_nesting_q_workcenter_2">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">5</field>
+        <field name="title">Workcenter 2</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__name" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_company" />
+        <field name="res_partner_type">other</field>
+    </record>
+    <record model="survey.question" id="survey_nesting_q_workcenter_2_street">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">6</field>
+        <field name="title">Workcenter 2 street</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__street" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_workcenter_2" />
+    </record>
+    <record model="survey.question" id="survey_nesting_q_employee_2">
+        <field name="survey_id" ref="survey_contact_nesting" />
+        <field name="sequence">7</field>
+        <field name="title">Workcenter 2 employee</field>
+        <field name="question_type">char_box</field>
+        <field name="res_partner_field" ref="base.field_res_partner__name" />
+        <field name="survey_question_node_id" ref="survey_nesting_q_workcenter_2" />
+    </record>
+</odoo>
