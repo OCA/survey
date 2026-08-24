@@ -1,27 +1,27 @@
 # Copyright 2026 Tecnativa - Eduardo Ezerouali
+# Copyright 2026 Tecnativa - Adasat Torres
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo.tests import HttpCase, tagged
 
-from odoo.addons.base.tests.common import BaseCommon
+from odoo.addons.survey.tests.common import SurveyCase
 
 
 @tagged("-at_install", "post_install")
-class TestContactGenerationModelSelection(BaseCommon, HttpCase):
+class TestContactGenerationModelSelection(SurveyCase, HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.survey = cls.env["survey.survey"].create(
             {
                 "title": "Test Question Model",
-                "survey_type": "custom",
                 "questions_layout": "one_page",
                 "access_mode": "public",
-                "access_token": "b137640d-14d4-4748-9ef6-344caaaaaaf",
+                "users_can_go_back": True,
                 "generate_contact": True,
             }
         )
-        cls.question = cls.env["survey.question"].create(
+        cls.question1 = cls.env["survey.question"].create(
             {
                 "survey_id": cls.survey.id,
                 "title": "Name",
@@ -29,7 +29,7 @@ class TestContactGenerationModelSelection(BaseCommon, HttpCase):
                 "res_partner_field": cls.env.ref("base.field_res_partner__name").id,
             }
         )
-        cls.question = cls.env["survey.question"].create(
+        cls.question2 = cls.env["survey.question"].create(
             {
                 "survey_id": cls.survey.id,
                 "title": "Email",
@@ -37,7 +37,7 @@ class TestContactGenerationModelSelection(BaseCommon, HttpCase):
                 "res_partner_field": cls.env.ref("base.field_res_partner__email").id,
             }
         )
-        cls.question = cls.env["survey.question"].create(
+        cls.question3 = cls.env["survey.question"].create(
             {
                 "survey_id": cls.survey.id,
                 "title": "State",
@@ -53,7 +53,7 @@ class TestContactGenerationModelSelection(BaseCommon, HttpCase):
     def test_question_model(self):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
-            "test_survey_contact_generation_model_selection",
+            "test_tour_contact_generation_model_selection",
         )
         user_input = self.survey.user_input_ids - self.initial_user_inputs
         partner = self.env["res.partner"].search(

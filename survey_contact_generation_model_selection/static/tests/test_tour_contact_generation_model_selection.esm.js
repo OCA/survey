@@ -1,25 +1,23 @@
-/** @odoo-module **/
-
 import {registry} from "@web/core/registry";
 
 registry
     .category("web_tour.tours")
-    .add("test_survey_contact_generation_model_selection", {
-        test: true,
+    .add("test_tour_contact_generation_model_selection", {
         steps: () => [
             {
-                content: "Start",
-                trigger: 'button.btn:contains("Start")',
+                content: "Start Survey",
+                trigger: "button.btn:contains('Start Survey')",
+                run: "click",
             },
             {
                 content: "Name",
                 trigger: "div.js_question-wrapper:contains('Name') input",
-                run: "text My Name",
+                run: "edit My Name",
             },
             {
                 content: "Email",
                 trigger: "div.js_question-wrapper:contains('Email') input",
-                run: "text survey_contact_generation@test.com",
+                run: "edit survey_contact_generation@test.com",
             },
             {
                 // Now click input explicitly
@@ -30,12 +28,24 @@ registry
             {
                 // Wait for dropdown to appear
                 content: "wait dropdown",
-                trigger: "div.choices__item--selectable:contains('Murcia (ES)')",
+                trigger:
+                    "div.js_question-wrapper:contains('State') div.choices__inner option:contains('Murcia (ES)'):not(:visible)",
                 run: "click",
             },
             {
-                content: "Click Submit",
-                trigger: "button[value='finish'].btn-secondary",
+                content: "Click Submit and finish the survey",
+                trigger: 'button[value="finish"]',
+                run: "click",
+            },
+            {
+                content: "Modal",
+                trigger: "footer:contains('Submit') button.btn-primary",
+                run: "click",
+            },
+            // Final page
+            {
+                content: "Thank you",
+                trigger: 'h1:contains("Thank you!")',
             },
         ],
     });

@@ -1,6 +1,6 @@
 # Copyright 2025 Tecnativa - Eduardo Ezerouali
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import ValidationError
 
 
@@ -30,13 +30,13 @@ class SurveyQuestion(models.Model):
                 and record.res_partner_field.relation != record.question_model_id.model
             ):
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "The contact field '%(field)s' stores %(relation)s records, "
                         "but the question '%(question)s' is answered with %(model)s "
                         "records.",
                         field=record.res_partner_field.field_description,
                         relation=record.res_partner_field.relation,
                         question=record.title,
-                        model=record.question_model_id.model or _("no model"),
+                        model=record.question_model_id.model or self.env._("no model"),
                     )
                 )
