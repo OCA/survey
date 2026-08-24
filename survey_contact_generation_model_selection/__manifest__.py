@@ -10,7 +10,7 @@
     "maintainers": ["eduezerouali-tecnativa"],
     "license": "AGPL-3",
     "depends": ["survey_contact_generation", "survey_question_type_model_selection"],
-    "assest": {
+    "assets": {
         "web.assets_tests": [
             "survey_contact_generation_model_selection/static/tests/test_tour_contact_generation_model_selection.esm.js",
         ],
