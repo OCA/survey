@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-11-11 12:42+0000\n"
+"PO-Revision-Date: 2026-08-24 08:27+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,help:survey_contact_generation.field_survey_question__res_partner_type
@@ -23,6 +23,9 @@ msgid ""
 "address with their parent, so a node holding an address of its own needs a "
 "different type."
 msgstr ""
+"Tipo di indirizzo del contatto che viene aperto da questa domanda. I "
+"contatti condividono il loro indirizzo con il padre, quindi un nodo che "
+"detiene un proprio indirizzo necessita di un tipo diverso."
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_partner_field_domain
@@ -55,7 +58,7 @@ msgstr "Sondaggio creazione contatto"
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_type
 msgid "Contact address type"
-msgstr ""
+msgstr "Tipo indirizzo contatto"
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
@@ -96,7 +99,7 @@ msgstr "Dipendenti"
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field_name
 msgid "Field Name"
-msgstr ""
+msgstr "Nome campo"
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__generate_contact
@@ -122,12 +125,12 @@ msgstr "Nome"
 #. module: survey_contact_generation
 #: model:survey.survey,title:survey_contact_generation.survey_contact_nesting
 msgid "Nested Contact Creation Survey"
-msgstr ""
+msgstr "Sondaggio creazione contatto annidato"
 
 #. module: survey_contact_generation
 #: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__survey_question_node_id
 msgid "Node"
-msgstr ""
+msgstr "Nodo"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_contact_q2
@@ -146,6 +149,9 @@ msgid ""
 "name opens a contact of its own, and hangs it from the contact of this node. "
 "Any other question fills in a field of the contact this node opened."
 msgstr ""
+"Domanda che apre il contatto a cui si riferisce questo. Una domanda mappata "
+"al nome apre un proprio contatto e lo aggancia al contatto di questo nodo. "
+"Qualsiasi altra domanda riempie un campo del contatto aperto da questo nodo."
 
 #. module: survey_contact_generation
 #: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug2
@@ -199,34 +205,34 @@ msgstr "Fornitore"
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_1
 msgid "Workcenter 1"
-msgstr ""
+msgstr "Centro di lavoro 1"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_employee_1
 msgid "Workcenter 1 employee"
-msgstr ""
+msgstr "Dipendente centro di lavoro 1"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_employee_1_email
 msgid "Workcenter 1 employee email"
-msgstr ""
+msgstr "E-mail dipendente centro di lavoro 1"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_1_street
 msgid "Workcenter 1 street"
-msgstr ""
+msgstr "Indirizzo centro di lavoro 1"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_2
 msgid "Workcenter 2"
-msgstr ""
+msgstr "Centro di lavoro 2"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_employee_2
 msgid "Workcenter 2 employee"
-msgstr ""
+msgstr "Dipendente centro di lavoro 2"
 
 #. module: survey_contact_generation
 #: model:survey.question,title:survey_contact_generation.survey_nesting_q_workcenter_2_street
 msgid "Workcenter 2 street"
-msgstr ""
+msgstr "Indirizzo centro di lavoro 2"
