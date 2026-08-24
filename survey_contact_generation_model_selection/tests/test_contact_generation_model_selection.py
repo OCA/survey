@@ -42,8 +42,10 @@ class TestContactGenerationModelSelection(BaseCommon, HttpCase):
                 "survey_id": cls.survey.id,
                 "title": "State",
                 "question_type": "model",
-                "question_model_id": 81,
-                "question_domain": '[("country_id", "in", [68])]',
+                "question_model_id": cls.env.ref("base.model_res_country_state").id,
+                "question_domain": '[("country_id", "in", [{}])]'.format(
+                    cls.env.ref("base.es").id
+                ),
             }
         )
         cls.initial_user_inputs = cls.survey.user_input_ids
@@ -51,7 +53,7 @@ class TestContactGenerationModelSelection(BaseCommon, HttpCase):
     def test_question_model(self):
         self.start_tour(
             f"/survey/start/{self.survey.access_token}",
-            "test_survey_question_model",
+            "test_survey_contact_generation_model_selection",
         )
         user_input = self.survey.user_input_ids - self.initial_user_inputs
         partner = self.env["res.partner"].search(
