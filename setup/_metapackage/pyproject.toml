@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-survey"
-version = "19.0.20260821.1"
+version = "19.0.20260825.0"
 dependencies = [
     "odoo-addon-partner_survey==19.0.*",
     "odoo-addon-survey_answer_generation==19.0.*",
@@ -15,6 +15,7 @@ dependencies = [
     "odoo-addon-survey_question_type_model_selection==19.0.*",
     "odoo-addon-survey_resource_booking==19.0.*",
     "odoo-addon-survey_result_mail==19.0.*",
+    "odoo-addon-survey_sale_generation==19.0.*",
     "odoo-addon-survey_skip_start==19.0.*",
 ]
 classifiers=[
