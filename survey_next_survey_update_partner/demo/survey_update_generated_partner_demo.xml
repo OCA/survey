@@ -43,13 +43,6 @@
         <field name="question_type">numerical_box</field>
         <field name="res_partner_field" ref="base.field_res_partner__color" />
     </record>
-    <record model="survey.question" id="survey_next_contact_q4">
-        <field name="survey_id" ref="survey_next_contact" />
-        <field name="sequence">4</field>
-        <field name="title">Date</field>
-        <field name="question_type">date</field>
-        <field name="res_partner_field" ref="base.field_res_partner__date" />
-    </record>
     <record model="survey.question" id="survey_next_contact_q5">
         <field name="survey_id" ref="survey_next_contact" />
         <field name="sequence">4</field>

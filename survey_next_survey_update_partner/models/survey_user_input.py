@@ -1,6 +1,6 @@
 # Copyright 2024 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, models
+from odoo import models
 
 
 class SurveyUserInput(models.Model):
@@ -69,7 +69,7 @@ class SurveyUserInput(models.Model):
             company_name = vals.pop("company_name", None)
             user_input.partner_id.update(self._prepare_generated_partner_update(lines))
             if comment:
-                user_input.partner_id.comment += _(
+                user_input.partner_id.comment += self.env._(
                     "\nUpdated comment\n %(comment)s", comment=comment
                 )
             if (
