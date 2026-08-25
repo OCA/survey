@@ -3,7 +3,7 @@
 {
     "name": "Survey sales linked to leads",
     "summary": "Link CRM leads to sale orders generated from surveys",
-    "version": "17.0.1.0.0",
+    "version": "19.0.1.0.0",
     "development_status": "Beta",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
