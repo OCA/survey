@@ -18,9 +18,9 @@ class SurveyUserInput(models.Model):
         for line in lines - basic_inputs:
             field_name = line.question_id.res_partner_field.name
             if line.question_id.res_partner_field.ttype == "many2one":
-                vals[
-                    field_name
-                ] = line.suggested_answer_id.res_partner_field_resource_ref.id
+                vals[field_name] = (
+                    line.suggested_answer_id.res_partner_field_resource_ref.id
+                )
             elif line.question_id.res_partner_field.ttype == "many2many":
                 vals.setdefault(field_name, [])
                 vals[field_name] += [
