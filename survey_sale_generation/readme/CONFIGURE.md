@@ -1,0 +1,56 @@
+You can configure either a new or an existing survey.
+
+1.  Go to *Surveys* and choose an existing one or create it.
+2.  In the *Options* tab, *Sales* group, set *Generate Quotations* on.
+3.  You can set your preferred sales team for the generated quotations.
+
+Now you'll have to configure the products linked to the questions.
+
+For *Numerical value* questions:
+
+1.  In the *Answers* tab choose the linked products.
+2.  The resulting quotation will have as many items of that products as
+    the user defines.
+
+For *Multiple choice: only one answer*:
+
+1.  In the *Answers* tab link multiple products to every given choice.
+2.  The resulting quotation will have the products linked to the survey
+    user's choice.
+
+For *Multiple choice: multiple answers allowed*:
+
+1.  In the *Answers* tab link products to every given choice.
+2.  The resulting quotation will have the products linked to the survey
+    user's choices.
+3.  By default a unit of product will be added per answer to the
+    quotation. If you want to set a variable choice, you can link a
+    numeric question that will act as multiplier.
+
+When the survey is submited an internal message is generated in the
+resulting quotation with a link to the user answers. Optionally, you can
+configure some of the questions so their input values are shown in such
+message. This way it can be easier to track some relevant infos
+concerning the request. To do so:
+
+1.  In the *Options* tab of the questions go to the *Sales* section.
+2.  Set *Show in sale order comment* on if you want those answers on the
+    internal notification.
+
+If you want the generated quotation to use a quotation template you can
+either:
+
+- Choose it from the general survey options: *Sale Order Template*.
+- In a single answer question, choose set the quotation depending on the
+  answer.
+
+The answer value will prevail over the general option.
+
+You can also configure the survey to send the quotation to the customer
+by mail. When doing so, you can choose a mail template or use the
+default one.
+
+If you want to fill sale fields from the answers:
+
+1.  In the *Options* tab of the questions go to the *Sales* section.
+2.  Set *Sale the sale field* you want to fill with the given answer.
