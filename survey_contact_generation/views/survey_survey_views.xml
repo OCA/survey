@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <group name="options" position="inside">
                 <group name="contact_options" string="Contact">
+                    <field name="generate_contact" />
                     <field
                         name="create_parent_contact"
                         invisible="not generate_contact"
