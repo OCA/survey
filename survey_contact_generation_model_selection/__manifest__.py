@@ -3,7 +3,7 @@
 {
     "name": "Survey contacts generation for model selection",
     "summary": "Generate new contacts from surveys using model selection",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Marketing/Survey",
     "website": "https://github.com/OCA/survey",
     "author": "Tecnativa, Odoo Community Association (OCA)",
