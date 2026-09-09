@@ -8,10 +8,12 @@ class SurveyUserInput(models.Model):
 
     def _prepare_partner_vals(self, elegible_inputs):
         res = super()._prepare_partner_vals(elegible_inputs)
-        for key, value in res.items():
-            if isinstance(value, models.BaseModel):
-                if len(value) == 1:
-                    res[key] = value.id
-                else:
-                    res[key] = [Command.set(value.ids)]
+        for line in elegible_inputs.filtered(lambda x: x.answer_type == "model"):
+            field = line.question_id.res_partner_field
+            if not field or field.name not in res:
+                continue
+            if field.ttype == "many2many":
+                res[field.name] = [Command.set(line.value_model.ids)]
+            else:
+                res[field.name] = line.value_model.id
         return res
