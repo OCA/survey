@@ -117,8 +117,8 @@ class SurveyUserInputLine(models.Model):
         for line in self.filtered("origin_input_line"):
             if line.answer_type and line.answer_type != "suggestion":
                 value = f"value_{line.answer_type}"
-                previous_value = str(line.origin_input_line[value])
-                current_value = str(line[value])
+                previous_value = str(line.origin_input_line[value] or "")
+                current_value = str(line[value] or "")
             else:
                 current_value = line.suggested_answer_id.value
                 previous_value = line.origin_input_line.suggested_answer_id.value
