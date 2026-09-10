@@ -120,8 +120,8 @@ class SurveyUserInputLine(models.Model):
                 previous_value = str(line.origin_input_line[value] or "")
                 current_value = str(line[value] or "")
             else:
-                current_value = line.suggested_answer_id.value
-                previous_value = line.origin_input_line.suggested_answer_id.value
+                current_value = line.suggested_answer_id.value or ""
+                previous_value = line.origin_input_line.suggested_answer_id.value or ""
             if previous_value == current_value:
                 continue
             line.diff_with_origin = get_diff(
