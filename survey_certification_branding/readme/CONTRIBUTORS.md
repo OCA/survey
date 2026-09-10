@@ -1,1 +1,2 @@
 - Rolando Pérez Rebollo <r.perez@binhex.cloud> (https://binhex.cloud)
+- Edilio Escalona Almira <e.escalona@binhex.cloud> (https://binhex.cloud)

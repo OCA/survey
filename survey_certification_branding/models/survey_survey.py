@@ -7,6 +7,7 @@ from odoo import api, fields, models
 class SurveySurvey(models.Model):
     _inherit = "survey.survey"
 
+    title = fields.Char(size=180)
     certification_company_name = fields.Char(
         "Certification - Company Name",
         help=(
@@ -15,6 +16,7 @@ class SurveySurvey(models.Model):
         ),
         compute="_compute_certification_branding_fields",
         store=True,
+        size=100,
         readonly=False,
     )
 

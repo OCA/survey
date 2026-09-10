@@ -35,10 +35,10 @@
         </xpath>
         <xpath expr="//span[@t-field='user_input.env.company.logo']" position="after">
             <t t-else="">
-                <span
-                    class="certification-company-logo"
-                    t-field="user_input.survey_id.certification_logo_512"
-                    t-options="{'widget': 'image'}"
+                <img
+                    class="certification-company-logo certification-branding"
+                    t-att-src="image_data_uri(user_input.survey_id.certification_logo_512)"
+                    style="max-height: 100px;"
                     role="img"
                 />
             </t>
@@ -80,10 +80,10 @@
         </xpath>
         <xpath expr="//span[@t-field='user_input.env.company.logo']" position="after">
             <t t-else="">
-                <span
-                    class="certification-company-logo"
-                    t-field="user_input.survey_id.certification_logo_512"
-                    t-options="{'widget': 'image'}"
+                <img
+                    class="certification-company-logo certification-branding"
+                    t-att-src="image_data_uri(user_input.survey_id.certification_logo_512)"
+                    style="max-height: 100px;"
                     role="img"
                 />
             </t>
