@@ -1,0 +1,1 @@
+- For the moment, it only works with one page layouts.
