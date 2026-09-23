@@ -38,6 +38,19 @@ class ReportSurveyXlsx(models.AbstractModel):
                 elif user_input[fieldname]:
                     user_input_data[col] = [user_input[fieldname].display_name]
 
+    def _write_question_header(self, sheet, question, cols, bold):
+        sheet.write(0, cols[f"question_{question.id}"], question.title, bold)
+
+    def _process_user_answer(self, data, user_input_id, user_answer, cols):
+        question_id = f"question_{user_answer.question_id.id}"
+        if question_id not in cols or user_answer.skipped:
+            # We should ignore old removed questions
+            return
+        data[user_input_id][cols[question_id]].append(user_answer._get_xlsx_value())
+
+    def _post_process_user_input(self, data, user_input, cols):
+        pass
+
     def generate_xlsx_report(self, workbook, data, results):
         n_cols = Iterator(-1)
         sheet = workbook.add_worksheet("Survey Results")
@@ -46,9 +59,8 @@ class ReportSurveyXlsx(models.AbstractModel):
         cols = defaultdict(n_cols.next)
         data = defaultdict(lambda: defaultdict(list))
         self._pre_generate_xlsx_report_header(sheet, results, cols, bold)
-        # One column by question
         for question in results.question_ids:
-            sheet.write(0, cols[f"question_{question.id}"], question.title, bold)
+            self._write_question_header(sheet, question, cols, bold)
         self._post_generate_xlsx_report_header(sheet, results, n_cols, bold)
         user_inputs = self.env["survey.user_input"].search(
             self._get_input_domain(results)
@@ -56,13 +68,8 @@ class ReportSurveyXlsx(models.AbstractModel):
         for user_input in user_inputs:
             self._add_extra_data(data[user_input.id], user_input, cols)
             for user_answer in user_input.user_input_line_ids:
-                question_id = f"question_{user_answer.question_id.id}"
-                if question_id not in cols or user_answer.skipped:
-                    # We should ignore old removed questions
-                    continue
-                data[user_input.id][cols[question_id]].append(
-                    user_answer._get_xlsx_value()
-                )
+                self._process_user_answer(data, user_input.id, user_answer, cols)
+            self._post_process_user_input(data, user_input, cols)
         row = 0
         for answer_data in data.values():
             row += 1
