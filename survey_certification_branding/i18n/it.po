@@ -53,8 +53,8 @@ msgstr "Logo"
 #. module: survey_certification_branding
 #: model:ir.model.fields,help:survey_certification_branding.field_survey_survey__certification_logo_512
 msgid ""
-"Logo to be used in the certification report. It will be resized to a maximum"
-" of 512x512 pixels. If left blank, the company logo will be used."
+"Logo to be used in the certification report. It will be resized to a maximum "
+"of 512x512 pixels. If left blank, the company logo will be used."
 msgstr ""
 "Logo da usare nel resoconto certificazione. Verrà ridimensionato ad un "
 "massimo di 512x512 pixel. Se lasciato vuoto, verrà usato il logo "
@@ -64,3 +64,8 @@ msgstr ""
 #: model:ir.model,name:survey_certification_branding.model_survey_survey
 msgid "Survey"
 msgstr "Sondaggio"
+
+#. module: survey_certification_branding
+#: model:ir.model.fields,field_description:survey_certification_branding.field_survey_survey__title
+msgid "Survey Title"
+msgstr ""
