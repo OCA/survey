@@ -56,3 +56,8 @@ msgstr ""
 #: model:ir.model,name:survey_certification_branding.model_survey_survey
 msgid "Survey"
 msgstr ""
+
+#. module: survey_certification_branding
+#: model:ir.model.fields,field_description:survey_certification_branding.field_survey_survey__title
+msgid "Survey Title"
+msgstr ""
