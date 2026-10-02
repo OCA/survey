@@ -1,0 +1,27 @@
+#o_survey_certification.certification-wrapper {
+    .certification {
+        .certification-bottom {
+            bottom: 0 !important;
+        }
+    }
+
+    // Modern Template
+    &.modern {
+        .certification {
+            .certification-top {
+                padding-bottom: 2mm !important;
+            }
+        }
+    }
+
+    &.classic {
+        .certification-bottom {
+            .certification-number {
+                bottom: 0 !important;
+            }
+            .certification-seal {
+                top: 45% !important;
+            }
+        }
+    }
+}

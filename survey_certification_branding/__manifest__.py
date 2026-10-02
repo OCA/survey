@@ -16,4 +16,9 @@
         "views/survey_survey_views.xml",
         "report/survey_report_templates.xml",
     ],
+    "assets": {
+        "web.report_assets_common": [
+            "survey_certification_branding/static/src/scss/survey_reports.scss",
+        ],
+    },
 }
