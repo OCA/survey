@@ -23,7 +23,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 16.0.1.1.0 |  | Link partners with their survey results
-[survey_certification_branding](survey_certification_branding/) | 16.0.1.0.0 |  | This module enables customization of certification reports by allowing a custom logo and company name per certification.
+[survey_certification_branding](survey_certification_branding/) | 16.0.1.1.0 |  | This module enables customization of certification reports by allowing a custom logo and company name per certification.
 [survey_contact_generation](survey_contact_generation/) | 16.0.1.1.2 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Generate new contacts from surveys
 [survey_formio](survey_formio/) | 16.0.1.0.0 |  | This module allows the generation of a form.io compatible JSON for a survey.
 [survey_link_base](survey_link_base/) | 16.0.1.0.0 |  | This addon creates a mixin and a wizard to enable the generation of surveys from other models.
