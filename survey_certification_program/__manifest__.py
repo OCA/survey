@@ -1,0 +1,24 @@
+# Copyright 2025 Binhex
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
+{
+    "name": "Survey Certification Program",
+    "summary": (
+        """This module add an optional certification program page to survey certificates."""
+    ),
+    "version": "16.0.1.0.0",
+    "license": "AGPL-3",
+    "author": "Binhex,Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/survey",
+    "depends": ["survey"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/survey_survey_views.xml",
+        "report/survey_report_templates.xml",
+    ],
+    "assets": {
+        "web.report_assets_common": [
+            "survey_certification_program/static/src/scss/survey_reports.scss",
+        ],
+    },
+}
