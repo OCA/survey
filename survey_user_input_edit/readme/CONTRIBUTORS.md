@@ -1,0 +1,2 @@
+- [Apycod](https://www.apycod.fr):
+  - Pierre Verkest <pierre.verkest@apycod.fr>
