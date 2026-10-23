@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_prevent_create_on_start
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: survey_prevent_create_on_start
+#: model_terms:ir.ui.view,arch_db:survey_prevent_create_on_start.survey_cannot_create_answer
+msgid "Direct access not allowed"
+msgstr "Accès direct non autorisé"
+
+#. module: survey_prevent_create_on_start
+#: model:ir.model.fields,field_description:survey_prevent_create_on_start.field_survey_survey__display_name
+msgid "Display Name"
+msgstr "Libellé"
+
+#. module: survey_prevent_create_on_start
+#: model:ir.model.fields,field_description:survey_prevent_create_on_start.field_survey_survey__id
+msgid "ID"
+msgstr "ID"
+
+#. module: survey_prevent_create_on_start
+#: model:ir.model.fields,help:survey_prevent_create_on_start.field_survey_survey__prevent_create_on_start
+msgid ""
+"If checked, respondents cannot create a new answer directly from the survey "
+"start link without a pre-existing answer token."
+msgstr ""
+"Si cette option est cochée, les participants ne peuvent pas créer de "
+"nouvelle réponse directement à partir du lien de démarrage du sondage sans "
+"un jeton de réponse préexistant."
+
+#. module: survey_prevent_create_on_start
+#: model_terms:ir.ui.view,arch_db:survey_prevent_create_on_start.survey_cannot_create_answer
+msgid ""
+"If you already started or submitted an answer, please use the direct link\n"
+"                            provided in your invitation email, or contact "
+"the survey organizer."
+msgstr ""
+"Si vous avez déjà commencé ou envoyé une réponse, veuillez utiliser le lien "
+"direct\n"
+"                            fourni dans votre e-mail d'invitation, ou "
+"contactez l'organisateur du sondage."
+
+#. module: survey_prevent_create_on_start
+#: model_terms:ir.ui.view,arch_db:survey_prevent_create_on_start.survey_cannot_create_answer
+msgid "Leave"
+msgstr "Quitter"
+
+#. module: survey_prevent_create_on_start
+#: model:ir.model.fields,field_description:survey_prevent_create_on_start.field_survey_survey__prevent_create_on_start
+msgid "Prevent creating answers on start"
+msgstr "Empêcher la création de réponses au démarrage"
+
+#. module: survey_prevent_create_on_start
+#: model:ir.model,name:survey_prevent_create_on_start.model_survey_survey
+msgid "Survey"
+msgstr "Sondage"
+
+#. module: survey_prevent_create_on_start
+#: model_terms:ir.ui.view,arch_db:survey_prevent_create_on_start.survey_cannot_create_answer
+msgid ""
+"You cannot create a new answer directly from this link.\n"
+"                            A personalized invitation link is required."
+msgstr ""
+"Vous ne pouvez pas créer de nouvelle réponse directement à partir de ce "
+"lien.\n"
+"                            Un lien d'invitation personnalisé est requis."

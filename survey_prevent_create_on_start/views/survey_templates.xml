@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 ACSONE SA/NV
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.html). -->
+<odoo>
+    <template id="survey_cannot_create_answer" name="Survey: cannot create answer">
+        <t t-call="survey.layout">
+            <div class="wrap">
+                <div class="container">
+                    <div class="jumbotron mt32">
+                        <h1>Direct access not allowed</h1>
+                        <p>
+                            You cannot create a new answer directly from this link.
+                            A personalized invitation link is required.
+                        </p>
+                        <p>
+                            If you already started or submitted an answer, please use the direct link
+                            provided in your invitation email, or contact the survey organizer.
+                        </p>
+                        <a class="btn btn-secondary" href="/">
+                            Leave
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
