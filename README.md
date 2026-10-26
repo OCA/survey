@@ -23,6 +23,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_survey](partner_survey/) | 18.0.1.0.0 |  | Link partners with their survey results
+[survey_legal](survey_legal/) | 18.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Require legal terms before survey submit
 [survey_xlsx](survey_xlsx/) | 18.0.1.0.0 |  | XLSX Report to show the survey results
 
 [//]: # (end addons)
