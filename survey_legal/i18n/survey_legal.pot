@@ -59,6 +59,5 @@ msgstr ""
 #. module: survey_legal
 #. odoo-javascript
 #: code:addons/survey_legal/static/src/js/survey_form.esm.js:0
-#, python-format
 msgid "You must accept the legal terms"
 msgstr ""
