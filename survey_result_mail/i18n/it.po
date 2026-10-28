@@ -1,0 +1,155 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_result_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-11-20 08:35+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: survey_result_mail
+#: model:ir.actions.report,print_report_name:survey_result_mail.survey_result_report
+msgid "'Survey results - %s' % (object.survey_id.display_name)"
+msgstr "'Risultati sondaggio - %s' % (object.survey_id.display_name)"
+
+#. module: survey_result_mail
+#: model:mail.template,body_html:survey_result_mail.mail_template_user_input_result_inline
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Dear <t t-out=\"object.partner_id.name or object.nickname or 'participant'\"/>.\n"
+"        <br/><br/>\n"
+"\n"
+"        Here you have a copy of your answers:\n"
+"    </p>\n"
+"    <p>\n"
+"        <t t-out=\"object._build_answers_html()\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        Thanks you for your participation.\n"
+"    </p>\n"
+"</div>\n"
+"    "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Spettabile <t t-out=\"object.partner_id.name or object.nickname or "
+"'participant'\"/>.\n"
+"        <br/><br/>\n"
+"\n"
+"        Di seguito una copia delle sue risposte:\n"
+"    </p>\n"
+"    <p>\n"
+"        <t t-out=\"object._build_answers_html()\"/>\n"
+"    </p>\n"
+"    <p>\n"
+"        Ringraziamo per la partecipazione.\n"
+"    </p>\n"
+"</div>\n"
+"    "
+
+#. module: survey_result_mail
+#: model:mail.template,body_html:survey_result_mail.mail_template_user_input_result_report
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Dear <t t-out=\"object.partner_id.name or object.nickname or 'participant'\"/>.\n"
+"        <br/><br/>\n"
+"\n"
+"        You'll find attached your survey answers so you can review them.\n"
+"\n"
+"\n"
+"        Thanks you for your participation.\n"
+"    </p>\n"
+"</div>\n"
+"    "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Spettabile <t t-out=\"object.partner_id.name or object.nickname or "
+"'participant'\"/>.\n"
+"        <br/><br/>\n"
+"\n"
+"        Trova in allegato le sue risposte al sondaggio così le può "
+"revisionare.\n"
+"\n"
+"\n"
+"        Ringraziamo per la partecipazione.\n"
+"    </p>\n"
+"</div>\n"
+"    "
+
+#. module: survey_result_mail
+#: model_terms:ir.ui.view,arch_db:survey_result_mail.survey_result_report_view_document
+msgid "<i class=\"fa fa-info-circle mr-2\"/><span>Reponses to your survey</span>"
+msgstr ""
+"<i class=\"fa fa-info-circle mr-2\"/><span>Risposte al tuo sondaggio</span>"
+
+#. module: survey_result_mail
+#: model:ir.model.fields,field_description:survey_result_mail.field_survey_survey__result_mail_template_id
+msgid "Result Mail Template"
+msgstr "Modello e-mail risultato"
+
+#. module: survey_result_mail
+#: model:mail.template,subject:survey_result_mail.mail_template_user_input_result_inline
+#: model:mail.template,subject:survey_result_mail.mail_template_user_input_result_report
+msgid "Results for your {{object.survey_id.title}} survey"
+msgstr "Risultati per il suo sondaggio {{object.survey_id.title}}"
+
+#. module: survey_result_mail
+#: model:ir.model.fields,field_description:survey_result_mail.field_survey_survey__send_result_mail
+msgid "Send survey answers"
+msgstr "Invia risposte sondaggio"
+
+#. module: survey_result_mail
+#: model:ir.model,name:survey_result_mail.model_survey_survey
+msgid "Survey"
+msgstr "Sondaggio"
+
+#. module: survey_result_mail
+#: model:ir.model.fields,field_description:survey_result_mail.field_survey_user_input__survey_result
+msgid "Survey Result"
+msgstr "Risultato sondaggio"
+
+#. module: survey_result_mail
+#: model:mail.template,report_name:survey_result_mail.mail_template_user_input_result_report
+msgid "Survey Results"
+msgstr "Risultati sondaggio"
+
+#. module: survey_result_mail
+#: model:ir.model,name:survey_result_mail.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Risposta utente al sondaggio"
+
+#. module: survey_result_mail
+#: model:ir.actions.report,name:survey_result_mail.survey_result_report
+msgid "Survey results"
+msgstr "Risultati sondaggio"
+
+#. module: survey_result_mail
+#: model:mail.template,name:survey_result_mail.mail_template_user_input_result_inline
+msgid "Survey: Results (inline)"
+msgstr "Sondaggio: risultati (in linea)"
+
+#. module: survey_result_mail
+#: model:mail.template,name:survey_result_mail.mail_template_user_input_result_report
+msgid "Survey: Results (with report)"
+msgstr "Sondaggio: risultati (con resoconto)"
+
+#. module: survey_result_mail
+#: model:ir.model.fields,help:survey_result_mail.field_survey_survey__send_result_mail
+msgid ""
+"When the survey is submitted, an email will be sent to the user withthe "
+"answers"
+msgstr ""
+"Quando viene inviato il sondaggio, una e-mail verrà inviata all'utente con "
+"le sue risposte"

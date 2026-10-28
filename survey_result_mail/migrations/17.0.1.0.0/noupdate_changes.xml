@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="mail_template_user_input_result_report" model="mail.template">
+        <field
+            name="report_template_ids"
+            eval="[(4, ref('survey_result_mail.survey_result_report'))]"
+        />
+    </record>
+</odoo>
