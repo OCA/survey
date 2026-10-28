@@ -1,0 +1,172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_contact_generation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-11-11 12:42+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__allowed_partner_field_domain
+msgid "Allowed Partner Field Domain"
+msgstr "Dominio campo partner consentito"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q3
+msgid "Color"
+msgstr "Colore"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q_company_name
+msgid "Company name"
+msgstr "Nome azienda"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_res_partner
+#: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_form
+#: model_terms:ir.ui.view,arch_db:survey_contact_generation.survey_question_form
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: survey_contact_generation
+#: model:survey.survey,title:survey_contact_generation.survey_contact_creation
+msgid "Contact Creation Survey"
+msgstr "Sondaggio creazione contatto"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question__res_partner_field
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field
+msgid "Contact field"
+msgstr "Campo contatto"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_question_answer__res_partner_field_resource_ref
+msgid "Contact field value"
+msgstr "Valore campo contatto"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q5
+msgid "Country"
+msgstr "Nazione"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__create_parent_contact
+msgid "Create Parent Contact"
+msgstr "Crea contatto partner"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q4
+msgid "Date"
+msgstr "Data"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q1
+msgid "Email"
+msgstr "E-mail"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug3
+msgid "Employees"
+msgstr "Dipendenti"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_survey_survey__generate_contact
+msgid "Generate Contact"
+msgstr "Genera contatto"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__generate_contact
+msgid "Generate contacts for anonymous survey users"
+msgstr "Genera contatti per utenti sondaggio anonimo"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,field_description:survey_contact_generation.field_res_partner__generating_survey_user_input_id
+#: model:ir.model.fields,field_description:survey_contact_generation.field_res_users__generating_survey_user_input_id
+msgid "Generating Survey User Input"
+msgstr "Generazione risposte utente sondaggio"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q0
+msgid "Name"
+msgstr "Nome"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q2
+msgid "Notes"
+msgstr "Note"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug2
+msgid "Prospects"
+msgstr "Prospettive"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug2
+msgid "Romania"
+msgstr "Romania"
+
+#. module: survey_contact_generation
+#: model:ir.model.fields,help:survey_contact_generation.field_survey_survey__create_parent_contact
+msgid ""
+"Set the company_name in a question and a parent contact will be created to "
+"hold the generated one"
+msgstr ""
+"Impostare il company_name in una richiesta e verrà creato il contatto "
+"partner per gestirla"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q5_sug1
+msgid "Spain"
+msgstr "Spagna"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_survey
+msgid "Survey"
+msgstr "Sondaggio"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question_answer
+msgid "Survey Label"
+msgstr "Etichetta sondaggio"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_question
+msgid "Survey Question"
+msgstr "Domanda sondaggio"
+
+#. module: survey_contact_generation
+#: model:ir.model,name:survey_contact_generation.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Risposta utente al sondaggio"
+
+#. module: survey_contact_generation
+#: model:survey.question,title:survey_contact_generation.survey_contact_q6
+msgid "Tags"
+msgstr "Etichette"
+
+#. module: survey_contact_generation
+#: model:survey.question.answer,value:survey_contact_generation.survey_contact_q6_sug1
+msgid "Vendor"
+msgstr "Fornitore"
+
+#~ msgid "Allowed Field"
+#~ msgstr "Campi permessi"
+
+#~ msgid "If other, please specify:"
+#~ msgstr "Se altro, specificare:"
+
+#~ msgid "The answer you entered is not valid."
+#~ msgstr "La risposta data non è valida."
+
+#~ msgid "This question requires an answer."
+#~ msgstr "Questa domanda richiede una risposta."
