@@ -1,0 +1,1 @@
+odoo-addon-survey-prevent-create-on-start @ git+https://github.com/oca/survey.git@refs/pull/264/head#subdirectory=survey_prevent_create_on_start
