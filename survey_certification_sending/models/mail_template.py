@@ -14,7 +14,10 @@ class MailTemplate(models.Model):
         email_values=None,
         email_layout_xmlid=False,
     ):
-        if self.model == "survey.user_input":
+        # The manual sending must go through even if the automatic one is skipped
+        if self.model == "survey.user_input" and not self.env.context.get(
+            "survey_certification_force_send"
+        ):
             survey_input = self.env["survey.user_input"].browse(res_id)
             if (
                 survey_input.survey_id.skip_certification_email

@@ -36,7 +36,9 @@ class SurveyUserInput(models.Model):
             ):
                 template = user_input.survey_id.certification_mail_template_id
                 if template:
-                    template.send_mail(
+                    template.with_context(
+                        survey_certification_force_send=True
+                    ).send_mail(
                         user_input.id, email_layout_xmlid="mail.mail_notification_light"
                     )
                     user_input.certification_sent = True

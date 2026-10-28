@@ -400,3 +400,32 @@ class TestCertificationsending(TestSurveyCommon):
             result = template.send_mail(answer.id)
             mock_send.assert_called_once()
         self.assertTrue(result)
+
+    def _get_certification_mails(self, answer):
+        return self.env["mail.mail"].search(
+            [("model", "=", "survey.user_input"), ("res_id", "=", answer.id)]
+        )
+
+    def test_manual_send_creates_mail_when_survey_skip(self):
+        """Skipping the automatic email must not block the manual sending"""
+        survey, q = self._make_passing_certification(
+            "Manual Send Survey Skip", extra_vals={"skip_certification_email": True}
+        )
+        answer = self._add_answer(survey, self.env.user)
+        self._add_answer_line(q, answer, q.suggested_answer_ids[1].id)
+        answer._mark_done()
+        self.assertFalse(self._get_certification_mails(answer))
+        answer.action_manual_send_certification()
+        self.assertTrue(self._get_certification_mails(answer))
+
+    def test_manual_send_creates_mail_when_partner_skip(self):
+        """Skipping the automatic email for the partner must not block the manual
+        sending"""
+        survey, q = self._make_passing_certification("Manual Send Partner Skip")
+        answer = self._add_answer(survey, self.env.user)
+        answer.partner_id.write({"skip_certification_email": True})
+        self._add_answer_line(q, answer, q.suggested_answer_ids[1].id)
+        answer._mark_done()
+        self.assertFalse(self._get_certification_mails(answer))
+        answer.action_manual_send_certification()
+        self.assertTrue(self._get_certification_mails(answer))
