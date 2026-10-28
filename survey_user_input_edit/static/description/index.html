@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
+<title>Survey user input edit</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
+
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: gray; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic, pre.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<a class="reference external image-reference" href="https://odoo-community.org/get-involved?utm_source=readme">
+<img alt="Odoo Community Association" src="https://odoo-community.org/readme-banner-image" />
+</a>
+<div class="section" id="survey-user-input-edit">
+<h1>Survey user input edit</h1>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This file is generated by oca-gen-addon-readme !!
+!! changes will be overwritten.                   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! source digest: sha256:6430d7d20ed03a52f3fa3b52e62c48b24942a1fbc1e244877b56f08fd3ebbbb1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/lgpl-3.0-standalone.html"><img alt="License: LGPL-3" src="https://img.shields.io/badge/license-LGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/survey/tree/19.0/survey_user_input_edit"><img alt="OCA/survey" src="https://img.shields.io/badge/github-OCA%2Fsurvey-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/survey-19-0/survey-19-0-survey_user_input_edit"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/survey&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p>This module allows respondents to modify and update their answers to a
+survey after a first submission.</p>
+<p>When enabled on a survey, respondents who complete or revisit a
+completed survey have the option to edit their existing responses rather
+than being locked in read-only mode or forced to restart a blank
+submission.</p>
+<p><strong>Table of contents</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-3">Usage</a></li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-4">Known issues / Roadmap</a></li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-5">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-6">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-7">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-8">Contributors</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-9">Maintainers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="use-cases-context">
+<h2><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h2>
+<p>In standard Odoo, once a respondent submits a survey
+(<tt class="docutils literal">survey.user_input</tt> reaches state <tt class="docutils literal">done</tt>), the access link
+transitions into read-only mode. The respondent can only consult their
+answers or start a completely new submission from scratch without
+retrieving their previous answers.</p>
+<p>However, several business scenarios require respondents to update their
+answers without starting over:</p>
+<ul class="simple">
+<li>Registration and enrollment forms (e.g., updating contact details,
+arrival dates, or uploaded documents before a deadline).</li>
+<li>Long multi-section questionnaires where a user realizes they made a
+mistake or omitted an item right after submitting.</li>
+<li>Periodic self-evaluations or profile forms where participants adjust
+their responses over time.</li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#toc-entry-2">Configuration</a></h2>
+<p>To allow respondents to edit their answers:</p>
+<ol class="arabic simple">
+<li>Go to <strong>Surveys &gt; Surveys</strong> and select or create a survey.</li>
+<li>Open the <strong>Options</strong> tab.</li>
+<li>In the <strong>Participants</strong> section, check the <strong>Allow editing answers</strong>
+option (<tt class="docutils literal">allow_editing</tt>).</li>
+<li>Save the survey.</li>
+</ol>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#toc-entry-3">Usage</a></h2>
+<p><strong>Architecture &amp; Token Lifecycle</strong></p>
+<p>Odoo surveys rely on a dual-token mechanism:</p>
+<ol class="arabic simple">
+<li><strong>Survey Access Token (``survey.access_token``)</strong>: Unique hash
+identifying the survey definition (e.g.,
+<tt class="docutils literal"><span class="pre">/survey/start/&lt;survey_token&gt;</span></tt>).</li>
+<li><strong>Answer Access Token (``survey.user_input.access_token``)</strong>: Unique
+hash identifying a specific participant’s submission session (e.g.,
+<tt class="docutils literal"><span class="pre">/survey/&lt;survey_token&gt;/&lt;answer_token&gt;</span></tt>).</li>
+</ol>
+<p>When a respondent initiates a survey via
+<tt class="docutils literal"><span class="pre">/survey/start/&lt;survey_token&gt;</span></tt>, Odoo sets an HTTP cookie in the
+browser:</p>
+<pre class="code text literal-block">
+survey_&lt;survey_token&gt;=&lt;answer_token&gt;
+</pre>
+<p>with a default validity of 24 hours. Subsequent visits to
+<tt class="docutils literal"><span class="pre">/survey/&lt;survey_token&gt;</span></tt> read this cookie to match the current
+respondent session.</p>
+<p><strong>Navigation and Editing Workflow</strong></p>
+<ol class="arabic simple">
+<li><strong>Initial Submission</strong>:<ul>
+<li>The respondent completes the questions and clicks <strong>Submit</strong>.</li>
+<li>The submission is marked as done (<tt class="docutils literal">state = 'done'</tt>), and the
+completion <tt class="docutils literal">end_datetime</tt> is recorded.</li>
+<li>The respondent lands on the native completion screen.</li>
+</ul>
+</li>
+<li><strong>Consultation and Edit Option</strong>:<ul>
+<li>On the completion screen, the respondent can:<ul>
+<li>Click <strong>Review your answers</strong>
+(<tt class="docutils literal"><span class="pre">/survey/print/&lt;survey_token&gt;?answer_token=&lt;answer_token&gt;&amp;review=True</span></tt>)
+to view their submitted responses in read-only mode.</li>
+<li>Click <strong>Edit your answers</strong>
+(<tt class="docutils literal"><span class="pre">/survey/start/&lt;survey_token&gt;?answer_token=&lt;answer_token&gt;&amp;edit=1</span></tt>)
+to enter modification mode.</li>
+</ul>
+</li>
+<li>Direct visits or page refreshes on
+<tt class="docutils literal"><span class="pre">/survey/&lt;survey_token&gt;/&lt;answer_token&gt;</span></tt> remain on the completion
+screen; the survey is not prematurely restarted unless the user
+explicitly clicks the edit button.</li>
+</ul>
+</li>
+<li><strong>Editing Mode</strong>:<ul>
+<li>When <strong>Edit your answers</strong> is clicked, the system executes:<ul>
+<li>The response transitions from <tt class="docutils literal">done</tt> to <tt class="docutils literal">in_progress</tt> (logged
+in chatter).</li>
+<li>The pagination pointer is reset, placing the respondent at the
+first question.</li>
+<li>All previous responses remain pre-filled in the form.</li>
+<li>Backward navigation is enabled across all pages.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Resubmission</strong>:<ul>
+<li>The respondent edits their answers and clicks <strong>Submit</strong>.</li>
+<li>Answer lines are updated in-place, ensuring no duplicate line
+entries are created.</li>
+<li>The submission returns to <tt class="docutils literal">done</tt>, updating <tt class="docutils literal">end_datetime</tt> and
+logging the completion state change in chatter.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Respondent Lifecycles: Public vs Logged-In Users</strong></p>
+<ul class="simple">
+<li><strong>Registered / Logged-in Users</strong>:<ul>
+<li>The submission is permanently associated with the user’s partner
+record (<tt class="docutils literal">partner_id</tt>).</li>
+<li>Even if the browser cookie is deleted or the user accesses the
+survey from a different device, visiting
+<tt class="docutils literal"><span class="pre">/survey/start/&lt;survey_token&gt;</span></tt> automatically retrieves their
+existing submission.</li>
+<li>If the survey was previously completed, the user is presented with
+the completion screen with the options to review or edit.</li>
+</ul>
+</li>
+<li><strong>Public / Anonymous Users</strong>:<ul>
+<li>The submission is not tied to a registered partner account.</li>
+<li>Identification relies on:<ol class="arabic">
+<li>The active browser cookie (<tt class="docutils literal">survey_&lt;survey_token&gt;</tt>), or</li>
+<li>The tokenized URL (<tt class="docutils literal"><span class="pre">/survey/&lt;survey_token&gt;/&lt;answer_token&gt;</span></tt>),
+such as those sent via email invitation links.</li>
+</ol>
+</li>
+<li>As long as the cookie remains active in their browser, a public user
+can complete the survey, consult their answers, and click <strong>Edit
+your answers</strong> to modify their submission.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="known-issues-roadmap">
+<h2><a class="toc-backref" href="#toc-entry-4">Known issues / Roadmap</a></h2>
+<p><strong>Public User Session Retention</strong></p>
+<ul class="simple">
+<li><strong>Anonymous submissions without a tokenized URL</strong>: If a public user
+completes an open public survey directly via the generic link
+<tt class="docutils literal"><span class="pre">/survey/start/&lt;survey_token&gt;</span></tt>, their session identity is stored
+only in the browser cookie <tt class="docutils literal">survey_&lt;survey_token&gt;</tt>.<ul>
+<li>If the user clears their browser cache/cookies, switches browsers,
+or opens the generic survey link on another device, Odoo cannot
+technically identify them (to prevent anonymous users from accessing
+other respondents’ data). In this situation, visiting the generic
+link starts a new blank survey.</li>
+<li>However, if the survey was distributed via email invitations (which
+include the unique <tt class="docutils literal">answer_token</tt> in the URL), public users can
+return and edit their answers from any device at any time using that
+link.</li>
+<li>A possible roadmap improvement could be an option to email a
+resumption link with the answer token upon first submission for
+anonymous respondents.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Scoring and Certification</strong></p>
+<ul class="simple">
+<li>For surveys with scoring and certification, retaking or editing
+answers currently retains the standard certification behavior (e.g.,
+if certification is already issued).</li>
+</ul>
+</div>
+<div class="section" id="bug-tracker">
+<h2><a class="toc-backref" href="#toc-entry-5">Bug Tracker</a></h2>
+<p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/survey/issues">GitHub Issues</a>.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+<a class="reference external" href="https://github.com/OCA/survey/issues/new?body=module:%20survey_user_input_edit%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<p>Do not contact contributors directly about support or help with technical issues.</p>
+</div>
+<div class="section" id="credits">
+<h2><a class="toc-backref" href="#toc-entry-6">Credits</a></h2>
+<div class="section" id="authors">
+<h3><a class="toc-backref" href="#toc-entry-7">Authors</a></h3>
+<ul class="simple">
+<li>Pierre Verkest</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h3><a class="toc-backref" href="#toc-entry-8">Contributors</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.apycod.fr">Apycod</a>:<ul>
+<li>Pierre Verkest <a class="reference external" href="mailto:pierre.verkest&#64;apycod.fr">pierre.verkest&#64;apycod.fr</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="maintainers">
+<h3><a class="toc-backref" href="#toc-entry-9">Maintainers</a></h3>
+<p>This module is maintained by the OCA.</p>
+<a class="reference external image-reference" href="https://odoo-community.org">
+<img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+</a>
+<p>OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.</p>
+<p>Current <a class="reference external" href="https://odoo-community.org/page/maintainer-role">maintainer</a>:</p>
+<p><a class="reference external image-reference" href="https://github.com/petrus-v"><img alt="petrus-v" src="https://github.com/petrus-v.png?size=40px" /></a></p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/survey/tree/19.0/survey_user_input_edit">OCA/survey</a> project on GitHub.</p>
+<p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

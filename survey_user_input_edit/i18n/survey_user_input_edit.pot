@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_user_input_edit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: survey_user_input_edit
+#: model_terms:ir.ui.view,arch_db:survey_user_input_edit.survey_button_retake
+msgid "<span>Number of attempts left</span>:"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model.fields,help:survey_user_input_edit.field_survey_survey__allow_editing
+msgid "Allow respondents to edit their answers after submitting the survey."
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model.fields,field_description:survey_user_input_edit.field_survey_survey__allow_editing
+msgid "Allow response editing"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model.fields,field_description:survey_user_input_edit.field_survey_survey__display_name
+#: model:ir.model.fields,field_description:survey_user_input_edit.field_survey_user_input__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model_terms:ir.ui.view,arch_db:survey_user_input_edit.survey_button_retake
+msgid "Edit your answers"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model.fields,field_description:survey_user_input_edit.field_survey_survey__id
+#: model:ir.model.fields,field_description:survey_user_input_edit.field_survey_user_input__id
+msgid "ID"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model_terms:ir.ui.view,arch_db:survey_user_input_edit.survey_button_retake
+msgid "Retry"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model.fields,field_description:survey_user_input_edit.field_survey_user_input__state
+msgid "Status"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model,name:survey_user_input_edit.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model:ir.model,name:survey_user_input_edit.model_survey_user_input
+msgid "Survey User Input"
+msgstr ""
+
+#. module: survey_user_input_edit
+#: model_terms:ir.ui.view,arch_db:survey_user_input_edit.survey_button_retake
+msgid "Take Again"
+msgstr ""
