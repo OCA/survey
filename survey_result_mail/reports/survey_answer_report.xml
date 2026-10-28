@@ -9,7 +9,8 @@
                 />
             </t>
             <div class="alert alert-info">
-                <i class="fa fa-info-circle me-2" /><span>Reponses to your survey</span>
+                <i class="fa fa-info-circle me-2" />
+                <span>Reponses to your survey</span>
             </div>
             <div class="page">
                 <div class="row col-10 offset-1">

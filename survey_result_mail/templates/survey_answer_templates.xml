@@ -175,21 +175,20 @@
                         t-att-for="str(question.id) + '_' + str(label.id)"
                         t-att-class="'o_survey_choice_btn me-2 mb-2 py-1 px-3 rounded %s %s' % (answer_class, 'o_survey_selected' if answer_selected else '')"
                     >
-
                         <span class="ms-2">
-                        <t
+                            <t
                                 t-if="answer_line and answer_line.suggested_answer_id.id == label.id"
                             >
-                            <i
+                                <i
                                     class="ms-2 fa fa-check-circle float-end mt-1 position-relative"
                                 />
-                        </t>
-                        <t t-else="">
-                            <i
+                            </t>
+                            <t t-else="">
+                                <i
                                     class="ms-2 fa fa-circle-thin float-end mt-1 position-relative"
                                 />
-                        </t>
-                        <t t-out="label.value" />
+                            </t>
+                            <t t-out="label.value" />
                         </span>
                     </label>
                 </t>
@@ -309,12 +308,14 @@
                         <t t-if="comment_line">
                             <i
                                 class="ms-2 fa fa-check-square float-end mt-1 position-relative"
-                            />&#160;
+                            />
+                            &#160;
                         </t>
                         <t t-else="">
                             <i
                                 class="ms-2 fa fa-square-o float-end mt-1 position-relative"
-                            />&#160;
+                            />
+                            &#160;
                         </t>
                     </label>
                 </div>
@@ -346,12 +347,14 @@
         >
             <thead>
                 <tr>
-                    <th class="border-0"> </th>
+                    <th class="border-0" />
                     <th
                         class="border-0 font-weight-normal"
                         t-foreach="question.suggested_answer_ids"
                         t-as="col_label"
-                    ><span t-field="col_label.value" /></th>
+                    >
+                        <span t-field="col_label.value" />
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -361,9 +364,9 @@
                     t-as="row_label"
                     t-att-id="row_label.id"
                 >
-                    <th class="border-0 font-weight-normal text-start"><span
-                            t-field="row_label.value"
-                        /></th>
+                    <th class="border-0 font-weight-normal text-start">
+                        <span t-field="row_label.value" />
+                    </th>
                     <t t-foreach="question.suggested_answer_ids" t-as="col_label">
                         <t
                             t-set="answer"
@@ -398,5 +401,4 @@
             />
         </div>
     </template>
-
 </odoo>
