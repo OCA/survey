@@ -63,9 +63,7 @@ class ReportSurveyXlsx(models.AbstractModel):
                 data[user_input.id][cols[question_id]].append(
                     user_answer._get_xlsx_value()
                 )
-        row = 0
-        for answer_data in data.values():
-            row += 1
+        for row, answer_data in enumerate(data.values(), start=1):
             for col_id, answer_vals in answer_data.items():
                 if isinstance(answer_vals[0], datetime.datetime):
                     date = answer_vals[0].date()

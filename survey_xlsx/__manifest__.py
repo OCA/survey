@@ -3,9 +3,8 @@
 
 {
     "name": "Survey XLSX",
-    "summary": """
-        XLSX Report to show the survey results""",
-    "version": "19.0.1.0.1",
+    "summary": "XLSX Report to show the survey results",
+    "version": "20.0.1.0.0",
     "license": "AGPL-3",
     "installable": True,
     "application": False,

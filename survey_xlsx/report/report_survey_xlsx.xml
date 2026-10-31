@@ -6,7 +6,6 @@
         <field name="type">ir.actions.report</field>
         <field name="report_type">xlsx</field>
         <field name="report_name">survey.xlsx</field>
-        <field name="report_file">survey</field>
         <field name="attachment_use">False</field>
         <field name="binding_model_id" ref="survey.model_survey_survey" />
         <field name="binding_type">report</field>

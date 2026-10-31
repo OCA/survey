@@ -2,10 +2,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import io
 import logging
-from datetime import date
 
 import freezegun
 import openpyxl
+
+from odoo import fields
 
 from odoo.addons.survey.tests import common
 
@@ -47,7 +48,7 @@ class TestReport(common.TestSurveyCommon):
         )
         self._add_answer_line(self.question_ft, answer, "FIRST ANSWER")
         self._add_answer_line(self.question_num, answer, 1)
-        self._add_answer_line(self.question_date, answer, date.today())
+        self._add_answer_line(self.question_date, answer, fields.Date.today())
         self._add_answer_line(
             self.suggested_question,
             answer,
