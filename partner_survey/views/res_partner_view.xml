@@ -15,7 +15,7 @@
                 <button
                     class="oe_stat_button"
                     type="object"
-                    icon="fa-list-alt"
+                    icon="list_alt"
                     name="action_view_surveys"
                     invisible="surveys_count == 0 or is_company or surveys_invisible"
                 >
@@ -36,7 +36,7 @@
                 <button
                     class="oe_stat_button"
                     type="object"
-                    icon="fa-list-alt"
+                    icon="list_alt"
                     name="action_view_surveys"
                     invisible="surveys_company_count == 0 or not is_company or surveys_company_invisible"
                 >
