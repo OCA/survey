@@ -40,6 +40,7 @@ addon | version | maintainers | summary
 [survey_result_mail](survey_result_mail/) | 19.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Send survey answers to the survey user
 [survey_sale_generation](survey_sale_generation/) | 19.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Generate sale orders from surveys
 [survey_skip_start](survey_skip_start/) | 19.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Skip the surveys start screen and go directly to fill the form
+[survey_xlsx](survey_xlsx/) | 19.0.1.0.1 |  | XLSX Report to show the survey results
 
 [//]: # (end addons)
 
